@@ -12,8 +12,8 @@ permalink: /
 
 [![C++](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![CI](https://github.com/N3b3x/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml/badge.svg?branch=main)](https://github.com/N3b3x/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml)
-[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://n3b3x.github.io/hf-pf1550-driver/)
+[![CI](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml/badge.svg?branch=main)](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://hardfoc.github.io/hf-pf1550-driver/)
 
 ## 📚 Table of Contents
 
@@ -30,7 +30,7 @@ permalink: /
 
 ## 📦 Overview
 
-> **📖 [Live documentation](https://n3b3x.github.io/hf-pf1550-driver/)** — guides, register extracts, Portenta profile, ESP32-C6 examples.
+> **📖 [Live documentation](https://hardfoc.github.io/hf-pf1550-driver/)** — guides, register extracts, Portenta profile, ESP32-C6 examples.
 
 The **PF1550** is a multi-rail PMIC (3 bucks, 3 LDOs, charger, OTP) used on **Arduino Portenta H7** (`MC34PF1550A0EP`) and **Synapse** MCU domains. Bare CubeMX firmware does **not** configure it — this driver provides portable I2C control, board profiles, and hf-core HAL integration.
 
@@ -89,7 +89,7 @@ See [Quick Start Guide](docs/quickstart.md) and [Portenta profile](docs/portenta
 
 1. Clone with submodules (for ESP32 examples):
    ```bash
-   git clone --recursive https://github.com/N3b3x/hf-pf1550-driver.git
+   git clone --recursive https://github.com/hardfoc/hf-pf1550-driver.git
    ```
 2. CMake:
    ```cmake
