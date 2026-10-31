@@ -57,7 +57,7 @@ provisioning still works if STANDBY is pulled low and USB rails are strapped.
 ## Software workflow
 
 ```bash
-git clone --recursive https://github.com/N3b3x/hf-pf1550-driver.git
+git clone --recursive https://github.com/hardfoc/hf-pf1550-driver.git
 cd hf-pf1550-driver/examples/esp32
 git submodule update --init --recursive
 

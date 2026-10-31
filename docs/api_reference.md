@@ -12,7 +12,7 @@ Complete reference for the `pf1550::` namespace. All symbols are exposed
 through `pf1550.hpp`; the implementation lives in `src/pf1550.ipp`.
 
 > Doxygen browsing: a full annotated API is published at
-> [n3b3x.github.io/hf-pf1550-driver](https://n3b3x.github.io/hf-pf1550-driver/)
+> [hardfoc.github.io/hf-pf1550-driver](https://hardfoc.github.io/hf-pf1550-driver/)
 > alongside this Jekyll site.
 
 ## Headers

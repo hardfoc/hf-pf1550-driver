@@ -20,7 +20,7 @@ permalink: /docs/examples/
 Clone **with submodules**:
 
 ```bash
-git clone --recursive https://github.com/N3b3x/hf-pf1550-driver.git
+git clone --recursive https://github.com/hardfoc/hf-pf1550-driver.git
 cd hf-pf1550-driver/examples/esp32
 git submodule update --init --recursive
 ./scripts/build_app.sh list
@@ -43,4 +43,4 @@ CONFIG_PF1550_APPLY_PORTENTA_PROFILE=y
 
 **Warning:** only use on lab / unprogrammed PMIC parts.
 
-See [examples/esp32/README.md](https://github.com/N3b3x/hf-pf1550-driver/blob/main/examples/esp32/README.md).
+See [examples/esp32/README.md](https://github.com/hardfoc/hf-pf1550-driver/blob/main/examples/esp32/README.md).

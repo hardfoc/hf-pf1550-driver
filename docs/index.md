@@ -10,9 +10,9 @@ has_children: true
 
 # HF-PF1550 documentation
 
-Welcome. This site mirrors the [`docs/`](https://github.com/N3b3x/hf-pf1550-driver/tree/main/docs) folder and documents the **NXP PF1550** PMIC family driver used on Portenta H7 and Synapse MCU power domains.
+Welcome. This site mirrors the [`docs/`](https://github.com/hardfoc/hf-pf1550-driver/tree/main/docs) folder and documents the **NXP PF1550** PMIC family driver used on Portenta H7 and Synapse MCU power domains.
 
-> **Browse on GitHub:** [repository home](https://github.com/N3b3x/hf-pf1550-driver) · [Issues](https://github.com/N3b3x/hf-pf1550-driver/issues)
+> **Browse on GitHub:** [repository home](https://github.com/hardfoc/hf-pf1550-driver) · [Issues](https://github.com/hardfoc/hf-pf1550-driver/issues)
 
 ## Documentation structure
 
