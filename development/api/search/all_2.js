@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['charger_0',['charger',['../structpf1550_1_1DiagnosticSnapshot.html#ab8ea40780b59a8f0fea9af12fcd3cc71',1,'pf1550::DiagnosticSnapshot']]],
+  ['chargerledctrl_1',['ChargerLedCtrl',['../namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768abc2e12049fe0ac45052936dbc9715c1d',1,'pf1550']]],
+  ['chargerledduty_2',['ChargerLedDuty',['../namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768abc302b93f477f2d0ed1a988ae530f7c2',1,'pf1550']]],
+  ['chargerstate_3',['ChargerState',['../namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e',1,'pf1550']]],
+  ['chargerstatename_4',['ChargerStateName',['../namespacepf1550.html#a3f17ae438d670440dbf9f19d5fc858f2',1,'pf1550']]],
+  ['chg_5fsense_5freg_5',['chg_sense_reg',['../structpf1550_1_1DiagnosticSnapshot.html#af175b5beade3784c2e97ec19b112da73',1,'pf1550::DiagnosticSnapshot']]],
+  ['chgint_6',['ChgInt',['../namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a875bc32d9760ead1f5f3ee81b90343b0',1,'pf1550']]],
+  ['chgintmask_7',['ChgIntMask',['../namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a7cad2328d5f57794ab2cb97c1b7c0aa0',1,'pf1550']]],
+  ['chgintok_8',['ChgIntOk',['../namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a99c3d55e4252d55b9b2b5069d1d361c3',1,'pf1550']]],
+  ['chgsense_9',['ChgSense',['../namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a0ca4f2a2e8f2f4989ec27279db56e866',1,'pf1550']]],
+  ['chip_20compatibility_10',['🔀 Chip compatibility',['../index.html#autotoc_md3',1,'']]],
+  ['clear_11',['Clear',['../structpf1550_1_1FaultFlags.html#ac97f80e40d9a497a5eb277dc6626e544',1,'pf1550::FaultFlags']]],
+  ['clearerrorflags_12',['ClearErrorFlags',['../classpf1550_1_1PF1550.html#ab083a075ccbce0b2bc5a981f7a6dc4aa',1,'pf1550::PF1550']]],
+  ['clearlatchedfaults_13',['ClearLatchedFaults',['../classpf1550_1_1PF1550.html#a445d79c90268708ff703f3982b37bac6',1,'pf1550::PF1550']]],
+  ['coincellctrl_14',['CoinCellCtrl',['../namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a7ccef6d2fd5e7c6920f1c04f51d92f1d',1,'pf1550']]],
+  ['compatibility_15',['🔀 Chip compatibility',['../index.html#autotoc_md3',1,'']]],
+  ['contents_16',['📚 Table of Contents',['../index.html#autotoc_md1',1,'']]],
+  ['contributing_17',['🤝 Contributing',['../index.html#autotoc_md11',1,'']]],
+  ['count_18',['COUNT',['../namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a4905ac9d6a22bdfc1ae096094ce6248d',1,'pf1550']]],
+  ['createesp32pf1550bus_19',['CreateEsp32Pf1550Bus',['../esp32__pf1550__bus_8hpp.html#aec0e98d83d7ac477a3e8b1daa71b2070',1,'esp32_pf1550_bus.hpp']]],
+  ['ctrl_5freg_20',['ctrl_reg',['../structpf1550_1_1RailDiagnostics.html#a13f4b0639fe82428115c9b836c133fde',1,'pf1550::RailDiagnostics']]],
+  ['ctrlpin_21',['CtrlPin',['../namespacepf1550.html#a8ebe2283b2a786a11c1955d26cae25f8',1,'pf1550']]]
+];

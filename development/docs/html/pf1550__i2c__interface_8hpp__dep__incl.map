@@ -1,0 +1,19 @@
+<map id="inc/pf1550_i2c_interface.hpp" name="inc/pf1550_i2c_interface.hpp">
+<area shape="rect" id="Node000001" title="CRTP I2C + GPIO interface for PF1550 driver." alt="" coords="362,5,570,33"/>
+<area shape="rect" id="Node000002" href="$esp32__pf1550__bus_8hpp.html" title="ESP32&#45;C6 I2C bus adapter for pf1550::PF1550." alt="" coords="295,81,469,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="444,43,406,83,403,78,439,46"/>
+<area shape="rect" id="Node000007" href="$pf1550_8hpp.html" title="Hardware&#45;agnostic driver for the NXP PF1550 PMIC family." alt="" coords="493,90,610,117"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="491,41,541,90,535,89,490,47"/>
+<area shape="rect" id="Node000003" href="$pf1550__esp32c6__diagnostics_8cpp.html" title="ESP32&#45;C6 PF1550 diagnostic&#45;snapshot + self&#45;test example." alt="" coords="466,182,706,227"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,130,544,182,539,182,440,136"/>
+<area shape="rect" id="Node000004" href="$pf1550__esp32c6__probe_8cpp.html" title="ESP32&#45;C6 I2C probe for NXP PF1550 @ 0x08." alt="" coords="730,182,932,227"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="484,124,603,147,719,171,753,182,748,181,717,176,602,152,484,129"/>
+<area shape="rect" id="Node000005" href="$pf1550__esp32c6__provision_8cpp.html" title="External ESP32&#45;C6 PMIC provisioning for pre&#45;MCU board bring&#45;up." alt="" coords="5,182,231,227"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="313,131,177,184,175,179,308,132"/>
+<area shape="rect" id="Node000006" href="$pf1550__esp32c6__register__dump_8cpp.html" title="Dump selected PF1550 registers over I2C (ESP32&#45;C6)" alt="" coords="254,174,443,235"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="372,139,361,175,357,171,368,142"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="562,129,581,183,576,180,559,134"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="603,120,773,181,767,182,603,125"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="498,121,481,128,362,153,243,176,208,184,207,179,241,171,361,148,480,123,493,123"/>
+<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="513,124,412,176,410,171,508,125"/>
+</map>

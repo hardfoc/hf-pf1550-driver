@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/hf_pf1550Targets.cmake")
+
+check_required_components(hf_pf1550)

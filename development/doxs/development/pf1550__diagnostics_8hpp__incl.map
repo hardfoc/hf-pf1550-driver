@@ -1,0 +1,10 @@
+<map id="inc/pf1550_diagnostics.hpp" name="inc/pf1550_diagnostics.hpp">
+<area shape="rect" id="Node000001" title="PF1550 diagnostic / fault&#45;classification types and snapshot containers." alt="" coords="13,5,211,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,75,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,36,65,72,61,68,100,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="137,157,202,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,31,140,108,157,143,151,142,135,110,113,35"/>
+<area shape="rect" id="Node000004" href="$pf1550__registers_8hpp.html" title="NXP PF1550 family I2C register map, bit&#45;field constants, and OTP keys." alt="" coords="149,81,307,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,31,197,72,192,73,132,36"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="220,108,191,147,188,142,215,110"/>
+</map>

@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>HF-PF1550 Driver: inc/pf1550_registers.hpp File Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HF-PF1550 Driver
+   &#160;<span id="projectnumber">0.1.0-dev</span>
+   </div>
+   <div id="projectbrief">Portable C++20 driver for the NXP PF1550 PMIC (3 bucks + 3 LDOs + charger + OTP), with Portenta H7 / Synapse profiles, diagnostic snapshot API, and hf-core HAL handler integration.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+<div id="theme-selection">
+ <label for="theme-select">Theme:</label>
+ <select id="theme-select">
+  <option value="theme-default">Default</option>
+  <option value="theme-round">Round</option>
+  <option value="theme-robot">Robot</option>
+ </select>
+</div>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('pf1550__registers_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">pf1550_registers.hpp File Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>NXP PF1550 family I2C register map, bit-field constants, and OTP keys.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for pf1550_registers.hpp:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pf1550__registers_8hpp__incl.svg" width="192" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pf1550__registers_8hpp__dep__incl.svg" width="939" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="pf1550__registers_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1IntCategoryBits.html">pf1550::IntCategoryBits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within INT_CATEGORY (Reg 0x06).  <a href="structpf1550_1_1IntCategoryBits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1SwIntStat0Bits.html">pf1550::SwIntStat0Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within SW_INT_STAT0 (Reg 0x08) — <b>low-side</b> current-limit faults.  <a href="structpf1550_1_1SwIntStat0Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1SwIntStat1Bits.html">pf1550::SwIntStat1Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within SW_INT_STAT1 (Reg 0x0B) — <b>high-side</b> current-limit faults.  <a href="structpf1550_1_1SwIntStat1Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1LdoIntStat0Bits.html">pf1550::LdoIntStat0Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within LDO_INT_STAT0 (Reg 0x18) — LDO current-limit faults.  <a href="structpf1550_1_1LdoIntStat0Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1TempIntStat0Bits.html">pf1550::TempIntStat0Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within TEMP_INT_STAT0 (Reg 0x20).  <a href="structpf1550_1_1TempIntStat0Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1MiscIntStat0Bits.html">pf1550::MiscIntStat0Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within MISC_INT_STAT0 (Reg 0x28).  <a href="structpf1550_1_1MiscIntStat0Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1SwCtrlBits.html">pf1550::SwCtrlBits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within <code>SWn_CTRL</code> (e.g. 0x35 / 0x3B / 0x41).  <a href="structpf1550_1_1SwCtrlBits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1LdoCtrlBits.html">pf1550::LdoCtrlBits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within <code>LDOn_CTRL</code> (0x4D / 0x50 / 0x53).  <a href="structpf1550_1_1LdoCtrlBits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1OtpUnlockKeys.html">pf1550::OtpUnlockKeys</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">OTP indirect-read unlock sequence (Section 12.x KEY1 / KEY2 / KEY3).  <a href="structpf1550_1_1OtpUnlockKeys.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1OtpRegion.html">pf1550::OtpRegion</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">OTP memory indirect address range (via FMRADDR/FMRDATA).  <a href="structpf1550_1_1OtpRegion.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacepf1550" id="r_namespacepf1550"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html">pf1550</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a18be47731a5a042e4bc9ccd9a44f6768" id="r_a18be47731a5a042e4bc9ccd9a44f6768"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">pf1550::Register</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768ad0263c6cf0769cabc86cfe88226d204b">pf1550::DeviceId</a> = 0x00
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a873f5f90a4ebcfc5c322951441887df7">pf1550::OtpFlavor</a> = 0x01
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768acdfa9ed93f060b55460ab35dd8e9d899">pf1550::SiliconRev</a> = 0x02
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aaf2b6afef546d17dada1105cf5c325fc">pf1550::IntCategory</a> = 0x06
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a6bac3ae857f60582985b473a2cf3a64e">pf1550::SwIntStat0</a> = 0x08
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a8b6779a9494966de71435d4b7248e78d">pf1550::SwIntMask0</a> = 0x09
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a5189f746507e41ba3c5bfbab843feb5e">pf1550::SwIntSense0</a> = 0x0A
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a100009dabb1c92d2a9051a9d3efc1195">pf1550::SwIntStat1</a> = 0x0B
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768af74af45b263907b04cf0465a25be216d">pf1550::SwIntMask1</a> = 0x0C
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aacc626130a97f0b815fb1d3a9c84e8b7">pf1550::SwIntSense1</a> = 0x0D
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a47df249cab48a30fcbbf662b0054bc46">pf1550::SwIntStat2</a> = 0x0E
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a804e226f7fed10955325a484dfee8dfd">pf1550::SwIntMask2</a> = 0x0F
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768adb8e917bb5eb392c406a388ba430ae82">pf1550::SwIntSense2</a> = 0x10
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a1a7af2d0f1bdba6893bfa27a9d6f0f7a">pf1550::LdoIntStat0</a> = 0x18
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a609acd4cfcd1adab30e62e1c3d052502">pf1550::LdoIntMask0</a> = 0x19
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a734ce2732b1201b2665c6249c421f964">pf1550::LdoIntSense0</a> = 0x1A
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aeff3c283c68b77ef0c9d25e168f4d417">pf1550::TempIntStat0</a> = 0x20
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a6f9414dcaf21fb8a5f4427bbfcc58e49">pf1550::TempIntMask0</a> = 0x21
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aab1a1bdf6042291fe215350dcea7d9ff">pf1550::TempIntSense0</a> = 0x22
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768ad5e91431873f93518b7ad57d6006aa16">pf1550::OnKeyIntStat0</a> = 0x24
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a14462906d108992bf552de8f40e5c19a">pf1550::OnKeyIntMask0</a> = 0x25
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a830eff4fc9f734d01b655f8f93f1e4fa">pf1550::OnKeyIntSense0</a> = 0x26
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a1f0cc9ba47b074fa660e36002ee7872a">pf1550::MiscIntStat0</a> = 0x28
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768af68a14fb203244ae19dac7ddbe567038">pf1550::MiscIntMask0</a> = 0x29
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a07488481db59d3c5d03f0ed46514068a">pf1550::MiscIntSense0</a> = 0x2A
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a7ccef6d2fd5e7c6920f1c04f51d92f1d">pf1550::CoinCellCtrl</a> = 0x30
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768ab50ab7adc16926e3bdda09bd56ccce7d">pf1550::Sw1Volt</a> = 0x32
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a7caa9b235f6b8f25511422a622a43381">pf1550::Sw1StbyVolt</a> = 0x33
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a4025a95a2d5d5714a9e30d870619a5a8">pf1550::Sw1SlpVolt</a> = 0x34
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a884b07143d9a8df5d723e003e1d4a5a5">pf1550::Sw1Ctrl</a> = 0x35
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aff9e49454371da5cee0db9a06a90fe46">pf1550::Sw1Ctrl1</a> = 0x36
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a6281eb82faac174b7bb01c41348e3880">pf1550::Sw2Volt</a> = 0x38
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a511fa8ca76206b5708ad563f7f93aab6">pf1550::Sw2StbyVolt</a> = 0x39
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a3b1a9e7608c21cf2ca4c1527e30a4a69">pf1550::Sw2SlpVolt</a> = 0x3A
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a780b8919c0b833c64a52333da6dad2c9">pf1550::Sw2Ctrl</a> = 0x3B
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a4f5097fe0e7bb758c9b1da4749e0a840">pf1550::Sw2Ctrl1</a> = 0x3C
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a79a8beb59013fcd9136c3a4521a6fed4">pf1550::Sw3Volt</a> = 0x3E
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aa397b68f0bcedda54a03fb4f970ae87d">pf1550::Sw3StbyVolt</a> = 0x3F
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a600be9f9ab8384233e172c4238502e5b">pf1550::Sw3SlpVolt</a> = 0x40
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a1405858fc166768d9804a174f16b8bd6">pf1550::Sw3Ctrl</a> = 0x41
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a1ec858ee36198cb0a4cc0006ad58e389">pf1550::Sw3Ctrl1</a> = 0x42
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768ae3e7cb9a1f8fe8055ef7c5e9e0fc4604">pf1550::VsnvsCtrl</a> = 0x48
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aab500fa825be450f39f5e07b3ab69f10">pf1550::VrefDdrCtrl</a> = 0x4A
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a6148d409c7eb56c900bbeca6a89ce061">pf1550::Ldo1Volt</a> = 0x4C
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a5fd8b24dd0b8de59bc581c8fe2b105ac">pf1550::Ldo1Ctrl</a> = 0x4D
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a5019fd68af2ddc57434a323c6e13f541">pf1550::Ldo2Volt</a> = 0x4F
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768ad3e14dbeb1288e6d6021025e56d83e04">pf1550::Ldo2Ctrl</a> = 0x50
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a121d8248726fc75faa298ba0a7a5359a">pf1550::Ldo3Volt</a> = 0x52
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aa70c4f4c7d49731caf9220cd8375523a">pf1550::Ldo3Ctrl</a> = 0x53
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a63a94889fa7ca6422f3a3063b836cccf">pf1550::PwrCtrl0</a> = 0x58
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a38199ce8674ae3ea375915eab39c8fad">pf1550::PwrCtrl1</a> = 0x59
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a46dd67b702d1239ba7d153a38f70b6dc">pf1550::PwrCtrl2</a> = 0x5A
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a434144638987e87db42aad26d557b93a">pf1550::PwrCtrl3</a> = 0x5B
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a018d022aa5630ba051143c51616f26e0">pf1550::Sw1PwrDnSeq</a> = 0x5F
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a5eddd468c29097b076b2a371abdf8291">pf1550::Sw2PwrDnSeq</a> = 0x60
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768aa9437dedc8dda50dcff7ed8fb92cf4d7">pf1550::Sw3PwrDnSeq</a> = 0x61
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a101b45ce80e077602a244b8a479e8e56">pf1550::Ldo1PwrDnSeq</a> = 0x62
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a593cc545d38685aa2c8086501b794014">pf1550::Ldo2PwrDnSeq</a> = 0x63
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a84d7e25b10054c59f0b68e32e93cea8d">pf1550::Ldo3PwrDnSeq</a> = 0x64
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a1a33a6a2267e9e8f456d9890a2166230">pf1550::VrefDdrPwrDnSeq</a> = 0x65
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a6fbf05d411a8fd1f88e31e6b8494b521">pf1550::StateInfo</a> = 0x67
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a81cab5a4b0c8ff5ee216be44ece96544">pf1550::I2cAddrReg</a> = 0x68
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768af72aa1e47a44f071c8dc92dae83ce246">pf1550::Rc16Mhz</a> = 0x6B
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768addf4d5ee6777e5eb0eff6ed4a85d28e1">pf1550::OtpKey1</a> = 0x6F
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768abc302b93f477f2d0ed1a988ae530f7c2">pf1550::ChargerLedDuty</a> = 0x9C
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768ad3ee692e0e973a70131ef137d2f1a2bc">pf1550::OtpKey2</a> = 0x9F
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768abc2e12049fe0ac45052936dbc9715c1d">pf1550::ChargerLedCtrl</a> = 0x9E
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768af3db69d0667830c26696f3f162aea530">pf1550::VbusInCurrentLimit</a> = 0x94
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a68979034db276a530f097c4123e4e478">pf1550::FmrAddr</a> = 0xC4
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a575f18fc077190260534d1c095e491d9">pf1550::FmrData</a> = 0xC5
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a8f9ecd524b301faf26776b81f69cd74f">pf1550::TestRegKey3</a> = 0xDF
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a875bc32d9760ead1f5f3ee81b90343b0">pf1550::ChgInt</a> = 0x80
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a7cad2328d5f57794ab2cb97c1b7c0aa0">pf1550::ChgIntMask</a> = 0x82
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a99c3d55e4252d55b9b2b5069d1d361c3">pf1550::ChgIntOk</a> = 0x84
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768ad82dce7dc7268907cc53c94a2f8d2acc">pf1550::VbusSns</a> = 0x86
+, <a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768a0ca4f2a2e8f2f4989ec27279db56e866">pf1550::ChgSense</a> = 0x87
+<br />
+ }</td></tr>
+<tr class="memdesc:a18be47731a5a042e4bc9ccd9a44f6768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symbolic register addresses used by the PF1550 driver.  <a href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">More...</a><br /></td></tr>
+<tr class="separator:a18be47731a5a042e4bc9ccd9a44f6768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00ce13d74ba6c20f71c9d15bfd64819" id="r_aa00ce13d74ba6c20f71c9d15bfd64819"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">pf1550::PmicState</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a0f68101772bd5397ef8eb1b632798652">pf1550::Wait</a> = 0b000000
+, <a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819ac5301693c4e792bcd5a479ef38fb8f8d">pf1550::Run</a> = 0b001100
+, <a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a2dbec34a65724db94f81e8533ee18192">pf1550::Standby</a> = 0b001101
+, <a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a243924bfd56a682be235638b53961e09">pf1550::Sleep</a> = 0b001110
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a1dc681e53b0d3a1c7c66a8bb866bde54">pf1550::RegsDisable</a> = 0b101011
+, <a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a88183b946cc5f0e8c96b2e66e1c74a7e">pf1550::Unknown</a> = 0xFF
+<br />
+ }</td></tr>
+<tr class="memdesc:aa00ce13d74ba6c20f71c9d15bfd64819"><td class="mdescLeft">&#160;</td><td class="mdescRight">STATE_INFO[5:0] values (Reg 0x67) describing the PMIC state machine.  <a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">More...</a><br /></td></tr>
+<tr class="separator:aa00ce13d74ba6c20f71c9d15bfd64819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f72c47ce166906591362fdfde6024e" id="r_ab1f72c47ce166906591362fdfde6024e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">pf1550::ChargerState</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea58532ea27917782582c12e0368cf4dd5">pf1550::PreCharge</a> = 0
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea3d382a93e72cc3eab460ae6f6ba72c81">pf1550::FastCC</a> = 1
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eafb7bf21d6a3b604d11f09f841d4fe929">pf1550::FastCV</a> = 2
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eab43c278970ebe9b51e7222075eed6bd9">pf1550::EndOfCharge</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eaf92965e2c8a7afb3c1b9a5c09a263636">pf1550::Done</a> = 4
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eae50de7362be6caf318b32ca9d0ee6182">pf1550::TimerFault</a> = 6
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea47d2e9b9b7c575cde335b23705405913">pf1550::ThermSuspend</a> = 7
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ead15305d7a4e34e02489c74a5ef542f36">pf1550::Off</a> = 8
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ead62a9096a19b827e93f5c74c85c2c1dc">pf1550::BatteryOv</a> = 9
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea339c6aa0cd17583b5c99b8703ca9c14e">pf1550::TempShutdown</a> = 10
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea1e9b9cdc1f5507d75868cb3a71e55e6b">pf1550::LinearOnly</a> = 12
+, <a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea88183b946cc5f0e8c96b2e66e1c74a7e">pf1550::Unknown</a> = 0xFF
+<br />
+ }</td></tr>
+<tr class="memdesc:ab1f72c47ce166906591362fdfde6024e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CHG_SNS[3:0] values (Reg 0x87) describing the charger sub-state.  <a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">More...</a><br /></td></tr>
+<tr class="separator:ab1f72c47ce166906591362fdfde6024e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1092336d5416301cf26854b357d0d7" id="r_abd1092336d5416301cf26854b357d0d7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7">pf1550::SwVoltageCode</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7a3c67b22acec37e5ea74ca75ee6a42341">pf1550::V1_1</a> = 0x00
+, <a class="el" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7aedc540e50f10c618159275a791847834">pf1550::V2_5</a> = 0x05
+, <a class="el" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7abc6a02c77473f9d3fafb2cbebdbb38ee">pf1550::V3_0</a> = 0x06
+, <a class="el" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7af869fb390f575744d7e1a3845efec815">pf1550::V3_3</a> = 0x07
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7aa80a14c08a076f638af5378a268a9f70">pf1550::V3_1</a> = 0x0D
+<br />
+ }</td></tr>
+<tr class="memdesc:abd1092336d5416301cf26854b357d0d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common SW buck output voltage codes (RUN mode).  <a href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7">More...</a><br /></td></tr>
+<tr class="separator:abd1092336d5416301cf26854b357d0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e9bd15902066b7c5d6674ae0bb25aba" id="r_a2e9bd15902066b7c5d6674ae0bb25aba"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25aba">pf1550::LdoVoltageCode</a> : uint8_t { <a class="el" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa6ec11796ccdf73b5b5872c5b8a977832">pf1550::V1_0</a> = 0x05
+, <a class="el" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa05e7d9b0b1c46c80e2cd07331ef1433b">pf1550::V1_2</a> = 0x09
+, <a class="el" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa4d57a4937ae5e3ae730629bba3303f5e">pf1550::V1_8</a> = 0x00
+ }</td></tr>
+<tr class="memdesc:a2e9bd15902066b7c5d6674ae0bb25aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common LDO output voltage codes used on Portenta H7 (Table 41).  <a href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25aba">More...</a><br /></td></tr>
+<tr class="separator:a2e9bd15902066b7c5d6674ae0bb25aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7eccd57860ced072a06613a6439d8d64" id="r_a7eccd57860ced072a06613a6439d8d64"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a7eccd57860ced072a06613a6439d8d64">pf1550::kDefaultI2cAddress</a> = 0x08</td></tr>
+<tr class="memdesc:a7eccd57860ced072a06613a6439d8d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default 7-bit I²C slave address (settable via OTP — see Table 147).  <br /></td></tr>
+<tr class="separator:a7eccd57860ced072a06613a6439d8d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795f286be126ceb9adfe1eb90456eeee" id="r_a795f286be126ceb9adfe1eb90456eeee"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a795f286be126ceb9adfe1eb90456eeee">pf1550::kExpectedDeviceId</a> = 0x7C</td></tr>
+<tr class="memdesc:a795f286be126ceb9adfe1eb90456eeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expected <code>DEVICE_ID[2:0]</code> family identifier (<a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> family = <code>100b</code>).  <br /></td></tr>
+<tr class="separator:a795f286be126ceb9adfe1eb90456eeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ac041ba99e7d9048f87799b184ef94" id="r_ae6ac041ba99e7d9048f87799b184ef94"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#ae6ac041ba99e7d9048f87799b184ef94">pf1550::kChargerPageBase</a> = 0x80</td></tr>
+<tr class="memdesc:ae6ac041ba99e7d9048f87799b184ef94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base offset for Section 12.2 charger sub-page (see datasheet §12.2).  <br /></td></tr>
+<tr class="separator:ae6ac041ba99e7d9048f87799b184ef94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>NXP PF1550 family I2C register map, bit-field constants, and OTP keys. </p>
+<p>Covers MC34PF1550*, MC32PF1550*, and the unprogrammed-OTP variant <code>MC34PF1550A0EP</code> used on Arduino Portenta H7 eval modules.</p>
+<p>Register addresses follow the NXP PF1550 datasheet (Rev. 7, September 2021) Section 12 <em>Register map</em>:</p>
+<ul>
+<li><b>12.1</b> <em>Specific PMIC registers</em> — base I2C offset <code>0x00</code> (DEVICE_ID, interrupts, regulators, power control).</li>
+<li><b>12.2</b> <em>Specific Charger registers</em> — base I2C offset <code>0x80</code> (CHG_INT, VBUS_SNS, CHG_SNS …).</li>
+</ul>
+<p>Per-bit details are intentionally kept compact here; consult <code>docs/datasheet/PF1550-i2c-register-reference.md</code> (auto-generated extract of Section 12) for the authoritative bit semantics.</p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024-2026 HardFOC. All rights reserved.</dd></dl>
+<dl class="section user"><dt>Versioning</dt><dd>Driver version exposed via HF_PF1550_VERSION (see pf1550_version.h). </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="pf1550__registers_8hpp.html">pf1550_registers.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

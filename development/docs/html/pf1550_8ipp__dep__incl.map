@@ -1,0 +1,13 @@
+<map id="src/pf1550.ipp" name="src/pf1550.ipp">
+<area shape="rect" id="Node000001" title="PF1550 driver template implementation." alt="" coords="432,5,546,33"/>
+<area shape="rect" id="Node000002" href="$pf1550_8hpp.html" title="Hardware&#45;agnostic driver for the NXP PF1550 PMIC family." alt="" coords="430,81,548,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="491,47,491,82,487,79,487,51"/>
+<area shape="rect" id="Node000003" href="$pf1550__esp32c6__diagnostics_8cpp.html" title="ESP32&#45;C6 PF1550 diagnostic&#45;snapshot + self&#45;test example." alt="" coords="5,165,245,210"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,115,213,167,212,162,422,110"/>
+<area shape="rect" id="Node000004" href="$pf1550__esp32c6__probe_8cpp.html" title="ESP32&#45;C6 I2C probe for NXP PF1550 @ 0x08." alt="" coords="269,165,472,210"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="463,117,400,167,398,162,458,119"/>
+<area shape="rect" id="Node000005" href="$pf1550__esp32c6__provision_8cpp.html" title="External ESP32&#45;C6 PMIC provisioning for pre&#45;MCU board bring&#45;up." alt="" coords="495,165,720,210"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="519,116,582,165,577,164,517,121"/>
+<area shape="rect" id="Node000006" href="$pf1550__esp32c6__register__dump_8cpp.html" title="Dump selected PF1550 registers over I2C (ESP32&#45;C6)" alt="" coords="744,157,932,218"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="559,110,734,154,746,160,741,159,732,159,558,115"/>
+</map>

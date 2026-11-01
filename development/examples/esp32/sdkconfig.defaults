@@ -1,0 +1,5 @@
+CONFIG_IDF_TARGET="esp32c6"
+CONFIG_FREERTOS_HZ=1000
+
+# Optional: apply Portenta profile when PF1550 eval hardware is wired
+# CONFIG_PF1550_APPLY_PORTENTA_PROFILE=y

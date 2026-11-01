@@ -1,0 +1,11 @@
+<map id="examples/esp32/main/esp32_pf1550_bus.hpp" name="examples/esp32/main/esp32_pf1550_bus.hpp">
+<area shape="rect" id="Node000001" title="ESP32&#45;C6 I2C bus adapter for pf1550::PF1550." alt="" coords="402,5,576,50"/>
+<area shape="rect" id="Node000002" href="$pf1550__esp32c6__diagnostics_8cpp.html" title="ESP32&#45;C6 PF1550 diagnostic&#45;snapshot + self&#45;test example." alt="" coords="5,106,245,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="397,54,205,109,204,103,392,55"/>
+<area shape="rect" id="Node000003" href="$pf1550__esp32c6__probe_8cpp.html" title="ESP32&#45;C6 I2C probe for NXP PF1550 @ 0x08." alt="" coords="269,106,472,151"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="454,59,397,109,395,104,449,61"/>
+<area shape="rect" id="Node000004" href="$pf1550__esp32c6__provision_8cpp.html" title="External ESP32&#45;C6 PMIC provisioning for pre&#45;MCU board bring&#45;up." alt="" coords="495,106,720,151"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="527,57,585,107,579,106,525,62"/>
+<area shape="rect" id="Node000005" href="$pf1550__esp32c6__register__dump_8cpp.html" title="Dump selected PF1550 registers over I2C (ESP32&#45;C6)" alt="" coords="744,98,932,160"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="581,52,746,101,741,101,580,57"/>
+</map>

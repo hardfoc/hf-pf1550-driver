@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>HF-PF1550 Driver: inc/pf1550.hpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HF-PF1550 Driver
+   &#160;<span id="projectnumber">0.1.0-dev</span>
+   </div>
+   <div id="projectbrief">Portable C++20 driver for the NXP PF1550 PMIC (3 bucks + 3 LDOs + charger + OTP), with Portenta H7 / Synapse profiles, diagnostic snapshot API, and hf-core HAL handler integration.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+<div id="theme-selection">
+ <label for="theme-select">Theme:</label>
+ <select id="theme-select">
+  <option value="theme-default">Default</option>
+  <option value="theme-round">Round</option>
+  <option value="theme-robot">Robot</option>
+ </select>
+</div>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('pf1550_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pf1550.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="pf1550_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;span&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="pf1550__diagnostics_8hpp.html">pf1550_diagnostics.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="pf1550__i2c__interface_8hpp.html">pf1550_i2c_interface.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="pf1550__profiles_8hpp.html">pf1550_profiles.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="pf1550__registers_8hpp.html">pf1550_registers.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="pf1550__voltage__tables_8hpp.html">pf1550_voltage_tables.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;pf1550_version.h&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacepf1550.html">pf1550</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> BusType&gt;</div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classpf1550_1_1PF1550.html">   62</a></span><span class="keyword">class </span><a class="code hl_class" href="classpf1550_1_1PF1550.html">PF1550</a> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507d">   65</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507d">Error</a> : uint16_t {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da6adf97f83acf6453d4a6a4b1070f3754">None</a>             = 0,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507dae92cfa391af4ffcf46788d6f83e65862">I2cWrite</a>         = 1 &lt;&lt; 0, </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da908e14a33d424bdbf77f36b8b032c529">I2cRead</a>          = 1 &lt;&lt; 1, </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507dada1b358bb9ad851e211f21df8a161c3d">InvalidParam</a>     = 1 &lt;&lt; 2, </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507daca4cc682495b7b98382718ed77afac35">DeviceNotFound</a>   = 1 &lt;&lt; 3, </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da9646ad3a1c3e708b4fa8b4b4270fbab6">NotInitialized</a>   = 1 &lt;&lt; 4, </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507dab7667a10a4f12466416e6348236add23">WrongDeviceId</a>    = 1 &lt;&lt; 5, </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da8fcdecab8d1ff883d6d66bb76d80dc71">ProfileApply</a>     = 1 &lt;&lt; 6, </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da16f6fab6b4490b2e6146df312197f9ec">DiagnosticRead</a>   = 1 &lt;&lt; 7, </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_enumvalue" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da7155e52fa76e85631d65f3b709341438">SelfTestFailed</a>   = 1 &lt;&lt; 8, </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  };</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="comment">// Construction / lifecycle</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_function" href="classpf1550_1_1PF1550.html#a9d9d4bcf5fde042e6d3c4405a636a9a7">PF1550</a>(BusType* bus, uint8_t address = <a class="code hl_variable" href="namespacepf1550.html#a7eccd57860ced072a06613a6439d8d64">kDefaultI2cAddress</a>) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#ae7da12fb399648bbacbe8178fdcb0143">EnsureInitialized</a>() noexcept;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classpf1550_1_1PF1550.html#abdae13b01e193c8097e73308c25e84ea">  103</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#abdae13b01e193c8097e73308c25e84ea">IsInitialized</a>() const noexcept { <span class="keywordflow">return</span> initialized_; }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classpf1550_1_1PF1550.html#ab273b97d6f076fe408eea329f447682f">  106</a></span>  uint8_t <a class="code hl_function" href="classpf1550_1_1PF1550.html#ab273b97d6f076fe408eea329f447682f">GetI2cAddress</a>() const noexcept { <span class="keywordflow">return</span> address_; }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="comment">// Identity</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a0c4f85f8711ceaf488629e0b2093a4e9">ReadDeviceId</a>(uint8_t&amp; <span class="keywordtype">id</span>) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#ac1918ec12a869ea8f46cb927f9b59b9f">VerifyDevice</a>() noexcept;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="comment">// Raw register access</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a15d32f1697e465dddbb40a7d21cfcbde">ReadRegister</a>(<a class="code hl_enumeration" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">Register</a> reg, uint8_t&amp; value) noexcept;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a83d01f52cef6783f70e789b651f25da9">WriteRegister</a>(<a class="code hl_enumeration" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">Register</a> reg, uint8_t value) noexcept;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="comment">// Profile application</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#ae8d1a5bed5b03239bf5d6e4ab9393479">ApplyProfile</a>(std::span&lt;const profiles::RegisterWrite&gt; profile) noexcept;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a83da76070105cd6a65b3f06114cbb766">ApplyPortentaH7DefaultProfile</a>() noexcept;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a54729f3318d23f8ca0a6bcd0ea245b4c">ApplyPortentaH7CarrierProfile</a>() noexcept;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="comment">// Power mode / strap GPIOs</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a0003009a94b134f4084b6b58ffdecb6a">SetPowerMode</a>(<a class="code hl_enumeration" href="namespacepf1550.html#af9d351690cc34a52f75df65ef0a25f2b">PowerMode</a> mode) noexcept;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#afbc8897c43eee486974d1cb70768d241">SetUsbRails</a>(<span class="keywordtype">bool</span> vbus_en, <span class="keywordtype">bool</span> otg_en) noexcept;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="comment">// Status / OTP</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a211345efbb136271fc66b4196edb223d">ReadPmicStatus</a>(uint8_t&amp; status) noexcept;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a2eb581171dba4ab24b9256c129ec91cc">ReadPmicState</a>(<a class="code hl_enumeration" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a>&amp; state) noexcept;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a6e2e0ce794cd5a463fc6e6bbd85bc8b5">ReadChargerState</a>(<a class="code hl_enumeration" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">ChargerState</a>&amp; state, uint8_t* raw_reg = <span class="keywordtype">nullptr</span>) noexcept;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a01774e6f3ca95188439831efe922f3e2">ReadOtpByte</a>(uint8_t otp_addr, uint8_t&amp; value) noexcept;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#af1a8f49b3b9bc174be78df1a59287055">ReadOtpRegion</a>(uint8_t* buffer, <span class="keywordtype">size_t</span> len, uint8_t start = <a class="code hl_struct" href="structpf1550_1_1OtpRegion.html">OtpRegion</a>::kStart) noexcept;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="comment">// Voltage / current configuration</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#abb8bbc1f447db112f4f03133c2fcfce5">SetSwVoltage</a>(uint8_t sw_index, <a class="code hl_enumeration" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7">SwVoltageCode</a> run_code) noexcept;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#ad8a6d4a45824d73e90b6f5a7b50d830f">SetLdoVoltage</a>(uint8_t ldo_index, <a class="code hl_enumeration" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25aba">LdoVoltageCode</a> code) noexcept;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#ae8bdb8fd259d67a8ae8f0d5d51ce8570">SetVbusCurrentLimitMa</a>(uint16_t limit_ma) noexcept;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  <span class="comment">// Interrupt management</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a8bdb15fdadb39e29733a86972fd34228">ReadInterruptCategory</a>(uint8_t&amp; category) noexcept;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a4e86c0e7de1a733f3c7c0ec11a61564d">ReadLatchedFaults</a>(<a class="code hl_struct" href="structpf1550_1_1FaultFlags.html">FaultFlags</a>&amp; faults) noexcept;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a445d79c90268708ff703f3982b37bac6">ClearLatchedFaults</a>() noexcept;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#af1df46eeb9dfa489a4805c1217a743b0">SetInterruptMaskAll</a>(<span class="keywordtype">bool</span> masked) noexcept;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  <span class="comment">// Diagnostics / self-test</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a7f984ac4a4c0042079b443284a12e465">ReadDiagnosticSnapshot</a>(<a class="code hl_struct" href="structpf1550_1_1DiagnosticSnapshot.html">DiagnosticSnapshot</a>&amp; out) noexcept;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a2a933c9b3268560cba13632563e6b333">RefreshStatusSnapshot</a>(<a class="code hl_struct" href="structpf1550_1_1DiagnosticSnapshot.html">DiagnosticSnapshot</a>&amp; snap) noexcept;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a9f1dae54fe45859ef1433a66c15962e8">RunPowerSelfTest</a>(<a class="code hl_struct" href="structpf1550_1_1SelfTestResult.html">SelfTestResult</a>&amp; out) noexcept;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="comment">// Driver-internal error tracking</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="comment">// ---------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="classpf1550_1_1PF1550.html#abda6327a6248a426b7ebb89e38ef4dd2">  295</a></span>  uint16_t <a class="code hl_function" href="classpf1550_1_1PF1550.html#abda6327a6248a426b7ebb89e38ef4dd2">GetErrorFlags</a>() const noexcept { <span class="keywordflow">return</span> error_flags_; }</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="foldopen" id="foldopen00298" data-start="{" data-end="}">
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="classpf1550_1_1PF1550.html#ab083a075ccbce0b2bc5a981f7a6dc4aa">  298</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#ab083a075ccbce0b2bc5a981f7a6dc4aa">ClearErrorFlags</a>(uint16_t mask = 0xFFFF) noexcept {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    error_flags_ &amp;= <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(~mask);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  }</div>
+</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="foldopen" id="foldopen00311" data-start="{" data-end="}">
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="classpf1550_1_1PF1550.html#a6dee3c193c1e841896c1d8f431979ef9">  311</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classpf1550_1_1PF1550.html#a6dee3c193c1e841896c1d8f431979ef9">SetSwDvsEnabled</a>(uint8_t sw_index, <span class="keywordtype">bool</span> enabled) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keywordflow">if</span> (sw_index == 1U || sw_index == 2U) {</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      sw_dvs_enabled_[sw_index - 1U] = enabled;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    }</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  }</div>
+</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno"><a class="line" href="classpf1550_1_1PF1550.html#af38118aa5105ec8068710cdcbb190a2a">  318</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="classpf1550_1_1PF1550.html#af38118aa5105ec8068710cdcbb190a2a">GetDriverVersion</a>() noexcept { <span class="keywordflow">return</span> HF_PF1550_VERSION; }</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  <span class="keywordtype">bool</span> writeReg8(uint8_t reg, uint8_t value) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  <span class="keywordtype">bool</span> readReg8(uint8_t reg, uint8_t&amp; value) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <span class="keywordtype">void</span> setError(<a class="code hl_enumeration" href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507d">Error</a> e) <span class="keyword">noexcept</span> { error_flags_ |= <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(e); }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  <span class="comment">// Snapshot helpers (templated to keep the header-only interface tidy).</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="keywordtype">bool</span> fillRailSnapshot(DiagnosticSnapshot&amp; snap) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="keywordtype">bool</span> fillFaultSnapshot(DiagnosticSnapshot&amp; snap) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  BusType* bus_;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  uint8_t  address_;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keywordtype">bool</span>     initialized_;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  uint16_t error_flags_;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  <span class="keywordtype">bool</span>     sw_dvs_enabled_[2]{<span class="keyword">false</span>, <span class="keyword">false</span>};  </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>};</div>
+</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>} <span class="comment">// namespace pf1550</span></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="preprocessor">#include &quot;<a class="code" href="pf1550_8ipp.html">../src/pf1550.ipp</a>&quot;</span></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html"><div class="ttname"><a href="classpf1550_1_1PF1550.html">pf1550::PF1550</a></div><div class="ttdoc">CRTP-based PF1550 PMIC driver.</div><div class="ttdef"><b>Definition</b> pf1550.hpp:62</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a0003009a94b134f4084b6b58ffdecb6a"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a0003009a94b134f4084b6b58ffdecb6a">pf1550::PF1550::SetPowerMode</a></div><div class="ttdeci">bool SetPowerMode(PowerMode mode) noexcept</div><div class="ttdoc">Drive the STANDBY strap pin to RUN or STANDBY.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:120</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a01774e6f3ca95188439831efe922f3e2"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a01774e6f3ca95188439831efe922f3e2">pf1550::PF1550::ReadOtpByte</a></div><div class="ttdeci">bool ReadOtpByte(uint8_t otp_addr, uint8_t &amp;value) noexcept</div><div class="ttdoc">Read a single OTP byte via FMRADDR/FMRDATA indirection.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:181</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a0c4f85f8711ceaf488629e0b2093a4e9"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a0c4f85f8711ceaf488629e0b2093a4e9">pf1550::PF1550::ReadDeviceId</a></div><div class="ttdeci">bool ReadDeviceId(uint8_t &amp;id) noexcept</div><div class="ttdoc">Read DEVICE_ID (Reg 0x00).</div><div class="ttdef"><b>Definition</b> pf1550.ipp:59</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a15d32f1697e465dddbb40a7d21cfcbde"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a15d32f1697e465dddbb40a7d21cfcbde">pf1550::PF1550::ReadRegister</a></div><div class="ttdeci">bool ReadRegister(Register reg, uint8_t &amp;value) noexcept</div><div class="ttdoc">Read any PF1550 register by enumerated address.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:81</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a211345efbb136271fc66b4196edb223d"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a211345efbb136271fc66b4196edb223d">pf1550::PF1550::ReadPmicStatus</a></div><div class="ttdeci">bool ReadPmicStatus(uint8_t &amp;status) noexcept</div><div class="ttdoc">Read STATE_INFO (Reg 0x67) and return the raw byte.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:151</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a2a933c9b3268560cba13632563e6b333"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a2a933c9b3268560cba13632563e6b333">pf1550::PF1550::RefreshStatusSnapshot</a></div><div class="ttdeci">bool RefreshStatusSnapshot(DiagnosticSnapshot &amp;snap) noexcept</div><div class="ttdoc">Refresh only the status part of a snapshot (≈14 register reads).</div><div class="ttdef"><b>Definition</b> pf1550.ipp:455</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a2eb581171dba4ab24b9256c129ec91cc"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a2eb581171dba4ab24b9256c129ec91cc">pf1550::PF1550::ReadPmicState</a></div><div class="ttdeci">bool ReadPmicState(PmicState &amp;state) noexcept</div><div class="ttdoc">Decoded variant of ReadPmicStatus.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:156</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a445d79c90268708ff703f3982b37bac6"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a445d79c90268708ff703f3982b37bac6">pf1550::PF1550::ClearLatchedFaults</a></div><div class="ttdeci">bool ClearLatchedFaults() noexcept</div><div class="ttdoc">Write 0xFF to every category STAT register to clear all RW1C bits.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:316</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a4e86c0e7de1a733f3c7c0ec11a61564d"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a4e86c0e7de1a733f3c7c0ec11a61564d">pf1550::PF1550::ReadLatchedFaults</a></div><div class="ttdeci">bool ReadLatchedFaults(FaultFlags &amp;faults) noexcept</div><div class="ttdoc">Read every category STAT register and aggregate latched faults.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:274</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a54729f3318d23f8ca0a6bcd0ea245b4c"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a54729f3318d23f8ca0a6bcd0ea245b4c">pf1550::PF1550::ApplyPortentaH7CarrierProfile</a></div><div class="ttdeci">bool ApplyPortentaH7CarrierProfile() noexcept</div><div class="ttdoc">Apply the Portenta-H7-on-carrier profile.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:115</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a6dee3c193c1e841896c1d8f431979ef9"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a6dee3c193c1e841896c1d8f431979ef9">pf1550::PF1550::SetSwDvsEnabled</a></div><div class="ttdeci">void SetSwDvsEnabled(uint8_t sw_index, bool enabled) noexcept</div><div class="ttdoc">Declare the SW1 / SW2 voltage encoding the part's OTP selects.</div><div class="ttdef"><b>Definition</b> pf1550.hpp:311</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a6e2e0ce794cd5a463fc6e6bbd85bc8b5"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a6e2e0ce794cd5a463fc6e6bbd85bc8b5">pf1550::PF1550::ReadChargerState</a></div><div class="ttdeci">bool ReadChargerState(ChargerState &amp;state, uint8_t *raw_reg=nullptr) noexcept</div><div class="ttdoc">Read CHG_SNS (Reg 0x87) — charger sub-state. Returns decoded enum.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:167</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a7f984ac4a4c0042079b443284a12e465"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a7f984ac4a4c0042079b443284a12e465">pf1550::PF1550::ReadDiagnosticSnapshot</a></div><div class="ttdeci">bool ReadDiagnosticSnapshot(DiagnosticSnapshot &amp;out) noexcept</div><div class="ttdoc">Build a full diagnostic snapshot (≈30 register reads).</div><div class="ttdef"><b>Definition</b> pf1550.ipp:420</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a83d01f52cef6783f70e789b651f25da9"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a83d01f52cef6783f70e789b651f25da9">pf1550::PF1550::WriteRegister</a></div><div class="ttdeci">bool WriteRegister(Register reg, uint8_t value) noexcept</div><div class="ttdoc">Write any PF1550 register by enumerated address.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:86</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a83da76070105cd6a65b3f06114cbb766"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a83da76070105cd6a65b3f06114cbb766">pf1550::PF1550::ApplyPortentaH7DefaultProfile</a></div><div class="ttdeci">bool ApplyPortentaH7DefaultProfile() noexcept</div><div class="ttdoc">Apply the legacy VFR-heritage Portenta H7 default profile.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:110</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a8bdb15fdadb39e29733a86972fd34228"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a8bdb15fdadb39e29733a86972fd34228">pf1550::PF1550::ReadInterruptCategory</a></div><div class="ttdeci">bool ReadInterruptCategory(uint8_t &amp;category) noexcept</div><div class="ttdoc">Read INT_CATEGORY (Reg 0x06).</div><div class="ttdef"><b>Definition</b> pf1550.ipp:269</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a9d9d4bcf5fde042e6d3c4405a636a9a7"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a9d9d4bcf5fde042e6d3c4405a636a9a7">pf1550::PF1550::PF1550</a></div><div class="ttdeci">PF1550(BusType *bus, uint8_t address=kDefaultI2cAddress) noexcept</div><div class="ttdoc">Construct a driver instance bound to a CRTP bus adapter.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:11</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_a9f1dae54fe45859ef1433a66c15962e8"><div class="ttname"><a href="classpf1550_1_1PF1550.html#a9f1dae54fe45859ef1433a66c15962e8">pf1550::PF1550::RunPowerSelfTest</a></div><div class="ttdeci">bool RunPowerSelfTest(SelfTestResult &amp;out) noexcept</div><div class="ttdoc">Boot-time self-test.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:477</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ab083a075ccbce0b2bc5a981f7a6dc4aa"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ab083a075ccbce0b2bc5a981f7a6dc4aa">pf1550::PF1550::ClearErrorFlags</a></div><div class="ttdeci">void ClearErrorFlags(uint16_t mask=0xFFFF) noexcept</div><div class="ttdoc">Clear sticky error bits matching mask.</div><div class="ttdef"><b>Definition</b> pf1550.hpp:298</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ab273b97d6f076fe408eea329f447682f"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ab273b97d6f076fe408eea329f447682f">pf1550::PF1550::GetI2cAddress</a></div><div class="ttdeci">uint8_t GetI2cAddress() const noexcept</div><div class="ttdoc">Currently configured 7-bit I²C address.</div><div class="ttdef"><b>Definition</b> pf1550.hpp:106</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_abb8bbc1f447db112f4f03133c2fcfce5"><div class="ttname"><a href="classpf1550_1_1PF1550.html#abb8bbc1f447db112f4f03133c2fcfce5">pf1550::PF1550::SetSwVoltage</a></div><div class="ttdeci">bool SetSwVoltage(uint8_t sw_index, SwVoltageCode run_code) noexcept</div><div class="ttdoc">Write SWn_VOLT for n=1..3. Returns false if sw_index is invalid.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:215</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_abda6327a6248a426b7ebb89e38ef4dd2"><div class="ttname"><a href="classpf1550_1_1PF1550.html#abda6327a6248a426b7ebb89e38ef4dd2">pf1550::PF1550::GetErrorFlags</a></div><div class="ttdeci">uint16_t GetErrorFlags() const noexcept</div><div class="ttdoc">Read all sticky error bits (see Error).</div><div class="ttdef"><b>Definition</b> pf1550.hpp:295</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_abdae13b01e193c8097e73308c25e84ea"><div class="ttname"><a href="classpf1550_1_1PF1550.html#abdae13b01e193c8097e73308c25e84ea">pf1550::PF1550::IsInitialized</a></div><div class="ttdeci">bool IsInitialized() const noexcept</div><div class="ttdoc">Idempotently initialise the bus and verify the device.   — query without re-running the bus init.</div><div class="ttdef"><b>Definition</b> pf1550.hpp:103</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ac1918ec12a869ea8f46cb927f9b59b9f"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ac1918ec12a869ea8f46cb927f9b59b9f">pf1550::PF1550::VerifyDevice</a></div><div class="ttdeci">bool VerifyDevice() noexcept</div><div class="ttdoc">Read DEVICE_ID and assert it matches kExpectedDeviceId.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:67</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507d"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507d">pf1550::PF1550::Error</a></div><div class="ttdeci">Error</div><div class="ttdoc">Bitmask error codes accumulated in error_flags_.</div><div class="ttdef"><b>Definition</b> pf1550.hpp:65</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507da16f6fab6b4490b2e6146df312197f9ec"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da16f6fab6b4490b2e6146df312197f9ec">pf1550::PF1550::Error::DiagnosticRead</a></div><div class="ttdeci">@ DiagnosticRead</div><div class="ttdoc">One or more reads while building a snapshot failed.</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507da6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da6adf97f83acf6453d4a6a4b1070f3754">pf1550::PF1550::Error::None</a></div><div class="ttdeci">@ None</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507da7155e52fa76e85631d65f3b709341438"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da7155e52fa76e85631d65f3b709341438">pf1550::PF1550::Error::SelfTestFailed</a></div><div class="ttdeci">@ SelfTestFailed</div><div class="ttdoc">RunPowerSelfTest() reported a non-Info severity.</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507da8fcdecab8d1ff883d6d66bb76d80dc71"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da8fcdecab8d1ff883d6d66bb76d80dc71">pf1550::PF1550::Error::ProfileApply</a></div><div class="ttdeci">@ ProfileApply</div><div class="ttdoc">At least one write in the last applied profile failed.</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507da908e14a33d424bdbf77f36b8b032c529"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da908e14a33d424bdbf77f36b8b032c529">pf1550::PF1550::Error::I2cRead</a></div><div class="ttdeci">@ I2cRead</div><div class="ttdoc">Last I²C read transaction failed.</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507da9646ad3a1c3e708b4fa8b4b4270fbab6"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507da9646ad3a1c3e708b4fa8b4b4270fbab6">pf1550::PF1550::Error::NotInitialized</a></div><div class="ttdeci">@ NotInitialized</div><div class="ttdoc">Called before EnsureInitialized() succeeded.</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507dab7667a10a4f12466416e6348236add23"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507dab7667a10a4f12466416e6348236add23">pf1550::PF1550::Error::WrongDeviceId</a></div><div class="ttdeci">@ WrongDeviceId</div><div class="ttdoc">Returned DEVICE_ID ≠ kExpectedDeviceId (0x7C).</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507daca4cc682495b7b98382718ed77afac35"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507daca4cc682495b7b98382718ed77afac35">pf1550::PF1550::Error::DeviceNotFound</a></div><div class="ttdeci">@ DeviceNotFound</div><div class="ttdoc">DEVICE_ID read returned NACK / wrong address.</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507dada1b358bb9ad851e211f21df8a161c3d"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507dada1b358bb9ad851e211f21df8a161c3d">pf1550::PF1550::Error::InvalidParam</a></div><div class="ttdeci">@ InvalidParam</div><div class="ttdoc">Caller-side argument validation failed.</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad4adeb35c70bd68cf73421091362507dae92cfa391af4ffcf46788d6f83e65862"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad4adeb35c70bd68cf73421091362507dae92cfa391af4ffcf46788d6f83e65862">pf1550::PF1550::Error::I2cWrite</a></div><div class="ttdeci">@ I2cWrite</div><div class="ttdoc">Last I²C write transaction failed.</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ad8a6d4a45824d73e90b6f5a7b50d830f"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ad8a6d4a45824d73e90b6f5a7b50d830f">pf1550::PF1550::SetLdoVoltage</a></div><div class="ttdeci">bool SetLdoVoltage(uint8_t ldo_index, LdoVoltageCode code) noexcept</div><div class="ttdoc">Write LDOn_VOLT for n=1..3. Returns false if ldo_index is invalid.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:235</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ae7da12fb399648bbacbe8178fdcb0143"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ae7da12fb399648bbacbe8178fdcb0143">pf1550::PF1550::EnsureInitialized</a></div><div class="ttdeci">bool EnsureInitialized() noexcept</div><div class="ttdoc">Idempotently initialise the bus and verify the device.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:42</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ae8bdb8fd259d67a8ae8f0d5d51ce8570"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ae8bdb8fd259d67a8ae8f0d5d51ce8570">pf1550::PF1550::SetVbusCurrentLimitMa</a></div><div class="ttdeci">bool SetVbusCurrentLimitMa(uint16_t limit_ma) noexcept</div><div class="ttdoc">Convenience: write VBUS_IN_LIM_CNFG (0x94) from a mA value.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:255</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_ae8d1a5bed5b03239bf5d6e4ab9393479"><div class="ttname"><a href="classpf1550_1_1PF1550.html#ae8d1a5bed5b03239bf5d6e4ab9393479">pf1550::PF1550::ApplyProfile</a></div><div class="ttdeci">bool ApplyProfile(std::span&lt; const profiles::RegisterWrite &gt; profile) noexcept</div><div class="ttdoc">Apply an arbitrary profile (sequence of register writes).</div><div class="ttdef"><b>Definition</b> pf1550.ipp:91</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_af1a8f49b3b9bc174be78df1a59287055"><div class="ttname"><a href="classpf1550_1_1PF1550.html#af1a8f49b3b9bc174be78df1a59287055">pf1550::PF1550::ReadOtpRegion</a></div><div class="ttdeci">bool ReadOtpRegion(uint8_t *buffer, size_t len, uint8_t start=OtpRegion::kStart) noexcept</div><div class="ttdoc">Read a contiguous region of OTP memory (default: full 0x1C..0x36 range).</div><div class="ttdef"><b>Definition</b> pf1550.ipp:196</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_af1df46eeb9dfa489a4805c1217a743b0"><div class="ttname"><a href="classpf1550_1_1PF1550.html#af1df46eeb9dfa489a4805c1217a743b0">pf1550::PF1550::SetInterruptMaskAll</a></div><div class="ttdeci">bool SetInterruptMaskAll(bool masked) noexcept</div><div class="ttdoc">Mask (1) or unmask (0) all interrupt categories at once.</div><div class="ttdef"><b>Definition</b> pf1550.ipp:331</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_af38118aa5105ec8068710cdcbb190a2a"><div class="ttname"><a href="classpf1550_1_1PF1550.html#af38118aa5105ec8068710cdcbb190a2a">pf1550::PF1550::GetDriverVersion</a></div><div class="ttdeci">static constexpr const char * GetDriverVersion() noexcept</div><div class="ttdoc">Driver version (string).</div><div class="ttdef"><b>Definition</b> pf1550.hpp:318</div></div>
+<div class="ttc" id="aclasspf1550_1_1PF1550_html_afbc8897c43eee486974d1cb70768d241"><div class="ttname"><a href="classpf1550_1_1PF1550.html#afbc8897c43eee486974d1cb70768d241">pf1550::PF1550::SetUsbRails</a></div><div class="ttdeci">bool SetUsbRails(bool vbus_en, bool otg_en) noexcept</div><div class="ttdoc">Drive USB_VBUS_EN and USB_OTG_EN straps (HIGH = enabled on Portenta).</div><div class="ttdef"><b>Definition</b> pf1550.ipp:140</div></div>
+<div class="ttc" id="anamespacepf1550_html"><div class="ttname"><a href="namespacepf1550.html">pf1550</a></div><div class="ttdef"><b>Definition</b> pf1550.ipp:8</div></div>
+<div class="ttc" id="anamespacepf1550_html_a18be47731a5a042e4bc9ccd9a44f6768"><div class="ttname"><a href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">pf1550::Register</a></div><div class="ttdeci">Register</div><div class="ttdoc">Symbolic register addresses used by the PF1550 driver.</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:48</div></div>
+<div class="ttc" id="anamespacepf1550_html_a2e9bd15902066b7c5d6674ae0bb25aba"><div class="ttname"><a href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25aba">pf1550::LdoVoltageCode</a></div><div class="ttdeci">LdoVoltageCode</div><div class="ttdoc">Common LDO output voltage codes used on Portenta H7 (Table 41).</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:260</div></div>
+<div class="ttc" id="anamespacepf1550_html_a7eccd57860ced072a06613a6439d8d64"><div class="ttname"><a href="namespacepf1550.html#a7eccd57860ced072a06613a6439d8d64">pf1550::kDefaultI2cAddress</a></div><div class="ttdeci">constexpr uint8_t kDefaultI2cAddress</div><div class="ttdoc">Default 7-bit I²C slave address (settable via OTP — see Table 147).</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:32</div></div>
+<div class="ttc" id="anamespacepf1550_html_aa00ce13d74ba6c20f71c9d15bfd64819"><div class="ttname"><a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">pf1550::PmicState</a></div><div class="ttdeci">PmicState</div><div class="ttdoc">STATE_INFO[5:0] values (Reg 0x67) describing the PMIC state machine.</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:214</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024e"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">pf1550::ChargerState</a></div><div class="ttdeci">ChargerState</div><div class="ttdoc">CHG_SNS[3:0] values (Reg 0x87) describing the charger sub-state.</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:224</div></div>
+<div class="ttc" id="anamespacepf1550_html_abd1092336d5416301cf26854b357d0d7"><div class="ttname"><a href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7">pf1550::SwVoltageCode</a></div><div class="ttdeci">SwVoltageCode</div><div class="ttdoc">Common SW buck output voltage codes (RUN mode).</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:251</div></div>
+<div class="ttc" id="anamespacepf1550_html_af9d351690cc34a52f75df65ef0a25f2b"><div class="ttname"><a href="namespacepf1550.html#af9d351690cc34a52f75df65ef0a25f2b">pf1550::PowerMode</a></div><div class="ttdeci">PowerMode</div><div class="ttdef"><b>Definition</b> pf1550_i2c_interface.hpp:35</div></div>
+<div class="ttc" id="apf1550_8ipp_html"><div class="ttname"><a href="pf1550_8ipp.html">pf1550.ipp</a></div><div class="ttdoc">PF1550 driver template implementation.</div></div>
+<div class="ttc" id="apf1550__diagnostics_8hpp_html"><div class="ttname"><a href="pf1550__diagnostics_8hpp.html">pf1550_diagnostics.hpp</a></div><div class="ttdoc">PF1550 diagnostic / fault-classification types and snapshot containers.</div></div>
+<div class="ttc" id="apf1550__i2c__interface_8hpp_html"><div class="ttname"><a href="pf1550__i2c__interface_8hpp.html">pf1550_i2c_interface.hpp</a></div><div class="ttdoc">CRTP I2C + GPIO interface for PF1550 driver.</div></div>
+<div class="ttc" id="apf1550__profiles_8hpp_html"><div class="ttname"><a href="pf1550__profiles_8hpp.html">pf1550_profiles.hpp</a></div><div class="ttdoc">Named PF1550 register-write sequences (eval / reference hosts).</div></div>
+<div class="ttc" id="apf1550__registers_8hpp_html"><div class="ttname"><a href="pf1550__registers_8hpp.html">pf1550_registers.hpp</a></div><div class="ttdoc">NXP PF1550 family I2C register map, bit-field constants, and OTP keys.</div></div>
+<div class="ttc" id="apf1550__voltage__tables_8hpp_html"><div class="ttname"><a href="pf1550__voltage__tables_8hpp.html">pf1550_voltage_tables.hpp</a></div><div class="ttdoc">PF1550 SW / LDO voltage-code ↔ millivolt conversion helpers.</div></div>
+<div class="ttc" id="astructpf1550_1_1DiagnosticSnapshot_html"><div class="ttname"><a href="structpf1550_1_1DiagnosticSnapshot.html">pf1550::DiagnosticSnapshot</a></div><div class="ttdoc">Full diagnostic snapshot returned by PF1550::ReadDiagnosticSnapshot().</div><div class="ttdef"><b>Definition</b> pf1550_diagnostics.hpp:140</div></div>
+<div class="ttc" id="astructpf1550_1_1FaultFlags_html"><div class="ttname"><a href="structpf1550_1_1FaultFlags.html">pf1550::FaultFlags</a></div><div class="ttdoc">Bitset of latched fault flags.</div><div class="ttdef"><b>Definition</b> pf1550_diagnostics.hpp:79</div></div>
+<div class="ttc" id="astructpf1550_1_1OtpRegion_html"><div class="ttname"><a href="structpf1550_1_1OtpRegion.html">pf1550::OtpRegion</a></div><div class="ttdoc">OTP memory indirect address range (via FMRADDR/FMRDATA).</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:311</div></div>
+<div class="ttc" id="astructpf1550_1_1SelfTestResult_html"><div class="ttname"><a href="structpf1550_1_1SelfTestResult.html">pf1550::SelfTestResult</a></div><div class="ttdoc">Result of a power self-test pass.</div><div class="ttdef"><b>Definition</b> pf1550_diagnostics.hpp:162</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="pf1550_8hpp.html">pf1550.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+menu "PF1550 Example Configuration"
+
+    config PF1550_I2C_SDA_GPIO
+        int "I2C SDA GPIO"
+        default 4
+        range 0 48
+        help
+            GPIO for PF1550 I2C SDA. Default matches other hf-core ESP32-C6 examples.
+
+    config PF1550_I2C_SCL_GPIO
+        int "I2C SCL GPIO"
+        default 5
+        range 0 48
+        help
+            GPIO for PF1550 I2C SCL.
+
+    config PF1550_I2C_FREQ_HZ
+        int "I2C clock frequency (Hz)"
+        default 400000
+        range 100000 1000000
+        help
+            PF1550 supports Fast Mode Plus up to 1 MHz on Portenta H7.
+
+    config PF1550_GPIO_STRAPS_ENABLE
+        bool "Drive PMIC strap GPIOs from ESP32-C6"
+        default n
+        help
+            Enable when STANDBY / USB strap pins are wired to the ESP32 for
+            external PMIC provisioning before MCU bring-up.
+
+    config PF1550_GPIO_STANDBY
+        int "STANDBY strap GPIO (-1 = not wired)"
+        depends on PF1550_GPIO_STRAPS_ENABLE
+        default -1
+        range -1 48
+        help
+            Drive LOW for RUN mode (Portenta PJ0 equivalent).
+
+    config PF1550_GPIO_USB_VBUS_EN
+        int "USB_VBUS_EN strap GPIO (-1 = not wired)"
+        depends on PF1550_GPIO_STRAPS_ENABLE
+        default -1
+        range -1 48
+        help
+            Drive HIGH to enable USB-C VBUS policy (Portenta PJ4 equivalent).
+
+    config PF1550_GPIO_USB_OTG_EN
+        int "USB_OTG_EN strap GPIO (-1 = not wired)"
+        depends on PF1550_GPIO_STRAPS_ENABLE
+        default -1
+        range -1 48
+        help
+            Drive HIGH for ULPI OTG (Portenta PJ6 equivalent).
+
+    choice PF1550_PROFILE_SELECT
+        prompt "Register profile to apply (provision app)"
+        default PF1550_PROFILE_CARRIER
+        help
+            Carrier profile sequences SW1 before LDOs and keeps SW2 fully enabled.
+
+        config PF1550_PROFILE_CARRIER
+            bool "portenta_h7_carrier (recommended)"
+        config PF1550_PROFILE_DEFAULT
+            bool "portenta_h7_default (legacy VFR order)"
+    endchoice
+
+    config PF1550_APPLY_PORTENTA_PROFILE
+        bool "Apply profile on boot (probe app only)"
+        default n
+        help
+            When enabled, pf1550_esp32c6_probe applies the selected profile after
+            DEVICE_ID check. Use only on lab / unprogrammed PMIC parts.
+
+endmenu

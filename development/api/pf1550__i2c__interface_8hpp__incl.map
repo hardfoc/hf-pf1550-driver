@@ -1,0 +1,7 @@
+<map id="inc/pf1550_i2c_interface.hpp" name="inc/pf1550_i2c_interface.hpp">
+<area shape="rect" id="Node000001" title="CRTP I2C + GPIO interface for PF1550 driver." alt="" coords="5,5,214,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="30,81,99,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,32,82,69,78,66,99,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="124,81,189,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,31,143,68,137,68,117,36"/>
+</map>

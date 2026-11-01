@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>HF-PF1550 Driver: inc/pf1550_profiles.hpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HF-PF1550 Driver
+   &#160;<span id="projectnumber">0.1.0-dev</span>
+   </div>
+   <div id="projectbrief">Portable C++20 driver for the NXP PF1550 PMIC (3 bucks + 3 LDOs + charger + OTP), with Portenta H7 / Synapse profiles, diagnostic snapshot API, and hf-core HAL handler integration.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+<div id="theme-selection">
+ <label for="theme-select">Theme:</label>
+ <select id="theme-select">
+  <option value="theme-default">Default</option>
+  <option value="theme-round">Round</option>
+  <option value="theme-robot">Robot</option>
+ </select>
+</div>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('pf1550__profiles_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pf1550_profiles.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="pf1550__profiles_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespacepf1550_1_1profiles.html">   15</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacepf1550_1_1profiles.html">pf1550::profiles</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structpf1550_1_1profiles_1_1RegisterWrite.html">   21</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structpf1550_1_1profiles_1_1RegisterWrite.html">RegisterWrite</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structpf1550_1_1profiles_1_1RegisterWrite.html#a565715f871314238573cf60859b3c0a8">   22</a></span>  uint8_t <a class="code hl_variable" href="structpf1550_1_1profiles_1_1RegisterWrite.html#a565715f871314238573cf60859b3c0a8">reg</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structpf1550_1_1profiles_1_1RegisterWrite.html#a8a1bb6d21fbb570b1c974908cf02ef3f">   23</a></span>  uint8_t <a class="code hl_variable" href="structpf1550_1_1profiles_1_1RegisterWrite.html#a8a1bb6d21fbb570b1c974908cf02ef3f">value</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structpf1550_1_1profiles_1_1RegisterWrite.html#a155f52e32cd6185af46a19e9144a291f">   25</a></span>  uint32_t <a class="code hl_variable" href="structpf1550_1_1profiles_1_1RegisterWrite.html#a155f52e32cd6185af46a19e9144a291f">delay_us</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespacepf1550_1_1profiles.html#ae20cf721ea3399f8f5b13f6fa015f97c">   37</a></span><span class="keyword">inline</span> <span class="keyword">constexpr</span> std::array&lt;RegisterWrite, 23&gt; <a class="code hl_variable" href="namespacepf1550_1_1profiles.html#ae20cf721ea3399f8f5b13f6fa015f97c">kPortentaH7Default</a> = {{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {0x4F, 0x00, 0},   <span class="comment">// LDO2 -&gt; 1.8 V</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {0x4C, 0x05, 0},   <span class="comment">// LDO1 -&gt; 1.0 V</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {0x4D, 0x0F, 0},   <span class="comment">// LDO1 enable</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {0x52, 0x09, 0},   <span class="comment">// LDO3 -&gt; 1.2 V</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {0x53, 0x0F, 0},   <span class="comment">// LDO3 enable</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {0x58, 0x03, 0},   <span class="comment">// LDO misc</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {0x9C, 0x80, 1000}, <span class="comment">// charger LED duty (Portenta bootloader)</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {0x9E, 0x20, 1000}, <span class="comment">// disable charger LED</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {0x42, 0x02, 1000}, <span class="comment">// SW3 current limit 2 A</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {0x94, 0xA0, 0},   <span class="comment">// VBUS input limit 1500 mA</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {0x38, 0x07, 0},   <span class="comment">// SW2 RUN 3.3 V</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {0x39, 0x05, 0},   <span class="comment">// SW2 STBY/DVS</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {0x3A, 0x05, 0},   <span class="comment">// SW2 alt</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {0x3B, 0x01, 0},   <span class="comment">// SW2 ctrl (standby voltage switch enabled)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {0x32, 0x07, 0},   <span class="comment">// SW1 RUN 3.3 V (VCAP / MCU digital)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {0x33, 0x05, 0},   <span class="comment">// SW1 STBY/DVS</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {0x34, 0x05, 0},   <span class="comment">// SW1 alt</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {0x35, 0x01, 0},   <span class="comment">// SW1 ctrl</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {0x3E, 0x0F, 0},   <span class="comment">// SW3 RUN (OTP may override on programmed parts)</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {0x3F, 0x0E, 0},   <span class="comment">// SW3 STBY/DVS</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {0x40, 0x0E, 0},   <span class="comment">// SW3 alt</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {0x41, 0x0F, 0},   <span class="comment">// SW3 ctrl</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {0x50, 0x0F, 0},   <span class="comment">// LDO2 commit / final enable (must be last)</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}};</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="namespacepf1550_1_1profiles.html#abdcd638ad25100a2456c98d2d0ebf4ce">   64</a></span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="namespacepf1550_1_1profiles.html#abdcd638ad25100a2456c98d2d0ebf4ce">kPortentaH7DefaultName</a> = <span class="stringliteral">&quot;portenta_h7_default&quot;</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="namespacepf1550_1_1profiles.html#a329d7e839be9e96ac9c814cf9f5f894f">   79</a></span><span class="keyword">inline</span> <span class="keyword">constexpr</span> std::array&lt;RegisterWrite, 23&gt; <a class="code hl_variable" href="namespacepf1550_1_1profiles.html#a329d7e839be9e96ac9c814cf9f5f894f">kPortentaH7Carrier</a> = {{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {0x32, 0x06, 0},    <span class="comment">// SW1 RUN 3.0 V (+3V1SW) — LDO input rail</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {0x33, 0x05, 0},    <span class="comment">// SW1 STBY/DVS</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {0x34, 0x05, 0},    <span class="comment">// SW1 SLP</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {0x35, 0x0F, 5000}, <span class="comment">// SW1 enable (delay for +3V1SW before LDOs)</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    {0x4F, 0x00, 0},    <span class="comment">// LDO2 -&gt; 1.8 V</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {0x4C, 0x05, 0},    <span class="comment">// LDO1 -&gt; 1.0 V</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {0x4D, 0x0F, 0},    <span class="comment">// LDO1 enable</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {0x52, 0x09, 0},    <span class="comment">// LDO3 -&gt; 1.2 V</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {0x53, 0x0F, 0},    <span class="comment">// LDO3 enable</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {0x58, 0x03, 0},    <span class="comment">// PWRCTRL0 (STANDBY polarity etc.)</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {0x9C, 0x80, 1000}, <span class="comment">// charger LED duty</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    {0x9E, 0x20, 1000}, <span class="comment">// disable charger LED (CHGB blips)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {0x42, 0x02, 1000}, <span class="comment">// SW3 current limit 2 A</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    {0x94, 0xA0, 0},    <span class="comment">// VBUS input limit 1500 mA</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {0x38, 0x07, 0},    <span class="comment">// SW2 RUN 3.3 V (carrier +VOUT)</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {0x39, 0x05, 0},    <span class="comment">// SW2 STBY/DVS</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {0x3A, 0x05, 0},    <span class="comment">// SW2 SLP</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {0x3B, 0x0F, 0},    <span class="comment">// SW2 ctrl — full enable for carrier</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {0x3E, 0x0F, 0},    <span class="comment">// SW3 RUN (+3V1 VCORE, OTP may override)</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {0x3F, 0x0E, 0},    <span class="comment">// SW3 STBY/DVS</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {0x40, 0x0E, 0},    <span class="comment">// SW3 SLP</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {0x41, 0x0F, 0},    <span class="comment">// SW3 ctrl</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {0x50, 0x0F, 0},    <span class="comment">// LDO2 commit / final enable (must be last)</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}};</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="namespacepf1550_1_1profiles.html#ac315d51a01b1ca91a08fb9dd5f1d958c">  105</a></span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="namespacepf1550_1_1profiles.html#ac315d51a01b1ca91a08fb9dd5f1d958c">kPortentaH7CarrierName</a> = <span class="stringliteral">&quot;portenta_h7_carrier&quot;</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>} <span class="comment">// namespace pf1550::profiles</span></div>
+</div>
+<div class="ttc" id="anamespacepf1550_1_1profiles_html"><div class="ttname"><a href="namespacepf1550_1_1profiles.html">pf1550::profiles</a></div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:15</div></div>
+<div class="ttc" id="anamespacepf1550_1_1profiles_html_a329d7e839be9e96ac9c814cf9f5f894f"><div class="ttname"><a href="namespacepf1550_1_1profiles.html#a329d7e839be9e96ac9c814cf9f5f894f">pf1550::profiles::kPortentaH7Carrier</a></div><div class="ttdeci">constexpr std::array&lt; RegisterWrite, 23 &gt; kPortentaH7Carrier</div><div class="ttdoc">Portenta H7 + carrier bring-up profile (SW1-first, full SW2 enable).</div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:79</div></div>
+<div class="ttc" id="anamespacepf1550_1_1profiles_html_abdcd638ad25100a2456c98d2d0ebf4ce"><div class="ttname"><a href="namespacepf1550_1_1profiles.html#abdcd638ad25100a2456c98d2d0ebf4ce">pf1550::profiles::kPortentaH7DefaultName</a></div><div class="ttdeci">constexpr const char * kPortentaH7DefaultName</div><div class="ttdoc">Human-readable profile identifier for logging and HAL binding.</div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:64</div></div>
+<div class="ttc" id="anamespacepf1550_1_1profiles_html_ac315d51a01b1ca91a08fb9dd5f1d958c"><div class="ttname"><a href="namespacepf1550_1_1profiles.html#ac315d51a01b1ca91a08fb9dd5f1d958c">pf1550::profiles::kPortentaH7CarrierName</a></div><div class="ttdeci">constexpr const char * kPortentaH7CarrierName</div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:105</div></div>
+<div class="ttc" id="anamespacepf1550_1_1profiles_html_ae20cf721ea3399f8f5b13f6fa015f97c"><div class="ttname"><a href="namespacepf1550_1_1profiles.html#ae20cf721ea3399f8f5b13f6fa015f97c">pf1550::profiles::kPortentaH7Default</a></div><div class="ttdeci">constexpr std::array&lt; RegisterWrite, 23 &gt; kPortentaH7Default</div><div class="ttdoc">Portenta H7 eval MCU-domain profile (VFR heritage).</div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:37</div></div>
+<div class="ttc" id="astructpf1550_1_1profiles_1_1RegisterWrite_html"><div class="ttname"><a href="structpf1550_1_1profiles_1_1RegisterWrite.html">pf1550::profiles::RegisterWrite</a></div><div class="ttdoc">Single I2C register write with optional post-write delay.</div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:21</div></div>
+<div class="ttc" id="astructpf1550_1_1profiles_1_1RegisterWrite_html_a155f52e32cd6185af46a19e9144a291f"><div class="ttname"><a href="structpf1550_1_1profiles_1_1RegisterWrite.html#a155f52e32cd6185af46a19e9144a291f">pf1550::profiles::RegisterWrite::delay_us</a></div><div class="ttdeci">uint32_t delay_us</div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:25</div></div>
+<div class="ttc" id="astructpf1550_1_1profiles_1_1RegisterWrite_html_a565715f871314238573cf60859b3c0a8"><div class="ttname"><a href="structpf1550_1_1profiles_1_1RegisterWrite.html#a565715f871314238573cf60859b3c0a8">pf1550::profiles::RegisterWrite::reg</a></div><div class="ttdeci">uint8_t reg</div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:22</div></div>
+<div class="ttc" id="astructpf1550_1_1profiles_1_1RegisterWrite_html_a8a1bb6d21fbb570b1c974908cf02ef3f"><div class="ttname"><a href="structpf1550_1_1profiles_1_1RegisterWrite.html#a8a1bb6d21fbb570b1c974908cf02ef3f">pf1550::profiles::RegisterWrite::value</a></div><div class="ttdeci">uint8_t value</div><div class="ttdef"><b>Definition</b> pf1550_profiles.hpp:23</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="pf1550__profiles_8hpp.html">pf1550_profiles.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>HF-PF1550 Driver: inc/pf1550_voltage_tables.hpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HF-PF1550 Driver
+   &#160;<span id="projectnumber">0.1.0-dev</span>
+   </div>
+   <div id="projectbrief">Portable C++20 driver for the NXP PF1550 PMIC (3 bucks + 3 LDOs + charger + OTP), with Portenta H7 / Synapse profiles, diagnostic snapshot API, and hf-core HAL handler integration.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+<div id="theme-selection">
+ <label for="theme-select">Theme:</label>
+ <select id="theme-select">
+  <option value="theme-default">Default</option>
+  <option value="theme-round">Round</option>
+  <option value="theme-robot">Robot</option>
+ </select>
+</div>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('pf1550__voltage__tables_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pf1550_voltage_tables.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="pf1550__voltage__tables_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="pf1550__registers_8hpp.html">pf1550_registers.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacepf1550.html">pf1550</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespacepf1550.html#a5d3f1dd2239f5bba728c5421e3b4ce9e">   47</a></span><span class="keyword">constexpr</span> uint16_t <a class="code hl_function" href="namespacepf1550.html#a5d3f1dd2239f5bba728c5421e3b4ce9e">SwCodeToMillivolts</a>(uint8_t code) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">constexpr</span> uint16_t kTable[7] = {1100, 1200, 1350, 1500, 1800, 2500, 3000};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">const</span> uint8_t c = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(code &amp; 0x3FU);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">return</span> c &lt; 7U ? kTable[c] : 3300U;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="namespacepf1550.html#a9a7d66142c5ea59b9d81a9307900e4cc">   57</a></span><span class="keyword">constexpr</span> uint16_t <a class="code hl_function" href="namespacepf1550.html#a9a7d66142c5ea59b9d81a9307900e4cc">SwDvsCodeToMillivolts</a>(uint8_t code) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(600U + (<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(code &amp; 0x3FU) * 25U + 1U) / 2U);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="namespacepf1550.html#a9cbb348df9c882fd700449a9d7c073cc">   65</a></span><span class="keyword">constexpr</span> uint16_t <a class="code hl_function" href="namespacepf1550.html#a9cbb348df9c882fd700449a9d7c073cc">Sw3CodeToMillivolts</a>(uint8_t code) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(1800U + 100U * (code &amp; 0x0FU));</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="namespacepf1550.html#a0892e65040f050fcdd6df0a93638d4f3">   75</a></span><span class="keyword">constexpr</span> uint8_t <a class="code hl_function" href="namespacepf1550.html#a0892e65040f050fcdd6df0a93638d4f3">SwMillivoltsToCode</a>(uint16_t mv) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">switch</span> (mv) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">case</span> 1100: <span class="keywordflow">return</span> 0x00;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">case</span> 1200: <span class="keywordflow">return</span> 0x01;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">case</span> 1350: <span class="keywordflow">return</span> 0x02;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">case</span> 1500: <span class="keywordflow">return</span> 0x03;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">case</span> 1800: <span class="keywordflow">return</span> 0x04;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">case</span> 2500: <span class="keywordflow">return</span> 0x05;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">case</span> 3000: <span class="keywordflow">return</span> 0x06;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">case</span> 3300: <span class="keywordflow">return</span> 0x07;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">default</span>:   <span class="keywordflow">return</span> 0xFFU;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="namespacepf1550.html#a68addc895f96cc9d67e05edf5b01c34f">  101</a></span><span class="keyword">constexpr</span> uint16_t <a class="code hl_function" href="namespacepf1550.html#a68addc895f96cc9d67e05edf5b01c34f">LdoCodeToMillivolts</a>(uint8_t code, <span class="keywordtype">bool</span> is_ldo2) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">const</span> uint8_t c = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(code &amp; 0x1FU);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">if</span> (is_ldo2) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">if</span> (c &lt;= 0x0FU) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(1800U + 100U * c);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> 0U;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordflow">if</span> (c &lt;= 0x0FU) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(750U + 50U * c);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(1800U + 100U * (c - 0x10U));</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="namespacepf1550.html#a4f33d48b9af3bb55d7e8c5e8f4c8dddb">  141</a></span><span class="keyword">constexpr</span> uint16_t <a class="code hl_function" href="namespacepf1550.html#a4f33d48b9af3bb55d7e8c5e8f4c8dddb">VbusLimitRegToMilliamps</a>(uint8_t reg_value) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keyword">const</span> uint8_t code = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>((reg_value &gt;&gt; 3U) &amp; 0x1FU);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="comment">// First 9 entries: 10, 15, 20, 25, 30, 35, 40, 45, 50 mA (5 mA step from 10).</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keywordflow">if</span> (code &lt;= 0x08U) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(10U + 5U * code);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">// 0x09..0x0F: 100, 150, 200, 300, 400, 500, 600 mA.</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordflow">switch</span> (code) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">case</span> 0x09: <span class="keywordflow">return</span> 100;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">case</span> 0x0A: <span class="keywordflow">return</span> 150;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">case</span> 0x0B: <span class="keywordflow">return</span> 200;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">case</span> 0x0C: <span class="keywordflow">return</span> 300;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">case</span> 0x0D: <span class="keywordflow">return</span> 400;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">case</span> 0x0E: <span class="keywordflow">return</span> 500;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">case</span> 0x0F: <span class="keywordflow">return</span> 600;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">case</span> 0x10: <span class="keywordflow">return</span> 700;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">case</span> 0x11: <span class="keywordflow">return</span> 800;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">case</span> 0x12: <span class="keywordflow">return</span> 900;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">case</span> 0x13: <span class="keywordflow">return</span> 1000;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">case</span> 0x14: <span class="keywordflow">return</span> 1500;  <span class="comment">// Portenta default</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">case</span> 0x15: <span class="keywordflow">return</span> 1600;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">case</span> 0x16: <span class="keywordflow">return</span> 1700;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">case</span> 0x17: <span class="keywordflow">return</span> 1800;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">default</span>: <span class="keywordflow">return</span> 0;       <span class="comment">// codes above table reserved</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>}</div>
+</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="namespacepf1550.html#abc80bb6d4ae502714b9f19e90d5de151">  174</a></span><span class="keyword">constexpr</span> uint8_t <a class="code hl_function" href="namespacepf1550.html#abc80bb6d4ae502714b9f19e90d5de151">VbusLimitMilliampsToReg</a>(uint16_t mA) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  uint8_t code = 0xFFU;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keywordflow">switch</span> (mA) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">case</span> 10:   code = 0x00; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">case</span> 100:  code = 0x09; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">case</span> 500:  code = 0x0E; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordflow">case</span> 1000: code = 0x13; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">case</span> 1500: code = 0x14; <span class="keywordflow">break</span>;  <span class="comment">// Portenta default</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keywordflow">return</span> (code == 0xFFU) ? 0xFFU : <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(code &lt;&lt; 3U);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
+</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="namespacepf1550.html#ae6f232e1d12abca0b9d3446b4740da39">  195</a></span><span class="keyword">constexpr</span> uint16_t <a class="code hl_function" href="namespacepf1550.html#ae6f232e1d12abca0b9d3446b4740da39">SwCurrentLimitCodeToMilliamps</a>(uint8_t code) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keywordflow">switch</span> (code &amp; 0x03U) {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">case</span> 0: <span class="keywordflow">return</span> 1000;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">case</span> 1: <span class="keywordflow">return</span> 1200;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">case</span> 2: <span class="keywordflow">return</span> 1500;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordflow">case</span> 3: <span class="keywordflow">return</span> 2000;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="namespacepf1550.html#addd27a23b2ad2302be63965d5db8b1d4">  210</a></span><span class="keyword">constexpr</span> <a class="code hl_enumeration" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a> <a class="code hl_function" href="namespacepf1550.html#addd27a23b2ad2302be63965d5db8b1d4">DecodeStateInfo</a>(uint8_t reg) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keywordflow">switch</span> (reg &amp; 0x3FU) {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">case</span> 0b000000: <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a0f68101772bd5397ef8eb1b632798652">PmicState::Wait</a>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keywordflow">case</span> 0b001100: <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819ac5301693c4e792bcd5a479ef38fb8f8d">PmicState::Run</a>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordflow">case</span> 0b001101: <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a2dbec34a65724db94f81e8533ee18192">PmicState::Standby</a>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordflow">case</span> 0b001110: <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a243924bfd56a682be235638b53961e09">PmicState::Sleep</a>;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">case</span> 0b101011: <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a1dc681e53b0d3a1c7c66a8bb866bde54">PmicState::RegsDisable</a>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordflow">default</span>:       <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a88183b946cc5f0e8c96b2e66e1c74a7e">PmicState::Unknown</a>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>}</div>
+</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="namespacepf1550.html#a41447a0b5f08eceec7c8e6f6ccb5021b">  222</a></span><span class="keyword">constexpr</span> <a class="code hl_enumeration" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">ChargerState</a> <a class="code hl_function" href="namespacepf1550.html#a41447a0b5f08eceec7c8e6f6ccb5021b">DecodeChargerSense</a>(uint8_t reg) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordflow">switch</span> (reg &amp; 0x0FU) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordflow">case</span> 0:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea58532ea27917782582c12e0368cf4dd5">ChargerState::PreCharge</a>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">case</span> 1:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea3d382a93e72cc3eab460ae6f6ba72c81">ChargerState::FastCC</a>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordflow">case</span> 2:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eafb7bf21d6a3b604d11f09f841d4fe929">ChargerState::FastCV</a>;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">case</span> 3:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eab43c278970ebe9b51e7222075eed6bd9">ChargerState::EndOfCharge</a>;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">case</span> 4:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eaf92965e2c8a7afb3c1b9a5c09a263636">ChargerState::Done</a>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordflow">case</span> 6:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eae50de7362be6caf318b32ca9d0ee6182">ChargerState::TimerFault</a>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">case</span> 7:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea47d2e9b9b7c575cde335b23705405913">ChargerState::ThermSuspend</a>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">case</span> 8:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ead15305d7a4e34e02489c74a5ef542f36">ChargerState::Off</a>;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">case</span> 9:  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ead62a9096a19b827e93f5c74c85c2c1dc">ChargerState::BatteryOv</a>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordflow">case</span> 10: <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea339c6aa0cd17583b5c99b8703ca9c14e">ChargerState::TempShutdown</a>;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordflow">case</span> 12: <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea1e9b9cdc1f5507d75868cb3a71e55e6b">ChargerState::LinearOnly</a>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">default</span>: <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea88183b946cc5f0e8c96b2e66e1c74a7e">ChargerState::Unknown</a>;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>}</div>
+</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a5d3f1dd2239f5bba728c5421e3b4ce9e">SwCodeToMillivolts</a>(0x06) == 3000, <span class="stringliteral">&quot;SW code 0x06 → 3.00 V (Portenta SW1 RUN)&quot;</span>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a5d3f1dd2239f5bba728c5421e3b4ce9e">SwCodeToMillivolts</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7af869fb390f575744d7e1a3845efec815">SwVoltageCode::V3_3</a>)) == 3300,</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>              <span class="stringliteral">&quot;SwVoltageCode::V3_3 must decode to 3.30 V&quot;</span>);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a9cbb348df9c882fd700449a9d7c073cc">Sw3CodeToMillivolts</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7aa80a14c08a076f638af5378a268a9f70">SwVoltageCode::V3_1</a>)) == 3100,</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>              <span class="stringliteral">&quot;SW3 code 0x0D → 3.10 V (Table 37)&quot;</span>);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a5d3f1dd2239f5bba728c5421e3b4ce9e">SwCodeToMillivolts</a>(0x0D) == 3300, <span class="stringliteral">&quot;SW1/SW2 DVS-disabled: every code ≥ 7 is 3.30 V&quot;</span>);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a9a7d66142c5ea59b9d81a9307900e4cc">SwDvsCodeToMillivolts</a>(0x00) == 600 &amp;&amp; <a class="code hl_function" href="namespacepf1550.html#a9a7d66142c5ea59b9d81a9307900e4cc">SwDvsCodeToMillivolts</a>(0x3F) == 1388 &amp;&amp;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                  <a class="code hl_function" href="namespacepf1550.html#a9a7d66142c5ea59b9d81a9307900e4cc">SwDvsCodeToMillivolts</a>(0x20) == 1000,</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>              <span class="stringliteral">&quot;SW1/SW2 DVS-enabled: 0.6 V + 12.5 mV steps&quot;</span>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a9cbb348df9c882fd700449a9d7c073cc">Sw3CodeToMillivolts</a>(0x0F) == 3300 &amp;&amp; <a class="code hl_function" href="namespacepf1550.html#a9cbb348df9c882fd700449a9d7c073cc">Sw3CodeToMillivolts</a>(0x00) == 1800, <span class="stringliteral">&quot;SW3 Table 37&quot;</span>);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a0892e65040f050fcdd6df0a93638d4f3">SwMillivoltsToCode</a>(3300) == 0x07, <span class="stringliteral">&quot;3300 mV round-trip → 0x07&quot;</span>);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a68addc895f96cc9d67e05edf5b01c34f">LdoCodeToMillivolts</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa6ec11796ccdf73b5b5872c5b8a977832">LdoVoltageCode::V1_0</a>), <span class="comment">/*is_ldo2=*/</span><span class="keyword">false</span>) == 1000,</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>              <span class="stringliteral">&quot;LDO1 code 0x05 → 1.0 V&quot;</span>);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a68addc895f96cc9d67e05edf5b01c34f">LdoCodeToMillivolts</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa4d57a4937ae5e3ae730629bba3303f5e">LdoVoltageCode::V1_8</a>), <span class="comment">/*is_ldo2=*/</span><span class="keyword">true</span>) == 1800,</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>              <span class="stringliteral">&quot;LDO2 code 0x00 → 1.8 V&quot;</span>);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a68addc895f96cc9d67e05edf5b01c34f">LdoCodeToMillivolts</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa05e7d9b0b1c46c80e2cd07331ef1433b">LdoVoltageCode::V1_2</a>), <span class="comment">/*is_ldo2=*/</span><span class="keyword">false</span>) == 1200,</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>              <span class="stringliteral">&quot;LDO3 code 0x09 → 1.2 V&quot;</span>);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#a4f33d48b9af3bb55d7e8c5e8f4c8dddb">VbusLimitRegToMilliamps</a>(0xA0) == 1500,</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>              <span class="stringliteral">&quot;Portenta sets 0xA0 (code 0x14) → 1500 mA per VBUS_IN_LIM_CNFG lookup&quot;</span>);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacepf1550.html#abc80bb6d4ae502714b9f19e90d5de151">VbusLimitMilliampsToReg</a>(1500) == 0xA0,</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>              <span class="stringliteral">&quot;VbusLimitMilliampsToReg(1500) must round-trip to 0xA0&quot;</span>);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>} <span class="comment">// namespace pf1550</span></div>
+<div class="ttc" id="anamespacepf1550_html"><div class="ttname"><a href="namespacepf1550.html">pf1550</a></div><div class="ttdef"><b>Definition</b> pf1550.ipp:8</div></div>
+<div class="ttc" id="anamespacepf1550_html_a0892e65040f050fcdd6df0a93638d4f3"><div class="ttname"><a href="namespacepf1550.html#a0892e65040f050fcdd6df0a93638d4f3">pf1550::SwMillivoltsToCode</a></div><div class="ttdeci">constexpr uint8_t SwMillivoltsToCode(uint16_t mv) noexcept</div><div class="ttdoc">Build a 6-bit SW voltage code from millivolts (Portenta-verified codes).</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:75</div></div>
+<div class="ttc" id="anamespacepf1550_html_a2e9bd15902066b7c5d6674ae0bb25abaa05e7d9b0b1c46c80e2cd07331ef1433b"><div class="ttname"><a href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa05e7d9b0b1c46c80e2cd07331ef1433b">pf1550::LdoVoltageCode::V1_2</a></div><div class="ttdeci">@ V1_2</div><div class="ttdoc">1.200 V (LDO3)</div></div>
+<div class="ttc" id="anamespacepf1550_html_a2e9bd15902066b7c5d6674ae0bb25abaa4d57a4937ae5e3ae730629bba3303f5e"><div class="ttname"><a href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa4d57a4937ae5e3ae730629bba3303f5e">pf1550::LdoVoltageCode::V1_8</a></div><div class="ttdeci">@ V1_8</div><div class="ttdoc">1.800 V (LDO2 — code 0)</div></div>
+<div class="ttc" id="anamespacepf1550_html_a2e9bd15902066b7c5d6674ae0bb25abaa6ec11796ccdf73b5b5872c5b8a977832"><div class="ttname"><a href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25abaa6ec11796ccdf73b5b5872c5b8a977832">pf1550::LdoVoltageCode::V1_0</a></div><div class="ttdeci">@ V1_0</div><div class="ttdoc">1.000 V (LDO1)</div></div>
+<div class="ttc" id="anamespacepf1550_html_a41447a0b5f08eceec7c8e6f6ccb5021b"><div class="ttname"><a href="namespacepf1550.html#a41447a0b5f08eceec7c8e6f6ccb5021b">pf1550::DecodeChargerSense</a></div><div class="ttdeci">constexpr ChargerState DecodeChargerSense(uint8_t reg) noexcept</div><div class="ttdoc">Convert CHG_SNS (0x87) into a typed ChargerState.</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:222</div></div>
+<div class="ttc" id="anamespacepf1550_html_a4f33d48b9af3bb55d7e8c5e8f4c8dddb"><div class="ttname"><a href="namespacepf1550.html#a4f33d48b9af3bb55d7e8c5e8f4c8dddb">pf1550::VbusLimitRegToMilliamps</a></div><div class="ttdeci">constexpr uint16_t VbusLimitRegToMilliamps(uint8_t reg_value) noexcept</div><div class="ttdoc">Decode VBUS_IN_LIM_CNFG (absolute address 0x94) register byte to mA.</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:141</div></div>
+<div class="ttc" id="anamespacepf1550_html_a5d3f1dd2239f5bba728c5421e3b4ce9e"><div class="ttname"><a href="namespacepf1550.html#a5d3f1dd2239f5bba728c5421e3b4ce9e">pf1550::SwCodeToMillivolts</a></div><div class="ttdeci">constexpr uint16_t SwCodeToMillivolts(uint8_t code) noexcept</div><div class="ttdoc">SW1 / SW2 output voltage, DVS disabled (OTP_SWx_DVS_SEL = 1).</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:47</div></div>
+<div class="ttc" id="anamespacepf1550_html_a68addc895f96cc9d67e05edf5b01c34f"><div class="ttname"><a href="namespacepf1550.html#a68addc895f96cc9d67e05edf5b01c34f">pf1550::LdoCodeToMillivolts</a></div><div class="ttdeci">constexpr uint16_t LdoCodeToMillivolts(uint8_t code, bool is_ldo2) noexcept</div><div class="ttdoc">Decode a 5-bit LDO voltage register field to millivolts.</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:101</div></div>
+<div class="ttc" id="anamespacepf1550_html_a9a7d66142c5ea59b9d81a9307900e4cc"><div class="ttname"><a href="namespacepf1550.html#a9a7d66142c5ea59b9d81a9307900e4cc">pf1550::SwDvsCodeToMillivolts</a></div><div class="ttdeci">constexpr uint16_t SwDvsCodeToMillivolts(uint8_t code) noexcept</div><div class="ttdoc">SW1 / SW2 output voltage, DVS enabled (OTP_SWx_DVS_SEL = 0): 0.6000 V + 12.5 mV × code (Table 31,...</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:57</div></div>
+<div class="ttc" id="anamespacepf1550_html_a9cbb348df9c882fd700449a9d7c073cc"><div class="ttname"><a href="namespacepf1550.html#a9cbb348df9c882fd700449a9d7c073cc">pf1550::Sw3CodeToMillivolts</a></div><div class="ttdeci">constexpr uint16_t Sw3CodeToMillivolts(uint8_t code) noexcept</div><div class="ttdoc">SW3 output voltage (Table 37): 1.80 V + 100 mV × SW3_VOLT[3:0].</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:65</div></div>
+<div class="ttc" id="anamespacepf1550_html_aa00ce13d74ba6c20f71c9d15bfd64819"><div class="ttname"><a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">pf1550::PmicState</a></div><div class="ttdeci">PmicState</div><div class="ttdoc">STATE_INFO[5:0] values (Reg 0x67) describing the PMIC state machine.</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:214</div></div>
+<div class="ttc" id="anamespacepf1550_html_aa00ce13d74ba6c20f71c9d15bfd64819a0f68101772bd5397ef8eb1b632798652"><div class="ttname"><a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a0f68101772bd5397ef8eb1b632798652">pf1550::PmicState::Wait</a></div><div class="ttdeci">@ Wait</div><div class="ttdoc">Wait / start-up before regulators are sequenced.</div></div>
+<div class="ttc" id="anamespacepf1550_html_aa00ce13d74ba6c20f71c9d15bfd64819a1dc681e53b0d3a1c7c66a8bb866bde54"><div class="ttname"><a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a1dc681e53b0d3a1c7c66a8bb866bde54">pf1550::PmicState::RegsDisable</a></div><div class="ttdeci">@ RegsDisable</div><div class="ttdoc">REGS_DISABLE — all regulators off (post PWRON long-press).</div></div>
+<div class="ttc" id="anamespacepf1550_html_aa00ce13d74ba6c20f71c9d15bfd64819a243924bfd56a682be235638b53961e09"><div class="ttname"><a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a243924bfd56a682be235638b53961e09">pf1550::PmicState::Sleep</a></div><div class="ttdeci">@ Sleep</div><div class="ttdoc">SLEEP / LPSR — minimal regulators.</div></div>
+<div class="ttc" id="anamespacepf1550_html_aa00ce13d74ba6c20f71c9d15bfd64819a2dbec34a65724db94f81e8533ee18192"><div class="ttname"><a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a2dbec34a65724db94f81e8533ee18192">pf1550::PmicState::Standby</a></div><div class="ttdeci">@ Standby</div><div class="ttdoc">STANDBY — standby-enabled regulators only.</div></div>
+<div class="ttc" id="anamespacepf1550_html_aa00ce13d74ba6c20f71c9d15bfd64819a88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819a88183b946cc5f0e8c96b2e66e1c74a7e">pf1550::PmicState::Unknown</a></div><div class="ttdeci">@ Unknown</div></div>
+<div class="ttc" id="anamespacepf1550_html_aa00ce13d74ba6c20f71c9d15bfd64819ac5301693c4e792bcd5a479ef38fb8f8d"><div class="ttname"><a href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819ac5301693c4e792bcd5a479ef38fb8f8d">pf1550::PmicState::Run</a></div><div class="ttdeci">@ Run</div><div class="ttdoc">RUN — all OTP-sequenced regulators enabled.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024e"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">pf1550::ChargerState</a></div><div class="ttdeci">ChargerState</div><div class="ttdoc">CHG_SNS[3:0] values (Reg 0x87) describing the charger sub-state.</div><div class="ttdef"><b>Definition</b> pf1550_registers.hpp:224</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024ea1e9b9cdc1f5507d75868cb3a71e55e6b"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea1e9b9cdc1f5507d75868cb3a71e55e6b">pf1550::ChargerState::LinearOnly</a></div><div class="ttdeci">@ LinearOnly</div><div class="ttdoc">Linear-only mode, no charge.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024ea339c6aa0cd17583b5c99b8703ca9c14e"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea339c6aa0cd17583b5c99b8703ca9c14e">pf1550::ChargerState::TempShutdown</a></div><div class="ttdeci">@ TempShutdown</div><div class="ttdoc">Off because TJ &gt; TSHDN.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024ea3d382a93e72cc3eab460ae6f6ba72c81"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea3d382a93e72cc3eab460ae6f6ba72c81">pf1550::ChargerState::FastCC</a></div><div class="ttdeci">@ FastCC</div><div class="ttdoc">Fast-charge constant-current.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024ea47d2e9b9b7c575cde335b23705405913"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea47d2e9b9b7c575cde335b23705405913">pf1550::ChargerState::ThermSuspend</a></div><div class="ttdeci">@ ThermSuspend</div><div class="ttdoc">Thermistor suspend.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024ea58532ea27917782582c12e0368cf4dd5"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea58532ea27917782582c12e0368cf4dd5">pf1550::ChargerState::PreCharge</a></div><div class="ttdeci">@ PreCharge</div><div class="ttdoc">Precharge mode (V_BATT &lt; V_PRECHG.LB).</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024ea88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ea88183b946cc5f0e8c96b2e66e1c74a7e">pf1550::ChargerState::Unknown</a></div><div class="ttdeci">@ Unknown</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024eab43c278970ebe9b51e7222075eed6bd9"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eab43c278970ebe9b51e7222075eed6bd9">pf1550::ChargerState::EndOfCharge</a></div><div class="ttdeci">@ EndOfCharge</div><div class="ttdoc">End-of-charge (I_BAT = I_EOC).</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024ead15305d7a4e34e02489c74a5ef542f36"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ead15305d7a4e34e02489c74a5ef542f36">pf1550::ChargerState::Off</a></div><div class="ttdeci">@ Off</div><div class="ttdoc">Input invalid or charger disabled.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024ead62a9096a19b827e93f5c74c85c2c1dc"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024ead62a9096a19b827e93f5c74c85c2c1dc">pf1550::ChargerState::BatteryOv</a></div><div class="ttdeci">@ BatteryOv</div><div class="ttdoc">Battery overvoltage.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024eae50de7362be6caf318b32ca9d0ee6182"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eae50de7362be6caf318b32ca9d0ee6182">pf1550::ChargerState::TimerFault</a></div><div class="ttdeci">@ TimerFault</div><div class="ttdoc">Timer fault.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024eaf92965e2c8a7afb3c1b9a5c09a263636"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eaf92965e2c8a7afb3c1b9a5c09a263636">pf1550::ChargerState::Done</a></div><div class="ttdeci">@ Done</div><div class="ttdoc">Done — battery full.</div></div>
+<div class="ttc" id="anamespacepf1550_html_ab1f72c47ce166906591362fdfde6024eafb7bf21d6a3b604d11f09f841d4fe929"><div class="ttname"><a href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024eafb7bf21d6a3b604d11f09f841d4fe929">pf1550::ChargerState::FastCV</a></div><div class="ttdeci">@ FastCV</div><div class="ttdoc">Fast-charge constant-voltage.</div></div>
+<div class="ttc" id="anamespacepf1550_html_abc80bb6d4ae502714b9f19e90d5de151"><div class="ttname"><a href="namespacepf1550.html#abc80bb6d4ae502714b9f19e90d5de151">pf1550::VbusLimitMilliampsToReg</a></div><div class="ttdeci">constexpr uint8_t VbusLimitMilliampsToReg(uint16_t mA) noexcept</div><div class="ttdoc">Encode mA → VBUS_IN_LIM_CNFG (0x94) register byte (bits 7:3).</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:174</div></div>
+<div class="ttc" id="anamespacepf1550_html_abd1092336d5416301cf26854b357d0d7aa80a14c08a076f638af5378a268a9f70"><div class="ttname"><a href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7aa80a14c08a076f638af5378a268a9f70">pf1550::SwVoltageCode::V3_1</a></div><div class="ttdeci">@ V3_1</div><div class="ttdoc">SW3 Table 37 code for 3.100 V (SW3 is OTP-loaded, read-only; SW1/SW2 decode 0x0D as 3....</div></div>
+<div class="ttc" id="anamespacepf1550_html_abd1092336d5416301cf26854b357d0d7af869fb390f575744d7e1a3845efec815"><div class="ttname"><a href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7af869fb390f575744d7e1a3845efec815">pf1550::SwVoltageCode::V3_3</a></div><div class="ttdeci">@ V3_3</div><div class="ttdoc">3.300 V (SW2 RUN on Portenta — carrier +3V3)</div></div>
+<div class="ttc" id="anamespacepf1550_html_addd27a23b2ad2302be63965d5db8b1d4"><div class="ttname"><a href="namespacepf1550.html#addd27a23b2ad2302be63965d5db8b1d4">pf1550::DecodeStateInfo</a></div><div class="ttdeci">constexpr PmicState DecodeStateInfo(uint8_t reg) noexcept</div><div class="ttdoc">Convert STATE_INFO (0x67) full byte into a typed PmicState.</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:210</div></div>
+<div class="ttc" id="anamespacepf1550_html_ae6f232e1d12abca0b9d3446b4740da39"><div class="ttname"><a href="namespacepf1550.html#ae6f232e1d12abca0b9d3446b4740da39">pf1550::SwCurrentLimitCodeToMilliamps</a></div><div class="ttdeci">constexpr uint16_t SwCurrentLimitCodeToMilliamps(uint8_t code) noexcept</div><div class="ttdoc">Decode the SW3_CTRL1[1:0] (or SW1/SW2_CTRL1) current limit field.</div><div class="ttdef"><b>Definition</b> pf1550_voltage_tables.hpp:195</div></div>
+<div class="ttc" id="apf1550__registers_8hpp_html"><div class="ttname"><a href="pf1550__registers_8hpp.html">pf1550_registers.hpp</a></div><div class="ttdoc">NXP PF1550 family I2C register map, bit-field constants, and OTP keys.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="pf1550__voltage__tables_8hpp.html">pf1550_voltage_tables.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

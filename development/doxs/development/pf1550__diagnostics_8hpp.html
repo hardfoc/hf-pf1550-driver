@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>HF-PF1550 Driver: inc/pf1550_diagnostics.hpp File Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HF-PF1550 Driver
+   &#160;<span id="projectnumber">0.1.0-dev</span>
+   </div>
+   <div id="projectbrief">Portable C++20 driver for the NXP PF1550 PMIC (3 bucks + 3 LDOs + charger + OTP), with Portenta H7 / Synapse profiles, diagnostic snapshot API, and hf-core HAL handler integration.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+<div id="theme-selection">
+ <label for="theme-select">Theme:</label>
+ <select id="theme-select">
+  <option value="theme-default">Default</option>
+  <option value="theme-round">Round</option>
+  <option value="theme-robot">Robot</option>
+ </select>
+</div>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('pf1550__diagnostics_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">pf1550_diagnostics.hpp File Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>PF1550 diagnostic / fault-classification types and snapshot containers.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &quot;<a class="el" href="pf1550__registers_8hpp_source.html">pf1550_registers.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for pf1550_diagnostics.hpp:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pf1550__diagnostics_8hpp__incl.svg" width="312" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pf1550__diagnostics_8hpp__dep__incl.svg" width="938" height="224"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="pf1550__diagnostics_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1FaultFlags.html">pf1550::FaultFlags</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitset of latched fault flags.  <a href="structpf1550_1_1FaultFlags.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1RailDiagnostics.html">pf1550::RailDiagnostics</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-rail status snapshot (latched + live + control byte).  <a href="structpf1550_1_1RailDiagnostics.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1DiagnosticSnapshot.html">pf1550::DiagnosticSnapshot</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full diagnostic snapshot returned by <code><a class="el" href="classpf1550_1_1PF1550.html#a7f984ac4a4c0042079b443284a12e465" title="Build a full diagnostic snapshot (≈30 register reads).">PF1550::ReadDiagnosticSnapshot()</a></code>.  <a href="structpf1550_1_1DiagnosticSnapshot.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1SelfTestResult.html">pf1550::SelfTestResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of a power self-test pass.  <a href="structpf1550_1_1SelfTestResult.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacepf1550" id="r_namespacepf1550"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html">pf1550</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2de0174ba078abebd86cae332fa408a3" id="r_a2de0174ba078abebd86cae332fa408a3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3">pf1550::RailId</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a6660f42d239b11f40346960738850d57">pf1550::Sw1</a> = 0
+, <a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a21c4c026e673bf3f53d6fef61e7acc0c">pf1550::Sw2</a> = 1
+, <a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a5e31f5874ed5c5ba827919f32c38d3d2">pf1550::Sw3</a> = 2
+, <a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3ac2941a3aa4d4bcfa9df3b8328b3df991">pf1550::Ldo1</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a65e2e31900ec6fb406f72b5110861014">pf1550::Ldo2</a> = 4
+, <a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a1b3002726b850297a40f2d2926aef7c4">pf1550::Ldo3</a> = 5
+, <a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a8478e546bd7d414b7fa5185b93b032d4">pf1550::Vsnvs</a> = 6
+, <a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a4905ac9d6a22bdfc1ae096094ce6248d">pf1550::COUNT</a> = 7
+<br />
+ }</td></tr>
+<tr class="memdesc:a2de0174ba078abebd86cae332fa408a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical identifier for each independently-controllable PF1550 output.  <a href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3">More...</a><br /></td></tr>
+<tr class="separator:a2de0174ba078abebd86cae332fa408a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e11c8c1035c5fe655f8370be81e37c5" id="r_a6e11c8c1035c5fe655f8370be81e37c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5">pf1550::FaultSeverity</a> : uint8_t { <a class="el" href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5a176a473e63c17ccdac91640c67f149bf">pf1550::kInfo</a> = 0
+, <a class="el" href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5aec0da41f4e48b52c362303eb27ed5dee">pf1550::kWarning</a> = 1
+, <a class="el" href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5a5a20548c220f372fc701cae6de94040b">pf1550::kCritical</a> = 2
+, <a class="el" href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5a9977723ab71679dcda435112be43d23a">pf1550::kMcuKill</a> = 3
+ }</td></tr>
+<tr class="memdesc:a6e11c8c1035c5fe655f8370be81e37c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Severity classification for a fault.  <a href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5">More...</a><br /></td></tr>
+<tr class="separator:a6e11c8c1035c5fe655f8370be81e37c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4db59d40d340261f6bc4d839bed7037f" id="r_a4db59d40d340261f6bc4d839bed7037f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3">RailId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a4db59d40d340261f6bc4d839bed7037f">pf1550::FaultRail</a> (uint32_t single_flag) noexcept</td></tr>
+<tr class="memdesc:a4db59d40d340261f6bc4d839bed7037f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a single fault flag to the rail it relates to, or <a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3a4905ac9d6a22bdfc1ae096094ce6248d">RailId::COUNT</a> if the fault is system-wide.  <br /></td></tr>
+<tr class="separator:a4db59d40d340261f6bc4d839bed7037f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40632916f713f8a57b3b09264696d86b" id="r_a40632916f713f8a57b3b09264696d86b"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a40632916f713f8a57b3b09264696d86b">pf1550::FaultSeverityPortentaH7</a> (uint32_t single_flag) noexcept</td></tr>
+<tr class="memdesc:a40632916f713f8a57b3b09264696d86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classify the severity of a <em>Portenta H7 eval</em> fault.  <br /></td></tr>
+<tr class="separator:a40632916f713f8a57b3b09264696d86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88bbd68a6b67042ae8716222e737b71" id="r_ad88bbd68a6b67042ae8716222e737b71"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#ad88bbd68a6b67042ae8716222e737b71">pf1550::WorstSeverityPortentaH7</a> (<a class="el" href="structpf1550_1_1FaultFlags.html">FaultFlags</a> fl) noexcept</td></tr>
+<tr class="memdesc:ad88bbd68a6b67042ae8716222e737b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the worst-case severity across an aggregated bitmask.  <br /></td></tr>
+<tr class="separator:ad88bbd68a6b67042ae8716222e737b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad96365d78c4da29ab8b4e344393f5a69" id="r_ad96365d78c4da29ab8b4e344393f5a69"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#ad96365d78c4da29ab8b4e344393f5a69">pf1550::RailName</a> (<a class="el" href="namespacepf1550.html#a2de0174ba078abebd86cae332fa408a3">RailId</a> id) noexcept</td></tr>
+<tr class="memdesc:ad96365d78c4da29ab8b4e344393f5a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable rail label (<code>"SW1"</code>, <code>"LDO2"</code>, …).  <br /></td></tr>
+<tr class="separator:ad96365d78c4da29ab8b4e344393f5a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502005d99f0e9559cced9da676e12c5f" id="r_a502005d99f0e9559cced9da676e12c5f"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a502005d99f0e9559cced9da676e12c5f">pf1550::PmicStateName</a> (<a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a> s) noexcept</td></tr>
+<tr class="memdesc:a502005d99f0e9559cced9da676e12c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name for a PmicState enumerator.  <br /></td></tr>
+<tr class="separator:a502005d99f0e9559cced9da676e12c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f17ae438d670440dbf9f19d5fc858f2" id="r_a3f17ae438d670440dbf9f19d5fc858f2"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a3f17ae438d670440dbf9f19d5fc858f2">pf1550::ChargerStateName</a> (<a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">ChargerState</a> s) noexcept</td></tr>
+<tr class="memdesc:a3f17ae438d670440dbf9f19d5fc858f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name for a ChargerState enumerator.  <br /></td></tr>
+<tr class="separator:a3f17ae438d670440dbf9f19d5fc858f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a651630255c423a8258fe704cd0e402c7" id="r_a651630255c423a8258fe704cd0e402c7"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550.html#a651630255c423a8258fe704cd0e402c7">pf1550::FaultSeverityName</a> (<a class="el" href="namespacepf1550.html#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a> s) noexcept</td></tr>
+<tr class="memdesc:a651630255c423a8258fe704cd0e402c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name for a FaultSeverity.  <br /></td></tr>
+<tr class="separator:a651630255c423a8258fe704cd0e402c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>PF1550 diagnostic / fault-classification types and snapshot containers. </p>
+<p>These POD types are exchanged between the low-level driver and HAL handlers / managers. They contain <b>no I²C dependencies</b> so they can be passed across cores, logged, or unit-tested on the host.</p>
+<p>The PMIC reports faults via three orthogonal sources:</p>
+<ol type="1">
+<li><b>INT_CATEGORY (0x06)</b> — <em>master</em> summary of pending interrupt categories (CHG, SW1/2/3, LDO, ONKEY, TEMP, MISC).</li>
+<li><b>Per-category STAT registers</b> — RW1C latched events (<code>SW_INT_STAT0..2</code>, <code>LDO_INT_STAT0</code>, <code>TEMP_INT_STAT0</code>, …).</li>
+<li><b>Per-category SENSE registers</b> — read-only <em>live</em> state used to differentiate a transient event from an ongoing condition.</li>
+</ol>
+<p>The diagnostics snapshot in this file captures <b>all three</b> so a host can decide between <em>latched warning</em>, <em>ongoing fault</em>, and <em>MCU-power-affecting fault</em> without re-reading the bus.</p>
+<dl class="section user"><dt>Host fault mapping</dt><dd>Downstream products that reuse this driver must keep their own traceability table in sync when adding or removing a flag here.</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024-2026 HardFOC. All rights reserved. </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="pf1550__diagnostics_8hpp.html">pf1550_diagnostics.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

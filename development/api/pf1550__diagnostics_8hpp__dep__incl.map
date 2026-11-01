@@ -1,0 +1,15 @@
+<map id="inc/pf1550_diagnostics.hpp" name="inc/pf1550_diagnostics.hpp">
+<area shape="rect" id="Node000001" title="PF1550 diagnostic / fault&#45;classification types and snapshot containers." alt="" coords="234,5,432,33"/>
+<area shape="rect" id="Node000002" href="$pf1550__esp32c6__diagnostics_8cpp.html" title="ESP32&#45;C6 PF1550 diagnostic&#45;snapshot + self&#45;test example." alt="" coords="5,165,245,210"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="307,44,154,167,151,162,303,42"/>
+<area shape="rect" id="Node000003" href="$pf1550__esp32c6__provision_8cpp.html" title="External ESP32&#45;C6 PMIC provisioning for pre&#45;MCU board bring&#45;up." alt="" coords="268,165,494,210"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="342,46,361,108,377,166,372,164,356,109,340,51"/>
+<area shape="rect" id="Node000004" href="$pf1550_8hpp.html" title="Hardware&#45;agnostic driver for the NXP PF1550 PMIC family." alt="" coords="370,81,488,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="363,40,415,81,409,81,362,45"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="373,113,199,167,197,162,368,114"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="417,121,394,167,391,163,413,124"/>
+<area shape="rect" id="Node000005" href="$pf1550__esp32c6__probe_8cpp.html" title="ESP32&#45;C6 I2C probe for NXP PF1550 @ 0x08." alt="" coords="517,165,720,210"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="471,113,575,165,570,164,469,118"/>
+<area shape="rect" id="Node000006" href="$pf1550__esp32c6__register__dump_8cpp.html" title="Dump selected PF1550 registers over I2C (ESP32&#45;C6)" alt="" coords="744,157,932,218"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="503,107,732,154,746,160,741,159,731,159,503,112"/>
+</map>

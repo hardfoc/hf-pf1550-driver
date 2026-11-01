@@ -1,0 +1,66 @@
+<map id="examples/esp32/main/pf1550_esp32c6_register_dump.cpp" name="examples/esp32/main/pf1550_esp32c6_register_dump.cpp">
+<area shape="rect" id="Node000001" title="Dump selected PF1550 registers over I2C (ESP32&#45;C6)" alt="" coords="1875,5,2063,67"/>
+<area shape="rect" id="Node000002" href="$esp32__pf1550__bus_8hpp.html" title="ESP32&#45;C6 I2C bus adapter for pf1550::PF1550." alt="" coords="1884,115,2054,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1971,65,1971,101,1967,97,1967,69"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="1376,266,1431,294"/>
+<area shape="poly" id="edge16_Node000001_Node000003" title=" " alt="" coords="1871,46,1780,63,1671,90,1615,109,1560,132,1507,160,1459,193,1433,221,1415,254,1412,250,1429,218,1455,189,1504,155,1558,127,1613,104,1670,85,1779,58,1877,45"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="2371,191,2454,218"/>
+<area shape="poly" id="edge38_Node000001_Node000009" title=" " alt="" coords="2050,65,2366,185,2361,185,2049,70"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="2479,191,2629,218"/>
+<area shape="poly" id="edge39_Node000001_Node000011" title=" " alt="" coords="2064,62,2496,186,2491,186,2063,67"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="2653,191,2770,218"/>
+<area shape="poly" id="edge40_Node000001_Node000012" title=" " alt="" coords="2064,56,2641,187,2635,187,2063,61"/>
+<area shape="rect" id="Node000017" href="$pf1550_8hpp.html" title="Hardware&#45;agnostic driver for the NXP PF1550 PMIC family." alt="" coords="800,115,895,143"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="1873,47,910,125,910,120,1876,43"/>
+<area shape="rect" id="Node000020" href="$pf1550__registers_8hpp.html" title="NXP PF1550 family I2C register map, bit&#45;field constants, and OTP keys." alt="" coords="400,266,559,294"/>
+<area shape="poly" id="edge37_Node000001_Node000020" title=" " alt="" coords="1872,38,1443,45,1154,52,850,65,558,84,304,111,199,128,113,147,50,168,28,180,14,192,8,204,13,217,30,226,62,235,159,250,386,271,383,275,158,255,61,240,28,231,10,220,3,204,9,189,25,176,48,164,112,142,198,122,303,105,558,79,850,60,1154,47,1443,40,1877,37"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1881,136,1676,158,1576,173,1506,193,1483,206,1461,222,1425,257,1423,252,1457,218,1480,202,1504,188,1575,168,1675,152,1886,135"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="1517,191,1583,218"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1886,141,1753,163,1598,193,1598,187,1752,158,1880,141"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="1607,191,1683,218"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="1909,143,1699,192,1698,187,1904,144"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="1706,191,1810,218"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="1934,143,1811,188,1809,183,1929,144"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="1834,191,1981,218"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="1960,142,1929,181,1927,176,1955,144"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="2005,191,2085,218"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1983,141,2023,181,2018,179,1982,146"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="2055,139,2192,159,2359,190,2353,190,2192,164,2054,144"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="2110,191,2228,218"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="2005,141,2122,185,2116,185,2004,146"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="2054,137,2466,190,2460,190,2054,143"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="2054,133,2312,153,2641,190,2635,190,2311,158,2054,138"/>
+<area shape="rect" id="Node000013" href="$pf1550__i2c__interface_8hpp.html" title="CRTP I2C + GPIO interface for PF1550 driver." alt="" coords="981,191,1167,218"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="1881,136,1579,160,1182,193,1182,188,1578,154,1886,135"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="2252,191,2347,218"/>
+<area shape="poly" id="edge15_Node000002_Node000016" title=" " alt="" coords="2029,141,2239,189,2234,189,2028,146"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="909,266,978,294"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="1053,218,981,261,979,256,1048,220"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="751,342,816,370"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="1068,217,1037,258,1016,279,992,296,952,316,910,332,832,350,832,345,908,327,950,312,989,292,1012,274,1033,254,1063,220"/>
+<area shape="poly" id="edge18_Node000017_Node000003" title=" " alt="" coords="895,128,1003,131,1138,140,1266,158,1317,171,1354,188,1369,202,1382,218,1398,253,1393,251,1377,221,1366,205,1351,193,1315,177,1265,163,1137,145,1003,136,895,133"/>
+<area shape="poly" id="edge27_Node000017_Node000013" title=" " alt="" coords="888,141,1022,185,1017,186,888,146"/>
+<area shape="poly" id="edge19_Node000017_Node000014" title=" " alt="" coords="869,140,896,162,920,189,935,220,942,252,938,250,930,222,916,192,893,165,868,146"/>
+<area shape="poly" id="edge20_Node000017_Node000015" title=" " alt="" coords="846,141,793,329,789,325,842,144"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="853,191,906,218"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="854,141,870,178,865,175,852,146"/>
+<area shape="rect" id="Node000019" href="$pf1550__diagnostics_8hpp.html" title="PF1550 diagnostic / fault&#45;classification types and snapshot containers." alt="" coords="602,191,778,218"/>
+<area shape="poly" id="edge22_Node000017_Node000019" title=" " alt="" coords="822,142,733,186,731,181,817,144"/>
+<area shape="poly" id="edge31_Node000017_Node000020" title=" " alt="" coords="797,134,552,155,432,172,392,182,371,193,365,202,365,210,375,228,398,244,428,260,423,260,395,249,371,231,359,211,360,200,367,189,390,177,431,166,551,149,802,132"/>
+<area shape="rect" id="Node000021" href="$pf1550__profiles_8hpp.html" title="Named PF1550 register&#45;write sequences (eval / reference hosts)." alt="" coords="1191,191,1341,218"/>
+<area shape="poly" id="edge28_Node000017_Node000021" title=" " alt="" coords="895,136,1179,187,1173,188,895,141"/>
+<area shape="rect" id="Node000022" href="$pf1550__voltage__tables_8hpp.html" title="PF1550 SW / LDO voltage&#45;code ↔ millivolt conversion helpers." alt="" coords="381,191,578,218"/>
+<area shape="poly" id="edge32_Node000017_Node000022" title=" " alt="" coords="797,140,561,190,560,185,802,139"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="23,191,157,218"/>
+<area shape="poly" id="edge35_Node000017_Node000023" title=" " alt="" coords="798,134,537,156,173,193,172,188,537,151,803,132"/>
+<area shape="rect" id="Node000024" href="$pf1550_8ipp.html" title="PF1550 driver template implementation." alt="" coords="181,191,306,218"/>
+<area shape="poly" id="edge36_Node000017_Node000024" title=" " alt="" coords="797,136,594,160,325,193,322,194,321,189,324,188,593,155,802,134"/>
+<area shape="poly" id="edge23_Node000019_Node000014" title=" " alt="" coords="736,216,896,264,891,265,735,222"/>
+<area shape="poly" id="edge24_Node000019_Node000015" title=" " alt="" coords="700,216,770,330,765,328,697,221"/>
+<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="655,218,532,263,531,258,650,220"/>
+<area shape="poly" id="edge26_Node000020_Node000015" title=" " alt="" coords="535,292,738,343,733,343,534,297"/>
+<area shape="poly" id="edge29_Node000021_Node000003" title=" " alt="" coords="1291,216,1369,259,1363,258,1290,221"/>
+<area shape="poly" id="edge30_Node000021_Node000015" title=" " alt="" coords="1237,218,1142,257,1027,297,923,325,832,347,831,341,922,320,1025,291,1140,252,1231,220"/>
+<area shape="poly" id="edge33_Node000022_Node000015" title=" " alt="" coords="507,216,746,334,741,335,505,221"/>
+<area shape="poly" id="edge34_Node000022_Node000020" title=" " alt="" coords="481,217,482,252,477,249,478,221"/>
+</map>

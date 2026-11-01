@@ -1,0 +1,10 @@
+<map id="pf1550::SelfTestResult" name="pf1550::SelfTestResult">
+<area shape="rect" id="Node000001" title="Result of a power self&#45;test pass." alt="" coords="14,191,180,218"/>
+<area shape="rect" id="Node000002" href="$structpf1550_1_1FaultFlags.html" title="Bitset of latched fault flags." alt="" coords="5,5,146,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,48,98,190,93,190,76,50"/>
+<area shape="rect" id="Node000003" href="$structpf1550_1_1DiagnosticSnapshot.html" title="Full diagnostic snapshot returned by PF1550::ReadDiagnosticSnapshot()." alt="" coords="140,98,344,126"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="113,38,220,96,216,99,113,43"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,134,119,192,117,188,206,133"/>
+<area shape="rect" id="Node000004" href="$structpf1550_1_1RailDiagnostics.html" title="Per&#45;rail status snapshot (latched + live + control byte)." alt="" coords="169,5,344,33"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="254,46,247,99,242,96,251,50"/>
+</map>

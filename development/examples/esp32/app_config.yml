@@ -1,0 +1,87 @@
+# ESP32 PF1550 Driver — app matrix for build scripts / CI
+version: "1.0"
+
+metadata:
+  project: "ESP32 PF1550 Driver Examples"
+  default_app: "pf1550_esp32c6_probe"
+  target: "esp32c6"
+  idf_versions: ["release/v5.5", "release/v5.4"]
+  build_types: [["Debug", "Release"], ["Debug"]]
+
+apps:
+  pf1550_esp32c6_probe:
+    description: "Probe PF1550 at 0x08, read DEVICE_ID and PMIC status over I2C"
+    source_file: "pf1550_esp32c6_probe.cpp"
+    category: "example"
+    idf_versions: ["release/v5.5"]
+    build_types: ["Debug", "Release"]
+    ci_enabled: true
+    featured: true
+    hardware_required: false
+    features:
+      - "ESP-IDF i2c_master on GPIO4/GPIO5"
+      - "Graceful failure when PMIC not wired"
+      - "Optional profile apply when CONFIG_PF1550_APPLY_PORTENTA_PROFILE=y"
+
+  pf1550_esp32c6_register_dump:
+    description: "Dump key PF1550 regulator and status registers"
+    source_file: "pf1550_esp32c6_register_dump.cpp"
+    category: "test"
+    idf_versions: ["release/v5.5"]
+    build_types: ["Debug"]
+    ci_enabled: true
+    hardware_required: false
+
+  pf1550_esp32c6_diagnostics:
+    description: "Full diagnostic snapshot + boot self-test + fault classification"
+    source_file: "pf1550_esp32c6_diagnostics.cpp"
+    category: "example"
+    idf_versions: ["release/v5.5"]
+    build_types: ["Debug", "Release"]
+    ci_enabled: true
+    hardware_required: false
+    features:
+      - "ReadDiagnosticSnapshot every 5 s"
+      - "RunPowerSelfTest on boot"
+      - "Portenta H7 severity classification (FaultSeverity::McuKill etc.)"
+      - "Latched-fault clear loop"
+
+  pf1550_esp32c6_provision:
+    description: "External PMIC provisioning before host MCU bring-up (I2C test pads)"
+    source_file: "pf1550_esp32c6_provision.cpp"
+    category: "example"
+    idf_versions: ["release/v5.5"]
+    build_types: ["Debug", "Release"]
+    ci_enabled: true
+    featured: true
+    hardware_required: false
+    features:
+      - "Apply portenta_h7_carrier profile over external I2C"
+      - "Optional STANDBY / USB strap GPIO drive via Kconfig"
+      - "Boot self-test + bench voltage checklist"
+      - "Continuous rail monitor after provision"
+
+build_config:
+  build_types:
+    Debug:
+      description: "Debug build"
+      cmake_build_type: "Debug"
+      optimization: "-O0"
+      debug_level: "-g3"
+      defines: ["DEBUG"]
+
+    Release:
+      description: "Release build"
+      cmake_build_type: "Release"
+      optimization: "-O2"
+      debug_level: "-g0"
+      defines: ["NDEBUG"]
+
+  build_directory_pattern: "build-app-{app_type}-type-{build_type}-target-{target}-idf-{idf_version}"
+  project_name_pattern: "esp32_pf1550_{app_type}_app"
+
+ci_config:
+  timeout_minutes: 30
+  fail_fast: false
+  exclude_combinations: []
+  special_apps: []

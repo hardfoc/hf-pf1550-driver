@@ -1,0 +1,8 @@
+<map id="inc/pf1550_voltage_tables.hpp" name="inc/pf1550_voltage_tables.hpp">
+<area shape="rect" id="Node000001" title="PF1550 SW / LDO voltage&#45;code ↔ millivolt conversion helpers." alt="" coords="5,5,151,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="45,174,111,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,53,51,86,47,106,49,125,63,160,58,160,43,126,42,105,46,85,64,48"/>
+<area shape="rect" id="Node000003" href="$pf1550__registers_8hpp.html" title="NXP PF1550 family I2C register map, bit&#45;field constants, and OTP keys." alt="" coords="58,98,216,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="94,48,121,85,116,85,93,53"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="129,125,100,163,96,159,124,127"/>
+</map>
