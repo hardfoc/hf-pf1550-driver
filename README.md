@@ -88,15 +88,20 @@ See [Quick Start Guide](docs/quickstart.md) and [Portenta profile](docs/portenta
 ## 🔧 Installation
 
 1. Clone with submodules (for ESP32 examples):
+
    ```bash
    git clone --recursive https://github.com/hardfoc/hf-pf1550-driver.git
    ```
+
 2. CMake:
+
    ```cmake
    add_subdirectory(hf-pf1550-driver)
    target_link_libraries(my_app PRIVATE hf::pf1550)
    ```
+
 3. Datasheet (local, gitignored PDF):
+
    ```bash
    ./scripts/fetch_datasheet.sh
    ./scripts/extract_register_reference.sh

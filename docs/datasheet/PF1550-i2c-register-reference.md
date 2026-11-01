@@ -17,7 +17,7 @@ For the **driver-maintained subset** used in code, see [PF1550-register-map.md](
 
 ## Section 12 — Register map (plain text)
 
-```
+```text
 12 Register map
 12.1 Specific PMIC Registers (Offset is 0x00)
 The following pages contain description of the various registers in the PF1550.

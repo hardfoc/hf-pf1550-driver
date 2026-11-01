@@ -40,7 +40,7 @@ VSYS is up — the STM32 does **not** need to run.
 If STANDBY or USB enable pins are wired to test points, enable strap drive in
 menuconfig:
 
-```
+```text
 Component config → PF1550 Example Configuration
   → Drive PMIC strap GPIOs from ESP32-C6
 ```
@@ -86,8 +86,9 @@ I (xxx) pf1550_prov: Provisioning complete — safe to remove ESP32 and bring up
 2. **Cold power cycle** if this is the first profile apply (PMIC state survives
    soft reset).
 3. Flash manufacturing firmware or release MCU reset.
-4. Verify UART7 banner: `[pmic] carrier profile OK ...` (see
-   [Portenta bring-up doc](https://github.com/N3b3x/pw-controller-sw/blob/main/docs/hardware/pmic-bringup-portenta-h7.md)).
+4. Verify UART7 banner: `[pmic] carrier profile OK ...` (see the Portenta
+   bring-up doc, `docs/hardware/pmic-bringup-portenta-h7.md`, in the private
+   `pw-controller-sw` firmware repository).
 
 ## App matrix
 

@@ -13,4 +13,4 @@ jobs:
     uses: hardfoc/hf-general-ci-tools/.github/workflows/ru-markdown-lint.yml@main
     with:
       config_file: '_config/.markdownlint.json'
-      paths: 'docs/**/*.md,*.md,examples/**/*.md'
+      globs: 'docs/**/*.md *.md examples/**/*.md'

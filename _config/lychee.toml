@@ -23,6 +23,7 @@ accept = ["200", "429", "403"]
 exclude = [
   '^https?://(www\.)?gnu\.org/licenses/.*',
   '^https?://img\.shields\.io/badge/License-.*',
-  '^https://n3b3x\.github\.io/hf-pf1550-driver/?.*',
+  # GitHub Pages for this repo — 404s until Pages is enabled and the site is first published
+  '^https://hardfoc\.github\.io/hf-pf1550-driver/?.*',
   '^https?://(www\.)?nxp\.com/',
 ]

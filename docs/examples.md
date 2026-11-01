@@ -37,7 +37,7 @@ For **external PMIC provisioning** before MCU bring-up, see
 
 Enable in `sdkconfig` when hardware is wired:
 
-```
+```ini
 CONFIG_PF1550_APPLY_PORTENTA_PROFILE=y
 ```
 
