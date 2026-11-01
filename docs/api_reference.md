@@ -137,9 +137,9 @@ through `pf1550.hpp`; the implementation lives in `src/pf1550.ipp`.
 
 The free `FaultSeverityPortentaH7(uint32_t flag)` and
 `WorstSeverityPortentaH7(FaultFlags)` map each fault to its
-Portenta-H7-specific severity (see
-[`docs/quality/diovv-pmic.md`](../../../../docs/quality/diovv-pmic.md)
-in `pw-controller-sw` for the rationale).
+Portenta-H7-specific severity (the rationale is documented in
+`docs/quality/diovv-pmic.md` of the private `pw-controller-sw` firmware
+repository).
 
 ## Constants
 

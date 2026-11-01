@@ -37,7 +37,7 @@ When PMIC I2C is on test pads and the host MCU is held in reset:
 ./scripts/idf_flash_monitor.sh pf1550_esp32c6_provision Debug
 ```
 
-See [docs/esp32-provisioning.md](../docs/esp32-provisioning.md) for strap GPIO
+See [docs/esp32-provisioning.md](../../docs/esp32-provisioning.md) for strap GPIO
 Kconfig and bench verification checklist.
 
 ## menuconfig
