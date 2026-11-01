@@ -1,0 +1,1366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>HF-PF1550 Driver: pf1550::PF1550&lt; BusType &gt; Class Template Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HF-PF1550 Driver
+   &#160;<span id="projectnumber">0.1.0-dev</span>
+   </div>
+   <div id="projectbrief">Portable C++20 driver for the NXP PF1550 PMIC (3 bucks + 3 LDOs + charger + OTP), with Portenta H7 / Synapse profiles, diagnostic snapshot API, and hf-core HAL handler integration.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+<div id="theme-selection">
+ <label for="theme-select">Theme:</label>
+ <select id="theme-select">
+  <option value="theme-default">Default</option>
+  <option value="theme-round">Round</option>
+  <option value="theme-robot">Robot</option>
+ </select>
+</div>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classpf1550_1_1PF1550.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="classpf1550_1_1PF1550-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">pf1550::PF1550&lt; BusType &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>CRTP-based <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> PMIC driver.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="pf1550_8hpp_source.html">pf1550.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ad4adeb35c70bd68cf73421091362507d" id="r_ad4adeb35c70bd68cf73421091362507d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4adeb35c70bd68cf73421091362507d">Error</a> : uint16_t { <br />
+&#160;&#160;<a class="el" href="#ad4adeb35c70bd68cf73421091362507da6adf97f83acf6453d4a6a4b1070f3754">None</a> = 0
+, <a class="el" href="#ad4adeb35c70bd68cf73421091362507dae92cfa391af4ffcf46788d6f83e65862">I2cWrite</a> = 1 &lt;&lt; 0
+, <a class="el" href="#ad4adeb35c70bd68cf73421091362507da908e14a33d424bdbf77f36b8b032c529">I2cRead</a> = 1 &lt;&lt; 1
+, <a class="el" href="#ad4adeb35c70bd68cf73421091362507dada1b358bb9ad851e211f21df8a161c3d">InvalidParam</a> = 1 &lt;&lt; 2
+, <br />
+&#160;&#160;<a class="el" href="#ad4adeb35c70bd68cf73421091362507daca4cc682495b7b98382718ed77afac35">DeviceNotFound</a> = 1 &lt;&lt; 3
+, <a class="el" href="#ad4adeb35c70bd68cf73421091362507da9646ad3a1c3e708b4fa8b4b4270fbab6">NotInitialized</a> = 1 &lt;&lt; 4
+, <a class="el" href="#ad4adeb35c70bd68cf73421091362507dab7667a10a4f12466416e6348236add23">WrongDeviceId</a> = 1 &lt;&lt; 5
+, <a class="el" href="#ad4adeb35c70bd68cf73421091362507da8fcdecab8d1ff883d6d66bb76d80dc71">ProfileApply</a> = 1 &lt;&lt; 6
+, <br />
+&#160;&#160;<a class="el" href="#ad4adeb35c70bd68cf73421091362507da16f6fab6b4490b2e6146df312197f9ec">DiagnosticRead</a> = 1 &lt;&lt; 7
+, <a class="el" href="#ad4adeb35c70bd68cf73421091362507da7155e52fa76e85631d65f3b709341438">SelfTestFailed</a> = 1 &lt;&lt; 8
+<br />
+ }</td></tr>
+<tr class="memdesc:ad4adeb35c70bd68cf73421091362507d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask error codes accumulated in <code>error_flags_</code>.  <a href="#ad4adeb35c70bd68cf73421091362507d">More...</a><br /></td></tr>
+<tr class="separator:ad4adeb35c70bd68cf73421091362507d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9d9d4bcf5fde042e6d3c4405a636a9a7" id="r_a9d9d4bcf5fde042e6d3c4405a636a9a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d9d4bcf5fde042e6d3c4405a636a9a7">PF1550</a> (BusType *bus, uint8_t address=<a class="el" href="namespacepf1550.html#a7eccd57860ced072a06613a6439d8d64">kDefaultI2cAddress</a>) noexcept</td></tr>
+<tr class="memdesc:a9d9d4bcf5fde042e6d3c4405a636a9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a driver instance bound to a CRTP bus adapter.  <br /></td></tr>
+<tr class="separator:a9d9d4bcf5fde042e6d3c4405a636a9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7da12fb399648bbacbe8178fdcb0143" id="r_ae7da12fb399648bbacbe8178fdcb0143"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7da12fb399648bbacbe8178fdcb0143">EnsureInitialized</a> () noexcept</td></tr>
+<tr class="memdesc:ae7da12fb399648bbacbe8178fdcb0143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Idempotently initialise the bus and verify the device.  <br /></td></tr>
+<tr class="separator:ae7da12fb399648bbacbe8178fdcb0143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdae13b01e193c8097e73308c25e84ea" id="r_abdae13b01e193c8097e73308c25e84ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdae13b01e193c8097e73308c25e84ea">IsInitialized</a> () const noexcept</td></tr>
+<tr class="memdesc:abdae13b01e193c8097e73308c25e84ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Idempotently initialise the bus and verify the device.   — query without re-running the bus init.  <br /></td></tr>
+<tr class="separator:abdae13b01e193c8097e73308c25e84ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab273b97d6f076fe408eea329f447682f" id="r_ab273b97d6f076fe408eea329f447682f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab273b97d6f076fe408eea329f447682f">GetI2cAddress</a> () const noexcept</td></tr>
+<tr class="memdesc:ab273b97d6f076fe408eea329f447682f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently configured 7-bit I²C address.  <br /></td></tr>
+<tr class="separator:ab273b97d6f076fe408eea329f447682f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c4f85f8711ceaf488629e0b2093a4e9" id="r_a0c4f85f8711ceaf488629e0b2093a4e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c4f85f8711ceaf488629e0b2093a4e9">ReadDeviceId</a> (uint8_t &amp;id) noexcept</td></tr>
+<tr class="memdesc:a0c4f85f8711ceaf488629e0b2093a4e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read DEVICE_ID (Reg 0x00).  <br /></td></tr>
+<tr class="separator:a0c4f85f8711ceaf488629e0b2093a4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1918ec12a869ea8f46cb927f9b59b9f" id="r_ac1918ec12a869ea8f46cb927f9b59b9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1918ec12a869ea8f46cb927f9b59b9f">VerifyDevice</a> () noexcept</td></tr>
+<tr class="memdesc:ac1918ec12a869ea8f46cb927f9b59b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read DEVICE_ID and assert it matches <a class="el" href="namespacepf1550.html#a795f286be126ceb9adfe1eb90456eeee">kExpectedDeviceId</a>.  <br /></td></tr>
+<tr class="separator:ac1918ec12a869ea8f46cb927f9b59b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d32f1697e465dddbb40a7d21cfcbde" id="r_a15d32f1697e465dddbb40a7d21cfcbde"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15d32f1697e465dddbb40a7d21cfcbde">ReadRegister</a> (<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">Register</a> reg, uint8_t &amp;value) noexcept</td></tr>
+<tr class="memdesc:a15d32f1697e465dddbb40a7d21cfcbde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read any <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> register by enumerated address.  <br /></td></tr>
+<tr class="separator:a15d32f1697e465dddbb40a7d21cfcbde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83d01f52cef6783f70e789b651f25da9" id="r_a83d01f52cef6783f70e789b651f25da9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83d01f52cef6783f70e789b651f25da9">WriteRegister</a> (<a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">Register</a> reg, uint8_t value) noexcept</td></tr>
+<tr class="memdesc:a83d01f52cef6783f70e789b651f25da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write any <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> register by enumerated address.  <br /></td></tr>
+<tr class="separator:a83d01f52cef6783f70e789b651f25da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d1a5bed5b03239bf5d6e4ab9393479" id="r_ae8d1a5bed5b03239bf5d6e4ab9393479"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8d1a5bed5b03239bf5d6e4ab9393479">ApplyProfile</a> (std::span&lt; const <a class="el" href="structpf1550_1_1profiles_1_1RegisterWrite.html">profiles::RegisterWrite</a> &gt; profile) noexcept</td></tr>
+<tr class="memdesc:ae8d1a5bed5b03239bf5d6e4ab9393479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply an arbitrary profile (sequence of register writes).  <br /></td></tr>
+<tr class="separator:ae8d1a5bed5b03239bf5d6e4ab9393479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83da76070105cd6a65b3f06114cbb766" id="r_a83da76070105cd6a65b3f06114cbb766"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83da76070105cd6a65b3f06114cbb766">ApplyPortentaH7DefaultProfile</a> () noexcept</td></tr>
+<tr class="memdesc:a83da76070105cd6a65b3f06114cbb766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the legacy VFR-heritage Portenta H7 default profile.  <br /></td></tr>
+<tr class="separator:a83da76070105cd6a65b3f06114cbb766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54729f3318d23f8ca0a6bcd0ea245b4c" id="r_a54729f3318d23f8ca0a6bcd0ea245b4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54729f3318d23f8ca0a6bcd0ea245b4c">ApplyPortentaH7CarrierProfile</a> () noexcept</td></tr>
+<tr class="memdesc:a54729f3318d23f8ca0a6bcd0ea245b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the Portenta-H7-on-carrier profile.  <br /></td></tr>
+<tr class="separator:a54729f3318d23f8ca0a6bcd0ea245b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0003009a94b134f4084b6b58ffdecb6a" id="r_a0003009a94b134f4084b6b58ffdecb6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0003009a94b134f4084b6b58ffdecb6a">SetPowerMode</a> (<a class="el" href="namespacepf1550.html#af9d351690cc34a52f75df65ef0a25f2b">PowerMode</a> mode) noexcept</td></tr>
+<tr class="memdesc:a0003009a94b134f4084b6b58ffdecb6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drive the STANDBY strap pin to RUN or STANDBY.  <br /></td></tr>
+<tr class="separator:a0003009a94b134f4084b6b58ffdecb6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc8897c43eee486974d1cb70768d241" id="r_afbc8897c43eee486974d1cb70768d241"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbc8897c43eee486974d1cb70768d241">SetUsbRails</a> (bool vbus_en, bool otg_en) noexcept</td></tr>
+<tr class="memdesc:afbc8897c43eee486974d1cb70768d241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drive <code>USB_VBUS_EN</code> and <code>USB_OTG_EN</code> straps (HIGH = enabled on Portenta).  <br /></td></tr>
+<tr class="separator:afbc8897c43eee486974d1cb70768d241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a211345efbb136271fc66b4196edb223d" id="r_a211345efbb136271fc66b4196edb223d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a211345efbb136271fc66b4196edb223d">ReadPmicStatus</a> (uint8_t &amp;status) noexcept</td></tr>
+<tr class="memdesc:a211345efbb136271fc66b4196edb223d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read STATE_INFO (Reg 0x67) and return the raw byte.  <br /></td></tr>
+<tr class="separator:a211345efbb136271fc66b4196edb223d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb581171dba4ab24b9256c129ec91cc" id="r_a2eb581171dba4ab24b9256c129ec91cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2eb581171dba4ab24b9256c129ec91cc">ReadPmicState</a> (<a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a> &amp;state) noexcept</td></tr>
+<tr class="memdesc:a2eb581171dba4ab24b9256c129ec91cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decoded variant of <a class="el" href="#a211345efbb136271fc66b4196edb223d">ReadPmicStatus</a>.  <br /></td></tr>
+<tr class="separator:a2eb581171dba4ab24b9256c129ec91cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e2e0ce794cd5a463fc6e6bbd85bc8b5" id="r_a6e2e0ce794cd5a463fc6e6bbd85bc8b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e2e0ce794cd5a463fc6e6bbd85bc8b5">ReadChargerState</a> (<a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">ChargerState</a> &amp;state, uint8_t *raw_reg=nullptr) noexcept</td></tr>
+<tr class="memdesc:a6e2e0ce794cd5a463fc6e6bbd85bc8b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read CHG_SNS (Reg 0x87) — charger sub-state. Returns decoded enum.  <br /></td></tr>
+<tr class="separator:a6e2e0ce794cd5a463fc6e6bbd85bc8b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01774e6f3ca95188439831efe922f3e2" id="r_a01774e6f3ca95188439831efe922f3e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01774e6f3ca95188439831efe922f3e2">ReadOtpByte</a> (uint8_t otp_addr, uint8_t &amp;value) noexcept</td></tr>
+<tr class="memdesc:a01774e6f3ca95188439831efe922f3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a single OTP byte via FMRADDR/FMRDATA indirection.  <br /></td></tr>
+<tr class="separator:a01774e6f3ca95188439831efe922f3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a8f49b3b9bc174be78df1a59287055" id="r_af1a8f49b3b9bc174be78df1a59287055"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1a8f49b3b9bc174be78df1a59287055">ReadOtpRegion</a> (uint8_t *buffer, size_t len, uint8_t start=<a class="el" href="structpf1550_1_1OtpRegion.html#ada33ddba1af0661e0dcaad557ef27e67">OtpRegion::kStart</a>) noexcept</td></tr>
+<tr class="memdesc:af1a8f49b3b9bc174be78df1a59287055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a contiguous region of OTP memory (default: full 0x1C..0x36 range).  <br /></td></tr>
+<tr class="separator:af1a8f49b3b9bc174be78df1a59287055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8bbc1f447db112f4f03133c2fcfce5" id="r_abb8bbc1f447db112f4f03133c2fcfce5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb8bbc1f447db112f4f03133c2fcfce5">SetSwVoltage</a> (uint8_t sw_index, <a class="el" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7">SwVoltageCode</a> run_code) noexcept</td></tr>
+<tr class="memdesc:abb8bbc1f447db112f4f03133c2fcfce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code>SWn_VOLT</code> for n=1..3. Returns <code>false</code> if <code>sw_index</code> is invalid.  <br /></td></tr>
+<tr class="separator:abb8bbc1f447db112f4f03133c2fcfce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a6d4a45824d73e90b6f5a7b50d830f" id="r_ad8a6d4a45824d73e90b6f5a7b50d830f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8a6d4a45824d73e90b6f5a7b50d830f">SetLdoVoltage</a> (uint8_t ldo_index, <a class="el" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25aba">LdoVoltageCode</a> code) noexcept</td></tr>
+<tr class="memdesc:ad8a6d4a45824d73e90b6f5a7b50d830f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code>LDOn_VOLT</code> for n=1..3. Returns <code>false</code> if <code>ldo_index</code> is invalid.  <br /></td></tr>
+<tr class="separator:ad8a6d4a45824d73e90b6f5a7b50d830f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8bdb8fd259d67a8ae8f0d5d51ce8570" id="r_ae8bdb8fd259d67a8ae8f0d5d51ce8570"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8bdb8fd259d67a8ae8f0d5d51ce8570">SetVbusCurrentLimitMa</a> (uint16_t limit_ma) noexcept</td></tr>
+<tr class="memdesc:ae8bdb8fd259d67a8ae8f0d5d51ce8570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience: write VBUS_IN_LIM_CNFG (0x94) from a mA value.  <br /></td></tr>
+<tr class="separator:ae8bdb8fd259d67a8ae8f0d5d51ce8570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bdb15fdadb39e29733a86972fd34228" id="r_a8bdb15fdadb39e29733a86972fd34228"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bdb15fdadb39e29733a86972fd34228">ReadInterruptCategory</a> (uint8_t &amp;category) noexcept</td></tr>
+<tr class="memdesc:a8bdb15fdadb39e29733a86972fd34228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read INT_CATEGORY (Reg 0x06).  <br /></td></tr>
+<tr class="separator:a8bdb15fdadb39e29733a86972fd34228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e86c0e7de1a733f3c7c0ec11a61564d" id="r_a4e86c0e7de1a733f3c7c0ec11a61564d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e86c0e7de1a733f3c7c0ec11a61564d">ReadLatchedFaults</a> (<a class="el" href="structpf1550_1_1FaultFlags.html">FaultFlags</a> &amp;faults) noexcept</td></tr>
+<tr class="memdesc:a4e86c0e7de1a733f3c7c0ec11a61564d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read every category STAT register and aggregate latched faults.  <br /></td></tr>
+<tr class="separator:a4e86c0e7de1a733f3c7c0ec11a61564d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a445d79c90268708ff703f3982b37bac6" id="r_a445d79c90268708ff703f3982b37bac6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a445d79c90268708ff703f3982b37bac6">ClearLatchedFaults</a> () noexcept</td></tr>
+<tr class="memdesc:a445d79c90268708ff703f3982b37bac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code>0xFF</code> to every category STAT register to clear all RW1C bits.  <br /></td></tr>
+<tr class="separator:a445d79c90268708ff703f3982b37bac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1df46eeb9dfa489a4805c1217a743b0" id="r_af1df46eeb9dfa489a4805c1217a743b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1df46eeb9dfa489a4805c1217a743b0">SetInterruptMaskAll</a> (bool masked) noexcept</td></tr>
+<tr class="memdesc:af1df46eeb9dfa489a4805c1217a743b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask (1) or unmask (0) all interrupt categories at once.  <br /></td></tr>
+<tr class="separator:af1df46eeb9dfa489a4805c1217a743b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f984ac4a4c0042079b443284a12e465" id="r_a7f984ac4a4c0042079b443284a12e465"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f984ac4a4c0042079b443284a12e465">ReadDiagnosticSnapshot</a> (<a class="el" href="structpf1550_1_1DiagnosticSnapshot.html">DiagnosticSnapshot</a> &amp;out) noexcept</td></tr>
+<tr class="memdesc:a7f984ac4a4c0042079b443284a12e465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a full diagnostic snapshot (≈30 register reads).  <br /></td></tr>
+<tr class="separator:a7f984ac4a4c0042079b443284a12e465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a933c9b3268560cba13632563e6b333" id="r_a2a933c9b3268560cba13632563e6b333"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a933c9b3268560cba13632563e6b333">RefreshStatusSnapshot</a> (<a class="el" href="structpf1550_1_1DiagnosticSnapshot.html">DiagnosticSnapshot</a> &amp;snap) noexcept</td></tr>
+<tr class="memdesc:a2a933c9b3268560cba13632563e6b333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh only the status part of a snapshot (≈14 register reads).  <br /></td></tr>
+<tr class="separator:a2a933c9b3268560cba13632563e6b333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1dae54fe45859ef1433a66c15962e8" id="r_a9f1dae54fe45859ef1433a66c15962e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f1dae54fe45859ef1433a66c15962e8">RunPowerSelfTest</a> (<a class="el" href="structpf1550_1_1SelfTestResult.html">SelfTestResult</a> &amp;out) noexcept</td></tr>
+<tr class="memdesc:a9f1dae54fe45859ef1433a66c15962e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boot-time self-test.  <br /></td></tr>
+<tr class="separator:a9f1dae54fe45859ef1433a66c15962e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abda6327a6248a426b7ebb89e38ef4dd2" id="r_abda6327a6248a426b7ebb89e38ef4dd2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda6327a6248a426b7ebb89e38ef4dd2">GetErrorFlags</a> () const noexcept</td></tr>
+<tr class="memdesc:abda6327a6248a426b7ebb89e38ef4dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read all sticky error bits (see <a class="el" href="#ad4adeb35c70bd68cf73421091362507d">Error</a>).  <br /></td></tr>
+<tr class="separator:abda6327a6248a426b7ebb89e38ef4dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab083a075ccbce0b2bc5a981f7a6dc4aa" id="r_ab083a075ccbce0b2bc5a981f7a6dc4aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab083a075ccbce0b2bc5a981f7a6dc4aa">ClearErrorFlags</a> (uint16_t mask=0xFFFF) noexcept</td></tr>
+<tr class="memdesc:ab083a075ccbce0b2bc5a981f7a6dc4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear sticky error bits matching <code>mask</code>.  <br /></td></tr>
+<tr class="separator:ab083a075ccbce0b2bc5a981f7a6dc4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dee3c193c1e841896c1d8f431979ef9" id="r_a6dee3c193c1e841896c1d8f431979ef9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dee3c193c1e841896c1d8f431979ef9">SetSwDvsEnabled</a> (uint8_t sw_index, bool enabled) noexcept</td></tr>
+<tr class="memdesc:a6dee3c193c1e841896c1d8f431979ef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare the SW1 / SW2 voltage encoding the part's OTP selects.  <br /></td></tr>
+<tr class="separator:a6dee3c193c1e841896c1d8f431979ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:af38118aa5105ec8068710cdcbb190a2a" id="r_af38118aa5105ec8068710cdcbb190a2a"><td class="memItemLeft" align="right" valign="top">static constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af38118aa5105ec8068710cdcbb190a2a">GetDriverVersion</a> () noexcept</td></tr>
+<tr class="memdesc:af38118aa5105ec8068710cdcbb190a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver version (string).  <br /></td></tr>
+<tr class="separator:af38118aa5105ec8068710cdcbb190a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename BusType&gt;<br />
+class pf1550::PF1550&lt; BusType &gt;</div><p>CRTP-based <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> PMIC driver. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">BusType</td><td>Platform bus type inheriting from <code><a class="el" href="classpf1550_1_1BusInterface.html" title="CRTP template interface for PF1550 bus and strap pins.">pf1550::BusInterface</a>&lt;BusType&gt;</code>. Must implement <code>Write(addr, reg, data, len)</code>, <code>Read(addr, reg, data, len)</code>, <code><a class="el" href="#ae7da12fb399648bbacbe8178fdcb0143" title="Idempotently initialise the bus and verify the device.">EnsureInitialized()</a></code>, <code>GpioSet(CtrlPin, GpioSignal)</code>, and <code>DelayUs(uint32_t)</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Thread-safety</dt><dd>The driver itself is <b>not</b> thread-safe by design — it expects the <code>BusType</code> adapter (or a host mutex wrapping it) to enforce single-writer access. Concurrent reads from another core are tolerated provided the bus adapter serialises I²C transactions.</dd></dl>
+<dl class="section user"><dt>Single-point-of-failure mitigation</dt><dd>See <a class="el" href="namespacepf1550.html#a40632916f713f8a57b3b09264696d86b">pf1550::FaultSeverityPortentaH7</a> — that mapping is the Portenta H7 MCU-on-SW3 eval tree. Other hosts supply their own severity table. </dd></dl>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ad4adeb35c70bd68cf73421091362507d" name="ad4adeb35c70bd68cf73421091362507d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4adeb35c70bd68cf73421091362507d">&#9670;&#160;</a></span>Error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ad4adeb35c70bd68cf73421091362507d">pf1550::PF1550::Error</a> : uint16_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bitmask error codes accumulated in <code>error_flags_</code>. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507da6adf97f83acf6453d4a6a4b1070f3754" name="ad4adeb35c70bd68cf73421091362507da6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507dae92cfa391af4ffcf46788d6f83e65862" name="ad4adeb35c70bd68cf73421091362507dae92cfa391af4ffcf46788d6f83e65862"></a>I2cWrite&#160;</td><td class="fielddoc"><p>Last I²C write transaction failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507da908e14a33d424bdbf77f36b8b032c529" name="ad4adeb35c70bd68cf73421091362507da908e14a33d424bdbf77f36b8b032c529"></a>I2cRead&#160;</td><td class="fielddoc"><p>Last I²C read transaction failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507dada1b358bb9ad851e211f21df8a161c3d" name="ad4adeb35c70bd68cf73421091362507dada1b358bb9ad851e211f21df8a161c3d"></a>InvalidParam&#160;</td><td class="fielddoc"><p>Caller-side argument validation failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507daca4cc682495b7b98382718ed77afac35" name="ad4adeb35c70bd68cf73421091362507daca4cc682495b7b98382718ed77afac35"></a>DeviceNotFound&#160;</td><td class="fielddoc"><p>DEVICE_ID read returned NACK / wrong address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507da9646ad3a1c3e708b4fa8b4b4270fbab6" name="ad4adeb35c70bd68cf73421091362507da9646ad3a1c3e708b4fa8b4b4270fbab6"></a>NotInitialized&#160;</td><td class="fielddoc"><p>Called before <a class="el" href="#ae7da12fb399648bbacbe8178fdcb0143" title="Idempotently initialise the bus and verify the device.">EnsureInitialized()</a> succeeded. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507dab7667a10a4f12466416e6348236add23" name="ad4adeb35c70bd68cf73421091362507dab7667a10a4f12466416e6348236add23"></a>WrongDeviceId&#160;</td><td class="fielddoc"><p>Returned DEVICE_ID ≠ kExpectedDeviceId (0x7C). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507da8fcdecab8d1ff883d6d66bb76d80dc71" name="ad4adeb35c70bd68cf73421091362507da8fcdecab8d1ff883d6d66bb76d80dc71"></a>ProfileApply&#160;</td><td class="fielddoc"><p>At least one write in the last applied profile failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507da16f6fab6b4490b2e6146df312197f9ec" name="ad4adeb35c70bd68cf73421091362507da16f6fab6b4490b2e6146df312197f9ec"></a>DiagnosticRead&#160;</td><td class="fielddoc"><p>One or more reads while building a snapshot failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adeb35c70bd68cf73421091362507da7155e52fa76e85631d65f3b709341438" name="ad4adeb35c70bd68cf73421091362507da7155e52fa76e85631d65f3b709341438"></a>SelfTestFailed&#160;</td><td class="fielddoc"><p><a class="el" href="#a9f1dae54fe45859ef1433a66c15962e8" title="Boot-time self-test.">RunPowerSelfTest()</a> reported a non-Info severity. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9d9d4bcf5fde042e6d3c4405a636a9a7" name="a9d9d4bcf5fde042e6d3c4405a636a9a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9d4bcf5fde042e6d3c4405a636a9a7">&#9670;&#160;</a></span>PF1550()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::PF1550 </td>
+          <td>(</td>
+          <td class="paramtype">BusType *</td>          <td class="paramname"><span class="paramname"><em>bus</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>address</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespacepf1550.html#a7eccd57860ced072a06613a6439d8d64">kDefaultI2cAddress</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a driver instance bound to a CRTP bus adapter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bus</td><td>Pointer to a <code>BusType</code> instance (lifetime: longer than the driver). May be <code>nullptr</code> only for testing; all methods will then return <code>false</code> and set <code><a class="el" href="#ad4adeb35c70bd68cf73421091362507dada1b358bb9ad851e211f21df8a161c3d" title="Caller-side argument validation failed.">Error::InvalidParam</a></code>. </td></tr>
+    <tr><td class="paramname">address</td><td>7-bit I²C address. Defaults to <a class="el" href="namespacepf1550.html#a7eccd57860ced072a06613a6439d8d64">kDefaultI2cAddress</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a54729f3318d23f8ca0a6bcd0ea245b4c" name="a54729f3318d23f8ca0a6bcd0ea245b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54729f3318d23f8ca0a6bcd0ea245b4c">&#9670;&#160;</a></span>ApplyPortentaH7CarrierProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ApplyPortentaH7CarrierProfile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the Portenta-H7-on-carrier profile. </p>
+<p>Differences from the default:</p><ol type="1">
+<li><b>SW1 (+3V1SW) sequenced first</b> — feeds LDO inputs on Portenta.</li>
+<li><code>SW2_CTRL = 0x0F</code> — full enable including STANDBY (carrier +3V3 stable).</li>
+<li>Charger LED disabled to suppress orange CHGB blips. </li>
+</ol>
+
+</div>
+</div>
+<a id="a83da76070105cd6a65b3f06114cbb766" name="a83da76070105cd6a65b3f06114cbb766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83da76070105cd6a65b3f06114cbb766">&#9670;&#160;</a></span>ApplyPortentaH7DefaultProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ApplyPortentaH7DefaultProfile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the legacy VFR-heritage Portenta H7 default profile. </p>
+
+</div>
+</div>
+<a id="ae8d1a5bed5b03239bf5d6e4ab9393479" name="ae8d1a5bed5b03239bf5d6e4ab9393479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8d1a5bed5b03239bf5d6e4ab9393479">&#9670;&#160;</a></span>ApplyProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ApplyProfile </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; const <a class="el" href="structpf1550_1_1profiles_1_1RegisterWrite.html">profiles::RegisterWrite</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>profile</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply an arbitrary profile (sequence of register writes). </p>
+<p>The profile is applied <b>in order</b>, observing each entry's <code>delay_us</code> setting. Used for the Portenta H7 default and carrier variants below, and for board-specific profiles in downstream projects.</p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> state survives MCU reset — voltage changes typically require a <b>full power cycle</b> to take effect. Soft reset alone is insufficient. </dd></dl>
+
+</div>
+</div>
+<a id="ab083a075ccbce0b2bc5a981f7a6dc4aa" name="ab083a075ccbce0b2bc5a981f7a6dc4aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab083a075ccbce0b2bc5a981f7a6dc4aa">&#9670;&#160;</a></span>ClearErrorFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ClearErrorFlags </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>mask</em><span class="paramdefsep"> = </span><span class="paramdefval">0xFFFF</span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear sticky error bits matching <code>mask</code>. </p>
+
+</div>
+</div>
+<a id="a445d79c90268708ff703f3982b37bac6" name="a445d79c90268708ff703f3982b37bac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a445d79c90268708ff703f3982b37bac6">&#9670;&#160;</a></span>ClearLatchedFaults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ClearLatchedFaults </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write <code>0xFF</code> to every category STAT register to clear all RW1C bits. </p>
+<p>Call after handling a fault to re-arm the interrupt path. </p>
+
+</div>
+</div>
+<a id="ae7da12fb399648bbacbe8178fdcb0143" name="ae7da12fb399648bbacbe8178fdcb0143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7da12fb399648bbacbe8178fdcb0143">&#9670;&#160;</a></span>EnsureInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::EnsureInitialized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Idempotently initialise the bus and verify the device. </p>
+<p>Calls <code>bus_-&gt;<a class="el" href="#ae7da12fb399648bbacbe8178fdcb0143" title="Idempotently initialise the bus and verify the device.">EnsureInitialized()</a></code>, then performs <a class="el" href="#ac1918ec12a869ea8f46cb927f9b59b9f">VerifyDevice</a>. After success, subsequent calls are O(1) no-ops.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a PF1550-family device was found at the configured address. </dd></dl>
+
+</div>
+</div>
+<a id="af38118aa5105ec8068710cdcbb190a2a" name="af38118aa5105ec8068710cdcbb190a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af38118aa5105ec8068710cdcbb190a2a">&#9670;&#160;</a></span>GetDriverVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr const char * <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::GetDriverVersion </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Driver version (string). </p>
+
+</div>
+</div>
+<a id="abda6327a6248a426b7ebb89e38ef4dd2" name="abda6327a6248a426b7ebb89e38ef4dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abda6327a6248a426b7ebb89e38ef4dd2">&#9670;&#160;</a></span>GetErrorFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::GetErrorFlags </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read all sticky error bits (see <a class="el" href="#ad4adeb35c70bd68cf73421091362507d">Error</a>). </p>
+
+</div>
+</div>
+<a id="ab273b97d6f076fe408eea329f447682f" name="ab273b97d6f076fe408eea329f447682f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab273b97d6f076fe408eea329f447682f">&#9670;&#160;</a></span>GetI2cAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::GetI2cAddress </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Currently configured 7-bit I²C address. </p>
+
+</div>
+</div>
+<a id="abdae13b01e193c8097e73308c25e84ea" name="abdae13b01e193c8097e73308c25e84ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdae13b01e193c8097e73308c25e84ea">&#9670;&#160;</a></span>IsInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::IsInitialized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Idempotently initialise the bus and verify the device.   — query without re-running the bus init. </p>
+<p>Calls <code>bus_-&gt;<a class="el" href="#ae7da12fb399648bbacbe8178fdcb0143" title="Idempotently initialise the bus and verify the device.">EnsureInitialized()</a></code>, then performs <a class="el" href="#ac1918ec12a869ea8f46cb927f9b59b9f">VerifyDevice</a>. After success, subsequent calls are O(1) no-ops.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a PF1550-family device was found at the configured address.   — query without re-running the bus init. </dd></dl>
+
+</div>
+</div>
+<a id="a6e2e0ce794cd5a463fc6e6bbd85bc8b5" name="a6e2e0ce794cd5a463fc6e6bbd85bc8b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2e0ce794cd5a463fc6e6bbd85bc8b5">&#9670;&#160;</a></span>ReadChargerState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadChargerState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacepf1550.html#ab1f72c47ce166906591362fdfde6024e">ChargerState</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>raw_reg</em><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read CHG_SNS (Reg 0x87) — charger sub-state. Returns decoded enum. </p>
+
+</div>
+</div>
+<a id="a0c4f85f8711ceaf488629e0b2093a4e9" name="a0c4f85f8711ceaf488629e0b2093a4e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c4f85f8711ceaf488629e0b2093a4e9">&#9670;&#160;</a></span>ReadDeviceId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadDeviceId </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read DEVICE_ID (Reg 0x00). </p>
+<p>Expected value: <a class="el" href="namespacepf1550.html#a795f286be126ceb9adfe1eb90456eeee">kExpectedDeviceId</a>. Other family IDs cause <code><a class="el" href="#ad4adeb35c70bd68cf73421091362507dab7667a10a4f12466416e6348236add23" title="Returned DEVICE_ID ≠ kExpectedDeviceId (0x7C).">Error::WrongDeviceId</a></code> to be set. </p>
+
+</div>
+</div>
+<a id="a7f984ac4a4c0042079b443284a12e465" name="a7f984ac4a4c0042079b443284a12e465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f984ac4a4c0042079b443284a12e465">&#9670;&#160;</a></span>ReadDiagnosticSnapshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadDiagnosticSnapshot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpf1550_1_1DiagnosticSnapshot.html">DiagnosticSnapshot</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build a full diagnostic snapshot (≈30 register reads). </p>
+<p>Safe to call from a periodic monitor thread. If any read fails, the snapshot is returned with <code>read_ok = false</code> and <code><a class="el" href="#ad4adeb35c70bd68cf73421091362507da16f6fab6b4490b2e6146df312197f9ec" title="One or more reads while building a snapshot failed.">Error::DiagnosticRead</a></code> is set; partial fields are still populated for forensic logging. </p>
+
+</div>
+</div>
+<a id="a8bdb15fdadb39e29733a86972fd34228" name="a8bdb15fdadb39e29733a86972fd34228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bdb15fdadb39e29733a86972fd34228">&#9670;&#160;</a></span>ReadInterruptCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadInterruptCategory </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t &amp;</td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read INT_CATEGORY (Reg 0x06). </p>
+<p>Top-level summary of pending interrupt categories — useful for fast polling before reading individual STAT registers. </p>
+
+</div>
+</div>
+<a id="a4e86c0e7de1a733f3c7c0ec11a61564d" name="a4e86c0e7de1a733f3c7c0ec11a61564d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e86c0e7de1a733f3c7c0ec11a61564d">&#9670;&#160;</a></span>ReadLatchedFaults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadLatchedFaults </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpf1550_1_1FaultFlags.html">FaultFlags</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>faults</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read every category STAT register and aggregate latched faults. </p>
+<p>Does <b>not</b> clear the STAT bits. Use <a class="el" href="#a445d79c90268708ff703f3982b37bac6">ClearLatchedFaults</a> for that. </p>
+
+</div>
+</div>
+<a id="a01774e6f3ca95188439831efe922f3e2" name="a01774e6f3ca95188439831efe922f3e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01774e6f3ca95188439831efe922f3e2">&#9670;&#160;</a></span>ReadOtpByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadOtpByte </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>otp_addr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read a single OTP byte via FMRADDR/FMRDATA indirection. </p>
+
+</div>
+</div>
+<a id="af1a8f49b3b9bc174be78df1a59287055" name="af1a8f49b3b9bc174be78df1a59287055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a8f49b3b9bc174be78df1a59287055">&#9670;&#160;</a></span>ReadOtpRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadOtpRegion </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>len</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>start</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="structpf1550_1_1OtpRegion.html#ada33ddba1af0661e0dcaad557ef27e67">OtpRegion::kStart</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read a contiguous region of OTP memory (default: full 0x1C..0x36 range). </p>
+
+</div>
+</div>
+<a id="a2eb581171dba4ab24b9256c129ec91cc" name="a2eb581171dba4ab24b9256c129ec91cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb581171dba4ab24b9256c129ec91cc">&#9670;&#160;</a></span>ReadPmicState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadPmicState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decoded variant of <a class="el" href="#a211345efbb136271fc66b4196edb223d">ReadPmicStatus</a>. </p>
+
+</div>
+</div>
+<a id="a211345efbb136271fc66b4196edb223d" name="a211345efbb136271fc66b4196edb223d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a211345efbb136271fc66b4196edb223d">&#9670;&#160;</a></span>ReadPmicStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadPmicStatus </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t &amp;</td>          <td class="paramname"><span class="paramname"><em>status</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read STATE_INFO (Reg 0x67) and return the raw byte. </p>
+<p>Use <a class="el" href="#a2eb581171dba4ab24b9256c129ec91cc">ReadPmicState</a> for a decoded <a class="el" href="namespacepf1550.html#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a> enumerator. </p>
+
+</div>
+</div>
+<a id="a15d32f1697e465dddbb40a7d21cfcbde" name="a15d32f1697e465dddbb40a7d21cfcbde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d32f1697e465dddbb40a7d21cfcbde">&#9670;&#160;</a></span>ReadRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::ReadRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read any <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> register by enumerated address. </p>
+
+</div>
+</div>
+<a id="a2a933c9b3268560cba13632563e6b333" name="a2a933c9b3268560cba13632563e6b333"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a933c9b3268560cba13632563e6b333">&#9670;&#160;</a></span>RefreshStatusSnapshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::RefreshStatusSnapshot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpf1550_1_1DiagnosticSnapshot.html">DiagnosticSnapshot</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>snap</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refresh only the status part of a snapshot (≈14 register reads). </p>
+<p>Re-reads what can change without a register write: INT_CATEGORY, STATE_INFO, charger and VBUS sense, and the latched + live fault registers (with the per-rail fault marks). Identity, rail set points and enables and the VBUS input limit are kept from the last <a class="el" href="#a7f984ac4a4c0042079b443284a12e465">ReadDiagnosticSnapshot</a> into <code>snap</code> — a monitor polling at 20 Hz does a full read now and then (say once a second) to catch a configuration change, and the status in between at half the bus time.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">snap</td><td>Snapshot from a previous full read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when every status read succeeded (sets <code>read_ok</code>). </dd></dl>
+
+</div>
+</div>
+<a id="a9f1dae54fe45859ef1433a66c15962e8" name="a9f1dae54fe45859ef1433a66c15962e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1dae54fe45859ef1433a66c15962e8">&#9670;&#160;</a></span>RunPowerSelfTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::RunPowerSelfTest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpf1550_1_1SelfTestResult.html">SelfTestResult</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Boot-time self-test. </p>
+<p>Reads a fresh snapshot and classifies it against the Portenta-H7-carrier expectations (PMIC in RUN, all SW/LDO enabled, no MCU-affecting faults latched). Used by the <code>SystemBootRecipe</code> row. </p>
+
+</div>
+</div>
+<a id="af1df46eeb9dfa489a4805c1217a743b0" name="af1df46eeb9dfa489a4805c1217a743b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1df46eeb9dfa489a4805c1217a743b0">&#9670;&#160;</a></span>SetInterruptMaskAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::SetInterruptMaskAll </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>masked</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mask (1) or unmask (0) all interrupt categories at once. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">masked</td><td><code>true</code> = silence all interrupts (powers up like this); <code>false</code> = allow events to propagate to INTB. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad8a6d4a45824d73e90b6f5a7b50d830f" name="ad8a6d4a45824d73e90b6f5a7b50d830f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a6d4a45824d73e90b6f5a7b50d830f">&#9670;&#160;</a></span>SetLdoVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::SetLdoVoltage </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>ldo_index</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacepf1550.html#a2e9bd15902066b7c5d6674ae0bb25aba">LdoVoltageCode</a></td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write <code>LDOn_VOLT</code> for n=1..3. Returns <code>false</code> if <code>ldo_index</code> is invalid. </p>
+
+</div>
+</div>
+<a id="a0003009a94b134f4084b6b58ffdecb6a" name="a0003009a94b134f4084b6b58ffdecb6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0003009a94b134f4084b6b58ffdecb6a">&#9670;&#160;</a></span>SetPowerMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::SetPowerMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacepf1550.html#af9d351690cc34a52f75df65ef0a25f2b">PowerMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Drive the STANDBY strap pin to RUN or STANDBY. </p>
+<p>Only meaningful if the bus adapter wires <code><a class="el" href="namespacepf1550.html#a8ebe2283b2a786a11c1955d26cae25f8a2dbec34a65724db94f81e8533ee18192">CtrlPin::Standby</a></code> to a real GPIO. STANDBY polarity follows the <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> STANDBYINV bit (RUN = LOW on Portenta). </p>
+
+</div>
+</div>
+<a id="a6dee3c193c1e841896c1d8f431979ef9" name="a6dee3c193c1e841896c1d8f431979ef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dee3c193c1e841896c1d8f431979ef9">&#9670;&#160;</a></span>SetSwDvsEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::SetSwDvsEnabled </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sw_index</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enabled</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Declare the SW1 / SW2 voltage encoding the part's OTP selects. </p>
+<p><code>OTP_SWx_DVS_SEL</code> decides between two tables (datasheet Table 31): DVS enabled 0.6–1.3875 V in 12.5 mV steps, DVS disabled an 8-point table up to 3.3 V. It lives in OTP (indirect access only), so the board declares it; the default is <b>disabled</b> (Portenta H7: SW1 3.0 V / SW2 3.3 V exist only in that table). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sw_index</td><td>1 or 2. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abb8bbc1f447db112f4f03133c2fcfce5" name="abb8bbc1f447db112f4f03133c2fcfce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8bbc1f447db112f4f03133c2fcfce5">&#9670;&#160;</a></span>SetSwVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::SetSwVoltage </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sw_index</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacepf1550.html#abd1092336d5416301cf26854b357d0d7">SwVoltageCode</a></td>          <td class="paramname"><span class="paramname"><em>run_code</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write <code>SWn_VOLT</code> for n=1..3. Returns <code>false</code> if <code>sw_index</code> is invalid. </p>
+
+</div>
+</div>
+<a id="afbc8897c43eee486974d1cb70768d241" name="afbc8897c43eee486974d1cb70768d241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc8897c43eee486974d1cb70768d241">&#9670;&#160;</a></span>SetUsbRails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::SetUsbRails </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>vbus_en</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>otg_en</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Drive <code>USB_VBUS_EN</code> and <code>USB_OTG_EN</code> straps (HIGH = enabled on Portenta). </p>
+
+</div>
+</div>
+<a id="ae8bdb8fd259d67a8ae8f0d5d51ce8570" name="ae8bdb8fd259d67a8ae8f0d5d51ce8570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8bdb8fd259d67a8ae8f0d5d51ce8570">&#9670;&#160;</a></span>SetVbusCurrentLimitMa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::SetVbusCurrentLimitMa </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>limit_ma</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convenience: write VBUS_IN_LIM_CNFG (0x94) from a mA value. </p>
+
+</div>
+</div>
+<a id="ac1918ec12a869ea8f46cb927f9b59b9f" name="ac1918ec12a869ea8f46cb927f9b59b9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1918ec12a869ea8f46cb927f9b59b9f">&#9670;&#160;</a></span>VerifyDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::VerifyDevice </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read DEVICE_ID and assert it matches <a class="el" href="namespacepf1550.html#a795f286be126ceb9adfe1eb90456eeee">kExpectedDeviceId</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on a positive match; <code>false</code> on NACK or wrong ID. </dd></dl>
+
+</div>
+</div>
+<a id="a83d01f52cef6783f70e789b651f25da9" name="a83d01f52cef6783f70e789b651f25da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d01f52cef6783f70e789b651f25da9">&#9670;&#160;</a></span>WriteRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BusType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpf1550_1_1PF1550.html">pf1550::PF1550</a>&lt; BusType &gt;::WriteRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacepf1550.html#a18be47731a5a042e4bc9ccd9a44f6768">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write any <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> register by enumerated address. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>inc/<a class="el" href="pf1550_8hpp_source.html">pf1550.hpp</a></li>
+<li>src/<a class="el" href="pf1550_8ipp_source.html">pf1550.ipp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacepf1550.html">pf1550</a></li><li class="navelem"><a class="el" href="classpf1550_1_1PF1550.html">PF1550</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

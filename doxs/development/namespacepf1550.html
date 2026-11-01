@@ -1,0 +1,1586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>HF-PF1550 Driver: pf1550 Namespace Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HF-PF1550 Driver
+   &#160;<span id="projectnumber">0.1.0-dev</span>
+   </div>
+   <div id="projectbrief">Portable C++20 driver for the NXP PF1550 PMIC (3 bucks + 3 LDOs + charger + OTP), with Portenta H7 / Synapse profiles, diagnostic snapshot API, and hf-core HAL handler integration.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+<div id="theme-selection">
+ <label for="theme-select">Theme:</label>
+ <select id="theme-select">
+  <option value="theme-default">Default</option>
+  <option value="theme-round">Round</option>
+  <option value="theme-robot">Robot</option>
+ </select>
+</div>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('namespacepf1550.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">pf1550 Namespace Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacepf1550_1_1profiles" id="r_namespacepf1550_1_1profiles"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepf1550_1_1profiles.html">profiles</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpf1550_1_1BusInterface.html">BusInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRTP template interface for <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> bus and strap pins.  <a href="classpf1550_1_1BusInterface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1DiagnosticSnapshot.html">DiagnosticSnapshot</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full diagnostic snapshot returned by <code><a class="el" href="classpf1550_1_1PF1550.html#a7f984ac4a4c0042079b443284a12e465" title="Build a full diagnostic snapshot (≈30 register reads).">PF1550::ReadDiagnosticSnapshot()</a></code>.  <a href="structpf1550_1_1DiagnosticSnapshot.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1FaultFlags.html">FaultFlags</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitset of latched fault flags.  <a href="structpf1550_1_1FaultFlags.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1IntCategoryBits.html">IntCategoryBits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within INT_CATEGORY (Reg 0x06).  <a href="structpf1550_1_1IntCategoryBits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1LdoCtrlBits.html">LdoCtrlBits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within <code>LDOn_CTRL</code> (0x4D / 0x50 / 0x53).  <a href="structpf1550_1_1LdoCtrlBits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1LdoIntStat0Bits.html">LdoIntStat0Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within LDO_INT_STAT0 (Reg 0x18) — LDO current-limit faults.  <a href="structpf1550_1_1LdoIntStat0Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1MiscIntStat0Bits.html">MiscIntStat0Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within MISC_INT_STAT0 (Reg 0x28).  <a href="structpf1550_1_1MiscIntStat0Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1OtpRegion.html">OtpRegion</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">OTP memory indirect address range (via FMRADDR/FMRDATA).  <a href="structpf1550_1_1OtpRegion.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1OtpUnlockKeys.html">OtpUnlockKeys</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">OTP indirect-read unlock sequence (Section 12.x KEY1 / KEY2 / KEY3).  <a href="structpf1550_1_1OtpUnlockKeys.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpf1550_1_1PF1550.html">PF1550</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRTP-based <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> PMIC driver.  <a href="classpf1550_1_1PF1550.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1RailDiagnostics.html">RailDiagnostics</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-rail status snapshot (latched + live + control byte).  <a href="structpf1550_1_1RailDiagnostics.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1SelfTestResult.html">SelfTestResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of a power self-test pass.  <a href="structpf1550_1_1SelfTestResult.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1SwCtrlBits.html">SwCtrlBits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within <code>SWn_CTRL</code> (e.g. 0x35 / 0x3B / 0x41).  <a href="structpf1550_1_1SwCtrlBits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1SwIntStat0Bits.html">SwIntStat0Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within SW_INT_STAT0 (Reg 0x08) — <b>low-side</b> current-limit faults.  <a href="structpf1550_1_1SwIntStat0Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1SwIntStat1Bits.html">SwIntStat1Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within SW_INT_STAT1 (Reg 0x0B) — <b>high-side</b> current-limit faults.  <a href="structpf1550_1_1SwIntStat1Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpf1550_1_1TempIntStat0Bits.html">TempIntStat0Bits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit positions within TEMP_INT_STAT0 (Reg 0x20).  <a href="structpf1550_1_1TempIntStat0Bits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2de0174ba078abebd86cae332fa408a3" id="r_a2de0174ba078abebd86cae332fa408a3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2de0174ba078abebd86cae332fa408a3">RailId</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#a2de0174ba078abebd86cae332fa408a3a6660f42d239b11f40346960738850d57">Sw1</a> = 0
+, <a class="el" href="#a2de0174ba078abebd86cae332fa408a3a21c4c026e673bf3f53d6fef61e7acc0c">Sw2</a> = 1
+, <a class="el" href="#a2de0174ba078abebd86cae332fa408a3a5e31f5874ed5c5ba827919f32c38d3d2">Sw3</a> = 2
+, <a class="el" href="#a2de0174ba078abebd86cae332fa408a3ac2941a3aa4d4bcfa9df3b8328b3df991">Ldo1</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#a2de0174ba078abebd86cae332fa408a3a65e2e31900ec6fb406f72b5110861014">Ldo2</a> = 4
+, <a class="el" href="#a2de0174ba078abebd86cae332fa408a3a1b3002726b850297a40f2d2926aef7c4">Ldo3</a> = 5
+, <a class="el" href="#a2de0174ba078abebd86cae332fa408a3a8478e546bd7d414b7fa5185b93b032d4">Vsnvs</a> = 6
+, <a class="el" href="#a2de0174ba078abebd86cae332fa408a3a4905ac9d6a22bdfc1ae096094ce6248d">COUNT</a> = 7
+<br />
+ }</td></tr>
+<tr class="memdesc:a2de0174ba078abebd86cae332fa408a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical identifier for each independently-controllable PF1550 output.  <a href="#a2de0174ba078abebd86cae332fa408a3">More...</a><br /></td></tr>
+<tr class="separator:a2de0174ba078abebd86cae332fa408a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e11c8c1035c5fe655f8370be81e37c5" id="r_a6e11c8c1035c5fe655f8370be81e37c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a> : uint8_t { <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5a176a473e63c17ccdac91640c67f149bf">kInfo</a> = 0
+, <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5aec0da41f4e48b52c362303eb27ed5dee">kWarning</a> = 1
+, <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5a5a20548c220f372fc701cae6de94040b">kCritical</a> = 2
+, <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5a9977723ab71679dcda435112be43d23a">kMcuKill</a> = 3
+ }</td></tr>
+<tr class="memdesc:a6e11c8c1035c5fe655f8370be81e37c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Severity classification for a fault.  <a href="#a6e11c8c1035c5fe655f8370be81e37c5">More...</a><br /></td></tr>
+<tr class="separator:a6e11c8c1035c5fe655f8370be81e37c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ebe2283b2a786a11c1955d26cae25f8" id="r_a8ebe2283b2a786a11c1955d26cae25f8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ebe2283b2a786a11c1955d26cae25f8">CtrlPin</a> : uint8_t { <a class="el" href="#a8ebe2283b2a786a11c1955d26cae25f8a2dbec34a65724db94f81e8533ee18192">Standby</a> = 0
+, <a class="el" href="#a8ebe2283b2a786a11c1955d26cae25f8ae57f6a9a3f23fbadcbcae0d7f3c93550">UsbVbusEn</a> = 1
+, <a class="el" href="#a8ebe2283b2a786a11c1955d26cae25f8abff164e005b1f17d5981c3c4af8eb946">UsbOtgEn</a> = 2
+, <a class="el" href="#a8ebe2283b2a786a11c1955d26cae25f8a024b5aaf1d72013e33d6737e24364584">PmicInt</a> = 3
+ }</td></tr>
+<tr class="memdesc:a8ebe2283b2a786a11c1955d26cae25f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Platform-wired PF1550 control signals (beyond I2C).  <a href="#a8ebe2283b2a786a11c1955d26cae25f8">More...</a><br /></td></tr>
+<tr class="separator:a8ebe2283b2a786a11c1955d26cae25f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5588eceff95a5fc6db3d634419324fd" id="r_af5588eceff95a5fc6db3d634419324fd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5588eceff95a5fc6db3d634419324fd">GpioSignal</a> : uint8_t { <a class="el" href="#af5588eceff95a5fc6db3d634419324fda3cab03c00dbd11bc3569afa0748013f0">Inactive</a> = 0
+, <a class="el" href="#af5588eceff95a5fc6db3d634419324fda4d3d769b812b6faa6b76e1a8abaece2d">Active</a> = 1
+ }</td></tr>
+<tr class="separator:af5588eceff95a5fc6db3d634419324fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9d351690cc34a52f75df65ef0a25f2b" id="r_af9d351690cc34a52f75df65ef0a25f2b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9d351690cc34a52f75df65ef0a25f2b">PowerMode</a> : uint8_t { <a class="el" href="#af9d351690cc34a52f75df65ef0a25f2bac5301693c4e792bcd5a479ef38fb8f8d">Run</a> = 0
+, <a class="el" href="#af9d351690cc34a52f75df65ef0a25f2ba2dbec34a65724db94f81e8533ee18192">Standby</a> = 1
+ }</td></tr>
+<tr class="separator:af9d351690cc34a52f75df65ef0a25f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18be47731a5a042e4bc9ccd9a44f6768" id="r_a18be47731a5a042e4bc9ccd9a44f6768"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768">Register</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768ad0263c6cf0769cabc86cfe88226d204b">DeviceId</a> = 0x00
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a873f5f90a4ebcfc5c322951441887df7">OtpFlavor</a> = 0x01
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768acdfa9ed93f060b55460ab35dd8e9d899">SiliconRev</a> = 0x02
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aaf2b6afef546d17dada1105cf5c325fc">IntCategory</a> = 0x06
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a6bac3ae857f60582985b473a2cf3a64e">SwIntStat0</a> = 0x08
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a8b6779a9494966de71435d4b7248e78d">SwIntMask0</a> = 0x09
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a5189f746507e41ba3c5bfbab843feb5e">SwIntSense0</a> = 0x0A
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a100009dabb1c92d2a9051a9d3efc1195">SwIntStat1</a> = 0x0B
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768af74af45b263907b04cf0465a25be216d">SwIntMask1</a> = 0x0C
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aacc626130a97f0b815fb1d3a9c84e8b7">SwIntSense1</a> = 0x0D
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a47df249cab48a30fcbbf662b0054bc46">SwIntStat2</a> = 0x0E
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a804e226f7fed10955325a484dfee8dfd">SwIntMask2</a> = 0x0F
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768adb8e917bb5eb392c406a388ba430ae82">SwIntSense2</a> = 0x10
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a1a7af2d0f1bdba6893bfa27a9d6f0f7a">LdoIntStat0</a> = 0x18
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a609acd4cfcd1adab30e62e1c3d052502">LdoIntMask0</a> = 0x19
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a734ce2732b1201b2665c6249c421f964">LdoIntSense0</a> = 0x1A
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aeff3c283c68b77ef0c9d25e168f4d417">TempIntStat0</a> = 0x20
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a6f9414dcaf21fb8a5f4427bbfcc58e49">TempIntMask0</a> = 0x21
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aab1a1bdf6042291fe215350dcea7d9ff">TempIntSense0</a> = 0x22
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768ad5e91431873f93518b7ad57d6006aa16">OnKeyIntStat0</a> = 0x24
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a14462906d108992bf552de8f40e5c19a">OnKeyIntMask0</a> = 0x25
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a830eff4fc9f734d01b655f8f93f1e4fa">OnKeyIntSense0</a> = 0x26
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a1f0cc9ba47b074fa660e36002ee7872a">MiscIntStat0</a> = 0x28
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768af68a14fb203244ae19dac7ddbe567038">MiscIntMask0</a> = 0x29
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a07488481db59d3c5d03f0ed46514068a">MiscIntSense0</a> = 0x2A
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a7ccef6d2fd5e7c6920f1c04f51d92f1d">CoinCellCtrl</a> = 0x30
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768ab50ab7adc16926e3bdda09bd56ccce7d">Sw1Volt</a> = 0x32
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a7caa9b235f6b8f25511422a622a43381">Sw1StbyVolt</a> = 0x33
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a4025a95a2d5d5714a9e30d870619a5a8">Sw1SlpVolt</a> = 0x34
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a884b07143d9a8df5d723e003e1d4a5a5">Sw1Ctrl</a> = 0x35
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aff9e49454371da5cee0db9a06a90fe46">Sw1Ctrl1</a> = 0x36
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a6281eb82faac174b7bb01c41348e3880">Sw2Volt</a> = 0x38
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a511fa8ca76206b5708ad563f7f93aab6">Sw2StbyVolt</a> = 0x39
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a3b1a9e7608c21cf2ca4c1527e30a4a69">Sw2SlpVolt</a> = 0x3A
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a780b8919c0b833c64a52333da6dad2c9">Sw2Ctrl</a> = 0x3B
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a4f5097fe0e7bb758c9b1da4749e0a840">Sw2Ctrl1</a> = 0x3C
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a79a8beb59013fcd9136c3a4521a6fed4">Sw3Volt</a> = 0x3E
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aa397b68f0bcedda54a03fb4f970ae87d">Sw3StbyVolt</a> = 0x3F
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a600be9f9ab8384233e172c4238502e5b">Sw3SlpVolt</a> = 0x40
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a1405858fc166768d9804a174f16b8bd6">Sw3Ctrl</a> = 0x41
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a1ec858ee36198cb0a4cc0006ad58e389">Sw3Ctrl1</a> = 0x42
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768ae3e7cb9a1f8fe8055ef7c5e9e0fc4604">VsnvsCtrl</a> = 0x48
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aab500fa825be450f39f5e07b3ab69f10">VrefDdrCtrl</a> = 0x4A
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a6148d409c7eb56c900bbeca6a89ce061">Ldo1Volt</a> = 0x4C
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a5fd8b24dd0b8de59bc581c8fe2b105ac">Ldo1Ctrl</a> = 0x4D
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a5019fd68af2ddc57434a323c6e13f541">Ldo2Volt</a> = 0x4F
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768ad3e14dbeb1288e6d6021025e56d83e04">Ldo2Ctrl</a> = 0x50
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a121d8248726fc75faa298ba0a7a5359a">Ldo3Volt</a> = 0x52
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aa70c4f4c7d49731caf9220cd8375523a">Ldo3Ctrl</a> = 0x53
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a63a94889fa7ca6422f3a3063b836cccf">PwrCtrl0</a> = 0x58
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a38199ce8674ae3ea375915eab39c8fad">PwrCtrl1</a> = 0x59
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a46dd67b702d1239ba7d153a38f70b6dc">PwrCtrl2</a> = 0x5A
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a434144638987e87db42aad26d557b93a">PwrCtrl3</a> = 0x5B
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a018d022aa5630ba051143c51616f26e0">Sw1PwrDnSeq</a> = 0x5F
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a5eddd468c29097b076b2a371abdf8291">Sw2PwrDnSeq</a> = 0x60
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768aa9437dedc8dda50dcff7ed8fb92cf4d7">Sw3PwrDnSeq</a> = 0x61
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a101b45ce80e077602a244b8a479e8e56">Ldo1PwrDnSeq</a> = 0x62
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a593cc545d38685aa2c8086501b794014">Ldo2PwrDnSeq</a> = 0x63
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a84d7e25b10054c59f0b68e32e93cea8d">Ldo3PwrDnSeq</a> = 0x64
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a1a33a6a2267e9e8f456d9890a2166230">VrefDdrPwrDnSeq</a> = 0x65
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a6fbf05d411a8fd1f88e31e6b8494b521">StateInfo</a> = 0x67
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a81cab5a4b0c8ff5ee216be44ece96544">I2cAddrReg</a> = 0x68
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768af72aa1e47a44f071c8dc92dae83ce246">Rc16Mhz</a> = 0x6B
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768addf4d5ee6777e5eb0eff6ed4a85d28e1">OtpKey1</a> = 0x6F
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768abc302b93f477f2d0ed1a988ae530f7c2">ChargerLedDuty</a> = 0x9C
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768ad3ee692e0e973a70131ef137d2f1a2bc">OtpKey2</a> = 0x9F
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768abc2e12049fe0ac45052936dbc9715c1d">ChargerLedCtrl</a> = 0x9E
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768af3db69d0667830c26696f3f162aea530">VbusInCurrentLimit</a> = 0x94
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a68979034db276a530f097c4123e4e478">FmrAddr</a> = 0xC4
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a575f18fc077190260534d1c095e491d9">FmrData</a> = 0xC5
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a8f9ecd524b301faf26776b81f69cd74f">TestRegKey3</a> = 0xDF
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a875bc32d9760ead1f5f3ee81b90343b0">ChgInt</a> = 0x80
+, <br />
+&#160;&#160;<a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a7cad2328d5f57794ab2cb97c1b7c0aa0">ChgIntMask</a> = 0x82
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a99c3d55e4252d55b9b2b5069d1d361c3">ChgIntOk</a> = 0x84
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768ad82dce7dc7268907cc53c94a2f8d2acc">VbusSns</a> = 0x86
+, <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768a0ca4f2a2e8f2f4989ec27279db56e866">ChgSense</a> = 0x87
+<br />
+ }</td></tr>
+<tr class="memdesc:a18be47731a5a042e4bc9ccd9a44f6768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symbolic register addresses used by the PF1550 driver.  <a href="#a18be47731a5a042e4bc9ccd9a44f6768">More...</a><br /></td></tr>
+<tr class="separator:a18be47731a5a042e4bc9ccd9a44f6768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00ce13d74ba6c20f71c9d15bfd64819" id="r_aa00ce13d74ba6c20f71c9d15bfd64819"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819a0f68101772bd5397ef8eb1b632798652">Wait</a> = 0b000000
+, <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819ac5301693c4e792bcd5a479ef38fb8f8d">Run</a> = 0b001100
+, <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819a2dbec34a65724db94f81e8533ee18192">Standby</a> = 0b001101
+, <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819a243924bfd56a682be235638b53961e09">Sleep</a> = 0b001110
+, <br />
+&#160;&#160;<a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819a1dc681e53b0d3a1c7c66a8bb866bde54">RegsDisable</a> = 0b101011
+, <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a> = 0xFF
+<br />
+ }</td></tr>
+<tr class="memdesc:aa00ce13d74ba6c20f71c9d15bfd64819"><td class="mdescLeft">&#160;</td><td class="mdescRight">STATE_INFO[5:0] values (Reg 0x67) describing the PMIC state machine.  <a href="#aa00ce13d74ba6c20f71c9d15bfd64819">More...</a><br /></td></tr>
+<tr class="separator:aa00ce13d74ba6c20f71c9d15bfd64819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f72c47ce166906591362fdfde6024e" id="r_ab1f72c47ce166906591362fdfde6024e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1f72c47ce166906591362fdfde6024e">ChargerState</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#ab1f72c47ce166906591362fdfde6024ea58532ea27917782582c12e0368cf4dd5">PreCharge</a> = 0
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024ea3d382a93e72cc3eab460ae6f6ba72c81">FastCC</a> = 1
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024eafb7bf21d6a3b604d11f09f841d4fe929">FastCV</a> = 2
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024eab43c278970ebe9b51e7222075eed6bd9">EndOfCharge</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#ab1f72c47ce166906591362fdfde6024eaf92965e2c8a7afb3c1b9a5c09a263636">Done</a> = 4
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024eae50de7362be6caf318b32ca9d0ee6182">TimerFault</a> = 6
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024ea47d2e9b9b7c575cde335b23705405913">ThermSuspend</a> = 7
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024ead15305d7a4e34e02489c74a5ef542f36">Off</a> = 8
+, <br />
+&#160;&#160;<a class="el" href="#ab1f72c47ce166906591362fdfde6024ead62a9096a19b827e93f5c74c85c2c1dc">BatteryOv</a> = 9
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024ea339c6aa0cd17583b5c99b8703ca9c14e">TempShutdown</a> = 10
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024ea1e9b9cdc1f5507d75868cb3a71e55e6b">LinearOnly</a> = 12
+, <a class="el" href="#ab1f72c47ce166906591362fdfde6024ea88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a> = 0xFF
+<br />
+ }</td></tr>
+<tr class="memdesc:ab1f72c47ce166906591362fdfde6024e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CHG_SNS[3:0] values (Reg 0x87) describing the charger sub-state.  <a href="#ab1f72c47ce166906591362fdfde6024e">More...</a><br /></td></tr>
+<tr class="separator:ab1f72c47ce166906591362fdfde6024e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1092336d5416301cf26854b357d0d7" id="r_abd1092336d5416301cf26854b357d0d7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd1092336d5416301cf26854b357d0d7">SwVoltageCode</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#abd1092336d5416301cf26854b357d0d7a3c67b22acec37e5ea74ca75ee6a42341">V1_1</a> = 0x00
+, <a class="el" href="#abd1092336d5416301cf26854b357d0d7aedc540e50f10c618159275a791847834">V2_5</a> = 0x05
+, <a class="el" href="#abd1092336d5416301cf26854b357d0d7abc6a02c77473f9d3fafb2cbebdbb38ee">V3_0</a> = 0x06
+, <a class="el" href="#abd1092336d5416301cf26854b357d0d7af869fb390f575744d7e1a3845efec815">V3_3</a> = 0x07
+, <br />
+&#160;&#160;<a class="el" href="#abd1092336d5416301cf26854b357d0d7aa80a14c08a076f638af5378a268a9f70">V3_1</a> = 0x0D
+<br />
+ }</td></tr>
+<tr class="memdesc:abd1092336d5416301cf26854b357d0d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common SW buck output voltage codes (RUN mode).  <a href="#abd1092336d5416301cf26854b357d0d7">More...</a><br /></td></tr>
+<tr class="separator:abd1092336d5416301cf26854b357d0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e9bd15902066b7c5d6674ae0bb25aba" id="r_a2e9bd15902066b7c5d6674ae0bb25aba"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e9bd15902066b7c5d6674ae0bb25aba">LdoVoltageCode</a> : uint8_t { <a class="el" href="#a2e9bd15902066b7c5d6674ae0bb25abaa6ec11796ccdf73b5b5872c5b8a977832">V1_0</a> = 0x05
+, <a class="el" href="#a2e9bd15902066b7c5d6674ae0bb25abaa05e7d9b0b1c46c80e2cd07331ef1433b">V1_2</a> = 0x09
+, <a class="el" href="#a2e9bd15902066b7c5d6674ae0bb25abaa4d57a4937ae5e3ae730629bba3303f5e">V1_8</a> = 0x00
+ }</td></tr>
+<tr class="memdesc:a2e9bd15902066b7c5d6674ae0bb25aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common LDO output voltage codes used on Portenta H7 (Table 41).  <a href="#a2e9bd15902066b7c5d6674ae0bb25aba">More...</a><br /></td></tr>
+<tr class="separator:a2e9bd15902066b7c5d6674ae0bb25aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4db59d40d340261f6bc4d839bed7037f" id="r_a4db59d40d340261f6bc4d839bed7037f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a2de0174ba078abebd86cae332fa408a3">RailId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4db59d40d340261f6bc4d839bed7037f">FaultRail</a> (uint32_t single_flag) noexcept</td></tr>
+<tr class="memdesc:a4db59d40d340261f6bc4d839bed7037f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a single fault flag to the rail it relates to, or <a class="el" href="#a2de0174ba078abebd86cae332fa408a3a4905ac9d6a22bdfc1ae096094ce6248d">RailId::COUNT</a> if the fault is system-wide.  <br /></td></tr>
+<tr class="separator:a4db59d40d340261f6bc4d839bed7037f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40632916f713f8a57b3b09264696d86b" id="r_a40632916f713f8a57b3b09264696d86b"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40632916f713f8a57b3b09264696d86b">FaultSeverityPortentaH7</a> (uint32_t single_flag) noexcept</td></tr>
+<tr class="memdesc:a40632916f713f8a57b3b09264696d86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classify the severity of a <em>Portenta H7 eval</em> fault.  <br /></td></tr>
+<tr class="separator:a40632916f713f8a57b3b09264696d86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88bbd68a6b67042ae8716222e737b71" id="r_ad88bbd68a6b67042ae8716222e737b71"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad88bbd68a6b67042ae8716222e737b71">WorstSeverityPortentaH7</a> (<a class="el" href="structpf1550_1_1FaultFlags.html">FaultFlags</a> fl) noexcept</td></tr>
+<tr class="memdesc:ad88bbd68a6b67042ae8716222e737b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the worst-case severity across an aggregated bitmask.  <br /></td></tr>
+<tr class="separator:ad88bbd68a6b67042ae8716222e737b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad96365d78c4da29ab8b4e344393f5a69" id="r_ad96365d78c4da29ab8b4e344393f5a69"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad96365d78c4da29ab8b4e344393f5a69">RailName</a> (<a class="el" href="#a2de0174ba078abebd86cae332fa408a3">RailId</a> id) noexcept</td></tr>
+<tr class="memdesc:ad96365d78c4da29ab8b4e344393f5a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable rail label (<code>"SW1"</code>, <code>"LDO2"</code>, …).  <br /></td></tr>
+<tr class="separator:ad96365d78c4da29ab8b4e344393f5a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502005d99f0e9559cced9da676e12c5f" id="r_a502005d99f0e9559cced9da676e12c5f"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a502005d99f0e9559cced9da676e12c5f">PmicStateName</a> (<a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a> s) noexcept</td></tr>
+<tr class="memdesc:a502005d99f0e9559cced9da676e12c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name for a PmicState enumerator.  <br /></td></tr>
+<tr class="separator:a502005d99f0e9559cced9da676e12c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f17ae438d670440dbf9f19d5fc858f2" id="r_a3f17ae438d670440dbf9f19d5fc858f2"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f17ae438d670440dbf9f19d5fc858f2">ChargerStateName</a> (<a class="el" href="#ab1f72c47ce166906591362fdfde6024e">ChargerState</a> s) noexcept</td></tr>
+<tr class="memdesc:a3f17ae438d670440dbf9f19d5fc858f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name for a ChargerState enumerator.  <br /></td></tr>
+<tr class="separator:a3f17ae438d670440dbf9f19d5fc858f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a651630255c423a8258fe704cd0e402c7" id="r_a651630255c423a8258fe704cd0e402c7"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a651630255c423a8258fe704cd0e402c7">FaultSeverityName</a> (<a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a> s) noexcept</td></tr>
+<tr class="memdesc:a651630255c423a8258fe704cd0e402c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name for a FaultSeverity.  <br /></td></tr>
+<tr class="separator:a651630255c423a8258fe704cd0e402c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3f1dd2239f5bba728c5421e3b4ce9e" id="r_a5d3f1dd2239f5bba728c5421e3b4ce9e"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d3f1dd2239f5bba728c5421e3b4ce9e">SwCodeToMillivolts</a> (uint8_t code) noexcept</td></tr>
+<tr class="memdesc:a5d3f1dd2239f5bba728c5421e3b4ce9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">SW1 / SW2 output voltage, <b>DVS disabled</b> (<code>OTP_SWx_DVS_SEL = 1</code>).  <br /></td></tr>
+<tr class="separator:a5d3f1dd2239f5bba728c5421e3b4ce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7d66142c5ea59b9d81a9307900e4cc" id="r_a9a7d66142c5ea59b9d81a9307900e4cc"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a7d66142c5ea59b9d81a9307900e4cc">SwDvsCodeToMillivolts</a> (uint8_t code) noexcept</td></tr>
+<tr class="memdesc:a9a7d66142c5ea59b9d81a9307900e4cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">SW1 / SW2 output voltage, <b>DVS enabled</b> (<code>OTP_SWx_DVS_SEL = 0</code>): 0.6000 V + 12.5 mV × code (Table 31, left column), rounded to mV.  <br /></td></tr>
+<tr class="separator:a9a7d66142c5ea59b9d81a9307900e4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cbb348df9c882fd700449a9d7c073cc" id="r_a9cbb348df9c882fd700449a9d7c073cc"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cbb348df9c882fd700449a9d7c073cc">Sw3CodeToMillivolts</a> (uint8_t code) noexcept</td></tr>
+<tr class="memdesc:a9cbb348df9c882fd700449a9d7c073cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">SW3 output voltage (Table 37): 1.80 V + 100 mV × <code>SW3_VOLT[3:0]</code>.  <br /></td></tr>
+<tr class="separator:a9cbb348df9c882fd700449a9d7c073cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0892e65040f050fcdd6df0a93638d4f3" id="r_a0892e65040f050fcdd6df0a93638d4f3"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0892e65040f050fcdd6df0a93638d4f3">SwMillivoltsToCode</a> (uint16_t mv) noexcept</td></tr>
+<tr class="memdesc:a0892e65040f050fcdd6df0a93638d4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a 6-bit SW voltage code from millivolts (Portenta-verified codes).  <br /></td></tr>
+<tr class="separator:a0892e65040f050fcdd6df0a93638d4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68addc895f96cc9d67e05edf5b01c34f" id="r_a68addc895f96cc9d67e05edf5b01c34f"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68addc895f96cc9d67e05edf5b01c34f">LdoCodeToMillivolts</a> (uint8_t code, bool is_ldo2) noexcept</td></tr>
+<tr class="memdesc:a68addc895f96cc9d67e05edf5b01c34f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a 5-bit LDO voltage register field to millivolts.  <br /></td></tr>
+<tr class="separator:a68addc895f96cc9d67e05edf5b01c34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f33d48b9af3bb55d7e8c5e8f4c8dddb" id="r_a4f33d48b9af3bb55d7e8c5e8f4c8dddb"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f33d48b9af3bb55d7e8c5e8f4c8dddb">VbusLimitRegToMilliamps</a> (uint8_t reg_value) noexcept</td></tr>
+<tr class="memdesc:a4f33d48b9af3bb55d7e8c5e8f4c8dddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode VBUS_IN_LIM_CNFG (absolute address 0x94) register byte to mA.  <br /></td></tr>
+<tr class="separator:a4f33d48b9af3bb55d7e8c5e8f4c8dddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc80bb6d4ae502714b9f19e90d5de151" id="r_abc80bb6d4ae502714b9f19e90d5de151"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc80bb6d4ae502714b9f19e90d5de151">VbusLimitMilliampsToReg</a> (uint16_t mA) noexcept</td></tr>
+<tr class="memdesc:abc80bb6d4ae502714b9f19e90d5de151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode mA → VBUS_IN_LIM_CNFG (0x94) register byte (bits 7:3).  <br /></td></tr>
+<tr class="separator:abc80bb6d4ae502714b9f19e90d5de151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f232e1d12abca0b9d3446b4740da39" id="r_ae6f232e1d12abca0b9d3446b4740da39"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6f232e1d12abca0b9d3446b4740da39">SwCurrentLimitCodeToMilliamps</a> (uint8_t code) noexcept</td></tr>
+<tr class="memdesc:ae6f232e1d12abca0b9d3446b4740da39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode the <code>SW3_CTRL1[1:0]</code> (or SW1/SW2_CTRL1) current limit field.  <br /></td></tr>
+<tr class="separator:ae6f232e1d12abca0b9d3446b4740da39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd27a23b2ad2302be63965d5db8b1d4" id="r_addd27a23b2ad2302be63965d5db8b1d4"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addd27a23b2ad2302be63965d5db8b1d4">DecodeStateInfo</a> (uint8_t reg) noexcept</td></tr>
+<tr class="memdesc:addd27a23b2ad2302be63965d5db8b1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert STATE_INFO (0x67) full byte into a typed <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a>.  <br /></td></tr>
+<tr class="separator:addd27a23b2ad2302be63965d5db8b1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41447a0b5f08eceec7c8e6f6ccb5021b" id="r_a41447a0b5f08eceec7c8e6f6ccb5021b"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#ab1f72c47ce166906591362fdfde6024e">ChargerState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41447a0b5f08eceec7c8e6f6ccb5021b">DecodeChargerSense</a> (uint8_t reg) noexcept</td></tr>
+<tr class="memdesc:a41447a0b5f08eceec7c8e6f6ccb5021b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert CHG_SNS (0x87) into a typed <a class="el" href="#ab1f72c47ce166906591362fdfde6024e">ChargerState</a>.  <br /></td></tr>
+<tr class="separator:a41447a0b5f08eceec7c8e6f6ccb5021b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7eccd57860ced072a06613a6439d8d64" id="r_a7eccd57860ced072a06613a6439d8d64"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eccd57860ced072a06613a6439d8d64">kDefaultI2cAddress</a> = 0x08</td></tr>
+<tr class="memdesc:a7eccd57860ced072a06613a6439d8d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default 7-bit I²C slave address (settable via OTP — see Table 147).  <br /></td></tr>
+<tr class="separator:a7eccd57860ced072a06613a6439d8d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795f286be126ceb9adfe1eb90456eeee" id="r_a795f286be126ceb9adfe1eb90456eeee"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795f286be126ceb9adfe1eb90456eeee">kExpectedDeviceId</a> = 0x7C</td></tr>
+<tr class="memdesc:a795f286be126ceb9adfe1eb90456eeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expected <code>DEVICE_ID[2:0]</code> family identifier (<a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> family = <code>100b</code>).  <br /></td></tr>
+<tr class="separator:a795f286be126ceb9adfe1eb90456eeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ac041ba99e7d9048f87799b184ef94" id="r_ae6ac041ba99e7d9048f87799b184ef94"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6ac041ba99e7d9048f87799b184ef94">kChargerPageBase</a> = 0x80</td></tr>
+<tr class="memdesc:ae6ac041ba99e7d9048f87799b184ef94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base offset for Section 12.2 charger sub-page (see datasheet §12.2).  <br /></td></tr>
+<tr class="separator:ae6ac041ba99e7d9048f87799b184ef94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ab1f72c47ce166906591362fdfde6024e" name="ab1f72c47ce166906591362fdfde6024e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f72c47ce166906591362fdfde6024e">&#9670;&#160;</a></span>ChargerState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ab1f72c47ce166906591362fdfde6024e">pf1550::ChargerState</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>CHG_SNS[3:0] values (Reg 0x87) describing the charger sub-state. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024ea58532ea27917782582c12e0368cf4dd5" name="ab1f72c47ce166906591362fdfde6024ea58532ea27917782582c12e0368cf4dd5"></a>PreCharge&#160;</td><td class="fielddoc"><p>Precharge mode (V_BATT &lt; V_PRECHG.LB). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024ea3d382a93e72cc3eab460ae6f6ba72c81" name="ab1f72c47ce166906591362fdfde6024ea3d382a93e72cc3eab460ae6f6ba72c81"></a>FastCC&#160;</td><td class="fielddoc"><p>Fast-charge constant-current. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024eafb7bf21d6a3b604d11f09f841d4fe929" name="ab1f72c47ce166906591362fdfde6024eafb7bf21d6a3b604d11f09f841d4fe929"></a>FastCV&#160;</td><td class="fielddoc"><p>Fast-charge constant-voltage. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024eab43c278970ebe9b51e7222075eed6bd9" name="ab1f72c47ce166906591362fdfde6024eab43c278970ebe9b51e7222075eed6bd9"></a>EndOfCharge&#160;</td><td class="fielddoc"><p>End-of-charge (I_BAT = I_EOC). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024eaf92965e2c8a7afb3c1b9a5c09a263636" name="ab1f72c47ce166906591362fdfde6024eaf92965e2c8a7afb3c1b9a5c09a263636"></a>Done&#160;</td><td class="fielddoc"><p>Done — battery full. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024eae50de7362be6caf318b32ca9d0ee6182" name="ab1f72c47ce166906591362fdfde6024eae50de7362be6caf318b32ca9d0ee6182"></a>TimerFault&#160;</td><td class="fielddoc"><p>Timer fault. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024ea47d2e9b9b7c575cde335b23705405913" name="ab1f72c47ce166906591362fdfde6024ea47d2e9b9b7c575cde335b23705405913"></a>ThermSuspend&#160;</td><td class="fielddoc"><p>Thermistor suspend. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024ead15305d7a4e34e02489c74a5ef542f36" name="ab1f72c47ce166906591362fdfde6024ead15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>Input invalid or charger disabled. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024ead62a9096a19b827e93f5c74c85c2c1dc" name="ab1f72c47ce166906591362fdfde6024ead62a9096a19b827e93f5c74c85c2c1dc"></a>BatteryOv&#160;</td><td class="fielddoc"><p>Battery overvoltage. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024ea339c6aa0cd17583b5c99b8703ca9c14e" name="ab1f72c47ce166906591362fdfde6024ea339c6aa0cd17583b5c99b8703ca9c14e"></a>TempShutdown&#160;</td><td class="fielddoc"><p>Off because TJ &gt; TSHDN. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024ea1e9b9cdc1f5507d75868cb3a71e55e6b" name="ab1f72c47ce166906591362fdfde6024ea1e9b9cdc1f5507d75868cb3a71e55e6b"></a>LinearOnly&#160;</td><td class="fielddoc"><p>Linear-only mode, no charge. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab1f72c47ce166906591362fdfde6024ea88183b946cc5f0e8c96b2e66e1c74a7e" name="ab1f72c47ce166906591362fdfde6024ea88183b946cc5f0e8c96b2e66e1c74a7e"></a>Unknown&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a8ebe2283b2a786a11c1955d26cae25f8" name="a8ebe2283b2a786a11c1955d26cae25f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ebe2283b2a786a11c1955d26cae25f8">&#9670;&#160;</a></span>CtrlPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a8ebe2283b2a786a11c1955d26cae25f8">pf1550::CtrlPin</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Platform-wired <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> control signals (beyond I2C). </p>
+<p>Portenta H7 mapping:</p><ul>
+<li>STANDBY: PJ0, active-high for standby (drive low for RUN)</li>
+<li>USB_VBUS_EN: PJ4</li>
+<li>USB_OTG_EN: PJ6</li>
+<li>PMIC_INT: PK0 (input, optional) </li>
+</ul>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8ebe2283b2a786a11c1955d26cae25f8a2dbec34a65724db94f81e8533ee18192" name="a8ebe2283b2a786a11c1955d26cae25f8a2dbec34a65724db94f81e8533ee18192"></a>Standby&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8ebe2283b2a786a11c1955d26cae25f8ae57f6a9a3f23fbadcbcae0d7f3c93550" name="a8ebe2283b2a786a11c1955d26cae25f8ae57f6a9a3f23fbadcbcae0d7f3c93550"></a>UsbVbusEn&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8ebe2283b2a786a11c1955d26cae25f8abff164e005b1f17d5981c3c4af8eb946" name="a8ebe2283b2a786a11c1955d26cae25f8abff164e005b1f17d5981c3c4af8eb946"></a>UsbOtgEn&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8ebe2283b2a786a11c1955d26cae25f8a024b5aaf1d72013e33d6737e24364584" name="a8ebe2283b2a786a11c1955d26cae25f8a024b5aaf1d72013e33d6737e24364584"></a>PmicInt&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a6e11c8c1035c5fe655f8370be81e37c5" name="a6e11c8c1035c5fe655f8370be81e37c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e11c8c1035c5fe655f8370be81e37c5">&#9670;&#160;</a></span>FaultSeverity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5">pf1550::FaultSeverity</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Severity classification for a fault. </p>
+<ul>
+<li><a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5a176a473e63c17ccdac91640c67f149bf">kInfo</a> — informational latched bit (e.g. PWRON press).</li>
+<li><a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5aec0da41f4e48b52c362303eb27ed5dee">kWarning</a> — recoverable condition (e.g. junction temp warning).</li>
+<li><a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5a5a20548c220f372fc701cae6de94040b">kCritical</a> — affects a rail that is <b>not</b> powering the MCU directly; the MCU can still execute and mitigate.</li>
+<li><a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5a9977723ab71679dcda435112be43d23a">kMcuKill</a> — affects an MCU-critical rail (SW3/LDO1/LDO3 on Portenta H7) — by definition the MCU may already be resetting; an <b>external monitor</b> must take over. </li>
+</ul>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6e11c8c1035c5fe655f8370be81e37c5a176a473e63c17ccdac91640c67f149bf" name="a6e11c8c1035c5fe655f8370be81e37c5a176a473e63c17ccdac91640c67f149bf"></a>kInfo&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6e11c8c1035c5fe655f8370be81e37c5aec0da41f4e48b52c362303eb27ed5dee" name="a6e11c8c1035c5fe655f8370be81e37c5aec0da41f4e48b52c362303eb27ed5dee"></a>kWarning&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6e11c8c1035c5fe655f8370be81e37c5a5a20548c220f372fc701cae6de94040b" name="a6e11c8c1035c5fe655f8370be81e37c5a5a20548c220f372fc701cae6de94040b"></a>kCritical&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6e11c8c1035c5fe655f8370be81e37c5a9977723ab71679dcda435112be43d23a" name="a6e11c8c1035c5fe655f8370be81e37c5a9977723ab71679dcda435112be43d23a"></a>kMcuKill&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="af5588eceff95a5fc6db3d634419324fd" name="af5588eceff95a5fc6db3d634419324fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5588eceff95a5fc6db3d634419324fd">&#9670;&#160;</a></span>GpioSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#af5588eceff95a5fc6db3d634419324fd">pf1550::GpioSignal</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af5588eceff95a5fc6db3d634419324fda3cab03c00dbd11bc3569afa0748013f0" name="af5588eceff95a5fc6db3d634419324fda3cab03c00dbd11bc3569afa0748013f0"></a>Inactive&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af5588eceff95a5fc6db3d634419324fda4d3d769b812b6faa6b76e1a8abaece2d" name="af5588eceff95a5fc6db3d634419324fda4d3d769b812b6faa6b76e1a8abaece2d"></a>Active&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a2e9bd15902066b7c5d6674ae0bb25aba" name="a2e9bd15902066b7c5d6674ae0bb25aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e9bd15902066b7c5d6674ae0bb25aba">&#9670;&#160;</a></span>LdoVoltageCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a2e9bd15902066b7c5d6674ae0bb25aba">pf1550::LdoVoltageCode</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Common LDO output voltage codes used on Portenta H7 (Table 41). </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2e9bd15902066b7c5d6674ae0bb25abaa6ec11796ccdf73b5b5872c5b8a977832" name="a2e9bd15902066b7c5d6674ae0bb25abaa6ec11796ccdf73b5b5872c5b8a977832"></a>V1_0&#160;</td><td class="fielddoc"><p>1.000 V (LDO1) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2e9bd15902066b7c5d6674ae0bb25abaa05e7d9b0b1c46c80e2cd07331ef1433b" name="a2e9bd15902066b7c5d6674ae0bb25abaa05e7d9b0b1c46c80e2cd07331ef1433b"></a>V1_2&#160;</td><td class="fielddoc"><p>1.200 V (LDO3) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2e9bd15902066b7c5d6674ae0bb25abaa4d57a4937ae5e3ae730629bba3303f5e" name="a2e9bd15902066b7c5d6674ae0bb25abaa4d57a4937ae5e3ae730629bba3303f5e"></a>V1_8&#160;</td><td class="fielddoc"><p>1.800 V (LDO2 — code 0) </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="aa00ce13d74ba6c20f71c9d15bfd64819" name="aa00ce13d74ba6c20f71c9d15bfd64819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa00ce13d74ba6c20f71c9d15bfd64819">&#9670;&#160;</a></span>PmicState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819">pf1550::PmicState</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>STATE_INFO[5:0] values (Reg 0x67) describing the PMIC state machine. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa00ce13d74ba6c20f71c9d15bfd64819a0f68101772bd5397ef8eb1b632798652" name="aa00ce13d74ba6c20f71c9d15bfd64819a0f68101772bd5397ef8eb1b632798652"></a>Wait&#160;</td><td class="fielddoc"><p>Wait / start-up before regulators are sequenced. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa00ce13d74ba6c20f71c9d15bfd64819ac5301693c4e792bcd5a479ef38fb8f8d" name="aa00ce13d74ba6c20f71c9d15bfd64819ac5301693c4e792bcd5a479ef38fb8f8d"></a>Run&#160;</td><td class="fielddoc"><p>RUN — all OTP-sequenced regulators enabled. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa00ce13d74ba6c20f71c9d15bfd64819a2dbec34a65724db94f81e8533ee18192" name="aa00ce13d74ba6c20f71c9d15bfd64819a2dbec34a65724db94f81e8533ee18192"></a>Standby&#160;</td><td class="fielddoc"><p>STANDBY — standby-enabled regulators only. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa00ce13d74ba6c20f71c9d15bfd64819a243924bfd56a682be235638b53961e09" name="aa00ce13d74ba6c20f71c9d15bfd64819a243924bfd56a682be235638b53961e09"></a>Sleep&#160;</td><td class="fielddoc"><p>SLEEP / LPSR — minimal regulators. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa00ce13d74ba6c20f71c9d15bfd64819a1dc681e53b0d3a1c7c66a8bb866bde54" name="aa00ce13d74ba6c20f71c9d15bfd64819a1dc681e53b0d3a1c7c66a8bb866bde54"></a>RegsDisable&#160;</td><td class="fielddoc"><p>REGS_DISABLE — all regulators off (post PWRON long-press). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa00ce13d74ba6c20f71c9d15bfd64819a88183b946cc5f0e8c96b2e66e1c74a7e" name="aa00ce13d74ba6c20f71c9d15bfd64819a88183b946cc5f0e8c96b2e66e1c74a7e"></a>Unknown&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="af9d351690cc34a52f75df65ef0a25f2b" name="af9d351690cc34a52f75df65ef0a25f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9d351690cc34a52f75df65ef0a25f2b">&#9670;&#160;</a></span>PowerMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#af9d351690cc34a52f75df65ef0a25f2b">pf1550::PowerMode</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af9d351690cc34a52f75df65ef0a25f2bac5301693c4e792bcd5a479ef38fb8f8d" name="af9d351690cc34a52f75df65ef0a25f2bac5301693c4e792bcd5a479ef38fb8f8d"></a>Run&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af9d351690cc34a52f75df65ef0a25f2ba2dbec34a65724db94f81e8533ee18192" name="af9d351690cc34a52f75df65ef0a25f2ba2dbec34a65724db94f81e8533ee18192"></a>Standby&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a2de0174ba078abebd86cae332fa408a3" name="a2de0174ba078abebd86cae332fa408a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de0174ba078abebd86cae332fa408a3">&#9670;&#160;</a></span>RailId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a2de0174ba078abebd86cae332fa408a3">pf1550::RailId</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logical identifier for each independently-controllable <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> output. </p>
+<p>Used to index into <a class="el" href="structpf1550_1_1RailDiagnostics.html">RailDiagnostics</a> arrays and to label log lines. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2de0174ba078abebd86cae332fa408a3a6660f42d239b11f40346960738850d57" name="a2de0174ba078abebd86cae332fa408a3a6660f42d239b11f40346960738850d57"></a>Sw1&#160;</td><td class="fielddoc"><p>SW1 / BUCK1 — Portenta +3V1SW (feeds LDO inputs). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2de0174ba078abebd86cae332fa408a3a21c4c026e673bf3f53d6fef61e7acc0c" name="a2de0174ba078abebd86cae332fa408a3a21c4c026e673bf3f53d6fef61e7acc0c"></a>Sw2&#160;</td><td class="fielddoc"><p>SW2 / BUCK2 — Portenta +3V3 / carrier VOUT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2de0174ba078abebd86cae332fa408a3a5e31f5874ed5c5ba827919f32c38d3d2" name="a2de0174ba078abebd86cae332fa408a3a5e31f5874ed5c5ba827919f32c38d3d2"></a>Sw3&#160;</td><td class="fielddoc"><p>SW3 / BUCK3 — Portenta +3V1 VCORE (MCU + QSPI). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2de0174ba078abebd86cae332fa408a3ac2941a3aa4d4bcfa9df3b8328b3df991" name="a2de0174ba078abebd86cae332fa408a3ac2941a3aa4d4bcfa9df3b8328b3df991"></a>Ldo1&#160;</td><td class="fielddoc"><p>LDO1 — Portenta +1V0 (MIPI bridge analog). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2de0174ba078abebd86cae332fa408a3a65e2e31900ec6fb406f72b5110861014" name="a2de0174ba078abebd86cae332fa408a3a65e2e31900ec6fb406f72b5110861014"></a>Ldo2&#160;</td><td class="fielddoc"><p>LDO2 — Portenta +1V8 (USB PHY, MIPI). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2de0174ba078abebd86cae332fa408a3a1b3002726b850297a40f2d2926aef7c4" name="a2de0174ba078abebd86cae332fa408a3a1b3002726b850297a40f2d2926aef7c4"></a>Ldo3&#160;</td><td class="fielddoc"><p>LDO3 — Portenta +1V2 (STM32 DSI, ETH PHY). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2de0174ba078abebd86cae332fa408a3a8478e546bd7d414b7fa5185b93b032d4" name="a2de0174ba078abebd86cae332fa408a3a8478e546bd7d414b7fa5185b93b032d4"></a>Vsnvs&#160;</td><td class="fielddoc"><p>VSNVS — RTC / backup LDO (≤2 mA). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2de0174ba078abebd86cae332fa408a3a4905ac9d6a22bdfc1ae096094ce6248d" name="a2de0174ba078abebd86cae332fa408a3a4905ac9d6a22bdfc1ae096094ce6248d"></a>COUNT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a18be47731a5a042e4bc9ccd9a44f6768" name="a18be47731a5a042e4bc9ccd9a44f6768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18be47731a5a042e4bc9ccd9a44f6768">&#9670;&#160;</a></span>Register</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a18be47731a5a042e4bc9ccd9a44f6768">pf1550::Register</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Symbolic register addresses used by the <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> driver. </p>
+<p>Names follow datasheet <em>Table N — Register XXX - ADDR yy</em> exactly so cross-reference is trivial. Charger-page registers (§12.2) are mapped to their kChargerPageBase-offset absolute addresses. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768ad0263c6cf0769cabc86cfe88226d204b" name="a18be47731a5a042e4bc9ccd9a44f6768ad0263c6cf0769cabc86cfe88226d204b"></a>DeviceId&#160;</td><td class="fielddoc"><p>DEVICE_ID — Table 86. Bits[2:0] = family, [7:3] = <code>01111</code> for <a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a873f5f90a4ebcfc5c322951441887df7" name="a18be47731a5a042e4bc9ccd9a44f6768a873f5f90a4ebcfc5c322951441887df7"></a>OtpFlavor&#160;</td><td class="fielddoc"><p>OTP_FLAVOR — Table 87. 0x00 = OTP not burned (A0EP). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768acdfa9ed93f060b55460ab35dd8e9d899" name="a18be47731a5a042e4bc9ccd9a44f6768acdfa9ed93f060b55460ab35dd8e9d899"></a>SiliconRev&#160;</td><td class="fielddoc"><p>SILICON_REV — Table 88. Metal/full-layer/fab-fin identifiers. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aaf2b6afef546d17dada1105cf5c325fc" name="a18be47731a5a042e4bc9ccd9a44f6768aaf2b6afef546d17dada1105cf5c325fc"></a>IntCategory&#160;</td><td class="fielddoc"><p>INT_CATEGORY — Table 89. CHG/SW1/SW2/SW3/LDO/ONKEY/TEMP/MISC summary. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a6bac3ae857f60582985b473a2cf3a64e" name="a18be47731a5a042e4bc9ccd9a44f6768a6bac3ae857f60582985b473a2cf3a64e"></a>SwIntStat0&#160;</td><td class="fielddoc"><p>SW_INT_STAT0 — low-side current limits (SW1/2/3). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a8b6779a9494966de71435d4b7248e78d" name="a18be47731a5a042e4bc9ccd9a44f6768a8b6779a9494966de71435d4b7248e78d"></a>SwIntMask0&#160;</td><td class="fielddoc"><p>SW_INT_MASK0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a5189f746507e41ba3c5bfbab843feb5e" name="a18be47731a5a042e4bc9ccd9a44f6768a5189f746507e41ba3c5bfbab843feb5e"></a>SwIntSense0&#160;</td><td class="fielddoc"><p>SW_INT_SENSE0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a100009dabb1c92d2a9051a9d3efc1195" name="a18be47731a5a042e4bc9ccd9a44f6768a100009dabb1c92d2a9051a9d3efc1195"></a>SwIntStat1&#160;</td><td class="fielddoc"><p>SW_INT_STAT1 — high-side current limits. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768af74af45b263907b04cf0465a25be216d" name="a18be47731a5a042e4bc9ccd9a44f6768af74af45b263907b04cf0465a25be216d"></a>SwIntMask1&#160;</td><td class="fielddoc"><p>SW_INT_MASK1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aacc626130a97f0b815fb1d3a9c84e8b7" name="a18be47731a5a042e4bc9ccd9a44f6768aacc626130a97f0b815fb1d3a9c84e8b7"></a>SwIntSense1&#160;</td><td class="fielddoc"><p>SW_INT_SENSE1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a47df249cab48a30fcbbf662b0054bc46" name="a18be47731a5a042e4bc9ccd9a44f6768a47df249cab48a30fcbbf662b0054bc46"></a>SwIntStat2&#160;</td><td class="fielddoc"><p>SW_INT_STAT2 — DVS done. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a804e226f7fed10955325a484dfee8dfd" name="a18be47731a5a042e4bc9ccd9a44f6768a804e226f7fed10955325a484dfee8dfd"></a>SwIntMask2&#160;</td><td class="fielddoc"><p>SW_INT_MASK2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768adb8e917bb5eb392c406a388ba430ae82" name="a18be47731a5a042e4bc9ccd9a44f6768adb8e917bb5eb392c406a388ba430ae82"></a>SwIntSense2&#160;</td><td class="fielddoc"><p>SW_INT_SENSE2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a1a7af2d0f1bdba6893bfa27a9d6f0f7a" name="a18be47731a5a042e4bc9ccd9a44f6768a1a7af2d0f1bdba6893bfa27a9d6f0f7a"></a>LdoIntStat0&#160;</td><td class="fielddoc"><p>LDO_INT_STAT0 — Table 99. LDO1/2/3 current-limit faults. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a609acd4cfcd1adab30e62e1c3d052502" name="a18be47731a5a042e4bc9ccd9a44f6768a609acd4cfcd1adab30e62e1c3d052502"></a>LdoIntMask0&#160;</td><td class="fielddoc"><p>LDO_INT_MASK0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a734ce2732b1201b2665c6249c421f964" name="a18be47731a5a042e4bc9ccd9a44f6768a734ce2732b1201b2665c6249c421f964"></a>LdoIntSense0&#160;</td><td class="fielddoc"><p>LDO_INT_SENSE0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aeff3c283c68b77ef0c9d25e168f4d417" name="a18be47731a5a042e4bc9ccd9a44f6768aeff3c283c68b77ef0c9d25e168f4d417"></a>TempIntStat0&#160;</td><td class="fielddoc"><p>TEMP_INT_STAT0 — Table 102. Junction-temperature events. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a6f9414dcaf21fb8a5f4427bbfcc58e49" name="a18be47731a5a042e4bc9ccd9a44f6768a6f9414dcaf21fb8a5f4427bbfcc58e49"></a>TempIntMask0&#160;</td><td class="fielddoc"><p>TEMP_INT_MASK0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aab1a1bdf6042291fe215350dcea7d9ff" name="a18be47731a5a042e4bc9ccd9a44f6768aab1a1bdf6042291fe215350dcea7d9ff"></a>TempIntSense0&#160;</td><td class="fielddoc"><p>TEMP_INT_SENSE0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768ad5e91431873f93518b7ad57d6006aa16" name="a18be47731a5a042e4bc9ccd9a44f6768ad5e91431873f93518b7ad57d6006aa16"></a>OnKeyIntStat0&#160;</td><td class="fielddoc"><p>ONKEY_INT_STAT0 — Table 105. Push / 1s/2s/3s/4s/8s long-press. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a14462906d108992bf552de8f40e5c19a" name="a18be47731a5a042e4bc9ccd9a44f6768a14462906d108992bf552de8f40e5c19a"></a>OnKeyIntMask0&#160;</td><td class="fielddoc"><p>ONKEY_INT_MASK0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a830eff4fc9f734d01b655f8f93f1e4fa" name="a18be47731a5a042e4bc9ccd9a44f6768a830eff4fc9f734d01b655f8f93f1e4fa"></a>OnKeyIntSense0&#160;</td><td class="fielddoc"><p>ONKEY_INT_SENSE0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a1f0cc9ba47b074fa660e36002ee7872a" name="a18be47731a5a042e4bc9ccd9a44f6768a1f0cc9ba47b074fa660e36002ee7872a"></a>MiscIntStat0&#160;</td><td class="fielddoc"><p>MISC_INT_STAT0 — Table 108. PWRON / VSYS / RESETBMCU events. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768af68a14fb203244ae19dac7ddbe567038" name="a18be47731a5a042e4bc9ccd9a44f6768af68a14fb203244ae19dac7ddbe567038"></a>MiscIntMask0&#160;</td><td class="fielddoc"><p>MISC_INT_MASK0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a07488481db59d3c5d03f0ed46514068a" name="a18be47731a5a042e4bc9ccd9a44f6768a07488481db59d3c5d03f0ed46514068a"></a>MiscIntSense0&#160;</td><td class="fielddoc"><p>MISC_INT_SENSE0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a7ccef6d2fd5e7c6920f1c04f51d92f1d" name="a18be47731a5a042e4bc9ccd9a44f6768a7ccef6d2fd5e7c6920f1c04f51d92f1d"></a>CoinCellCtrl&#160;</td><td class="fielddoc"><p>COINCELL_CONTROL — Table 111. LICELL charging configuration. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768ab50ab7adc16926e3bdda09bd56ccce7d" name="a18be47731a5a042e4bc9ccd9a44f6768ab50ab7adc16926e3bdda09bd56ccce7d"></a>Sw1Volt&#160;</td><td class="fielddoc"><p>SW1_VOLT — RUN-mode voltage code (Table 31). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a7caa9b235f6b8f25511422a622a43381" name="a18be47731a5a042e4bc9ccd9a44f6768a7caa9b235f6b8f25511422a622a43381"></a>Sw1StbyVolt&#160;</td><td class="fielddoc"><p>SW1_STBY_VOLT — STANDBY-mode voltage. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a4025a95a2d5d5714a9e30d870619a5a8" name="a18be47731a5a042e4bc9ccd9a44f6768a4025a95a2d5d5714a9e30d870619a5a8"></a>Sw1SlpVolt&#160;</td><td class="fielddoc"><p>SW1_SLP_VOLT — SLEEP-mode voltage. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a884b07143d9a8df5d723e003e1d4a5a5" name="a18be47731a5a042e4bc9ccd9a44f6768a884b07143d9a8df5d723e003e1d4a5a5"></a>Sw1Ctrl&#160;</td><td class="fielddoc"><p>SW1_CTRL — EN/STBY_EN/OMODE/LPWR/DVSSPEED/FPWM/RDIS_ENB. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aff9e49454371da5cee0db9a06a90fe46" name="a18be47731a5a042e4bc9ccd9a44f6768aff9e49454371da5cee0db9a06a90fe46"></a>Sw1Ctrl1&#160;</td><td class="fielddoc"><p>SW1_CTRL1 — SW1_ILIM[1:0] current limit + TMODE_SEL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a6281eb82faac174b7bb01c41348e3880" name="a18be47731a5a042e4bc9ccd9a44f6768a6281eb82faac174b7bb01c41348e3880"></a>Sw2Volt&#160;</td><td class="fielddoc"><p>SW2_VOLT — Table 117. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a511fa8ca76206b5708ad563f7f93aab6" name="a18be47731a5a042e4bc9ccd9a44f6768a511fa8ca76206b5708ad563f7f93aab6"></a>Sw2StbyVolt&#160;</td><td class="fielddoc"><p>SW2_STBY_VOLT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a3b1a9e7608c21cf2ca4c1527e30a4a69" name="a18be47731a5a042e4bc9ccd9a44f6768a3b1a9e7608c21cf2ca4c1527e30a4a69"></a>Sw2SlpVolt&#160;</td><td class="fielddoc"><p>SW2_SLP_VOLT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a780b8919c0b833c64a52333da6dad2c9" name="a18be47731a5a042e4bc9ccd9a44f6768a780b8919c0b833c64a52333da6dad2c9"></a>Sw2Ctrl&#160;</td><td class="fielddoc"><p>SW2_CTRL — Table 120. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a4f5097fe0e7bb758c9b1da4749e0a840" name="a18be47731a5a042e4bc9ccd9a44f6768a4f5097fe0e7bb758c9b1da4749e0a840"></a>Sw2Ctrl1&#160;</td><td class="fielddoc"><p>SW2_CTRL1 — SW2_ILIM[1:0]. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a79a8beb59013fcd9136c3a4521a6fed4" name="a18be47731a5a042e4bc9ccd9a44f6768a79a8beb59013fcd9136c3a4521a6fed4"></a>Sw3Volt&#160;</td><td class="fielddoc"><p>SW3_VOLT — Table 122. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aa397b68f0bcedda54a03fb4f970ae87d" name="a18be47731a5a042e4bc9ccd9a44f6768aa397b68f0bcedda54a03fb4f970ae87d"></a>Sw3StbyVolt&#160;</td><td class="fielddoc"><p>SW3_STBY_VOLT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a600be9f9ab8384233e172c4238502e5b" name="a18be47731a5a042e4bc9ccd9a44f6768a600be9f9ab8384233e172c4238502e5b"></a>Sw3SlpVolt&#160;</td><td class="fielddoc"><p>SW3_SLP_VOLT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a1405858fc166768d9804a174f16b8bd6" name="a18be47731a5a042e4bc9ccd9a44f6768a1405858fc166768d9804a174f16b8bd6"></a>Sw3Ctrl&#160;</td><td class="fielddoc"><p>SW3_CTRL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a1ec858ee36198cb0a4cc0006ad58e389" name="a18be47731a5a042e4bc9ccd9a44f6768a1ec858ee36198cb0a4cc0006ad58e389"></a>Sw3Ctrl1&#160;</td><td class="fielddoc"><p>SW3_CTRL1 — SW3_ILIM[1:0] (Portenta sets <code>0x02</code> = 2.0 A). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768ae3e7cb9a1f8fe8055ef7c5e9e0fc4604" name="a18be47731a5a042e4bc9ccd9a44f6768ae3e7cb9a1f8fe8055ef7c5e9e0fc4604"></a>VsnvsCtrl&#160;</td><td class="fielddoc"><p>VSNVS_CTRL — Table 127. RTC/SNVS backup LDO control. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aab500fa825be450f39f5e07b3ab69f10" name="a18be47731a5a042e4bc9ccd9a44f6768aab500fa825be450f39f5e07b3ab69f10"></a>VrefDdrCtrl&#160;</td><td class="fielddoc"><p>VREFDDR_CTRL — Table 128. DDR reference (unused on Portenta). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a6148d409c7eb56c900bbeca6a89ce061" name="a18be47731a5a042e4bc9ccd9a44f6768a6148d409c7eb56c900bbeca6a89ce061"></a>Ldo1Volt&#160;</td><td class="fielddoc"><p>LDO1_VOLT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a5fd8b24dd0b8de59bc581c8fe2b105ac" name="a18be47731a5a042e4bc9ccd9a44f6768a5fd8b24dd0b8de59bc581c8fe2b105ac"></a>Ldo1Ctrl&#160;</td><td class="fielddoc"><p>LDO1_CTRL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a5019fd68af2ddc57434a323c6e13f541" name="a18be47731a5a042e4bc9ccd9a44f6768a5019fd68af2ddc57434a323c6e13f541"></a>Ldo2Volt&#160;</td><td class="fielddoc"><p>LDO2_VOLT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768ad3e14dbeb1288e6d6021025e56d83e04" name="a18be47731a5a042e4bc9ccd9a44f6768ad3e14dbeb1288e6d6021025e56d83e04"></a>Ldo2Ctrl&#160;</td><td class="fielddoc"><p>LDO2_CTRL — <b>must be written last</b> in Portenta profile. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a121d8248726fc75faa298ba0a7a5359a" name="a18be47731a5a042e4bc9ccd9a44f6768a121d8248726fc75faa298ba0a7a5359a"></a>Ldo3Volt&#160;</td><td class="fielddoc"><p>LDO3_VOLT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aa70c4f4c7d49731caf9220cd8375523a" name="a18be47731a5a042e4bc9ccd9a44f6768aa70c4f4c7d49731caf9220cd8375523a"></a>Ldo3Ctrl&#160;</td><td class="fielddoc"><p>LDO3_CTRL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a63a94889fa7ca6422f3a3063b836cccf" name="a18be47731a5a042e4bc9ccd9a44f6768a63a94889fa7ca6422f3a3063b836cccf"></a>PwrCtrl0&#160;</td><td class="fielddoc"><p>PWRCTRL0 — STANDBYDLY, STANDBYINV, POR_DLY, TGRESET. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a38199ce8674ae3ea375915eab39c8fad" name="a18be47731a5a042e4bc9ccd9a44f6768a38199ce8674ae3ea375915eab39c8fad"></a>PwrCtrl1&#160;</td><td class="fielddoc"><p>PWRCTRL1 — PWRONDBNC, ONKEYDBNC, PWRONRSTEN, RESTARTEN, REGSCPEN. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a46dd67b702d1239ba7d153a38f70b6dc" name="a18be47731a5a042e4bc9ccd9a44f6768a46dd67b702d1239ba7d153a38f70b6dc"></a>PwrCtrl2&#160;</td><td class="fielddoc"><p>PWRCTRL2 — WDI_EN, WDI_POL etc. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a434144638987e87db42aad26d557b93a" name="a18be47731a5a042e4bc9ccd9a44f6768a434144638987e87db42aad26d557b93a"></a>PwrCtrl3&#160;</td><td class="fielddoc"><p>PWRCTRL3 — sequence delay etc. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a018d022aa5630ba051143c51616f26e0" name="a18be47731a5a042e4bc9ccd9a44f6768a018d022aa5630ba051143c51616f26e0"></a>Sw1PwrDnSeq&#160;</td><td class="fielddoc"><p>SW1_PWRDN_SEQ. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a5eddd468c29097b076b2a371abdf8291" name="a18be47731a5a042e4bc9ccd9a44f6768a5eddd468c29097b076b2a371abdf8291"></a>Sw2PwrDnSeq&#160;</td><td class="fielddoc"><p>SW2_PWRDN_SEQ. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768aa9437dedc8dda50dcff7ed8fb92cf4d7" name="a18be47731a5a042e4bc9ccd9a44f6768aa9437dedc8dda50dcff7ed8fb92cf4d7"></a>Sw3PwrDnSeq&#160;</td><td class="fielddoc"><p>SW3_PWRDN_SEQ. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a101b45ce80e077602a244b8a479e8e56" name="a18be47731a5a042e4bc9ccd9a44f6768a101b45ce80e077602a244b8a479e8e56"></a>Ldo1PwrDnSeq&#160;</td><td class="fielddoc"><p>LDO1_PWRDN_SEQ. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a593cc545d38685aa2c8086501b794014" name="a18be47731a5a042e4bc9ccd9a44f6768a593cc545d38685aa2c8086501b794014"></a>Ldo2PwrDnSeq&#160;</td><td class="fielddoc"><p>LDO2_PWRDN_SEQ. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a84d7e25b10054c59f0b68e32e93cea8d" name="a18be47731a5a042e4bc9ccd9a44f6768a84d7e25b10054c59f0b68e32e93cea8d"></a>Ldo3PwrDnSeq&#160;</td><td class="fielddoc"><p>LDO3_PWRDN_SEQ. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a1a33a6a2267e9e8f456d9890a2166230" name="a18be47731a5a042e4bc9ccd9a44f6768a1a33a6a2267e9e8f456d9890a2166230"></a>VrefDdrPwrDnSeq&#160;</td><td class="fielddoc"><p>VREFDDR_PWRDN_SEQ. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a6fbf05d411a8fd1f88e31e6b8494b521" name="a18be47731a5a042e4bc9ccd9a44f6768a6fbf05d411a8fd1f88e31e6b8494b521"></a>StateInfo&#160;</td><td class="fielddoc"><p>STATE_INFO — Table 146. STATE[5:0] = Wait/RUN/STANDBY/SLEEP/REGS_DISABLE. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a81cab5a4b0c8ff5ee216be44ece96544" name="a18be47731a5a042e4bc9ccd9a44f6768a81cab5a4b0c8ff5ee216be44ece96544"></a>I2cAddrReg&#160;</td><td class="fielddoc"><p>I2C_ADDR — Table 147 (read-only, OTP-driven). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768af72aa1e47a44f071c8dc92dae83ce246" name="a18be47731a5a042e4bc9ccd9a44f6768af72aa1e47a44f071c8dc92dae83ce246"></a>Rc16Mhz&#160;</td><td class="fielddoc"><p>RC_16MHZ — 16 MHz clock force, analog core overrides. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768addf4d5ee6777e5eb0eff6ed4a85d28e1" name="a18be47731a5a042e4bc9ccd9a44f6768addf4d5ee6777e5eb0eff6ed4a85d28e1"></a>OtpKey1&#160;</td><td class="fielddoc"><p>KEY1 unlock (write <code>0x15</code>). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768abc302b93f477f2d0ed1a988ae530f7c2" name="a18be47731a5a042e4bc9ccd9a44f6768abc302b93f477f2d0ed1a988ae530f7c2"></a>ChargerLedDuty&#160;</td><td class="fielddoc"><p>Undocumented Portenta bootloader register (LED duty). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768ad3ee692e0e973a70131ef137d2f1a2bc" name="a18be47731a5a042e4bc9ccd9a44f6768ad3ee692e0e973a70131ef137d2f1a2bc"></a>OtpKey2&#160;</td><td class="fielddoc"><p>KEY2 unlock (write <code>0x50</code>). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768abc2e12049fe0ac45052936dbc9715c1d" name="a18be47731a5a042e4bc9ccd9a44f6768abc2e12049fe0ac45052936dbc9715c1d"></a>ChargerLedCtrl&#160;</td><td class="fielddoc"><p>Undocumented Portenta bootloader register (LED disable). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768af3db69d0667830c26696f3f162aea530" name="a18be47731a5a042e4bc9ccd9a44f6768af3db69d0667830c26696f3f162aea530"></a>VbusInCurrentLimit&#160;</td><td class="fielddoc"><p>VBUS input current limit ((mA/50) &lt;&lt; 3 — Portenta uses 1500 mA → <code>0xA0</code>). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a68979034db276a530f097c4123e4e478" name="a18be47731a5a042e4bc9ccd9a44f6768a68979034db276a530f097c4123e4e478"></a>FmrAddr&#160;</td><td class="fielddoc"><p>FMRADDR — OTP indirect address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a575f18fc077190260534d1c095e491d9" name="a18be47731a5a042e4bc9ccd9a44f6768a575f18fc077190260534d1c095e491d9"></a>FmrData&#160;</td><td class="fielddoc"><p>FRMDATA — OTP indirect data. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a8f9ecd524b301faf26776b81f69cd74f" name="a18be47731a5a042e4bc9ccd9a44f6768a8f9ecd524b301faf26776b81f69cd74f"></a>TestRegKey3&#160;</td><td class="fielddoc"><p>TEST_REG_KEY3 — third OTP unlock key (write <code>0xAB</code>). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a875bc32d9760ead1f5f3ee81b90343b0" name="a18be47731a5a042e4bc9ccd9a44f6768a875bc32d9760ead1f5f3ee81b90343b0"></a>ChgInt&#160;</td><td class="fielddoc"><p>CHG_INT — Table 150. SUP_I/BAT2SOC_I/CHGREV_I/CHG_I. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a7cad2328d5f57794ab2cb97c1b7c0aa0" name="a18be47731a5a042e4bc9ccd9a44f6768a7cad2328d5f57794ab2cb97c1b7c0aa0"></a>ChgIntMask&#160;</td><td class="fielddoc"><p>CHG_INT_MASK. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a99c3d55e4252d55b9b2b5069d1d361c3" name="a18be47731a5a042e4bc9ccd9a44f6768a99c3d55e4252d55b9b2b5069d1d361c3"></a>ChgIntOk&#160;</td><td class="fielddoc"><p>CHG_INT_OK — Table 152. CHG_OK, BATT_OK, VBUS_OK. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768ad82dce7dc7268907cc53c94a2f8d2acc" name="a18be47731a5a042e4bc9ccd9a44f6768ad82dce7dc7268907cc53c94a2f8d2acc"></a>VbusSns&#160;</td><td class="fielddoc"><p>VBUS_SNS — Table 153. VBUS_VALID, DPM_SNS, OVLO, UVLO. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a18be47731a5a042e4bc9ccd9a44f6768a0ca4f2a2e8f2f4989ec27279db56e866" name="a18be47731a5a042e4bc9ccd9a44f6768a0ca4f2a2e8f2f4989ec27279db56e866"></a>ChgSense&#160;</td><td class="fielddoc"><p>CHG_SNS — Table 154. Charger mode (precharge, fast-cc, fast-cv, eoc …). </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="abd1092336d5416301cf26854b357d0d7" name="abd1092336d5416301cf26854b357d0d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd1092336d5416301cf26854b357d0d7">&#9670;&#160;</a></span>SwVoltageCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#abd1092336d5416301cf26854b357d0d7">pf1550::SwVoltageCode</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Common SW buck output voltage codes (RUN mode). </p>
+<p>Full encoding is <code>code → V_out</code> per datasheet Table 31:</p><ul>
+<li><code>0x00..0x0E</code> → 1.10 V .. 2.50 V (step 100 mV)</li>
+<li><code>0x0F..0x1F</code> → step 50 mV up to 3.90 V (typical step varies — see table)</li>
+</ul>
+<p>Only the codes used on Arduino Portenta H7 eval are enumerated.</p>
+<dl class="section note"><dt>Note</dt><dd>The reverse mapping (code → mV) is also provided as a free function in <a class="el" href="pf1550__voltage__tables_8hpp.html">pf1550_voltage_tables.hpp</a> for diagnostics. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abd1092336d5416301cf26854b357d0d7a3c67b22acec37e5ea74ca75ee6a42341" name="abd1092336d5416301cf26854b357d0d7a3c67b22acec37e5ea74ca75ee6a42341"></a>V1_1&#160;</td><td class="fielddoc"><p>1.100 V (datasheet base) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abd1092336d5416301cf26854b357d0d7aedc540e50f10c618159275a791847834" name="abd1092336d5416301cf26854b357d0d7aedc540e50f10c618159275a791847834"></a>V2_5&#160;</td><td class="fielddoc"><p>2.500 V (Portenta STBY/SLP setting) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abd1092336d5416301cf26854b357d0d7abc6a02c77473f9d3fafb2cbebdbb38ee" name="abd1092336d5416301cf26854b357d0d7abc6a02c77473f9d3fafb2cbebdbb38ee"></a>V3_0&#160;</td><td class="fielddoc"><p>3.000 V (SW1 RUN on Portenta carrier profile) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abd1092336d5416301cf26854b357d0d7af869fb390f575744d7e1a3845efec815" name="abd1092336d5416301cf26854b357d0d7af869fb390f575744d7e1a3845efec815"></a>V3_3&#160;</td><td class="fielddoc"><p>3.300 V (SW2 RUN on Portenta — carrier +3V3) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abd1092336d5416301cf26854b357d0d7aa80a14c08a076f638af5378a268a9f70" name="abd1092336d5416301cf26854b357d0d7aa80a14c08a076f638af5378a268a9f70"></a>V3_1&#160;</td><td class="fielddoc"><p>SW3 Table 37 code for 3.100 V (SW3 is OTP-loaded, read-only; SW1/SW2 decode 0x0D as 3.30 V) </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a3f17ae438d670440dbf9f19d5fc858f2" name="a3f17ae438d670440dbf9f19d5fc858f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f17ae438d670440dbf9f19d5fc858f2">&#9670;&#160;</a></span>ChargerStateName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char * pf1550::ChargerStateName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ab1f72c47ce166906591362fdfde6024e">ChargerState</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Human-readable name for a ChargerState enumerator. </p>
+
+</div>
+</div>
+<a id="a41447a0b5f08eceec7c8e6f6ccb5021b" name="a41447a0b5f08eceec7c8e6f6ccb5021b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41447a0b5f08eceec7c8e6f6ccb5021b">&#9670;&#160;</a></span>DecodeChargerSense()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="#ab1f72c47ce166906591362fdfde6024e">ChargerState</a> pf1550::DecodeChargerSense </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert CHG_SNS (0x87) into a typed <a class="el" href="#ab1f72c47ce166906591362fdfde6024e">ChargerState</a>. </p>
+
+</div>
+</div>
+<a id="addd27a23b2ad2302be63965d5db8b1d4" name="addd27a23b2ad2302be63965d5db8b1d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd27a23b2ad2302be63965d5db8b1d4">&#9670;&#160;</a></span>DecodeStateInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a> pf1550::DecodeStateInfo </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert STATE_INFO (0x67) full byte into a typed <a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a>. </p>
+<p>Only <code>STATE[5:0]</code> carries meaning; upper bits are reserved. </p>
+
+</div>
+</div>
+<a id="a4db59d40d340261f6bc4d839bed7037f" name="a4db59d40d340261f6bc4d839bed7037f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db59d40d340261f6bc4d839bed7037f">&#9670;&#160;</a></span>FaultRail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="#a2de0174ba078abebd86cae332fa408a3">RailId</a> pf1550::FaultRail </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>single_flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Map a single fault flag to the rail it relates to, or <a class="el" href="#a2de0174ba078abebd86cae332fa408a3a4905ac9d6a22bdfc1ae096094ce6248d">RailId::COUNT</a> if the fault is system-wide. </p>
+
+</div>
+</div>
+<a id="a651630255c423a8258fe704cd0e402c7" name="a651630255c423a8258fe704cd0e402c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a651630255c423a8258fe704cd0e402c7">&#9670;&#160;</a></span>FaultSeverityName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char * pf1550::FaultSeverityName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Human-readable name for a FaultSeverity. </p>
+
+</div>
+</div>
+<a id="a40632916f713f8a57b3b09264696d86b" name="a40632916f713f8a57b3b09264696d86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40632916f713f8a57b3b09264696d86b">&#9670;&#160;</a></span>FaultSeverityPortentaH7()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a> pf1550::FaultSeverityPortentaH7 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>single_flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Classify the severity of a <em>Portenta H7 eval</em> fault. </p>
+<p>On other platforms the same flag may have a different severity (e.g. a board that runs the MCU from SW2 instead of SW3). Callers should provide board-specific overrides if they re-use the driver for non-Portenta wiring. </p>
+
+</div>
+</div>
+<a id="a68addc895f96cc9d67e05edf5b01c34f" name="a68addc895f96cc9d67e05edf5b01c34f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68addc895f96cc9d67e05edf5b01c34f">&#9670;&#160;</a></span>LdoCodeToMillivolts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t pf1550::LdoCodeToMillivolts </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>code</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>is_ldo2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decode a 5-bit LDO voltage register field to millivolts. </p>
+<p>Per datasheet Table 41 (LDO1/2/3 voltage encoding):</p><ul>
+<li>LDO1, LDO3 (Group A): codes <code>0x00..0x0F</code> cover 750 mV → 1500 mV (step 50 mV), codes <code>0x10..0x1F</code> cover 1800 mV → 3300 mV (step 100 mV).</li>
+<li>LDO2 (Group B): codes <code>0x00..0x0F</code> cover 1800 mV → 3300 mV (step 100 mV).</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>Raw 5-bit value from <code>LDOn_VOLT[4:0]</code>. </td></tr>
+    <tr><td class="paramname">is_ldo2</td><td><code>true</code> for LDO2 (Group B), <code>false</code> for LDO1/LDO3 (Group A). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Output voltage in mV, or <code>0</code> if reserved. </dd></dl>
+
+</div>
+</div>
+<a id="a502005d99f0e9559cced9da676e12c5f" name="a502005d99f0e9559cced9da676e12c5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502005d99f0e9559cced9da676e12c5f">&#9670;&#160;</a></span>PmicStateName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char * pf1550::PmicStateName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa00ce13d74ba6c20f71c9d15bfd64819">PmicState</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Human-readable name for a PmicState enumerator. </p>
+
+</div>
+</div>
+<a id="ad96365d78c4da29ab8b4e344393f5a69" name="ad96365d78c4da29ab8b4e344393f5a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad96365d78c4da29ab8b4e344393f5a69">&#9670;&#160;</a></span>RailName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char * pf1550::RailName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a2de0174ba078abebd86cae332fa408a3">RailId</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Human-readable rail label (<code>"SW1"</code>, <code>"LDO2"</code>, …). </p>
+
+</div>
+</div>
+<a id="a9cbb348df9c882fd700449a9d7c073cc" name="a9cbb348df9c882fd700449a9d7c073cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cbb348df9c882fd700449a9d7c073cc">&#9670;&#160;</a></span>Sw3CodeToMillivolts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t pf1550::Sw3CodeToMillivolts </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SW3 output voltage (Table 37): 1.80 V + 100 mV × <code>SW3_VOLT[3:0]</code>. </p>
+<dl class="section note"><dt>Note</dt><dd>SW3 is loaded from OTP and read-only (it has no DVS) — writes are ignored. </dd></dl>
+
+</div>
+</div>
+<a id="a5d3f1dd2239f5bba728c5421e3b4ce9e" name="a5d3f1dd2239f5bba728c5421e3b4ce9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d3f1dd2239f5bba728c5421e3b4ce9e">&#9670;&#160;</a></span>SwCodeToMillivolts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t pf1550::SwCodeToMillivolts </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SW1 / SW2 output voltage, <b>DVS disabled</b> (<code>OTP_SWx_DVS_SEL = 1</code>). </p>
+<p>Datasheet Rev. 7 Table 31, right column: eight set points, every code from 7 up is 3.30 V. Portenta H7 runs SW1 at 3.0 V and SW2 at 3.3 V — values that exist only in this table, so its SW1/SW2 are DVS-disabled. (In that mode the datasheet makes <code>SWx_VOLT</code> read-only.)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Code   </th><th class="markdownTableHeadNone">mV   </th><th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone">Code   </th><th class="markdownTableHeadNone">mV    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">1100   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">1800    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">1200   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">5   </td><td class="markdownTableBodyNone">2500    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">1350   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">6   </td><td class="markdownTableBodyNone">3000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">1500   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">≥ 7   </td><td class="markdownTableBodyNone">3300   </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>Raw <code>SWx_VOLT[5:0]</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Output voltage in mV. </dd></dl>
+
+</div>
+</div>
+<a id="ae6f232e1d12abca0b9d3446b4740da39" name="ae6f232e1d12abca0b9d3446b4740da39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6f232e1d12abca0b9d3446b4740da39">&#9670;&#160;</a></span>SwCurrentLimitCodeToMilliamps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t pf1550::SwCurrentLimitCodeToMilliamps </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decode the <code>SW3_CTRL1[1:0]</code> (or SW1/SW2_CTRL1) current limit field. </p>
+<p>Encoded current limits per Tables 116, 121, 126:</p><ul>
+<li><code>00</code> → 1.0 A typical</li>
+<li><code>01</code> → 1.2 A typical</li>
+<li><code>10</code> → 1.5 A typical</li>
+<li><code>11</code> → 2.0 A typical </li>
+</ul>
+
+</div>
+</div>
+<a id="a9a7d66142c5ea59b9d81a9307900e4cc" name="a9a7d66142c5ea59b9d81a9307900e4cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7d66142c5ea59b9d81a9307900e4cc">&#9670;&#160;</a></span>SwDvsCodeToMillivolts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t pf1550::SwDvsCodeToMillivolts </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SW1 / SW2 output voltage, <b>DVS enabled</b> (<code>OTP_SWx_DVS_SEL = 0</code>): 0.6000 V + 12.5 mV × code (Table 31, left column), rounded to mV. </p>
+
+</div>
+</div>
+<a id="a0892e65040f050fcdd6df0a93638d4f3" name="a0892e65040f050fcdd6df0a93638d4f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0892e65040f050fcdd6df0a93638d4f3">&#9670;&#160;</a></span>SwMillivoltsToCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t pf1550::SwMillivoltsToCode </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>mv</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build a 6-bit SW voltage code from millivolts (Portenta-verified codes). </p>
+<p>Returns <code>0xFF</code> if the requested voltage is not a verified Portenta setting. Use <a class="el" href="#abd1092336d5416301cf26854b357d0d7">SwVoltageCode</a> for the type-safe variant. </p>
+
+</div>
+</div>
+<a id="abc80bb6d4ae502714b9f19e90d5de151" name="abc80bb6d4ae502714b9f19e90d5de151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc80bb6d4ae502714b9f19e90d5de151">&#9670;&#160;</a></span>VbusLimitMilliampsToReg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t pf1550::VbusLimitMilliampsToReg </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>mA</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Encode mA → VBUS_IN_LIM_CNFG (0x94) register byte (bits 7:3). </p>
+<p>Only common values are supported (10/100/500/1000/1500 mA). Out-of-grid requests return <code>0xFF</code>. </p>
+
+</div>
+</div>
+<a id="a4f33d48b9af3bb55d7e8c5e8f4c8dddb" name="a4f33d48b9af3bb55d7e8c5e8f4c8dddb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f33d48b9af3bb55d7e8c5e8f4c8dddb">&#9670;&#160;</a></span>VbusLimitRegToMilliamps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t pf1550::VbusLimitRegToMilliamps </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg_value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decode VBUS_IN_LIM_CNFG (absolute address 0x94) register byte to mA. </p>
+<p>The VBUS input current limit field occupies bits <b>[7:3]</b> of the register and uses a non-linear lookup table (datasheet Table at §12.2):</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">code   </th><th class="markdownTableHeadNone">mA   </th><th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone">code   </th><th class="markdownTableHeadNone">mA    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x00   </td><td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">0x10   </td><td class="markdownTableBodyNone">700    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x01   </td><td class="markdownTableBodyNone">15   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">0x11   </td><td class="markdownTableBodyNone">800    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x02   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">0x12   </td><td class="markdownTableBodyNone">900    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x03   </td><td class="markdownTableBodyNone">25   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">0x13   </td><td class="markdownTableBodyNone">1000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x04   </td><td class="markdownTableBodyNone">30   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">0x14   </td><td class="markdownTableBodyNone"><b>1500</b> (Portenta default)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x05   </td><td class="markdownTableBodyNone">35   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">0x15   </td><td class="markdownTableBodyNone">1600    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x06   </td><td class="markdownTableBodyNone">40   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">0x16   </td><td class="markdownTableBodyNone">1700    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x07   </td><td class="markdownTableBodyNone">45   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">0x17   </td><td class="markdownTableBodyNone">1800    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x08   </td><td class="markdownTableBodyNone">50   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">…   </td><td class="markdownTableBodyNone">…    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x09   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">…   </td><td class="markdownTableBodyNone">…   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x0F   </td><td class="markdownTableBodyNone">600   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
+</table>
+<p>Portenta H7 writes <code>(20 &lt;&lt; 3) == 0xA0</code> (code 0x14 = 1500 mA).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg_value</td><td>Raw register byte (bits 2:0 ignored). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Decoded current limit in mA. Codes above the table return <code>0</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ad88bbd68a6b67042ae8716222e737b71" name="ad88bbd68a6b67042ae8716222e737b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88bbd68a6b67042ae8716222e737b71">&#9670;&#160;</a></span>WorstSeverityPortentaH7()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="#a6e11c8c1035c5fe655f8370be81e37c5">FaultSeverity</a> pf1550::WorstSeverityPortentaH7 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpf1550_1_1FaultFlags.html">FaultFlags</a></td>          <td class="paramname"><span class="paramname"><em>fl</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the worst-case severity across an aggregated bitmask. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ae6ac041ba99e7d9048f87799b184ef94" name="ae6ac041ba99e7d9048f87799b184ef94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ac041ba99e7d9048f87799b184ef94">&#9670;&#160;</a></span>kChargerPageBase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t pf1550::kChargerPageBase = 0x80</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Base offset for Section 12.2 charger sub-page (see datasheet §12.2). </p>
+
+</div>
+</div>
+<a id="a7eccd57860ced072a06613a6439d8d64" name="a7eccd57860ced072a06613a6439d8d64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eccd57860ced072a06613a6439d8d64">&#9670;&#160;</a></span>kDefaultI2cAddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t pf1550::kDefaultI2cAddress = 0x08</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default 7-bit I²C slave address (settable via OTP — see Table 147). </p>
+
+</div>
+</div>
+<a id="a795f286be126ceb9adfe1eb90456eeee" name="a795f286be126ceb9adfe1eb90456eeee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795f286be126ceb9adfe1eb90456eeee">&#9670;&#160;</a></span>kExpectedDeviceId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t pf1550::kExpectedDeviceId = 0x7C</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Expected <code>DEVICE_ID[2:0]</code> family identifier (<a class="el" href="classpf1550_1_1PF1550.html" title="CRTP-based PF1550 PMIC driver.">PF1550</a> family = <code>100b</code>). </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacepf1550.html">pf1550</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

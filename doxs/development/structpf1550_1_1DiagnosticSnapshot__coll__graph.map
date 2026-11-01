@@ -1,0 +1,7 @@
+<map id="pf1550::DiagnosticSnapshot" name="pf1550::DiagnosticSnapshot">
+<area shape="rect" id="Node000001" title="Full diagnostic snapshot returned by PF1550::ReadDiagnosticSnapshot()." alt="" coords="64,98,268,126"/>
+<area shape="rect" id="Node000002" href="$structpf1550_1_1FaultFlags.html" title="Bitset of latched fault flags." alt="" coords="5,5,146,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,41,156,97,151,98,98,46"/>
+<area shape="rect" id="Node000003" href="$structpf1550_1_1RailDiagnostics.html" title="Per&#45;rail status snapshot (latched + live + control byte)." alt="" coords="169,5,344,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,43,181,100,178,95,231,44"/>
+</map>

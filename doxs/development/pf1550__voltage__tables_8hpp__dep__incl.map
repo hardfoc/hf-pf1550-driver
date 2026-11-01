@@ -1,0 +1,13 @@
+<map id="inc/pf1550_voltage_tables.hpp" name="inc/pf1550_voltage_tables.hpp">
+<area shape="rect" id="Node000001" title="PF1550 SW / LDO voltage&#45;code ↔ millivolt conversion helpers." alt="" coords="416,5,562,50"/>
+<area shape="rect" id="Node000002" href="$pf1550_8hpp.html" title="Hardware&#45;agnostic driver for the NXP PF1550 PMIC family." alt="" coords="430,98,548,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="491,64,491,99,487,96,487,68"/>
+<area shape="rect" id="Node000003" href="$pf1550__esp32c6__diagnostics_8cpp.html" title="ESP32&#45;C6 PF1550 diagnostic&#45;snapshot + self&#45;test example." alt="" coords="5,182,245,227"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,132,213,184,212,179,422,127"/>
+<area shape="rect" id="Node000004" href="$pf1550__esp32c6__probe_8cpp.html" title="ESP32&#45;C6 I2C probe for NXP PF1550 @ 0x08." alt="" coords="269,182,472,227"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="463,134,400,184,398,179,458,136"/>
+<area shape="rect" id="Node000005" href="$pf1550__esp32c6__provision_8cpp.html" title="External ESP32&#45;C6 PMIC provisioning for pre&#45;MCU board bring&#45;up." alt="" coords="495,182,720,227"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="519,133,582,182,577,181,517,138"/>
+<area shape="rect" id="Node000006" href="$pf1550__esp32c6__register__dump_8cpp.html" title="Dump selected PF1550 registers over I2C (ESP32&#45;C6)" alt="" coords="744,174,932,235"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="559,127,734,171,746,177,741,176,732,176,558,132"/>
+</map>
