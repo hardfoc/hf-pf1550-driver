@@ -40,7 +40,7 @@ VSYS is up — the STM32 does **not** need to run.
 If STANDBY or USB enable pins are wired to test points, enable strap drive in
 menuconfig:
 
-```
+```text
 Component config → PF1550 Example Configuration
   → Drive PMIC strap GPIOs from ESP32-C6
 ```

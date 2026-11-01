@@ -12,7 +12,7 @@ The handler bridges **HardFOC `BaseI2c`** and optional **`BaseGpio`** strap pins
 
 ## Location
 
-```
+```text
 hf-core/handlers/pf1550/
   Pf1550Handler.h
   Pf1550Handler.cpp
