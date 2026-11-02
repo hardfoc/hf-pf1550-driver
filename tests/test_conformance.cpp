@@ -78,3 +78,11 @@ TEST_CASE("TEMP_INT_STAT0 bit 2 is the 125 C crossing and bit 1 is unused") {
   bus.reg(0x20) = 1u << 0;
   CHECK_EQ(latched(bus).value, FaultFlags::kTempWarn);
 }
+
+// Table 58: VBUS_LIN_ILIM codes 21 to 31 are reserved.
+TEST_CASE("reserved VBUS input-limit codes decode to 0 mA") {
+  for (uint8_t code = 21; code < 32; ++code) {
+    CHECK_EQ(pf1550::VbusLimitRegToMilliamps(static_cast<uint8_t>(code << 3)), 0);
+  }
+  CHECK_EQ(pf1550::VbusLimitRegToMilliamps(20u << 3), 1500);
+}

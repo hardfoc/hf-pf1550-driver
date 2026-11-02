@@ -105,7 +105,8 @@ PMIC enters STANDBY.
 | 16 to 20 | 700, 800, 900, 1000, 1500 mA |
 | 21 to 31 | Reserved |
 
-`SetVbusCurrentLimitMa()` accepts 10, 100, 500, 1000 and 1500 mA and rejects anything else with
+`VbusLimitRegToMilliamps()` decodes the register byte and returns 0 for a reserved code; the snapshot's
+`vbus_in_limit_ma` uses it. `SetVbusCurrentLimitMa()` accepts 10, 100, 500, 1000 and 1500 mA and rejects anything else with
 `Error::InvalidParam`. For another value, write the byte yourself:
 `WriteRegister(Register::VbusInCurrentLimit, code << 3)`.
 

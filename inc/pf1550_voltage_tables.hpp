@@ -116,7 +116,7 @@ constexpr uint16_t LdoCodeToMillivolts(uint8_t code, bool is_ldo2) noexcept {
  * @brief Decode VBUS_IN_LIM_CNFG (absolute address 0x94) register byte to mA.
  *
  * The VBUS input current limit field occupies bits **[7:3]** of the register
- * and uses a non-linear lookup table (datasheet Table at §12.2):
+ * and uses a non-linear lookup table (datasheet Table 58):
  *
  * | code | mA  | | code | mA   |
  * |------|-----|-|------|------|
@@ -125,10 +125,10 @@ constexpr uint16_t LdoCodeToMillivolts(uint8_t code, bool is_ldo2) noexcept {
  * | 0x02 | 20  | | 0x12 | 900  |
  * | 0x03 | 25  | | 0x13 | 1000 |
  * | 0x04 | 30  | | 0x14 | **1500** (Portenta default) |
- * | 0x05 | 35  | | 0x15 | 1600 |
- * | 0x06 | 40  | | 0x16 | 1700 |
- * | 0x07 | 45  | | 0x17 | 1800 |
- * | 0x08 | 50  | | …    | …    |
+ * | 0x05 | 35  | | 0x15..0x1F | reserved |
+ * | 0x06 | 40  | |      |      |
+ * | 0x07 | 45  | |      |      |
+ * | 0x08 | 50  | |      |      |
  * | 0x09 | 100 | |      |      |
  * | …    | …   | |      |      |
  * | 0x0F | 600 | |      |      |
@@ -136,7 +136,7 @@ constexpr uint16_t LdoCodeToMillivolts(uint8_t code, bool is_ldo2) noexcept {
  * Portenta H7 writes `(20 << 3) == 0xA0` (code 0x14 = 1500 mA).
  *
  * @param reg_value Raw register byte (bits 2:0 ignored).
- * @return Decoded current limit in mA. Codes above the table return `0`.
+ * @return Decoded current limit in mA; reserved codes (21..31) return `0`.
  */
 constexpr uint16_t VbusLimitRegToMilliamps(uint8_t reg_value) noexcept {
   const uint8_t code = static_cast<uint8_t>((reg_value >> 3U) & 0x1FU);
@@ -158,10 +158,7 @@ constexpr uint16_t VbusLimitRegToMilliamps(uint8_t reg_value) noexcept {
     case 0x12: return 900;
     case 0x13: return 1000;
     case 0x14: return 1500;  // Portenta default
-    case 0x15: return 1600;
-    case 0x16: return 1700;
-    case 0x17: return 1800;
-    default: return 0;       // codes above table reserved
+    default: return 0;       // codes 21..31 are reserved (Table 58)
   }
 }
 
