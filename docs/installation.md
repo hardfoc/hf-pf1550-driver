@@ -30,7 +30,8 @@ target_link_libraries(my_app PRIVATE hf::pf1550)
 
 `hf::pf1550` is an alias of the `hf_pf1550` INTERFACE target. It carries the include directories (`inc/` and the
 generated version header) and requires C++20 (`cxx_std_20`), so your target does not need to set either.
-`find_package(hf_pf1550)` works after `cmake --install`.
+`find_package(hf_pf1550)` works after `cmake --install`: the headers go to `include/hf_pf1550/inc/` and the
+template implementation they include to `include/hf_pf1550/src/`, and `hf::pf1550` points at the first.
 
 | Option | Default | Effect |
 | --- | --- | --- |
