@@ -1,11 +1,3 @@
----
-layout: default
-title: "📖 API reference"
-nav_order: 8
-parent: "📚 Documentation"
-permalink: /docs/api_reference/
----
-
 # API reference
 
 Complete reference for the `pf1550::` namespace. All symbols are exposed

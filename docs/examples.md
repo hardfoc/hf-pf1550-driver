@@ -1,11 +1,3 @@
----
-layout: default
-title: "💡 Examples"
-nav_order: 9
-parent: "📚 Documentation"
-permalink: /docs/examples/
----
-
 # Examples
 
 ## ESP32-C6 (ESP-IDF)

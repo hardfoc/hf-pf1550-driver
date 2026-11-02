@@ -1,12 +1,3 @@
----
-layout: default
-title: "PF1550 I2C register reference (extract)"
-description: "Auto-generated readable extract from NXP PF1550 Rev.7 Section 12"
-nav_order: 12
-parent: "Datasheet & links"
-permalink: /docs/datasheet/PF1550-i2c-register-reference/
----
-
 # PF1550 I2C register reference (readable extract)
 
 > **Auto-generated** from `_local_reference/datasheet/PF1550.pdf` via

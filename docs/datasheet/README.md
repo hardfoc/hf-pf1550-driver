@@ -1,12 +1,3 @@
----
-layout: default
-title: "📄 Datasheet & manufacturer"
-description: "NXP PF1550 official documentation and readable extracts"
-nav_order: 11
-parent: "📚 Documentation"
-permalink: /docs/datasheet/
----
-
 # Datasheet and manufacturer resources
 
 ## Official source

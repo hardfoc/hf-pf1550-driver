@@ -1,11 +1,3 @@
----
-layout: default
-title: "🛠️ Troubleshooting"
-nav_order: 10
-parent: "📚 Documentation"
-permalink: /docs/troubleshooting/
----
-
 # Troubleshooting
 
 ## DEVICE_ID read fails / NACK

@@ -1,11 +1,3 @@
----
-layout: default
-title: "🔗 Platform integration"
-nav_order: 7
-parent: "📚 Documentation"
-permalink: /docs/platform_integration/
----
-
 # Platform integration — hf-core Pf1550Handler
 
 The handler bridges **HardFOC `BaseI2c`** and optional **`BaseGpio`** strap pins to `pf1550::PF1550<HalPf1550Comm>`.

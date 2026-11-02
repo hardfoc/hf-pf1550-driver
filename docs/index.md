@@ -1,13 +1,3 @@
----
-layout: default
-title: "📚 Documentation"
-description: "Complete documentation for the HardFOC PF1550 PMIC driver"
-nav_order: 2
-parent: "HardFOC PF1550 Driver"
-permalink: /docs/
-has_children: true
----
-
 # HF-PF1550 documentation
 
 Welcome. This site mirrors the [`docs/`](https://github.com/hardfoc/hf-pf1550-driver/tree/main/docs) folder and documents the **NXP PF1550** PMIC family driver used on Portenta H7 and Synapse MCU power domains.

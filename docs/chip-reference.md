@@ -1,11 +1,3 @@
----
-layout: default
-title: "Chip reference"
-nav_order: 4
-parent: "📚 Documentation"
-permalink: /docs/chip-reference/
----
-
 # Chip reference
 
 ## Family

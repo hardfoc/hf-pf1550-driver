@@ -1,11 +1,3 @@
----
-layout: default
-title: "⚡ Quick start"
-nav_order: 4
-parent: "📚 Documentation"
-permalink: /docs/quickstart/
----
-
 # Quick start
 
 ## 1. Implement the bus adapter (CRTP)
@@ -47,7 +39,6 @@ pmic.ApplyPortentaH7DefaultProfile();
 
 ## 4. Custom profile
 
-{% raw %}
 ```cpp
 std::array<pf1550::profiles::RegisterWrite, 2> custom = {{
     {0x4F, 0x00, 0},
@@ -55,6 +46,5 @@ std::array<pf1550::profiles::RegisterWrite, 2> custom = {{
 }};
 pmic.ApplyProfile(custom);
 ```
-{% endraw %}
 
 **Next:** [Hardware setup →](hardware_setup.md) · [API reference →](api_reference.md)

@@ -1,11 +1,3 @@
----
-layout: default
-title: "ESP32-C6 external provisioning"
-nav_order: 6
-parent: "📚 Documentation"
-permalink: /docs/esp32-provisioning/
----
-
 # ESP32-C6 external PMIC provisioning
 
 Use an **ESP32-C6 dev kit** to configure the PF1550 over exposed I2C test pads

@@ -1,11 +1,3 @@
----
-layout: default
-title: "🔌 Hardware setup — ESP32-C6"
-nav_order: 5
-parent: "📚 Documentation"
-permalink: /docs/hardware_setup/
----
-
 # Hardware setup — ESP32-C6 examples
 
 The ESP32-C6 examples exercise the **driver API over I2C**. They do not require a PF1550 on the bench for CI builds.

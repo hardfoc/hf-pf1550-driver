@@ -1,11 +1,3 @@
----
-layout: default
-title: "⚙️ Configuration"
-nav_order: 6
-parent: "📚 Documentation"
-permalink: /docs/configuration/
----
-
 # Configuration
 
 The PF1550 driver exposes board-level configuration through three layers:
@@ -35,7 +27,6 @@ The two tables only differ in **a few register writes**; see
 
 ## 2. Building a custom profile
 
-{% raw %}
 ```cpp
 #include "pf1550_profiles.hpp"
 
@@ -48,7 +39,6 @@ constexpr std::array<pf1550::profiles::RegisterWrite, 4> kMyMinimalProfile = {{
 
 pmic.ApplyProfile(kMyMinimalProfile);
 ```
-{% endraw %}
 
 Each `RegisterWrite` entry takes a target register, the byte to write,
 and an optional `delay_us` to wait *after* the write. The driver

@@ -38,3 +38,4 @@ __pycache__/
 # Docs site output
 _site/
 docs/html/
+site/

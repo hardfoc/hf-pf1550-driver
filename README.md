@@ -1,11 +1,3 @@
----
-layout: default
-title: "HardFOC PF1550 Driver"
-description: "Header-only NXP PF1550 PMIC driver with ESP32-C6 examples and Portenta H7 profile"
-nav_order: 1
-permalink: /
----
-
 # HF-PF1550 Driver
 
 **NXP [PF1550](https://www.nxp.com/products/power-management/pmics/power-management-ics-pmic-for-high-performance-applications:PF1550) PMIC family — I2C power management for application processors**
@@ -15,20 +7,20 @@ permalink: /
 [![CI](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml/badge.svg?branch=main)](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://hardfoc.github.io/hf-pf1550-driver/)
 
-## 📚 Table of Contents
+## Table of Contents
 
-1. [Overview](#-overview)
-2. [Features](#-features)
-3. [Quick Start](#-quick-start)
-4. [Installation](#-installation)
-5. [API Reference](#-api-reference)
-6. [Examples](#-examples)
-7. [Documentation](#-documentation)
-8. [References](#-references)
-9. [Contributing](#-contributing)
-10. [License](#-license)
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Quick Start](#quick-start)
+4. [Installation](#installation)
+5. [API Reference](#api-reference)
+6. [Examples](#examples)
+7. [Documentation](#documentation)
+8. [References](#references)
+9. [Contributing](#contributing)
+10. [License](#license)
 
-## 📦 Overview
+## Overview
 
 > **📖 [Live documentation](https://hardfoc.github.io/hf-pf1550-driver/)** — guides, register extracts, Portenta profile, ESP32-C6 examples.
 
@@ -36,7 +28,7 @@ The **PF1550** is a multi-rail PMIC (3 bucks, 3 LDOs, charger, OTP) used on **Ar
 
 You implement a small **CRTP bus adapter** (`pf1550::BusInterface<YourBus>`) for I2C and optional strap GPIOs.
 
-### 🔀 Chip compatibility
+### Chip compatibility
 
 | Part | I2C | DEVICE_ID | OTP |
 |------|-----|-----------|-----|
@@ -44,7 +36,7 @@ You implement a small **CRTP bus adapter** (`pf1550::BusInterface<YourBus>`) for
 | MC34PF1550* | 0x08 | 0x7C | Factory OTP — some rails locked |
 | MC32PF1550* | 0x08 | 0x7C | Same register map |
 
-## ✨ Features
+## Features
 
 - ✅ **Header-only C++20** — `pf1550::PF1550<BusType>` with `.ipp` template implementation
 - ✅ **CRTP bus interface** — zero virtual overhead on I2C path
@@ -63,7 +55,7 @@ You implement a small **CRTP bus adapter** (`pf1550::BusInterface<YourBus>`) for
 - ✅ **Documentation** — Doxygen + Jekyll GitHub Pages, `docs/datasheet/` auto-generated extract, **DIOVV traceability** for medical-device use
 - ✅ **CI** — ESP32 matrix build, C++ lint, C++ static analysis, docs link check, YAML lint, markdownlint, release packaging
 
-## 🚀 Quick Start
+## Quick Start
 
 ```cpp
 #include "pf1550.hpp"
@@ -85,7 +77,7 @@ if (pmic.EnsureInitialized()) {
 
 See [Quick Start Guide](docs/quickstart.md) and [Portenta profile](docs/portenta-profile.md).
 
-## 🔧 Installation
+## Installation
 
 1. Clone with submodules (for ESP32 examples):
 
@@ -109,7 +101,7 @@ See [Quick Start Guide](docs/quickstart.md) and [Portenta profile](docs/portenta
 
 Details: [docs/installation.md](docs/installation.md)
 
-## 📖 API Reference
+## API Reference
 
 | Method | Description |
 |--------|-------------|
@@ -123,7 +115,7 @@ Details: [docs/installation.md](docs/installation.md)
 
 Full API: [docs/api_reference.md](docs/api_reference.md)
 
-## 📊 Examples
+## Examples
 
 | Example | Target | Description |
 |---------|--------|-------------|
@@ -137,7 +129,7 @@ cd examples/esp32
 ./scripts/build_app.sh pf1550_esp32c6_provision Debug
 ```
 
-## 📚 Documentation
+## Documentation
 
 | Guide | Description |
 |-------|-------------|
@@ -151,7 +143,7 @@ cd examples/esp32
 | [Datasheet](docs/datasheet/README.md) | PDF fetch + readable extracts |
 | [Troubleshooting](docs/troubleshooting.md) | OTP, power-cycle, USB |
 
-## 🔗 References
+## References
 
 | Resource | Link |
 |----------|------|
@@ -159,10 +151,10 @@ cd examples/esp32
 | Portenta VFR reference | `I2C_PMIC.c` in pw-design reference tree |
 | ESP-IDF I2C master | [ESP32-C6 I2C docs](https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/i2c.html) |
 
-## 🤝 Contributing
+## Contributing
 
 Run `./scripts/verify_driver_scaffold.sh` before opening a PR. Hardware validation remains manual.
 
-## 📄 License
+## License
 
 **GPL-3.0** — see [LICENSE](LICENSE).

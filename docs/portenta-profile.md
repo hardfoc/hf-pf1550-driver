@@ -1,11 +1,3 @@
----
-layout: default
-title: "Portenta H7 profile"
-nav_order: 5
-parent: "📚 Documentation"
-permalink: /docs/portenta-profile/
----
-
 # Portenta H7 PMIC profiles
 
 ## Rail assignment (MCU domain — module schematic)
