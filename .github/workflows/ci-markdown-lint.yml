@@ -8,6 +8,9 @@ on:
     branches: [main, develop]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   markdownlint:
     uses: hardfoc/hf-general-ci-tools/.github/workflows/ru-markdown-lint.yml@v1
