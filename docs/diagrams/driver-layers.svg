@@ -56,8 +56,10 @@
 <text x="516.6" y="409.5" font-size="16" font-weight="700" fill="#3730A3">ReadOtpRegion</text>
 <rect x="661.9" y="391.4" width="133.5" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
 <text x="669.9" y="409.5" font-size="16" font-weight="700" fill="#3730A3">SetSwVoltage</text>
-<rect x="803.4" y="391.4" width="138.6" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
-<text x="811.4" y="409.5" font-size="16" font-weight="700" fill="#3730A3">SetLdoVoltage</text>
+<rect x="803.4" y="391.4" width="159.4" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="811.4" y="409.5" font-size="16" font-weight="700" fill="#3730A3">SetSwVoltageMv</text>
+<rect x="970.8" y="391.4" width="138.6" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="978.8" y="409.5" font-size="16" font-weight="700" fill="#3730A3">SetLdoVoltage</text>
 <rect x="48" y="425.4" width="216.7" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
 <text x="56" y="443.5" font-size="16" font-weight="700" fill="#3730A3">SetVbusCurrentLimitMa</text>
 <rect x="272.7" y="425.4" width="207.6" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
