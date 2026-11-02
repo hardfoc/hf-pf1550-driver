@@ -293,13 +293,12 @@ bool PF1550<BusType>::ReadLatchedFaults(FaultFlags& faults) noexcept {
   if (ldo0 & LdoIntStat0Bits::kLdo1Fault) faults.Set(FaultFlags::kLdo1Fault);
   if (ldo0 & LdoIntStat0Bits::kLdo2Fault) faults.Set(FaultFlags::kLdo2Fault);
   if (ldo0 & LdoIntStat0Bits::kLdo3Fault) faults.Set(FaultFlags::kLdo3Fault);
-  if (temp0 & TempIntStat0Bits::kTempWarn) faults.Set(FaultFlags::kTempWarn);
-  if (temp0 & TempIntStat0Bits::kTempShdn) faults.Set(FaultFlags::kTempShdn);
+  if (temp0 & TempIntStat0Bits::kTherm110) faults.Set(FaultFlags::kTempWarn);
+  if (temp0 & TempIntStat0Bits::kTherm125) faults.Set(FaultFlags::kTempShdn);
   if (misc0 & MiscIntStat0Bits::kPwrOn) faults.Set(FaultFlags::kPwrOn);
-  if (misc0 & MiscIntStat0Bits::kVsysLow) faults.Set(FaultFlags::kVsysLow);
-  if (misc0 & MiscIntStat0Bits::kVsysOv) faults.Set(FaultFlags::kVsysOv);
-  if (misc0 & MiscIntStat0Bits::kWdiAssert) faults.Set(FaultFlags::kWdiAssert);
-  if (misc0 & MiscIntStat0Bits::kResetBmcu) faults.Set(FaultFlags::kResetBmcu);
+  if (misc0 & MiscIntStat0Bits::kLowSysWarn) faults.Set(FaultFlags::kVsysLow);
+  if (misc0 & MiscIntStat0Bits::kSysOvlo) faults.Set(FaultFlags::kVsysOv);
+  // PWRUP_I / PWRDN_I report finished mode transitions, not faults: read MISC_INT_STAT0 for them.
   if (chg != 0) faults.Set(FaultFlags::kChgFault);
   // VBUS_VALID is bit 5 of VBUS_SNS — invalid means !bit5.
   if ((vbus & (1u << 5)) == 0) faults.Set(FaultFlags::kVbusInval);

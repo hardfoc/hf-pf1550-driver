@@ -105,10 +105,10 @@ STAT bits are write-1-to-clear: `ClearLatchedFaults()` writes 0xFF to every STAT
 handled the cause; a bit that comes back at once means the cause is still there. The sticky driver flags are
 separate: `ClearErrorFlags()` clears them.
 
-!!! danger "SW, temperature and MISC fault flags"
-    The fault decoder reads the SW, temperature and MISC status registers at bit positions that differ from the
-    data sheet ([Register map](registers.md#interrupt-registers)). Treat those `FaultFlags` bits, and the
-    severities derived from them, as unreliable until the decoder is fixed; the LDO and charger flags are right.
+`ReadLatchedFaults()` decodes the STAT registers at the data sheet's bit positions ([Register
+map](registers.md#interrupt-registers)). `PWRUP_I` and `PWRDN_I` (a finished RUN / STANDBY / SLEEP transition) are
+events, not faults, and have no `FaultFlags` bit; read `MISC_INT_STAT0` if you need them. `kWdiAssert` and
+`kResetBmcu` are never set: the PF1550 has no such interrupt bits.
 
 ## Run the boot self-test
 

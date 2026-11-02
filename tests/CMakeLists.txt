@@ -12,6 +12,7 @@
 add_executable(hf_pf1550_host_tests
   test_main.cpp
   test_driver.cpp
+  test_conformance.cpp
 )
 
 target_link_libraries(hf_pf1550_host_tests PRIVATE ${HF_PF1550_TARGET_NAME})

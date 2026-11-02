@@ -92,16 +92,16 @@ struct FaultFlags {
   static constexpr uint32_t kLdo2Fault = 1u << 9;
   static constexpr uint32_t kLdo3Fault = 1u << 10;
 
-  // ---- Temperature ----
-  static constexpr uint32_t kTempWarn = 1u << 12;
-  static constexpr uint32_t kTempShdn = 1u << 13;
+  // ---- Temperature (TEMP_INT_STAT0, Table 102) ----
+  static constexpr uint32_t kTempWarn = 1u << 12; ///< THERM110I: die crossed 110 °C.
+  static constexpr uint32_t kTempShdn = 1u << 13; ///< THERM125I: die crossed 125 °C.
 
-  // ---- Misc system events ----
-  static constexpr uint32_t kPwrOn     = 1u << 16;
-  static constexpr uint32_t kVsysLow   = 1u << 17;
-  static constexpr uint32_t kVsysOv    = 1u << 18;
-  static constexpr uint32_t kWdiAssert = 1u << 19;
-  static constexpr uint32_t kResetBmcu = 1u << 20;
+  // ---- Misc system events (MISC_INT_STAT0, Table 108) ----
+  static constexpr uint32_t kPwrOn     = 1u << 16; ///< PWRON_I: power-on button event.
+  static constexpr uint32_t kVsysLow   = 1u << 17; ///< LOW_SYS_WARN_I: VSYS crossed LOW_SYS_WARN.
+  static constexpr uint32_t kVsysOv    = 1u << 18; ///< SYS_OVLO_I: VSYS crossed SYS_OVLO.
+  static constexpr uint32_t kWdiAssert = 1u << 19; ///< Never set: the PF1550 has no WDI interrupt bit.
+  static constexpr uint32_t kResetBmcu = 1u << 20; ///< Never set: the PF1550 has no RESETBMCU interrupt bit.
 
   // ---- Charger / VBUS ----
   static constexpr uint32_t kChgFault   = 1u << 24;

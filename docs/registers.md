@@ -112,12 +112,10 @@ and SENSE (the live state). INT_CATEGORY (0x06) has one bit per group and is the
 
 </div>
 
-!!! warning "The fault decoder does not match these bit positions yet"
-    `ReadLatchedFaults()` tests `SW_INT_STAT0/1` bits 0, 2 and 4, `TEMP_INT_STAT0` bits 0 and 1, and
-    `MISC_INT_STAT0` bits 0 to 4 in a different order (`PWRON`, `VSYS low`, `VSYS OV`, `WDI`, `RESETBMCU`). The
-    table above is the data sheet's. Until the decoder is fixed, the SW2, SW3, temperature and MISC flags in
-    `FaultFlags` can name the wrong event (a RUN to STANDBY transition, for example, sets `kVsysLow`); the LDO and
-    charger flags are right. Read the STAT registers with `ReadRegister()` when you need a definite answer.
+`ReadLatchedFaults()` maps these bits into `FaultFlags`: `SW1/2/3_LS_I` and `_HS_I` to `kSwNLs` / `kSwNHs`,
+`LDOn_FAULTI` to `kLdoNFault`, `THERM110I` to `kTempWarn`, `THERM125I` to `kTempShdn`, `PWRON_I` to `kPwrOn`,
+`LOW_SYS_WARN_I` to `kVsysLow` and `SYS_OVLO_I` to `kVsysOv`. `PWRUP_I` and `PWRDN_I` are mode-transition events and
+are not mapped. The SENSE registers use the same layout as their STAT registers.
 
 ## The plain-text extract
 
