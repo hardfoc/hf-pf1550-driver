@@ -41,6 +41,13 @@ if(HF_PF1550_ENABLE_WARNINGS)
     endif()
 endif()
 
+# ── Host unit tests (register model; no hardware) ────────────────────────────
+option(HF_PF1550_BUILD_TESTS "Build the host unit tests in tests/" OFF)
+if(HF_PF1550_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(tests)
+endif()
+
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 

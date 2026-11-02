@@ -39,3 +39,4 @@ __pycache__/
 _site/
 docs/html/
 site/
+build-host/
