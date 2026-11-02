@@ -160,7 +160,7 @@ public:
    * Differences from the default:
    *  1. **SW1 (+3V1SW) sequenced first** — feeds LDO inputs on Portenta.
    *  2. `SW2_CTRL = 0x0F` — full enable including STANDBY (carrier +3V3 stable).
-   *  3. Charger LED disabled to suppress orange CHGB blips.
+   *  3. `SW1_CTRL = 0x0F` — SW1 stays on in STANDBY and SLEEP as well.
    */
   bool ApplyPortentaH7CarrierProfile() noexcept;
 

@@ -40,15 +40,15 @@ inline constexpr std::array<RegisterWrite, 23> kPortentaH7Default = {{
     {0x4D, 0x0F, 0},   // LDO1 enable
     {0x52, 0x09, 0},   // LDO3 -> 1.2 V
     {0x53, 0x0F, 0},   // LDO3 enable
-    {0x58, 0x03, 0},   // LDO misc
+    {0x58, 0x03, 0},   // PWRCTRL0: STANDBYDLY = 3, STANDBYINV = 0
     {0x9C, 0x80, 1000}, // charger LED duty (Portenta bootloader)
     {0x9E, 0x20, 1000}, // disable charger LED
-    {0x42, 0x02, 1000}, // SW3 current limit 2 A
+    {0x42, 0x02, 1000}, // SW3_CTRL1: current limit 1.5 A typical (Table 126)
     {0x94, 0xA0, 0},   // VBUS input limit 1500 mA
     {0x38, 0x07, 0},   // SW2 RUN 3.3 V
     {0x39, 0x05, 0},   // SW2 STBY/DVS
     {0x3A, 0x05, 0},   // SW2 alt
-    {0x3B, 0x01, 0},   // SW2 ctrl (standby voltage switch enabled)
+    {0x3B, 0x01, 0},   // SW2_CTRL: on in RUN only
     {0x32, 0x07, 0},   // SW1 RUN 3.3 V (VCAP / MCU digital)
     {0x33, 0x05, 0},   // SW1 STBY/DVS
     {0x34, 0x05, 0},   // SW1 alt
@@ -86,10 +86,10 @@ inline constexpr std::array<RegisterWrite, 23> kPortentaH7Carrier = {{
     {0x4D, 0x0F, 0},    // LDO1 enable
     {0x52, 0x09, 0},    // LDO3 -> 1.2 V
     {0x53, 0x0F, 0},    // LDO3 enable
-    {0x58, 0x03, 0},    // PWRCTRL0 (STANDBY polarity etc.)
+    {0x58, 0x03, 0},    // PWRCTRL0: STANDBYDLY = 3, STANDBYINV = 0
     {0x9C, 0x80, 1000}, // charger LED duty
     {0x9E, 0x20, 1000}, // disable charger LED (CHGB blips)
-    {0x42, 0x02, 1000}, // SW3 current limit 2 A
+    {0x42, 0x02, 1000}, // SW3_CTRL1: current limit 1.5 A typical (Table 126)
     {0x94, 0xA0, 0},    // VBUS input limit 1500 mA
     {0x38, 0x07, 0},    // SW2 RUN 3.3 V (carrier +VOUT)
     {0x39, 0x05, 0},    // SW2 STBY/DVS
