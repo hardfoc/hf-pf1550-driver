@@ -42,10 +42,10 @@ cannot read it with an ordinary register access: you declare it with `SetSwDvsEn
 With DVS enabled, `SWx_VOLT`, `SWx_STBY_VOLT` and `SWx_SLP_VOLT` can be changed after start-up. With DVS
 disabled they are read-only, and the data sheet says they must not be written.
 
-!!! danger "`SwVoltageCode` values are DVS-disabled codes"
-    `SwVoltageCode::V3_3` is code 0x07. On an SW1 or SW2 that runs with DVS enabled, the same code is 0.6875 V.
-    Before calling `SetSwVoltage(1, ...)` or `SetSwVoltage(2, ...)`, know which table the part uses; for a DVS
-    rail, write a DVS code with `WriteRegister(Register::Sw1Volt, code)` instead.
+`SetSwVoltageMv()` and `SetSwVoltage()` follow these rules: they write only a DVS-enabled SW1 or SW2 (declared
+with `SetSwDvsEnabled()`), always in the DVS encoding, and refuse a DVS-disabled buck and SW3.
+`SwDvsMillivoltsToCode()` gives the code for a millivolt value. A raw `WriteRegister()` is not checked: on a DVS
+buck, code 0x07 is 0.6875 V, not 3.3 V.
 
 ## SW3
 
@@ -105,7 +105,8 @@ PMIC enters STANDBY.
 | 16 to 20 | 700, 800, 900, 1000, 1500 mA |
 | 21 to 31 | Reserved |
 
-`SetVbusCurrentLimitMa()` accepts 10, 100, 500, 1000 and 1500 mA and rejects anything else with
+`VbusLimitRegToMilliamps()` decodes the register byte and returns 0 for a reserved code; the snapshot's
+`vbus_in_limit_ma` uses it. `SetVbusCurrentLimitMa()` accepts 10, 100, 500, 1000 and 1500 mA and rejects anything else with
 `Error::InvalidParam`. For another value, write the byte yourself:
 `WriteRegister(Register::VbusInCurrentLimit, code << 3)`.
 

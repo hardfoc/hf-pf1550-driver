@@ -213,22 +213,24 @@ bool PF1550<BusType>::ReadOtpRegion(uint8_t* buffer, size_t len, uint8_t start) 
 
 template <typename BusType>
 bool PF1550<BusType>::SetSwVoltage(uint8_t sw_index, SwVoltageCode run_code) noexcept {
-  Register volt_reg = Register::Sw1Volt;
-  switch (sw_index) {
-  case 1:
-    volt_reg = Register::Sw1Volt;
-    break;
-  case 2:
-    volt_reg = Register::Sw2Volt;
-    break;
-  case 3:
-    volt_reg = Register::Sw3Volt;
-    break;
-  default:
+  return SetSwVoltageMv(sw_index, SwCodeToMillivolts(static_cast<uint8_t>(run_code)));
+}
+
+template <typename BusType>
+bool PF1550<BusType>::SetSwVoltageMv(uint8_t sw_index, uint16_t mv) noexcept {
+  // SW3_VOLT is OTP-loaded and read-only (Table 37); SW1/SW2_VOLT are writable only with DVS enabled
+  // (Table 31), where the encoding is 0.6 V + 12.5 mV x code.
+  if ((sw_index != 1U && sw_index != 2U) || !sw_dvs_enabled_[sw_index - 1U]) {
     setError(Error::InvalidParam);
     return false;
   }
-  return writeReg8(static_cast<uint8_t>(volt_reg), static_cast<uint8_t>(run_code));
+  const uint8_t code = SwDvsMillivoltsToCode(mv);
+  if (code == 0xFFU) {
+    setError(Error::InvalidParam);
+    return false;
+  }
+  const Register volt_reg = sw_index == 1U ? Register::Sw1Volt : Register::Sw2Volt;
+  return writeReg8(static_cast<uint8_t>(volt_reg), code);
 }
 
 template <typename BusType>
@@ -293,13 +295,12 @@ bool PF1550<BusType>::ReadLatchedFaults(FaultFlags& faults) noexcept {
   if (ldo0 & LdoIntStat0Bits::kLdo1Fault) faults.Set(FaultFlags::kLdo1Fault);
   if (ldo0 & LdoIntStat0Bits::kLdo2Fault) faults.Set(FaultFlags::kLdo2Fault);
   if (ldo0 & LdoIntStat0Bits::kLdo3Fault) faults.Set(FaultFlags::kLdo3Fault);
-  if (temp0 & TempIntStat0Bits::kTempWarn) faults.Set(FaultFlags::kTempWarn);
-  if (temp0 & TempIntStat0Bits::kTempShdn) faults.Set(FaultFlags::kTempShdn);
+  if (temp0 & TempIntStat0Bits::kTherm110) faults.Set(FaultFlags::kTempWarn);
+  if (temp0 & TempIntStat0Bits::kTherm125) faults.Set(FaultFlags::kTempShdn);
   if (misc0 & MiscIntStat0Bits::kPwrOn) faults.Set(FaultFlags::kPwrOn);
-  if (misc0 & MiscIntStat0Bits::kVsysLow) faults.Set(FaultFlags::kVsysLow);
-  if (misc0 & MiscIntStat0Bits::kVsysOv) faults.Set(FaultFlags::kVsysOv);
-  if (misc0 & MiscIntStat0Bits::kWdiAssert) faults.Set(FaultFlags::kWdiAssert);
-  if (misc0 & MiscIntStat0Bits::kResetBmcu) faults.Set(FaultFlags::kResetBmcu);
+  if (misc0 & MiscIntStat0Bits::kLowSysWarn) faults.Set(FaultFlags::kVsysLow);
+  if (misc0 & MiscIntStat0Bits::kSysOvlo) faults.Set(FaultFlags::kVsysOv);
+  // PWRUP_I / PWRDN_I report finished mode transitions, not faults: read MISC_INT_STAT0 for them.
   if (chg != 0) faults.Set(FaultFlags::kChgFault);
   // VBUS_VALID is bit 5 of VBUS_SNS — invalid means !bit5.
   if ((vbus & (1u << 5)) == 0) faults.Set(FaultFlags::kVbusInval);
@@ -378,6 +379,15 @@ bool PF1550<BusType>::fillRailSnapshot(DiagnosticSnapshot& snap) noexcept {
     }
     d.enabled_run  = (d.ctrl_reg & SwCtrlBits::kEn) != 0;
     d.enabled_stby = (d.ctrl_reg & SwCtrlBits::kStbyEn) != 0;
+  }
+  // VSNVS: fixed 3.0 V, always on, no voltage or enable field (VSNVS_VOLT is unused, Table 127).
+  auto& vsnvs = snap.rails[static_cast<size_t>(RailId::Vsnvs)];
+  if (readReg8(static_cast<uint8_t>(Register::VsnvsCtrl), vsnvs.ctrl_reg)) {
+    vsnvs.set_voltage_mv = kVsnvsMillivolts;
+    vsnvs.enabled_run    = true;
+    vsnvs.enabled_stby   = true;
+  } else {
+    ok = false;
   }
   return ok;
 }

@@ -19,11 +19,10 @@ ctest --test-dir build-host --output-on-failure
 | File | Covers |
 | --- | --- |
 | [`tests/test_driver.cpp`](../tests/test_driver.cpp) | Identification and its errors, profile order and waits, a profile that stops at a failed write, rail and VBUS setters, strap pins, the OTP unlock sequence, fault clearing, the diagnostic snapshot and self-test, the data sheet's code tables |
+| [`tests/test_conformance.cpp`](../tests/test_conformance.cpp) | Data sheet conformance: interrupt status bit positions (Tables 90, 93, 102, 108), SW voltage writes only on DVS bucks (Tables 31, 37), profiles without read-only writes, reserved VBUS limit codes (Table 58), the VSNVS entry (Table 127), the self-test without VBUS (Table 153) |
+| [`tests/install_check.cmake`](../tests/install_check.cmake) | `cmake --install` into the build tree, then compile a consumer against the installed headers only |
 | [`tests/mock_pf1550.hpp`](../tests/mock_pf1550.hpp) | The register model |
 | [`tests/test_harness.hpp`](../tests/test_harness.hpp), [`tests/test_main.cpp`](../tests/test_main.cpp) | A dependency-free test runner |
-
-The fault-decoder bit positions that differ from the data sheet ([Register map](registers.md#interrupt-registers))
-are not covered by a test yet: one belongs with the fix.
 
 ## Documentation snippets
 

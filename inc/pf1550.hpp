@@ -206,8 +206,26 @@ public:
   // Voltage / current configuration
   // ---------------------------------------------------------------------------
 
-  /// @brief Write `SWn_VOLT` for n=1..3. Returns `false` if `sw_index` is invalid.
+  /**
+   * @brief Set the RUN voltage of SW1 or SW2 from a @ref SwVoltageCode.
+   *
+   * @ref SwVoltageCode values name DVS-disabled set points (Table 31, right column). `SWx_VOLT` is
+   * writable only when the buck runs with DVS enabled (declare it with @ref SetSwDvsEnabled), so the
+   * driver converts the code's voltage to the DVS encoding (0.6 V + 12.5 mV × code) and writes that.
+   *
+   * @return `false` with `Error::InvalidParam`, writing nothing, when `sw_index` is not 1..3, when the
+   *         register is read-only (SW3 always, Table 37; SW1 / SW2 with DVS disabled, Table 31) or when
+   *         the voltage is outside the DVS range (0.6 V to 1.3875 V).
+   */
   bool SetSwVoltage(uint8_t sw_index, SwVoltageCode run_code) noexcept;
+  /**
+   * @brief Set the RUN voltage of a DVS-enabled SW1 or SW2 in millivolts.
+   *
+   * @param mv A value on the DVS grid: 600 + 12.5 × code, rounded to mV (see
+   *           @ref SwDvsMillivoltsToCode).
+   * @return `false` with `Error::InvalidParam` under the same conditions as @ref SetSwVoltage.
+   */
+  bool SetSwVoltageMv(uint8_t sw_index, uint16_t mv) noexcept;
 
   /// @brief Write `LDOn_VOLT` for n=1..3. Returns `false` if `ldo_index` is invalid.
   bool SetLdoVoltage(uint8_t ldo_index, LdoVoltageCode code) noexcept;
@@ -301,6 +319,9 @@ public:
 
   /**
    * @brief Declare the SW1 / SW2 voltage encoding the part's OTP selects.
+   *
+   * Decides how the snapshot decodes `SWx_VOLT` and whether @ref SetSwVoltage / @ref SetSwVoltageMv
+   * may write it.
    * @details `OTP_SWx_DVS_SEL` decides between two tables (datasheet Table
    *          31): DVS enabled 0.6–1.3875 V in 12.5 mV steps, DVS disabled an
    *          8-point table up to 3.3 V. It lives in OTP (indirect access only),

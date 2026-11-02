@@ -20,8 +20,8 @@ Start with `GetErrorFlags()` after a failing call: `DeviceNotFound` or `I2cRead`
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| An SW voltage write is accepted but the rail does not move | SW3's voltage registers, and SW1's / SW2's with DVS disabled, are read-only | Read the snapshot to see the real set point; change it in OTP or use a DVS part |
-| A rail reads far below the expected voltage | A DVS-disabled code written to a DVS-enabled SW1 / SW2 (0x07 is 0.6875 V there) | Use DVS codes; declare the mode with `SetSwDvsEnabled()` ([Rails and OTP](rails-and-otp.md)) |
+| `SetSwVoltage()` / `SetSwVoltageMv()` return `false` | SW3, or an SW1 / SW2 declared DVS-disabled: those voltage registers are read-only. Or the voltage is off the DVS grid | Change the set point in OTP, or declare DVS with `SetSwDvsEnabled()` if the part has it ([Rails and OTP](rails-and-otp.md)) |
+| A rail reads far below the expected voltage | A DVS-disabled code written with `WriteRegister()` to a DVS-enabled SW1 / SW2 (0x07 is 0.6875 V there) | Use `SetSwVoltageMv()`; declare the mode with `SetSwDvsEnabled()` |
 | A profile change has no effect after a reset | The PMIC kept the previous values: an MCU reset does not reset it | Power the PMIC down completely, then apply the profile again |
 | The snapshot shows the old values after a profile | The profile stopped at a failed write | Check the return value and `ProfileApply`; the writes before it did happen |
 | `SetVbusCurrentLimitMa()` returns `false` | The value is not 10, 100, 500, 1000 or 1500 mA | Write `VBUS_INLIM_CNFG` with `code << 3` for other Table 58 values |
@@ -39,8 +39,6 @@ Start with `GetErrorFlags()` after a failing call: `DeviceNotFound` or `I2cRead`
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| `RunPowerSelfTest()` fails on battery | No VBUS sets `kVbusInval`, ranked `kWarning` | Expected without USB; rank `result.faults` for your board |
-| The self-test fails after a STANDBY transition | The MISC decoder reads `PWRDN_I` as `kVsysLow` ([Register map](registers.md#interrupt-registers)) | Clear the latched faults after mode changes; read `MISC_INT_STAT0` directly |
 | A fault comes back right after `ClearLatchedFaults()` | The cause is still there | Read the SENSE register for the live state |
 | INTB never goes low | Every interrupt is masked (the reset value) | `SetInterruptMaskAll(false)`, or unmask one group |
 

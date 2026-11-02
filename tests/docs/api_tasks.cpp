@@ -38,7 +38,8 @@ bool rails(Driver& pmic) {
   // --8<-- [start:rails]
   bool ok = true;
   ok &= pmic.SetLdoVoltage(2, pf1550::LdoVoltageCode::V1_8);  // LDO2_VOLT = 0x00
-  ok &= pmic.SetSwVoltage(2, pf1550::SwVoltageCode::V3_3);    // SW2_VOLT = 0x07
+  pmic.SetSwDvsEnabled(2, true);                              // this part's SW2 runs with DVS
+  ok &= pmic.SetSwVoltageMv(2, 1200);                         // SW2_VOLT = 0x30 (0.6 V + 48 x 12.5 mV)
   ok &= pmic.SetVbusCurrentLimitMa(500);                      // VBUS_INLIM_CNFG = 0x70
   ok &= pmic.WriteRegister(pf1550::Register::Sw2Ctrl,
                            pf1550::SwCtrlBits::kEn | pf1550::SwCtrlBits::kStbyEn);

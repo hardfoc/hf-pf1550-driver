@@ -12,6 +12,7 @@
 add_executable(hf_pf1550_host_tests
   test_main.cpp
   test_driver.cpp
+  test_conformance.cpp
 )
 
 target_link_libraries(hf_pf1550_host_tests PRIVATE ${HF_PF1550_TARGET_NAME})
@@ -33,3 +34,13 @@ target_link_libraries(hf_pf1550_doc_snippets PRIVATE ${HF_PF1550_TARGET_NAME})
 target_include_directories(hf_pf1550_doc_snippets PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/docs)
 target_compile_features(hf_pf1550_doc_snippets PRIVATE cxx_std_20)
 target_compile_options(hf_pf1550_doc_snippets PRIVATE -Wall -Wextra)
+
+# The installed package must be usable on its own: install into the build tree, then compile a consumer
+# against the installed headers only.
+add_test(NAME hf_pf1550_install_check
+  COMMAND ${CMAKE_COMMAND}
+    -DBUILD_DIR=${CMAKE_BINARY_DIR}
+    -DPREFIX=${CMAKE_BINARY_DIR}/install-check
+    -DCXX=${CMAKE_CXX_COMPILER}
+    -DINCDIR=${CMAKE_INSTALL_INCLUDEDIR}
+    -P ${CMAKE_CURRENT_SOURCE_DIR}/install_check.cmake)

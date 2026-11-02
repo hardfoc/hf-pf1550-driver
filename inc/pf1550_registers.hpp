@@ -34,6 +34,9 @@ inline constexpr uint8_t kDefaultI2cAddress = 0x08;
 /// @brief Expected `DEVICE_ID[2:0]` family identifier (PF1550 family = `100b`).
 inline constexpr uint8_t kExpectedDeviceId = 0x7C;
 
+/// @brief VSNVS output voltage: fixed 3.0 V (VSNVS_CTRL has no voltage field, Table 127).
+inline constexpr uint16_t kVsnvsMillivolts = 3000;
+
 /// @brief Base offset for Section 12.2 charger sub-page (see datasheet §12.2).
 inline constexpr uint8_t kChargerPageBase = 0x80;
 
@@ -172,20 +175,21 @@ struct IntCategoryBits {
 /**
  * @brief Bit positions within SW_INT_STAT0 (Reg 0x08) — **low-side** current-limit faults.
  *
- * STAT bits are RW1C: read 1 = event latched, write 1 to clear.
- * The corresponding SW_INT_SENSE0 (0x0A) shows the *instantaneous* (live) state.
+ * Data sheet Table 90. STAT bits are RW1C: read 1 = event latched, write 1 to clear.
+ * The corresponding SW_INT_SENSE0 (0x0A) shows the *instantaneous* (live) state with the same layout.
  */
 struct SwIntStat0Bits {
-  static constexpr uint8_t kSw1Ls = 1u << 0; ///< SW1 low-side current limit hit.
-  static constexpr uint8_t kSw2Ls = 1u << 2; ///< SW2 low-side current limit hit.
-  static constexpr uint8_t kSw3Ls = 1u << 4; ///< SW3 low-side current limit hit.
+  static constexpr uint8_t kSw1Ls = 1u << 0; ///< SW1_LS_I — SW1 low-side current limit (Table 90).
+  static constexpr uint8_t kSw2Ls = 1u << 1; ///< SW2_LS_I — SW2 low-side current limit.
+  static constexpr uint8_t kSw3Ls = 1u << 2; ///< SW3_LS_I — SW3 low-side current limit.
 };
 
-/// @brief Bit positions within SW_INT_STAT1 (Reg 0x0B) — **high-side** current-limit faults.
+/// @brief Bit positions within SW_INT_STAT1 (Reg 0x0B, Table 93) — **high-side** current-limit faults.
+/// SW_INT_SENSE1 (0x0D) uses the same layout.
 struct SwIntStat1Bits {
-  static constexpr uint8_t kSw1Hs = 1u << 0; ///< SW1 high-side current limit hit (over-current).
-  static constexpr uint8_t kSw2Hs = 1u << 2; ///< SW2 high-side current limit hit.
-  static constexpr uint8_t kSw3Hs = 1u << 4; ///< SW3 high-side current limit hit.
+  static constexpr uint8_t kSw1Hs = 1u << 0; ///< SW1_HS_I — SW1 high-side current limit.
+  static constexpr uint8_t kSw2Hs = 1u << 1; ///< SW2_HS_I — SW2 high-side current limit.
+  static constexpr uint8_t kSw3Hs = 1u << 2; ///< SW3_HS_I — SW3 high-side current limit.
 };
 
 /// @brief Bit positions within LDO_INT_STAT0 (Reg 0x18) — LDO current-limit faults.
@@ -195,19 +199,27 @@ struct LdoIntStat0Bits {
   static constexpr uint8_t kLdo3Fault = 1u << 2; ///< LDO3 fault.
 };
 
-/// @brief Bit positions within TEMP_INT_STAT0 (Reg 0x20).
+/// @brief Bit positions within TEMP_INT_STAT0 (Reg 0x20, Table 102). Bit 1 is unused.
 struct TempIntStat0Bits {
-  static constexpr uint8_t kTempWarn = 1u << 0; ///< Junction temperature warning.
-  static constexpr uint8_t kTempShdn = 1u << 1; ///< Junction temperature thermal shutdown asserted.
+  static constexpr uint8_t kTherm110 = 1u << 0; ///< THERM110I — die temperature crossed 110 °C (either way).
+  static constexpr uint8_t kTherm125 = 1u << 2; ///< THERM125I — die temperature crossed 125 °C (either way).
+  static constexpr uint8_t kTempWarn = kTherm110; ///< Alias of @ref kTherm110.
+  static constexpr uint8_t kTempShdn = kTherm125; ///< Alias of @ref kTherm125 (the chip has no separate shutdown bit).
 };
 
-/// @brief Bit positions within MISC_INT_STAT0 (Reg 0x28).
+/// @brief Bit positions within MISC_INT_STAT0 (Reg 0x28, Table 108). Bits 7:5 are unused.
 struct MiscIntStat0Bits {
-  static constexpr uint8_t kPwrOn      = 1u << 0; ///< PWRON pin event.
-  static constexpr uint8_t kVsysLow    = 1u << 1; ///< VSYS undervoltage / brown-out.
-  static constexpr uint8_t kVsysOv     = 1u << 2; ///< VSYS overvoltage.
-  static constexpr uint8_t kWdiAssert  = 1u << 3; ///< WDI (watchdog input) low event.
-  static constexpr uint8_t kResetBmcu  = 1u << 4; ///< RESETBMCU event.
+  static constexpr uint8_t kPwrUp      = 1u << 0; ///< PWRUP_I — STANDBY/SLEEP to RUN transition finished.
+  static constexpr uint8_t kPwrDn      = 1u << 1; ///< PWRDN_I — RUN to STANDBY/SLEEP transition finished.
+  static constexpr uint8_t kPwrOn      = 1u << 2; ///< PWRON_I — power-on button event.
+  static constexpr uint8_t kLowSysWarn = 1u << 3; ///< LOW_SYS_WARN_I — VSYS crossed the LOW_SYS_WARN threshold.
+  static constexpr uint8_t kSysOvlo    = 1u << 4; ///< SYS_OVLO_I — VSYS crossed the SYS_OVLO threshold.
+  static constexpr uint8_t kVsysLow    = kLowSysWarn; ///< Alias of @ref kLowSysWarn.
+  static constexpr uint8_t kVsysOv     = kSysOvlo;    ///< Alias of @ref kSysOvlo.
+  /// The PF1550 has no WDI interrupt bit; kept (as 0, never matches) for source compatibility.
+  [[deprecated("MISC_INT_STAT0 has no WDI bit (Table 108)")]] static constexpr uint8_t kWdiAssert = 0;
+  /// The PF1550 has no RESETBMCU interrupt bit; kept (as 0, never matches) for source compatibility.
+  [[deprecated("MISC_INT_STAT0 has no RESETBMCU bit (Table 108)")]] static constexpr uint8_t kResetBmcu = 0;
 };
 
 /// @brief STATE_INFO[5:0] values (Reg 0x67) describing the PMIC state machine.

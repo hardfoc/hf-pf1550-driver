@@ -17,6 +17,7 @@
     "ReadOtpByte",
     "ReadOtpRegion",
     "SetSwVoltage",
+    "SetSwVoltageMv",
     "SetLdoVoltage",
     "SetVbusCurrentLimitMa",
     "ReadInterruptCategory",

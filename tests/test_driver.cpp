@@ -62,8 +62,8 @@ TEST_CASE("the carrier profile writes SW1 first, LDO2_CTRL last, and waits where
   REQUIRE(pmic.ApplyPortentaH7CarrierProfile());
   const auto w = bus.writes();
   REQUIRE(w.size() == pf1550::profiles::kPortentaH7Carrier.size());
-  CHECK_EQ(w.front().reg, 0x32); // SW1_VOLT
-  CHECK_EQ(w.front().value, 0x06);
+  CHECK_EQ(w.front().reg, 0x35); // SW1_CTRL
+  CHECK_EQ(w.front().value, 0x0F);
   CHECK_EQ(w.back().reg, 0x50); // LDO2_CTRL
   CHECK_EQ(w.back().value, 0x0F);
   for (size_t i = 0; i < w.size(); ++i) {
@@ -85,7 +85,7 @@ TEST_CASE("a profile stops at the first write that fails") {
   bus.clearLog();
   CHECK(!pmic.ApplyPortentaH7CarrierProfile());
   CHECK_EQ(bus.writes().back().reg, 0x4D);
-  CHECK_EQ(bus.writes().size(), 7u);
+  CHECK_EQ(bus.writes().size(), 4u);
   CHECK((pmic.GetErrorFlags() & flag(Driver::Error::ProfileApply)) != 0);
   CHECK((pmic.GetErrorFlags() & flag(Driver::Error::I2cWrite)) != 0);
 }
@@ -93,8 +93,9 @@ TEST_CASE("a profile stops at the first write that fails") {
 TEST_CASE("rail setters write the voltage register and reject an unknown rail") {
   MockPf1550 bus;
   Driver pmic(&bus);
-  REQUIRE(pmic.SetSwVoltage(2, pf1550::SwVoltageCode::V3_3));
-  CHECK_EQ(bus.reg(0x38), 0x07);
+  pmic.SetSwDvsEnabled(2, true); // SWx_VOLT is writable only with DVS enabled (Table 31)
+  REQUIRE(pmic.SetSwVoltage(2, pf1550::SwVoltageCode::V1_1));
+  CHECK_EQ(bus.reg(0x38), 40);
   REQUIRE(pmic.SetLdoVoltage(3, pf1550::LdoVoltageCode::V1_2));
   CHECK_EQ(bus.reg(0x52), 0x09);
   bus.clearLog();
@@ -177,6 +178,9 @@ TEST_CASE("clearing latched faults writes 1s to every status register") {
 TEST_CASE("a diagnostic snapshot decodes state, rails and the VBUS limit") {
   MockPf1550 bus;
   Driver pmic(&bus);
+  bus.reg(0x32) = 0x06; // SW1_VOLT, SW2_VOLT, SW3_VOLT: OTP set points (read-only)
+  bus.reg(0x38) = 0x07;
+  bus.reg(0x3E) = 0x0F;
   REQUIRE(pmic.EnsureInitialized());
   REQUIRE(pmic.ApplyPortentaH7CarrierProfile());
   pf1550::DiagnosticSnapshot snap;

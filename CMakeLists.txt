@@ -7,6 +7,12 @@ cmake_minimum_required(VERSION 3.16)
 project(hf_pf1550_driver LANGUAGES CXX)
 
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/hf_pf1550_build_settings.cmake)
+include(GNUInstallDirs)
+
+# pf1550.hpp includes "../src/pf1550.ipp", so the install keeps the inc/ and src/ pair side by side:
+# <includedir>/hf_pf1550/inc/*.hpp and <includedir>/hf_pf1550/src/pf1550.ipp.
+set(HF_PF1550_INSTALL_ROOT "${CMAKE_INSTALL_INCLUDEDIR}/hf_pf1550")
+set(HF_PF1550_INSTALL_INC  "${HF_PF1550_INSTALL_ROOT}/inc")
 
 if(HF_PF1550_SOURCE_FILES)
     add_library(${HF_PF1550_TARGET_NAME} STATIC ${HF_PF1550_SOURCE_FILES})
@@ -14,7 +20,7 @@ if(HF_PF1550_SOURCE_FILES)
         PUBLIC
             $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/inc>
             $<BUILD_INTERFACE:${HF_PF1550_VERSION_HEADER_DIR}>
-            $<INSTALL_INTERFACE:include>
+            $<INSTALL_INTERFACE:${HF_PF1550_INSTALL_INC}>
     )
     target_compile_features(${HF_PF1550_TARGET_NAME} PUBLIC cxx_std_20)
 else()
@@ -23,7 +29,7 @@ else()
         INTERFACE
             $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/inc>
             $<BUILD_INTERFACE:${HF_PF1550_VERSION_HEADER_DIR}>
-            $<INSTALL_INTERFACE:include>
+            $<INSTALL_INTERFACE:${HF_PF1550_INSTALL_INC}>
     )
     target_compile_features(${HF_PF1550_TARGET_NAME} INTERFACE cxx_std_20)
 endif()
@@ -48,19 +54,19 @@ if(HF_PF1550_BUILD_TESTS)
     add_subdirectory(tests)
 endif()
 
-include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 install(TARGETS ${HF_PF1550_TARGET_NAME} EXPORT hf_pf1550Targets
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    INCLUDES DESTINATION ${HF_PF1550_INSTALL_INC}
 )
 
-install(DIRECTORY inc/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+install(DIRECTORY inc/ DESTINATION ${HF_PF1550_INSTALL_INC}
     FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h" PATTERN "*.h.in" EXCLUDE)
-install(FILES "${HF_PF1550_VERSION_HEADER}" DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(FILES "${HF_PF1550_VERSION_HEADER}" DESTINATION ${HF_PF1550_INSTALL_INC})
+install(FILES src/pf1550.ipp DESTINATION ${HF_PF1550_INSTALL_ROOT}/src)
 
 install(EXPORT hf_pf1550Targets
     FILE hf_pf1550Targets.cmake

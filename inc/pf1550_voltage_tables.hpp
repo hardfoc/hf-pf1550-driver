@@ -59,6 +59,23 @@ constexpr uint16_t SwDvsCodeToMillivolts(uint8_t code) noexcept {
 }
 
 /**
+ * @brief Encode a **DVS-enabled** SW1 / SW2 voltage (Table 31, left column).
+ *
+ * Inverse of @ref SwDvsCodeToMillivolts: accepts exactly the millivolt values that function returns
+ * (600 to 1388 mV on the 12.5 mV grid, rounded to mV).
+ *
+ * @return The 6-bit code, or `0xFF` when @p mv is not on the grid.
+ */
+constexpr uint8_t SwDvsMillivoltsToCode(uint16_t mv) noexcept {
+  for (uint8_t code = 0; code < 64U; ++code) {
+    if (SwDvsCodeToMillivolts(code) == mv) {
+      return code;
+    }
+  }
+  return 0xFFU;
+}
+
+/**
  * @brief SW3 output voltage (Table 37): 1.80 V + 100 mV × `SW3_VOLT[3:0]`.
  * @note SW3 is loaded from OTP and read-only (it has no DVS) — writes are ignored.
  */
@@ -116,7 +133,7 @@ constexpr uint16_t LdoCodeToMillivolts(uint8_t code, bool is_ldo2) noexcept {
  * @brief Decode VBUS_IN_LIM_CNFG (absolute address 0x94) register byte to mA.
  *
  * The VBUS input current limit field occupies bits **[7:3]** of the register
- * and uses a non-linear lookup table (datasheet Table at §12.2):
+ * and uses a non-linear lookup table (datasheet Table 58):
  *
  * | code | mA  | | code | mA   |
  * |------|-----|-|------|------|
@@ -125,10 +142,10 @@ constexpr uint16_t LdoCodeToMillivolts(uint8_t code, bool is_ldo2) noexcept {
  * | 0x02 | 20  | | 0x12 | 900  |
  * | 0x03 | 25  | | 0x13 | 1000 |
  * | 0x04 | 30  | | 0x14 | **1500** (Portenta default) |
- * | 0x05 | 35  | | 0x15 | 1600 |
- * | 0x06 | 40  | | 0x16 | 1700 |
- * | 0x07 | 45  | | 0x17 | 1800 |
- * | 0x08 | 50  | | …    | …    |
+ * | 0x05 | 35  | | 0x15..0x1F | reserved |
+ * | 0x06 | 40  | |      |      |
+ * | 0x07 | 45  | |      |      |
+ * | 0x08 | 50  | |      |      |
  * | 0x09 | 100 | |      |      |
  * | …    | …   | |      |      |
  * | 0x0F | 600 | |      |      |
@@ -136,7 +153,7 @@ constexpr uint16_t LdoCodeToMillivolts(uint8_t code, bool is_ldo2) noexcept {
  * Portenta H7 writes `(20 << 3) == 0xA0` (code 0x14 = 1500 mA).
  *
  * @param reg_value Raw register byte (bits 2:0 ignored).
- * @return Decoded current limit in mA. Codes above the table return `0`.
+ * @return Decoded current limit in mA; reserved codes (21..31) return `0`.
  */
 constexpr uint16_t VbusLimitRegToMilliamps(uint8_t reg_value) noexcept {
   const uint8_t code = static_cast<uint8_t>((reg_value >> 3U) & 0x1FU);
@@ -158,10 +175,7 @@ constexpr uint16_t VbusLimitRegToMilliamps(uint8_t reg_value) noexcept {
     case 0x12: return 900;
     case 0x13: return 1000;
     case 0x14: return 1500;  // Portenta default
-    case 0x15: return 1600;
-    case 0x16: return 1700;
-    case 0x17: return 1800;
-    default: return 0;       // codes above table reserved
+    default: return 0;       // codes 21..31 are reserved (Table 58)
   }
 }
 
@@ -250,6 +264,9 @@ static_assert(SwCodeToMillivolts(0x0D) == 3300, "SW1/SW2 DVS-disabled: every cod
 static_assert(SwDvsCodeToMillivolts(0x00) == 600 && SwDvsCodeToMillivolts(0x3F) == 1388 &&
                   SwDvsCodeToMillivolts(0x20) == 1000,
               "SW1/SW2 DVS-enabled: 0.6 V + 12.5 mV steps");
+static_assert(SwDvsMillivoltsToCode(1100) == 40 && SwDvsMillivoltsToCode(1388) == 0x3F &&
+                  SwDvsMillivoltsToCode(1006) == 0xFFU,
+              "DVS encode is the inverse of SwDvsCodeToMillivolts");
 static_assert(Sw3CodeToMillivolts(0x0F) == 3300 && Sw3CodeToMillivolts(0x00) == 1800, "SW3 Table 37");
 static_assert(SwMillivoltsToCode(3300) == 0x07, "3300 mV round-trip → 0x07");
 static_assert(LdoCodeToMillivolts(static_cast<uint8_t>(LdoVoltageCode::V1_0), /*is_ldo2=*/false) == 1000,

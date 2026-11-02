@@ -17,7 +17,7 @@ also sets a bit in the sticky error flags, which stay set until you clear them.
 | --- | --- |
 | Identify | `EnsureInitialized()`, `IsInitialized()`, `ReadDeviceId()`, `VerifyDevice()`, `GetI2cAddress()` |
 | Profiles | `ApplyProfile(span)`, `ApplyPortentaH7DefaultProfile()`, `ApplyPortentaH7CarrierProfile()` |
-| Rails and limits | `SetSwVoltage()`, `SetLdoVoltage()`, `SetVbusCurrentLimitMa()`, `SetSwDvsEnabled()` |
+| Rails and limits | `SetSwVoltageMv()`, `SetSwVoltage()`, `SetLdoVoltage()`, `SetVbusCurrentLimitMa()`, `SetSwDvsEnabled()` |
 | Strap pins | `SetPowerMode()`, `SetUsbRails()` |
 | Status | `ReadPmicStatus()`, `ReadPmicState()`, `ReadChargerState()`, `ReadInterruptCategory()` |
 | Faults and interrupts | `ReadLatchedFaults()`, `ClearLatchedFaults()`, `SetInterruptMaskAll()` |
@@ -52,13 +52,16 @@ shows how to write your own.
 --8<-- "tests/docs/api_tasks.cpp:rails"
 ```
 
-`SetSwVoltage(n, code)` and `SetLdoVoltage(n, code)` write the RUN set point of rail `n` (1 to 3) and reject any
-other index with `Error::InvalidParam`. Enables have no helper: build the control byte from `SwCtrlBits` or
+`SetLdoVoltage(n, code)` writes the RUN set point of LDO `n` (1 to 3). `SetSwVoltageMv(n, mv)` and
+`SetSwVoltage(n, code)` set the RUN voltage of SW1 or SW2, and only when that buck runs with DVS enabled (declared
+with `SetSwDvsEnabled()`): they write the DVS code for the voltage. They refuse with `Error::InvalidParam`, writing
+nothing, for SW3 and for a DVS-disabled SW1 / SW2, whose voltage registers are read-only, and for a voltage that
+is not on the DVS grid (0.6 V to 1.3875 V in 12.5 mV steps). Any other index is rejected the same way. Enables have no helper: build the control byte from `SwCtrlBits` or
 `LdoCtrlBits` and use `WriteRegister()`.
 
-!!! warning "Know the SW1 / SW2 table before you write a code"
-    `SwVoltageCode` values are DVS-disabled codes, and in that mode the data sheet makes the SW voltage registers
-    read-only. On a DVS-enabled buck the same code means a voltage under 1.4 V. [Rails and
+!!! note "`SwVoltageCode` names a voltage"
+    `SwVoltageCode` values are DVS-disabled codes. `SetSwVoltage()` uses the voltage the code stands for
+    (`V1_1` is 1.1 V) and converts it to the DVS encoding, so codes above 1.3875 V are refused. [Rails and
     OTP](rails-and-otp.md#sw1-and-sw2-two-code-tables) has both tables.
 
 ## Read status
@@ -81,8 +84,9 @@ end of charge, done, faults, off) and can return the raw byte too. `PmicStateNam
 `DiagnosticSnapshot` holds identity (DEVICE_ID, OTP_FLAVOR, SILICON_REV), INT_CATEGORY, the decoded state and
 charger state, VBUS sense, the decoded VBUS input limit, the aggregated `FaultFlags`, and one `RailDiagnostics` per
 rail: raw control and voltage bytes, set point in mV, RUN and STANDBY enables, latched and live fault marks. The
-VSNVS entry is not filled in. When a read fails, `read_ok` is `false` and `Error::DiagnosticRead` is set, but every
-field that was read is kept for logging.
+VSNVS entry holds the raw VSNVS_CTRL byte, 3000 mV and both enables set: VSNVS is a fixed, always-on output. When
+a read fails, `read_ok` is `false` and `Error::DiagnosticRead` is set, but every field that was read is kept for
+logging.
 
 `RefreshStatusSnapshot()` re-reads only what changes without a register write (interrupts, state, charger, VBUS,
 faults), at about half the bus time of a full read. A monitor polling at 20 Hz can do a full read once a second
@@ -99,16 +103,16 @@ and refreshes in between.
 | A call returns `false` | NACK, bad argument or a failed read | `GetErrorFlags()`: `I2cWrite`, `I2cRead`, `InvalidParam`, `DeviceNotFound`, `WrongDeviceId`, `NotInitialized`, `ProfileApply`, `DiagnosticRead`, `SelfTestFailed` |
 | INT_CATEGORY non-zero | A group has a latched interrupt | `ReadLatchedFaults()`, or the STAT register with `ReadRegister()` |
 | INTB low | An unmasked interrupt is pending | Masks power up set: `SetInterruptMaskAll(false)` unmasks every group |
-| `kVbusInval` in `FaultFlags` | VBUS_VALID_SNS is clear: no valid USB or adapter input | Expected on battery |
+| `kVbusInval` in `FaultFlags` | VBUS_VALID_SNS is clear: no valid USB or adapter input | Expected on battery; ranked `kInfo` |
 
 STAT bits are write-1-to-clear: `ClearLatchedFaults()` writes 0xFF to every STAT register. Clear after you have
 handled the cause; a bit that comes back at once means the cause is still there. The sticky driver flags are
 separate: `ClearErrorFlags()` clears them.
 
-!!! danger "SW, temperature and MISC fault flags"
-    The fault decoder reads the SW, temperature and MISC status registers at bit positions that differ from the
-    data sheet ([Register map](registers.md#interrupt-registers)). Treat those `FaultFlags` bits, and the
-    severities derived from them, as unreliable until the decoder is fixed; the LDO and charger flags are right.
+`ReadLatchedFaults()` decodes the STAT registers at the data sheet's bit positions ([Register
+map](registers.md#interrupt-registers)). `PWRUP_I` and `PWRDN_I` (a finished RUN / STANDBY / SLEEP transition) are
+events, not faults, and have no `FaultFlags` bit; read `MISC_INT_STAT0` if you need them. `kWdiAssert` and
+`kResetBmcu` are never set: the PF1550 has no such interrupt bits.
 
 ## Run the boot self-test
 

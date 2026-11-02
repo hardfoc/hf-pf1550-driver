@@ -28,13 +28,15 @@ struct RegisterWrite {
 /**
  * @brief Portenta H7 eval MCU-domain profile (VFR heritage).
  *
- * Sequence derived from PortentaH7_VFR I2C_PMIC_Initialize(). Some SW3 voltage
- * registers may be OTP-locked on programmed parts; writes are still issued for
- * A0EP (unprogrammed OTP) bring-up.
+ * Sequence derived from PortentaH7_VFR I2C_PMIC_Initialize(), without its
+ * SWx_VOLT / SWx_STBY_VOLT / SWx_SLP_VOLT writes: SW3's are read-only (Table 37)
+ * and SW1's / SW2's are read-only with DVS disabled (Table 31), which is how the
+ * Portenta's 3.0 V / 3.3 V bucks run. On a DVS-enabled buck those DVS-disabled
+ * codes would have meant 0.6875 V. The bucks run at their OTP set points.
  *
  * Register 0x50 (LDO2_CTRL commit) is intentionally last in this table.
  */
-inline constexpr std::array<RegisterWrite, 23> kPortentaH7Default = {{
+inline constexpr std::array<RegisterWrite, 14> kPortentaH7Default = {{
     {0x4F, 0x00, 0},   // LDO2 -> 1.8 V
     {0x4C, 0x05, 0},   // LDO1 -> 1.0 V
     {0x4D, 0x0F, 0},   // LDO1 enable
@@ -45,17 +47,8 @@ inline constexpr std::array<RegisterWrite, 23> kPortentaH7Default = {{
     {0x9E, 0x20, 1000}, // disable charger LED
     {0x42, 0x02, 1000}, // SW3_CTRL1: current limit 1.5 A typical (Table 126)
     {0x94, 0xA0, 0},   // VBUS input limit 1500 mA
-    {0x38, 0x07, 0},   // SW2 RUN 3.3 V
-    {0x39, 0x05, 0},   // SW2 STBY/DVS
-    {0x3A, 0x05, 0},   // SW2 alt
     {0x3B, 0x01, 0},   // SW2_CTRL: on in RUN only
-    {0x32, 0x07, 0},   // SW1 RUN 3.3 V (VCAP / MCU digital)
-    {0x33, 0x05, 0},   // SW1 STBY/DVS
-    {0x34, 0x05, 0},   // SW1 alt
     {0x35, 0x01, 0},   // SW1 ctrl
-    {0x3E, 0x0F, 0},   // SW3 RUN (OTP may override on programmed parts)
-    {0x3F, 0x0E, 0},   // SW3 STBY/DVS
-    {0x40, 0x0E, 0},   // SW3 alt
     {0x41, 0x0F, 0},   // SW3 ctrl
     {0x50, 0x0F, 0},   // LDO2 commit / final enable (must be last)
 }};
@@ -70,16 +63,14 @@ inline constexpr const char* kPortentaH7DefaultName = "portenta_h7_default";
  * carrier HDC needs +3V3 on SW2 (BUCK2) including JTAG VTref.
  *
  * Differences from kPortentaH7Default:
- * - SW1 (+3V1SW) voltage + enable written **before** LDO registers.
- * - SW2_CTRL = 0x0F (RUN + STBY + sleep + LPWR) keeps carrier +3V3 up.
- * - SW1 RUN set to 3.0 V (code 0x06) as used on the Portenta H7 SW1 rail.
+ * - SW1 (+3V1SW) enable written **before** LDO registers, then a 5 ms wait.
+ * - SW1_CTRL = 0x0F and SW2_CTRL = 0x0F (RUN + STBY + sleep + LPWR) keep +3V1SW
+ *   and the carrier +3V3 up in STANDBY.
+ * - Like the default, no SW voltage register writes (read-only, Tables 31 / 37).
  *
  * Requires a **full PMIC power cycle** after first apply on cold boot.
  */
-inline constexpr std::array<RegisterWrite, 23> kPortentaH7Carrier = {{
-    {0x32, 0x06, 0},    // SW1 RUN 3.0 V (+3V1SW) — LDO input rail
-    {0x33, 0x05, 0},    // SW1 STBY/DVS
-    {0x34, 0x05, 0},    // SW1 SLP
+inline constexpr std::array<RegisterWrite, 14> kPortentaH7Carrier = {{
     {0x35, 0x0F, 5000}, // SW1 enable (delay for +3V1SW before LDOs)
     {0x4F, 0x00, 0},    // LDO2 -> 1.8 V
     {0x4C, 0x05, 0},    // LDO1 -> 1.0 V
@@ -91,13 +82,7 @@ inline constexpr std::array<RegisterWrite, 23> kPortentaH7Carrier = {{
     {0x9E, 0x20, 1000}, // disable charger LED (CHGB blips)
     {0x42, 0x02, 1000}, // SW3_CTRL1: current limit 1.5 A typical (Table 126)
     {0x94, 0xA0, 0},    // VBUS input limit 1500 mA
-    {0x38, 0x07, 0},    // SW2 RUN 3.3 V (carrier +VOUT)
-    {0x39, 0x05, 0},    // SW2 STBY/DVS
-    {0x3A, 0x05, 0},    // SW2 SLP
     {0x3B, 0x0F, 0},    // SW2 ctrl — full enable for carrier
-    {0x3E, 0x0F, 0},    // SW3 RUN (+3V1 VCORE, OTP may override)
-    {0x3F, 0x0E, 0},    // SW3 STBY/DVS
-    {0x40, 0x0E, 0},    // SW3 SLP
     {0x41, 0x0F, 0},    // SW3 ctrl
     {0x50, 0x0F, 0},    // LDO2 commit / final enable (must be last)
 }};
