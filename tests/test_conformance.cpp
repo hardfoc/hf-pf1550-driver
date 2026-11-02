@@ -1,8 +1,8 @@
 /**
  * @file test_conformance.cpp
- * @brief Regression tests for behaviour checked against the NXP PF1550 data sheet (Rev. 7, section 12):
- * interrupt status bit positions, the SW voltage tables and their read-only cases, the VBUS input limit
- * table, the VSNVS snapshot entry and the self-test without VBUS.
+ * @brief Regression tests for behaviour checked against the NXP PF1550 data sheet (Rev. 7, section
+ * 12): interrupt status bit positions, the SW voltage tables and their read-only cases, the VBUS
+ * input limit table, the VSNVS snapshot entry and the self-test without VBUS.
  */
 #include "mock_pf1550.hpp"
 #include "test_harness.hpp"
@@ -44,7 +44,8 @@ TEST_CASE("MISC_INT_STAT0 bits decode to PWRON, LOW_SYS_WARN and SYS_OVLO") {
   CHECK_EQ(latched(bus).value, 0u);
 }
 
-// Tables 90 and 93: SW1/SW2/SW3 at bits 0, 1, 2 of SW_INT_STAT0 (low side) and SW_INT_STAT1 (high side).
+// Tables 90 and 93: SW1/SW2/SW3 at bits 0, 1, 2 of SW_INT_STAT0 (low side) and SW_INT_STAT1 (high
+// side).
 TEST_CASE("SW current-limit bits are 0, 1 and 2 for SW1, SW2 and SW3") {
   MockPf1550 bus;
   bus.reg(0x08) = 1u << 1;
@@ -87,8 +88,8 @@ TEST_CASE("reserved VBUS input-limit codes decode to 0 mA") {
   CHECK_EQ(pf1550::VbusLimitRegToMilliamps(20u << 3), 1500);
 }
 
-// Table 31: DVS enabled is 0.6 V + 12.5 mV per code and the registers are writable; DVS disabled makes
-// SWx_VOLT read-only. Table 37: SW3 is read-only.
+// Table 31: DVS enabled is 0.6 V + 12.5 mV per code and the registers are writable; DVS disabled
+// makes SWx_VOLT read-only. Table 37: SW3 is read-only.
 TEST_CASE("SetSwVoltage encodes the voltage for a DVS rail and refuses read-only registers") {
   MockPf1550 bus;
   Driver pmic(&bus);
@@ -122,7 +123,8 @@ TEST_CASE("SetSwVoltageMv takes a DVS grid voltage and nothing else") {
 }
 
 TEST_CASE("the Portenta profiles do not write the read-only SW voltage registers") {
-  for (const auto* profile : {&pf1550::profiles::kPortentaH7Default, &pf1550::profiles::kPortentaH7Carrier}) {
+  for (const auto* profile :
+       {&pf1550::profiles::kPortentaH7Default, &pf1550::profiles::kPortentaH7Carrier}) {
     for (const auto& w : *profile) {
       const bool sw_volt = (w.reg >= 0x32 && w.reg <= 0x34) || (w.reg >= 0x38 && w.reg <= 0x3A) ||
                            (w.reg >= 0x3E && w.reg <= 0x40);
