@@ -17,9 +17,9 @@ menu "PF1550 Example Configuration"
     config PF1550_I2C_FREQ_HZ
         int "I2C clock frequency (Hz)"
         default 400000
-        range 100000 1000000
+        range 100000 400000
         help
-            PF1550 supports Fast Mode Plus up to 1 MHz on Portenta H7.
+            The PF1550 I2C interface supports fast mode, up to 400 kHz.
 
     config PF1550_GPIO_STRAPS_ENABLE
         bool "Drive PMIC strap GPIOs from ESP32-C6"
