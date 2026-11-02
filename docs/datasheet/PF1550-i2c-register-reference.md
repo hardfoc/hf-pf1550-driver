@@ -1,19 +1,10 @@
----
-layout: default
-title: "PF1550 I2C register reference (extract)"
-description: "Auto-generated readable extract from NXP PF1550 Rev.7 Section 12"
-nav_order: 12
-parent: "Datasheet & links"
-permalink: /docs/datasheet/PF1550-i2c-register-reference/
----
-
 # PF1550 I2C register reference (readable extract)
 
 > **Auto-generated** from `_local_reference/datasheet/PF1550.pdf` via
 > `scripts/extract_register_reference.sh`. Do not hand-edit — regenerate after
 > datasheet updates. Authoritative source: [NXP PF1550.pdf](https://www.nxp.com/docs/en/data-sheet/PF1550.pdf).
 
-For the **driver-maintained subset** used in code, see [PF1550-register-map.md](PF1550-register-map.md).
+For the registers the driver names, see the Register map page (`docs/registers.md`).
 
 ## Section 12 — Register map (plain text)
 

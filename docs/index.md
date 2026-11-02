@@ -1,60 +1,110 @@
 ---
-layout: default
-title: "📚 Documentation"
-description: "Complete documentation for the HardFOC PF1550 PMIC driver"
-nav_order: 2
-parent: "HardFOC PF1550 Driver"
-permalink: /docs/
-has_children: true
+hide:
+  - navigation
+  - toc
 ---
 
-# HF-PF1550 documentation
+<div class="hf-hero" markdown>
+<span class="hf-kicker">HardFOC driver</span>
 
-Welcome. This site mirrors the [`docs/`](https://github.com/hardfoc/hf-pf1550-driver/tree/main/docs) folder and documents the **NXP PF1550** PMIC family driver used on Portenta H7 and Synapse MCU power domains.
+# PF1550 Driver
 
-> **Browse on GitHub:** [repository home](https://github.com/hardfoc/hf-pf1550-driver) · [Issues](https://github.com/hardfoc/hf-pf1550-driver/issues)
+<p>A header-only C++20 driver for the NXP PF1550 power management IC. It identifies the chip, applies board power
+profiles, sets rail voltages and the USB input limit, reads OTP, and reports rail state and faults, on any MCU with
+I2C.</p>
 
-## Documentation structure
+[Quickstart](quickstart.md){ .md-button .md-button--primary }
+[API guide](api-guide.md){ .md-button }
+[Source on GitHub](https://github.com/hardfoc/hf-pf1550-driver){ .md-button }
+</div>
 
-### Getting started
+The driver has no platform code. You give it a small class that reads and writes one register over I2C and sets
+three strap pins; it does the rest: identification, ordered register sequences, code tables, the OTP unlock
+sequence and fault decoding.
 
-- **[Installation](installation.md)** — Toolchain, CMake, generated headers
-- **[Quick start](quickstart.md)** — Minimal I2C bus adapter + device probe
-- **[Chip reference](chip-reference.md)** — Parts, DEVICE_ID, family scope
+<div class="hf-chip" markdown>
+<div class="hf-chip__head">
+<span class="hf-chip__kicker">PMIC for low-power application processors</span>
+<span class="hf-chip__name">PF1550</span>
+<span class="hf-chip__vendor">NXP Semiconductors</span>
+</div>
 
-### Hardware & integration
+Regulators
+:   SW1, SW2, SW3 buck converters (1.0 A each); LDO1 and LDO3 (300 mA), LDO2 (400 mA); VSNVS 3.0 V; VREFDDR
 
-- **[Hardware setup — ESP32-C6](hardware_setup.md)** — Lab I2C wiring for examples
-- **[ESP32-C6 provisioning](esp32-provisioning.md)** — External I2C PMIC setup before MCU bring-up
-- **[Portenta H7 profile](portenta-profile.md)** — Default + `carrier` profiles, rails, straps
-- **[Configuration](configuration.md)** — Profiles, per-rail tuning, interrupt masks
-- **[CMake integration](cmake_integration.md)** — `hf::pf1550`, build settings
-- **[Platform integration](platform_integration.md)** — hf-core `Pf1550Handler`
+Charger
+:   Single-cell Li-ion / Li-polymer linear charger; VBUSIN 4.1 V to 6.0 V, input limit 10 mA to 1500 mA
 
-### Reference & examples
+Host interface
+:   I2C, fast mode up to 400 kHz, 7-bit address 0x08 (OTP-selectable 0x08 to 0x0F)
 
-- **[API reference](api_reference.md)** — `PF1550<BusType>`, diagnostics, errors
-- **[Examples](examples.md)** — ESP32-C6 probe, diagnostics, provisioning
-- **[Troubleshooting](troubleshooting.md)** — OTP locks, I2C, power-cycle behavior
+Control pins
+:   STANDBY, PWRON, ONKEY, WDI (inputs); INTB, RESETBMCU (open-drain outputs)
 
-### Manufacturer
+Configuration
+:   OTP: start-up sequence, set points, charger parameters; A0EP parts ship unprogrammed
 
-- **[Datasheet & links](datasheet/README.md)** — PDF fetch, readable extracts
+Package
+:   40-pin HVQFN, 5 mm × 5 mm, exposed pad; −40 °C to 105 °C (MC34) or 85 °C (MC32)
 
-## Recommended reading order
+[Data sheet (Rev. 7)](https://www.nxp.com/docs/en/data-sheet/PF1550.pdf) ·
+[Product page](https://www.nxp.com/products/PF1550) ·
+[Register map](registers.md)
+</div>
 
-1. [Installation](installation.md)
-2. [Chip reference](chip-reference.md) — confirm **0x7C** @ 0x08
-3. [Quick start](quickstart.md) — implement `BusInterface`
-4. [Portenta profile](portenta-profile.md) — if targeting Portenta / Synapse
-5. [Examples](examples.md) — ESP32-C6 CI-safe probe
+## What you get
 
-## Verification (software-only)
+- **One object per PMIC.** `PF1550<YourBus>` exposes identification, register access, profiles, rail set points,
+  strap pins, OTP, interrupts and diagnostics as plain member functions. See [API guide](api-guide.md).
+- **Board profiles as data.** A profile is a table of register writes with optional waits, applied in order; the
+  Portenta H7 default and carrier profiles are included. See [Portenta H7 profiles](portenta-h7.md).
+- **Datasheet code tables.** SW, LDO and VBUS-limit codes convert to millivolts and milliamps from the data
+  sheet's tables, checked at compile time. See [Rails and OTP](rails-and-otp.md).
+- **A diagnostic snapshot.** One call reads identity, state, every rail's set point and enables, the VBUS limit
+  and latched faults, for a monitor task. See [API guide](api-guide.md#read-a-diagnostic-snapshot).
+- **Zero-overhead portability.** The port is a CRTP class: no virtual calls, no heap, no RTOS dependency.
+  See [Porting](porting.md).
+- **Tested without hardware.** Host unit tests run the driver against a register model of the chip. See
+  [Testing and CI](testing.md).
 
-Run the scaffold verifier before opening a PR:
+## Where to go next
 
-```bash
-./scripts/verify_driver_scaffold.sh
-```
+<div class="grid cards" markdown>
 
-Hardware validation (scope, rail voltages, USB bring-up) remains a **human operator** step.
+-   :material-rocket-launch-outline: **[Quickstart](quickstart.md)**
+
+    ---
+
+    Wire the bus, write the port, read the rails in about 15 lines.
+
+-   :material-chip: **[Hardware](hardware.md)**
+
+    ---
+
+    Pins, bus settings, supplies, rails and the parts.
+
+-   :material-layers-outline: **[Architecture](architecture.md)**
+
+    ---
+
+    The three layers and what each one owns.
+
+-   :material-code-braces: **[API guide](api-guide.md)**
+
+    ---
+
+    Identify, configure, read, diagnose and handle faults, task by task.
+
+-   :material-swap-horizontal: **[Porting](porting.md)**
+
+    ---
+
+    Implement the bus interface for your MCU.
+
+-   :material-book-open-variant: **[API reference](api-reference.md)**
+
+    ---
+
+    Every class and member, generated from the headers.
+
+</div>

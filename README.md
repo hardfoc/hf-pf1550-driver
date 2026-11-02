@@ -1,168 +1,109 @@
----
-layout: default
-title: "HardFOC PF1550 Driver"
-description: "Header-only NXP PF1550 PMIC driver with ESP32-C6 examples and Portenta H7 profile"
-nav_order: 1
-permalink: /
----
+# PF1550 Driver
 
-# HF-PF1550 Driver
+A header-only C++20 driver for the NXP PF1550 power management IC (three bucks, three LDOs, a Li-ion charger):
+identify it, apply board power profiles, set rails and read rail state and faults, from any MCU with I2C.
 
-**NXP [PF1550](https://www.nxp.com/products/power-management/pmics/power-management-ics-pmic-for-high-performance-applications:PF1550) PMIC family — I2C power management for application processors**
+[![Host tests](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/ci-host-tests.yml/badge.svg?branch=main)](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/ci-host-tests.yml)
+[![ESP32 examples](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml/badge.svg?branch=main)](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml)
+[![Docs](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/ci-docs-publish.yml/badge.svg?branch=main)](https://hardfoc.github.io/hf-pf1550-driver/)
+[![License: GPL-3.0](https://img.shields.io/github/license/hardfoc/hf-pf1550-driver)](LICENSE)
 
-[![C++](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
-[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![CI](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml/badge.svg?branch=main)](https://github.com/hardfoc/hf-pf1550-driver/actions/workflows/esp32-examples-build-ci.yml)
-[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://hardfoc.github.io/hf-pf1550-driver/)
+**Documentation: <https://hardfoc.github.io/hf-pf1550-driver/>**
 
-## 📚 Table of Contents
+<!-- figure: driver-layers -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/diagrams/driver-layers.dark.svg">
+  <img src="docs/diagrams/driver-layers.svg"
+    alt="Layer diagram: the application calls the hardware-agnostic PF1550 driver, whose operations read and
+    write the PMIC's registers, which uses the CRTP bus interface, which calls the platform port you
+    write, which drives the I2C bus and the STANDBY and USB strap pins of the PF1550.">
+</picture>
+<!-- /figure -->
 
-1. [Overview](#-overview)
-2. [Features](#-features)
-3. [Quick Start](#-quick-start)
-4. [Installation](#-installation)
-5. [API Reference](#-api-reference)
-6. [Examples](#-examples)
-7. [Documentation](#-documentation)
-8. [References](#-references)
-9. [Contributing](#-contributing)
-10. [License](#-license)
+## In 30 seconds
 
-## 📦 Overview
+Write a small port class for your MCU (register write, register read, bus init, strap pins;
+[Porting](https://hardfoc.github.io/hf-pf1550-driver/latest/porting/)), then:
 
-> **📖 [Live documentation](https://hardfoc.github.io/hf-pf1550-driver/)** — guides, register extracts, Portenta profile, ESP32-C6 examples.
-
-The **PF1550** is a multi-rail PMIC (3 bucks, 3 LDOs, charger, OTP) used on **Arduino Portenta H7** (`MC34PF1550A0EP`) and **Synapse** MCU domains. Bare CubeMX firmware does **not** configure it — this driver provides portable I2C control, board profiles, and hf-core HAL integration.
-
-You implement a small **CRTP bus adapter** (`pf1550::BusInterface<YourBus>`) for I2C and optional strap GPIOs.
-
-### 🔀 Chip compatibility
-
-| Part | I2C | DEVICE_ID | OTP |
-|------|-----|-----------|-----|
-| MC34PF1550A0EP | 0x08 | 0x7C | Unprogrammed — full profile writes |
-| MC34PF1550* | 0x08 | 0x7C | Factory OTP — some rails locked |
-| MC32PF1550* | 0x08 | 0x7C | Same register map |
-
-## ✨ Features
-
-- ✅ **Header-only C++20** — `pf1550::PF1550<BusType>` with `.ipp` template implementation
-- ✅ **CRTP bus interface** — zero virtual overhead on I2C path
-- ✅ **Portenta H7 profiles** — `portenta_h7_default` (VFR) and **`portenta_h7_carrier`** (SW1-first, full SW2 enable, charger-LED off)
-- ✅ **Full register map** — every §12.1 / §12.2 datasheet register exposed by symbolic name + bit-field constants (`SwCtrlBits`, `LdoCtrlBits`, `MiscIntStat0Bits`, …)
-- ✅ **Voltage / current decoders** — `SwCodeToMillivolts`, `LdoCodeToMillivolts`, `VbusLimitRegToMilliamps`, `SwCurrentLimitCodeToMilliamps` — all `constexpr`
-- ✅ **State decoders** — `DecodeStateInfo` (Run/Standby/Sleep/RegsDisable) and `DecodeChargerSense` (PreCharge/FastCC/Done/…)
-- ✅ **Diagnostic snapshot** — `ReadDiagnosticSnapshot()` reads identity, state, per-rail enable/voltage, latched + live faults, and charger state in one call
-- ✅ **Boot-time self-test** — `RunPowerSelfTest()` classifies the snapshot into `FaultSeverity::{Info, Warning, Critical, McuKill}` using Portenta H7 wiring
-- ✅ **Interrupt API** — `ReadInterruptCategory`, `ReadLatchedFaults`, `ClearLatchedFaults`, `SetInterruptMaskAll`
-- ✅ **OTP read helpers** — indirect FMRADDR/FMRDATA access with KEY1/KEY2/KEY3 unlock
-- ✅ **Strap pin hooks** — STANDBY, USB_VBUS_EN, USB_OTG_EN via CRTP `GpioSet`
-- ✅ **CMake package** — `hf::pf1550`, ESP-IDF component wrapper, semver header
-- ✅ **hf-core handler** — `Pf1550Handler` via `HF_CORE_ENABLE_PF1550` (thread-safe, cached snapshot, fault-severity classifier)
-- ✅ **ESP32-C6 examples** — CI-safe I2C probe + register dump (no hardware required)
-- ✅ **Documentation** — Doxygen + Jekyll GitHub Pages, `docs/datasheet/` auto-generated extract, **DIOVV traceability** for medical-device use
-- ✅ **CI** — ESP32 matrix build, C++ lint, C++ static analysis, docs link check, YAML lint, markdownlint, release packaging
-
-## 🚀 Quick Start
-
+<!-- generated: quickstart-code -->
 ```cpp
+#include <cstdio>
+
 #include "pf1550.hpp"
 
-struct MyBus : pf1550::BusInterface<MyBus> {
-  bool EnsureInitialized() noexcept { /* init I2C */ return true; }
-  bool Write(uint8_t a, uint8_t r, const uint8_t* d, size_t n) noexcept { /* ... */ }
-  bool Read(uint8_t a, uint8_t r, uint8_t* d, size_t n) noexcept { /* ... */ }
-};
+int bring_up_pmic(MyI2c& bus) {
+  pf1550::PF1550<MyI2c> pmic(&bus);              // 7-bit address 0x08
 
-MyBus bus;
-pf1550::PF1550<MyBus> pmic(&bus);
+  if (!pmic.EnsureInitialized()) {               // 1. bus up, DEVICE_ID == 0x7C
+    return -1;                                   // wiring, pull-ups or address
+  }
 
-if (pmic.EnsureInitialized()) {
-  pmic.SetPowerMode(pf1550::PowerMode::Run);
-  pmic.ApplyPortentaH7DefaultProfile();
+  pf1550::PmicState state{};                     // 2. where is the state machine?
+  if (!pmic.ReadPmicState(state) || state != pf1550::PmicState::Run) {
+    return -2;
+  }
+
+  pf1550::DiagnosticSnapshot snap{};             // 3. SW1..LDO3: set point and enable
+  if (!pmic.ReadDiagnosticSnapshot(snap)) {
+    return -3;
+  }
+  for (size_t i = 0; i <= static_cast<size_t>(pf1550::RailId::Ldo3); ++i) {
+    const auto id = static_cast<pf1550::RailId>(i);
+    std::printf("%s %u mV %s\n", pf1550::RailName(id), snap.rails[i].set_voltage_mv,
+                snap.rails[i].enabled_run ? "on" : "off");
+  }
+  return 0;
 }
 ```
+<!-- /generated -->
 
-See [Quick Start Guide](docs/quickstart.md) and [Portenta profile](docs/portenta-profile.md).
+## What it does
 
-## 🔧 Installation
+- Finds the PMIC at 0x08 and checks DEVICE_ID (`EnsureInitialized()`).
+- Applies a board profile, an ordered table of register writes with waits; the Arduino Portenta H7 default and
+  carrier profiles are included.
+- Sets SW and LDO set points and the VBUS input limit, and drives the STANDBY and USB strap pins.
+- Reads state, charger state, a full diagnostic snapshot of every rail, latched faults and OTP.
+- Decodes the data sheet's voltage, current-limit and state codes, checked at compile time.
+- No heap, no exceptions, no RTOS, no virtual calls (the port is a CRTP class).
 
-1. Clone with submodules (for ESP32 examples):
-
-   ```bash
-   git clone --recursive https://github.com/hardfoc/hf-pf1550-driver.git
-   ```
-
-2. CMake:
-
-   ```cmake
-   add_subdirectory(hf-pf1550-driver)
-   target_link_libraries(my_app PRIVATE hf::pf1550)
-   ```
-
-3. Datasheet (local, gitignored PDF):
-
-   ```bash
-   ./scripts/fetch_datasheet.sh
-   ./scripts/extract_register_reference.sh
-   ```
-
-Details: [docs/installation.md](docs/installation.md)
-
-## 📖 API Reference
-
-| Method | Description |
-|--------|-------------|
-| `EnsureInitialized()` | I2C + DEVICE_ID check (0x7C) |
-| `ApplyPortentaH7DefaultProfile()` | Board init sequence |
-| `ApplyProfile(span<RegisterWrite>)` | Custom register table |
-| `SetPowerMode(Run \| Standby)` | STANDBY strap |
-| `SetUsbRails(vbus, otg)` | USB enable straps |
-| `ReadPmicStatus()` | Status reg 0x67 |
-| `ReadOtpRegion()` | OTP indirect read |
-
-Full API: [docs/api_reference.md](docs/api_reference.md)
-
-## 📊 Examples
-
-| Example | Target | Description |
-|---------|--------|-------------|
-| `pf1550_esp32c6_probe` | ESP32-C6 | DEVICE_ID + status |
-| `pf1550_esp32c6_register_dump` | ESP32-C6 | Regulator register dump |
-| `pf1550_esp32c6_diagnostics` | ESP32-C6 | Snapshot + self-test loop |
-| **`pf1550_esp32c6_provision`** | ESP32-C6 | **External I2C provisioning (pre-MCU)** |
+## Install
 
 ```bash
-cd examples/esp32
-./scripts/build_app.sh pf1550_esp32c6_provision Debug
+git submodule add https://github.com/hardfoc/hf-pf1550-driver.git external/hf-pf1550-driver
 ```
 
-## 📚 Documentation
+```cmake
+add_subdirectory(external/hf-pf1550-driver)
+target_link_libraries(my_app PRIVATE hf::pf1550)
+```
 
-| Guide | Description |
-|-------|-------------|
-| [Documentation home](docs/index.md) | Full TOC |
-| [Installation](docs/installation.md) | CMake, ESP-IDF, hf-core |
-| [Quick start](docs/quickstart.md) | Bus adapter + probe |
-| [Chip reference](docs/chip-reference.md) | Parts and IDs |
-| [Portenta profile](docs/portenta-profile.md) | Rails, straps, init table |
-| [Hardware setup](docs/hardware_setup.md) | ESP32-C6 wiring |
-| [Platform integration](docs/platform_integration.md) | Pf1550Handler |
-| [Datasheet](docs/datasheet/README.md) | PDF fetch + readable extracts |
-| [Troubleshooting](docs/troubleshooting.md) | OTP, power-cycle, USB |
+ESP-IDF: use the component wrapper in [`examples/esp32/components/hf_pf1550`](examples/esp32/components/hf_pf1550/CMakeLists.txt).
+Details: [Installation](https://hardfoc.github.io/hf-pf1550-driver/latest/installation/).
 
-## 🔗 References
+## Documentation
 
-| Resource | Link |
-|----------|------|
-| NXP PF1550 datasheet | [PF1550.pdf](https://www.nxp.com/docs/en/data-sheet/PF1550.pdf) |
-| Portenta VFR reference | `I2C_PMIC.c` in pw-design reference tree |
-| ESP-IDF I2C master | [ESP32-C6 I2C docs](https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-reference/peripherals/i2c.html) |
+| | |
+| --- | --- |
+| [Quickstart](https://hardfoc.github.io/hf-pf1550-driver/latest/quickstart/) | Wire it, write the port, read the rails |
+| [Hardware](https://hardfoc.github.io/hf-pf1550-driver/latest/hardware/) | Pins, bus settings, supplies, rails, parts |
+| [Rails and OTP](https://hardfoc.github.io/hf-pf1550-driver/latest/rails-and-otp/) | Code tables, read-only registers, what OTP decides |
+| [Portenta H7 profiles](https://hardfoc.github.io/hf-pf1550-driver/latest/portenta-h7/) | Every write of the built-in profiles |
+| [API guide](https://hardfoc.github.io/hf-pf1550-driver/latest/api-guide/) | Identify, configure, read, handle faults |
+| [API reference](https://hardfoc.github.io/hf-pf1550-driver/latest/api/) | Doxygen, every class and member |
 
-## 🤝 Contributing
+The pages are in [`docs/`](docs/index.md). NXP's data sheet is not committed: `scripts/fetch_datasheet.sh` downloads
+it into the git-ignored `_local_reference/`.
 
-Run `./scripts/verify_driver_scaffold.sh` before opening a PR. Hardware validation remains manual.
+## Tests
 
-## 📄 License
+```bash
+cmake -S . -B build-host -DHF_PF1550_BUILD_TESTS=ON && cmake --build build-host && ctest --test-dir build-host
+```
 
-**GPL-3.0** — see [LICENSE](LICENSE).
+The host tests run the driver against a register model of the chip; the code on the documentation site is compiled
+by the same build.
+
+## License
+
+GPL-3.0. See [LICENSE](LICENSE).

@@ -11,7 +11,7 @@
  * 4. Confirm self-test PASS and rail setpoints in the log.
  * 5. Remove ESP32, release MCU reset, flash manufacturing firmware.
  *
- * @see docs/esp32-provisioning.md
+ * @see docs/provisioning.md
  */
 
 #include "esp32_pf1550_bus.hpp"

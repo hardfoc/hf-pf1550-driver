@@ -1,0 +1,43 @@
+{
+  "operations": [
+    "EnsureInitialized",
+    "IsInitialized",
+    "ReadDeviceId",
+    "VerifyDevice",
+    "ReadRegister",
+    "WriteRegister",
+    "ApplyProfile",
+    "ApplyPortentaH7DefaultProfile",
+    "ApplyPortentaH7CarrierProfile",
+    "SetPowerMode",
+    "SetUsbRails",
+    "ReadPmicStatus",
+    "ReadPmicState",
+    "ReadChargerState",
+    "ReadOtpByte",
+    "ReadOtpRegion",
+    "SetSwVoltage",
+    "SetLdoVoltage",
+    "SetVbusCurrentLimitMa",
+    "ReadInterruptCategory",
+    "ReadLatchedFaults",
+    "ClearLatchedFaults",
+    "SetInterruptMaskAll",
+    "ReadDiagnosticSnapshot",
+    "RefreshStatusSnapshot",
+    "RunPowerSelfTest"
+  ],
+  "required": [
+    "Write",
+    "Read",
+    "EnsureInitialized",
+    "GpioSet"
+  ],
+  "optional": [
+    "DelayUs"
+  ],
+  "sources": [
+    "inc/pf1550.hpp:PF1550 public members",
+    "inc/pf1550_i2c_interface.hpp:BusInterface"
+  ]
+}

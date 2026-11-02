@@ -41,8 +41,7 @@ for f in \
   _config/.clang-format \
   _config/lychee.toml \
   docs/index.md \
-  docs/datasheet/README.md \
-  docs/datasheet/PF1550-register-map.md \
+  docs/registers.md \
   docs/datasheet/PF1550-i2c-register-reference.md \
   scripts/fetch_datasheet.sh \
   scripts/extract_register_reference.sh \

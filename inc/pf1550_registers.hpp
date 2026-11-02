@@ -103,7 +103,7 @@ enum class Register : uint8_t {
   Sw3StbyVolt    = 0x3F,  ///< SW3_STBY_VOLT
   Sw3SlpVolt     = 0x40,  ///< SW3_SLP_VOLT
   Sw3Ctrl        = 0x41,  ///< SW3_CTRL
-  Sw3Ctrl1       = 0x42,  ///< SW3_CTRL1 — SW3_ILIM[1:0] (Portenta sets `0x02` = 2.0 A).
+  Sw3Ctrl1       = 0x42,  ///< SW3_CTRL1 — Table 126. SW3_ILIM[1:0] + SW3_TMODE_SEL (Portenta writes `0x02` = 1.5 A typical).
 
   // --- §12.1 — VSNVS / VREFDDR ---
   VsnvsCtrl      = 0x48,  ///< VSNVS_CTRL — Table 127. RTC/SNVS backup LDO control.
@@ -139,9 +139,9 @@ enum class Register : uint8_t {
 
   // --- §12.1 — OTP indirect read ---
   OtpKey1        = 0x6F,  ///< KEY1 unlock (write `0x15`).
-  ChargerLedDuty = 0x9C,  ///< Undocumented Portenta bootloader register (LED duty).
+  ChargerLedDuty = 0x9C,  ///< LED_PWM — Table 170. LED_EN, LED_RAMP, LED_PWM[5:0] duty (Portenta writes `0x80`).
   OtpKey2        = 0x9F,  ///< KEY2 unlock (write `0x50`).
-  ChargerLedCtrl = 0x9E,  ///< Undocumented Portenta bootloader register (LED disable).
+  ChargerLedCtrl = 0x9E,  ///< LED_CNFG — Table 172. LEDOVRD, LED_CFG, current, frequency (Portenta writes `0x20`).
   VbusInCurrentLimit = 0x94, ///< VBUS input current limit ((mA/50) << 3 — Portenta uses 1500 mA → `0xA0`).
   FmrAddr        = 0xC4,  ///< FMRADDR — OTP indirect address.
   FmrData        = 0xC5,  ///< FRMDATA — OTP indirect data.
@@ -240,8 +240,10 @@ enum class ChargerState : uint8_t {
  * @brief Common SW buck output voltage codes (RUN mode).
  *
  * Full encoding is `code → V_out` per datasheet Table 31:
- *  - `0x00..0x0E` → 1.10 V .. 2.50 V  (step 100 mV)
- *  - `0x0F..0x1F` → step 50 mV up to 3.90 V (typical step varies — see table)
+ *  - DVS disabled (`OTP_SWx_DVS_SEL = 1`): 1.10, 1.20, 1.35, 1.50, 1.80, 2.50,
+ *    3.00 V for codes 0..6, and 3.30 V for every code from 7 up.
+ *  - DVS enabled (`OTP_SWx_DVS_SEL = 0`): 0.6000 V + 12.5 mV × code.
+ *  These enumerators are DVS-disabled codes; SW3 uses Table 37 instead.
  *
  * Only the codes used on Arduino Portenta H7 eval are enumerated.
  *
