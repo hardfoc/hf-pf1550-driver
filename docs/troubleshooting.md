@@ -39,7 +39,6 @@ Start with `GetErrorFlags()` after a failing call: `DeviceNotFound` or `I2cRead`
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| `RunPowerSelfTest()` fails on battery | No VBUS sets `kVbusInval`, ranked `kWarning` | Expected without USB; rank `result.faults` for your board |
 | A fault comes back right after `ClearLatchedFaults()` | The cause is still there | Read the SENSE register for the live state |
 | INTB never goes low | Every interrupt is masked (the reset value) | `SetInterruptMaskAll(false)`, or unmask one group |
 

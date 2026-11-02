@@ -144,3 +144,17 @@ TEST_CASE("the snapshot fills the VSNVS entry") {
   CHECK_EQ(v.set_voltage_mv, 3000);
   CHECK(v.enabled_run && v.enabled_stby);
 }
+
+// Table 153: VBUS_VALID clear means no valid input, the normal state when running from the battery.
+TEST_CASE("the self-test passes on battery with no VBUS") {
+  MockPf1550 bus;
+  for (uint8_t r : {0x35, 0x3B, 0x41, 0x4D, 0x50, 0x53}) {
+    bus.reg(r) = 0x01; // every rail enabled in RUN
+  }
+  bus.reg(0x86) = 0; // VBUS not valid
+  Driver pmic(&bus);
+  pf1550::SelfTestResult result{};
+  CHECK(pmic.RunPowerSelfTest(result));
+  CHECK(result.faults.Has(FaultFlags::kVbusInval));
+  CHECK(result.worst_severity == pf1550::FaultSeverity::kInfo);
+}

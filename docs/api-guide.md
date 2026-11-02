@@ -84,8 +84,9 @@ end of charge, done, faults, off) and can return the raw byte too. `PmicStateNam
 `DiagnosticSnapshot` holds identity (DEVICE_ID, OTP_FLAVOR, SILICON_REV), INT_CATEGORY, the decoded state and
 charger state, VBUS sense, the decoded VBUS input limit, the aggregated `FaultFlags`, and one `RailDiagnostics` per
 rail: raw control and voltage bytes, set point in mV, RUN and STANDBY enables, latched and live fault marks. The
-VSNVS entry holds the raw VSNVS_CTRL byte, 3000 mV and both enables set: VSNVS is a fixed, always-on output. When a read fails, `read_ok` is `false` and `Error::DiagnosticRead` is set, but every
-field that was read is kept for logging.
+VSNVS entry holds the raw VSNVS_CTRL byte, 3000 mV and both enables set: VSNVS is a fixed, always-on output. When
+a read fails, `read_ok` is `false` and `Error::DiagnosticRead` is set, but every field that was read is kept for
+logging.
 
 `RefreshStatusSnapshot()` re-reads only what changes without a register write (interrupts, state, charger, VBUS,
 faults), at about half the bus time of a full read. A monitor polling at 20 Hz can do a full read once a second
@@ -102,7 +103,7 @@ and refreshes in between.
 | A call returns `false` | NACK, bad argument or a failed read | `GetErrorFlags()`: `I2cWrite`, `I2cRead`, `InvalidParam`, `DeviceNotFound`, `WrongDeviceId`, `NotInitialized`, `ProfileApply`, `DiagnosticRead`, `SelfTestFailed` |
 | INT_CATEGORY non-zero | A group has a latched interrupt | `ReadLatchedFaults()`, or the STAT register with `ReadRegister()` |
 | INTB low | An unmasked interrupt is pending | Masks power up set: `SetInterruptMaskAll(false)` unmasks every group |
-| `kVbusInval` in `FaultFlags` | VBUS_VALID_SNS is clear: no valid USB or adapter input | Expected on battery |
+| `kVbusInval` in `FaultFlags` | VBUS_VALID_SNS is clear: no valid USB or adapter input | Expected on battery; ranked `kInfo` |
 
 STAT bits are write-1-to-clear: `ClearLatchedFaults()` writes 0xFF to every STAT register. Clear after you have
 handled the cause; a bit that comes back at once means the cause is still there. The sticky driver flags are

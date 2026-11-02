@@ -220,12 +220,13 @@ constexpr FaultSeverity FaultSeverityPortentaH7(uint32_t single_flag) noexcept {
 
     case FaultFlags::kTempWarn:
     case FaultFlags::kChgFault:
-    case FaultFlags::kVbusInval:
     case FaultFlags::kWdiAssert:
     case FaultFlags::kI2cReadFail:
     case FaultFlags::kI2cWriteFail:
       return FaultSeverity::kWarning;
 
+    // No valid VBUS (VBUS_VALID clear, Table 153) is the normal state when running from the battery.
+    case FaultFlags::kVbusInval:
     case FaultFlags::kPwrOn:
     case FaultFlags::kResetBmcu:
     default:
