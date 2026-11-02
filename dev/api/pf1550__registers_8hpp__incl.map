@@ -1,5 +1,0 @@
-<map id="pf1550_registers.hpp" name="pf1550_registers.hpp">
-<area shape="rect" id="Node000001" title="NXP PF1550 family I2C register map, bit&#45;field constants, and OTP keys." alt="" coords="5,5,164,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="51,79,118,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,31,87,65,82,65,82,31"/>
-</map>

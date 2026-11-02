@@ -1,5 +1,0 @@
-<map id="pf1550_voltage_tables.hpp" name="pf1550_voltage_tables.hpp">
-<area shape="rect" id="Node000001" title="PF1550 SW / LDO voltage&#45;code ↔ millivolt conversion helpers." alt="" coords="5,5,204,31"/>
-<area shape="rect" id="Node000002" href="$pf1550_8hpp.html" title="Hardware&#45;agnostic driver for the NXP PF1550 PMIC family." alt="" coords="57,79,152,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,44,107,79,102,79,102,44"/>
-</map>

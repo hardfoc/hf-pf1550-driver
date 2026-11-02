@@ -1,7 +1,0 @@
-<map id="pf1550_profiles.hpp" name="pf1550_profiles.hpp">
-<area shape="rect" id="Node000001" title="Named PF1550 register&#45;write sequences (eval / reference hosts)." alt="" coords="5,5,156,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="10,79,66,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,32,54,68,50,66,71,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="90,79,157,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="90,30,112,66,107,68,85,32"/>
-</map>
