@@ -120,3 +120,14 @@ TEST_CASE("SetSwVoltageMv takes a DVS grid voltage and nothing else") {
   CHECK_EQ(pf1550::SwDvsMillivoltsToCode(1100), 40);
   CHECK_EQ(pf1550::SwDvsMillivoltsToCode(599), 0xFF);
 }
+
+TEST_CASE("the Portenta profiles do not write the read-only SW voltage registers") {
+  for (const auto* profile : {&pf1550::profiles::kPortentaH7Default, &pf1550::profiles::kPortentaH7Carrier}) {
+    for (const auto& w : *profile) {
+      const bool sw_volt = (w.reg >= 0x32 && w.reg <= 0x34) || (w.reg >= 0x38 && w.reg <= 0x3A) ||
+                           (w.reg >= 0x3E && w.reg <= 0x40);
+      CHECK(!sw_volt);
+    }
+    CHECK_EQ(profile->back().reg, 0x50); // LDO2_CTRL stays last
+  }
+}
