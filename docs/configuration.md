@@ -37,7 +37,7 @@ Rules worth following in a profile:
 
 | Setting | Call | Register |
 | --- | --- | --- |
-| SW1 / SW2 / SW3 RUN set point | `SetSwVoltage(n, SwVoltageCode)` | `SWn_VOLT` |
+| SW1 / SW2 RUN set point (DVS-enabled bucks only) | `SetSwVoltageMv(n, mv)`, `SetSwVoltage(n, SwVoltageCode)` | `SWn_VOLT` |
 | LDO1 / LDO2 / LDO3 set point | `SetLdoVoltage(n, LdoVoltageCode)` | `LDOn_VOLT` |
 | VBUS input current limit | `SetVbusCurrentLimitMa(10 / 100 / 500 / 1000 / 1500)` | `VBUS_INLIM_CNFG` (0x94) |
 | Rail enables per mode | `WriteRegister(Register::Sw2Ctrl, SwCtrlBits::kEn \| ...)` | `SWn_CTRL`, `LDOn_CTRL` |
@@ -51,9 +51,9 @@ Rules worth following in a profile:
 --8<-- "tests/docs/configuration.cpp:dvs"
 ```
 
-`SetSwDvsEnabled(n, enabled)` changes only how the snapshot turns `SW1_VOLT` and `SW2_VOLT` into millivolts; it
-writes nothing. Set it to what the part's `OTP_SWx_DVS_SEL` says. The default (both disabled) matches the Portenta
-H7.
+`SetSwDvsEnabled(n, enabled)` decides how the snapshot turns `SW1_VOLT` and `SW2_VOLT` into millivolts and whether
+`SetSwVoltage()` / `SetSwVoltageMv()` may write them; it writes nothing itself. Set it to what the part's
+`OTP_SWx_DVS_SEL` says. The default (both disabled) matches the Portenta H7.
 
 ## Address
 

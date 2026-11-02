@@ -86,3 +86,37 @@ TEST_CASE("reserved VBUS input-limit codes decode to 0 mA") {
   }
   CHECK_EQ(pf1550::VbusLimitRegToMilliamps(20u << 3), 1500);
 }
+
+// Table 31: DVS enabled is 0.6 V + 12.5 mV per code and the registers are writable; DVS disabled makes
+// SWx_VOLT read-only. Table 37: SW3 is read-only.
+TEST_CASE("SetSwVoltage encodes the voltage for a DVS rail and refuses read-only registers") {
+  MockPf1550 bus;
+  Driver pmic(&bus);
+  pmic.SetSwDvsEnabled(1, true);
+  REQUIRE(pmic.SetSwVoltage(1, pf1550::SwVoltageCode::V1_1));
+  CHECK_EQ(bus.reg(0x32), 40); // 0.6 V + 40 x 12.5 mV = 1.100 V
+  bus.clearLog();
+  CHECK(!pmic.SetSwVoltage(1, pf1550::SwVoltageCode::V3_3)); // above the DVS range
+  CHECK(!pmic.SetSwVoltage(2, pf1550::SwVoltageCode::V3_3)); // DVS disabled: read-only
+  CHECK(!pmic.SetSwVoltage(3, pf1550::SwVoltageCode::V3_1)); // SW3: read-only
+  CHECK(bus.writes().empty());
+  CHECK((pmic.GetErrorFlags() & flag(Driver::Error::InvalidParam)) != 0);
+}
+
+TEST_CASE("SetSwVoltageMv takes a DVS grid voltage and nothing else") {
+  MockPf1550 bus;
+  Driver pmic(&bus);
+  pmic.SetSwDvsEnabled(2, true);
+  REQUIRE(pmic.SetSwVoltageMv(2, 1000));
+  CHECK_EQ(bus.reg(0x38), 0x20);
+  REQUIRE(pmic.SetSwVoltageMv(2, 1388)); // 1.3875 V, the top code, rounded to mV
+  CHECK_EQ(bus.reg(0x38), 0x3F);
+  bus.clearLog();
+  CHECK(!pmic.SetSwVoltageMv(2, 1006));
+  CHECK(!pmic.SetSwVoltageMv(1, 1000)); // SW1 still DVS disabled
+  CHECK(!pmic.SetSwVoltageMv(3, 3300));
+  CHECK(bus.writes().empty());
+  CHECK_EQ(pf1550::SwDvsMillivoltsToCode(600), 0);
+  CHECK_EQ(pf1550::SwDvsMillivoltsToCode(1100), 40);
+  CHECK_EQ(pf1550::SwDvsMillivoltsToCode(599), 0xFF);
+}

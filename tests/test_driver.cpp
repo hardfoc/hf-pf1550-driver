@@ -93,8 +93,9 @@ TEST_CASE("a profile stops at the first write that fails") {
 TEST_CASE("rail setters write the voltage register and reject an unknown rail") {
   MockPf1550 bus;
   Driver pmic(&bus);
-  REQUIRE(pmic.SetSwVoltage(2, pf1550::SwVoltageCode::V3_3));
-  CHECK_EQ(bus.reg(0x38), 0x07);
+  pmic.SetSwDvsEnabled(2, true); // SWx_VOLT is writable only with DVS enabled (Table 31)
+  REQUIRE(pmic.SetSwVoltage(2, pf1550::SwVoltageCode::V1_1));
+  CHECK_EQ(bus.reg(0x38), 40);
   REQUIRE(pmic.SetLdoVoltage(3, pf1550::LdoVoltageCode::V1_2));
   CHECK_EQ(bus.reg(0x52), 0x09);
   bus.clearLog();

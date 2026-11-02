@@ -213,22 +213,24 @@ bool PF1550<BusType>::ReadOtpRegion(uint8_t* buffer, size_t len, uint8_t start) 
 
 template <typename BusType>
 bool PF1550<BusType>::SetSwVoltage(uint8_t sw_index, SwVoltageCode run_code) noexcept {
-  Register volt_reg = Register::Sw1Volt;
-  switch (sw_index) {
-  case 1:
-    volt_reg = Register::Sw1Volt;
-    break;
-  case 2:
-    volt_reg = Register::Sw2Volt;
-    break;
-  case 3:
-    volt_reg = Register::Sw3Volt;
-    break;
-  default:
+  return SetSwVoltageMv(sw_index, SwCodeToMillivolts(static_cast<uint8_t>(run_code)));
+}
+
+template <typename BusType>
+bool PF1550<BusType>::SetSwVoltageMv(uint8_t sw_index, uint16_t mv) noexcept {
+  // SW3_VOLT is OTP-loaded and read-only (Table 37); SW1/SW2_VOLT are writable only with DVS enabled
+  // (Table 31), where the encoding is 0.6 V + 12.5 mV x code.
+  if ((sw_index != 1U && sw_index != 2U) || !sw_dvs_enabled_[sw_index - 1U]) {
     setError(Error::InvalidParam);
     return false;
   }
-  return writeReg8(static_cast<uint8_t>(volt_reg), static_cast<uint8_t>(run_code));
+  const uint8_t code = SwDvsMillivoltsToCode(mv);
+  if (code == 0xFFU) {
+    setError(Error::InvalidParam);
+    return false;
+  }
+  const Register volt_reg = sw_index == 1U ? Register::Sw1Volt : Register::Sw2Volt;
+  return writeReg8(static_cast<uint8_t>(volt_reg), code);
 }
 
 template <typename BusType>

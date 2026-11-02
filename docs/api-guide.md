@@ -17,7 +17,7 @@ also sets a bit in the sticky error flags, which stay set until you clear them.
 | --- | --- |
 | Identify | `EnsureInitialized()`, `IsInitialized()`, `ReadDeviceId()`, `VerifyDevice()`, `GetI2cAddress()` |
 | Profiles | `ApplyProfile(span)`, `ApplyPortentaH7DefaultProfile()`, `ApplyPortentaH7CarrierProfile()` |
-| Rails and limits | `SetSwVoltage()`, `SetLdoVoltage()`, `SetVbusCurrentLimitMa()`, `SetSwDvsEnabled()` |
+| Rails and limits | `SetSwVoltageMv()`, `SetSwVoltage()`, `SetLdoVoltage()`, `SetVbusCurrentLimitMa()`, `SetSwDvsEnabled()` |
 | Strap pins | `SetPowerMode()`, `SetUsbRails()` |
 | Status | `ReadPmicStatus()`, `ReadPmicState()`, `ReadChargerState()`, `ReadInterruptCategory()` |
 | Faults and interrupts | `ReadLatchedFaults()`, `ClearLatchedFaults()`, `SetInterruptMaskAll()` |
@@ -52,13 +52,16 @@ shows how to write your own.
 --8<-- "tests/docs/api_tasks.cpp:rails"
 ```
 
-`SetSwVoltage(n, code)` and `SetLdoVoltage(n, code)` write the RUN set point of rail `n` (1 to 3) and reject any
-other index with `Error::InvalidParam`. Enables have no helper: build the control byte from `SwCtrlBits` or
+`SetLdoVoltage(n, code)` writes the RUN set point of LDO `n` (1 to 3). `SetSwVoltageMv(n, mv)` and
+`SetSwVoltage(n, code)` set the RUN voltage of SW1 or SW2, and only when that buck runs with DVS enabled (declared
+with `SetSwDvsEnabled()`): they write the DVS code for the voltage. They refuse with `Error::InvalidParam`, writing
+nothing, for SW3 and for a DVS-disabled SW1 / SW2, whose voltage registers are read-only, and for a voltage that
+is not on the DVS grid (0.6 V to 1.3875 V in 12.5 mV steps). Any other index is rejected the same way. Enables have no helper: build the control byte from `SwCtrlBits` or
 `LdoCtrlBits` and use `WriteRegister()`.
 
-!!! warning "Know the SW1 / SW2 table before you write a code"
-    `SwVoltageCode` values are DVS-disabled codes, and in that mode the data sheet makes the SW voltage registers
-    read-only. On a DVS-enabled buck the same code means a voltage under 1.4 V. [Rails and
+!!! note "`SwVoltageCode` names a voltage"
+    `SwVoltageCode` values are DVS-disabled codes. `SetSwVoltage()` uses the voltage the code stands for
+    (`V1_1` is 1.1 V) and converts it to the DVS encoding, so codes above 1.3875 V are refused. [Rails and
     OTP](rails-and-otp.md#sw1-and-sw2-two-code-tables) has both tables.
 
 ## Read status

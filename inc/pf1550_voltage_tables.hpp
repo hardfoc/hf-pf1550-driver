@@ -59,6 +59,23 @@ constexpr uint16_t SwDvsCodeToMillivolts(uint8_t code) noexcept {
 }
 
 /**
+ * @brief Encode a **DVS-enabled** SW1 / SW2 voltage (Table 31, left column).
+ *
+ * Inverse of @ref SwDvsCodeToMillivolts: accepts exactly the millivolt values that function returns
+ * (600 to 1388 mV on the 12.5 mV grid, rounded to mV).
+ *
+ * @return The 6-bit code, or `0xFF` when @p mv is not on the grid.
+ */
+constexpr uint8_t SwDvsMillivoltsToCode(uint16_t mv) noexcept {
+  for (uint8_t code = 0; code < 64U; ++code) {
+    if (SwDvsCodeToMillivolts(code) == mv) {
+      return code;
+    }
+  }
+  return 0xFFU;
+}
+
+/**
  * @brief SW3 output voltage (Table 37): 1.80 V + 100 mV × `SW3_VOLT[3:0]`.
  * @note SW3 is loaded from OTP and read-only (it has no DVS) — writes are ignored.
  */
@@ -247,6 +264,9 @@ static_assert(SwCodeToMillivolts(0x0D) == 3300, "SW1/SW2 DVS-disabled: every cod
 static_assert(SwDvsCodeToMillivolts(0x00) == 600 && SwDvsCodeToMillivolts(0x3F) == 1388 &&
                   SwDvsCodeToMillivolts(0x20) == 1000,
               "SW1/SW2 DVS-enabled: 0.6 V + 12.5 mV steps");
+static_assert(SwDvsMillivoltsToCode(1100) == 40 && SwDvsMillivoltsToCode(1388) == 0x3F &&
+                  SwDvsMillivoltsToCode(1006) == 0xFFU,
+              "DVS encode is the inverse of SwDvsCodeToMillivolts");
 static_assert(Sw3CodeToMillivolts(0x0F) == 3300 && Sw3CodeToMillivolts(0x00) == 1800, "SW3 Table 37");
 static_assert(SwMillivoltsToCode(3300) == 0x07, "3300 mV round-trip → 0x07");
 static_assert(LdoCodeToMillivolts(static_cast<uint8_t>(LdoVoltageCode::V1_0), /*is_ldo2=*/false) == 1000,
