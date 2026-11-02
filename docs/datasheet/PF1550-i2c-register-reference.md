@@ -4,7 +4,7 @@
 > `scripts/extract_register_reference.sh`. Do not hand-edit — regenerate after
 > datasheet updates. Authoritative source: [NXP PF1550.pdf](https://www.nxp.com/docs/en/data-sheet/PF1550.pdf).
 
-For the **driver-maintained subset** used in code, see [PF1550-register-map.md](PF1550-register-map.md).
+For the registers the driver names, see the Register map page (`docs/registers.md`).
 
 ## Section 12 — Register map (plain text)
 

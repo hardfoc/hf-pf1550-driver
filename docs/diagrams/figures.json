@@ -1,0 +1,14 @@
+{
+  "driver-layers": {
+    "title": "Three layers, one of them yours",
+    "alt": "Layer diagram: the application calls the hardware-agnostic PF1550 driver, whose operations read and write the PMIC's registers, which uses the CRTP bus interface, which calls the platform port you write, which drives the I2C bus and the STANDBY and USB strap pins of the PF1550.",
+    "description": "From top to bottom. Your application talks to one PF1550<Bus> object per PMIC. Its public operations (listed from inc/pf1550.hpp) read and write the PF1550's registers: identification, named register sequences (profiles), rail set points, strap pins, OTP, interrupts and diagnostics. The communication interface (pf1550::BusInterface in inc/pf1550_i2c_interface.hpp) is a CRTP base: four methods are required, DelayUs() has a default. The platform port is the only code you write. Below it is the chip.",
+    "profile": "overview",
+    "width": 1200,
+    "source": "docs/diagrams/figures/driver-layers.py",
+    "sources": [
+      "inc/pf1550.hpp:PF1550 public members",
+      "inc/pf1550_i2c_interface.hpp:BusInterface"
+    ]
+  }
+}

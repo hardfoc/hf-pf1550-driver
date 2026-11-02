@@ -20,3 +20,5 @@ plugins:
   - hardfoc
   - search
   - awesome-nav
+exclude_docs: |
+  datasheet/PF1550-i2c-register-reference.md

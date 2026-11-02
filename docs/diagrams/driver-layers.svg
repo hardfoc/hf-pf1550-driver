@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="driver-layers-title driver-layers-desc" font-family="Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+<title id="driver-layers-title">Three layers, one of them yours</title>
+<desc id="driver-layers-desc">Layer diagram: the application calls the hardware-agnostic PF1550 driver, whose operations read and write the PMIC's registers, which uses the CRTP bus interface, which calls the platform port you write, which drives the I2C bus and the STANDBY and USB strap pins of the PF1550.</desc>
+<defs><marker id="fk-arrow-rail" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8893A2"/></marker></defs>
+<rect x="0.5" y="0.5" width="1199" height="999" rx="16" fill="#FFFFFF" stroke="#E2E7EE"/>
+<text x="32" y="46.8" font-size="16" font-weight="700" letter-spacing="1.2" fill="#3730A3">ARCHITECTURE</text>
+<text x="32" y="85.6" font-size="32" font-weight="700" fill="#17202C">Three layers, one of them yours</text>
+<text x="32" y="115.4" font-size="18" fill="#566070">The driver and the interface are the same on every MCU. The port is a small class with four required methods.</text>
+<rect x="32" y="131.4" width="1136" height="1" fill="#E2E7EE"/>
+<rect x="32" y="278.4" width="1136" height="225" rx="16" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1.2"/>
+<path d="M600 242.4 L600 274.4" fill="none" stroke="#8893A2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fk-arrow-rail)"/>
+<path d="M600 507.4 L600 539.4" fill="none" stroke="#8893A2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fk-arrow-rail)"/>
+<path d="M600 661.4 L600 693.4" fill="none" stroke="#8893A2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fk-arrow-rail)"/>
+<path d="M600 812.4 L600 844.4" fill="none" stroke="#8893A2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fk-arrow-rail)"/>
+<rect x="32" y="149.4" width="1136" height="89" rx="12" fill="#FFFFFF" stroke="#C9D1DB" stroke-width="1"/>
+<rect x="32" y="157.4" width="4" height="73" rx="2" fill="#64748B"/>
+<rect x="32" y="543.4" width="1136" height="114" rx="12" fill="#EEF0FF" stroke="#4F46E5" stroke-width="1.4"/>
+<rect x="32" y="551.4" width="4" height="98" rx="2" fill="#4F46E5"/>
+<rect x="32" y="697.4" width="1136" height="111" rx="12" fill="#E6F6F4" stroke="#0F8B80" stroke-width="1.4"/>
+<rect x="32" y="705.4" width="4" height="95" rx="2" fill="#0F8B80"/>
+<rect x="32" y="848.4" width="1136" height="89" rx="12" fill="#FFFFFF" stroke="#C9D1DB" stroke-width="1"/>
+<rect x="32" y="856.4" width="4" height="73" rx="2" fill="#64748B"/>
+<text x="56" y="184.4" font-size="20" font-weight="700" fill="#17202C">Your application</text>
+<text x="56" y="215" font-size="17" fill="#2B3442">boot sequence, power monitor task, provisioning jig ...</text>
+<rect x="48" y="323.4" width="154.2" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="56" y="341.5" font-size="16" font-weight="700" fill="#3730A3">EnsureInitialized</text>
+<rect x="210.2" y="323.4" width="110.5" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="218.2" y="341.5" font-size="16" font-weight="700" fill="#3730A3">IsInitialized</text>
+<rect x="328.7" y="323.4" width="130.4" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="336.7" y="341.5" font-size="16" font-weight="700" fill="#3730A3">ReadDeviceId</text>
+<rect x="467.2" y="323.4" width="124.4" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="475.2" y="341.5" font-size="16" font-weight="700" fill="#3730A3">VerifyDevice</text>
+<rect x="599.6" y="323.4" width="127.1" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="607.6" y="341.5" font-size="16" font-weight="700" fill="#3730A3">ReadRegister</text>
+<rect x="734.6" y="323.4" width="130.7" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="742.6" y="341.5" font-size="16" font-weight="700" fill="#3730A3">WriteRegister</text>
+<rect x="873.3" y="323.4" width="119.2" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="881.3" y="341.5" font-size="16" font-weight="700" fill="#3730A3">ApplyProfile</text>
+<rect x="48" y="357.4" width="273.3" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="56" y="375.5" font-size="16" font-weight="700" fill="#3730A3">ApplyPortentaH7DefaultProfile</text>
+<rect x="329.3" y="357.4" width="270.8" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="337.3" y="375.5" font-size="16" font-weight="700" fill="#3730A3">ApplyPortentaH7CarrierProfile</text>
+<rect x="608" y="357.4" width="143.2" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="616" y="375.5" font-size="16" font-weight="700" fill="#3730A3">SetPowerMode</text>
+<rect x="759.3" y="357.4" width="115.7" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="767.3" y="375.5" font-size="16" font-weight="700" fill="#3730A3">SetUsbRails</text>
+<rect x="883" y="357.4" width="152.3" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="891" y="375.5" font-size="16" font-weight="700" fill="#3730A3">ReadPmicStatus</text>
+<rect x="48" y="391.4" width="142.3" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="56" y="409.5" font-size="16" font-weight="700" fill="#3730A3">ReadPmicState</text>
+<rect x="198.3" y="391.4" width="168.8" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="206.3" y="409.5" font-size="16" font-weight="700" fill="#3730A3">ReadChargerState</text>
+<rect x="375.1" y="391.4" width="125.5" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="383.1" y="409.5" font-size="16" font-weight="700" fill="#3730A3">ReadOtpByte</text>
+<rect x="508.6" y="391.4" width="145.3" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="516.6" y="409.5" font-size="16" font-weight="700" fill="#3730A3">ReadOtpRegion</text>
+<rect x="661.9" y="391.4" width="133.5" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="669.9" y="409.5" font-size="16" font-weight="700" fill="#3730A3">SetSwVoltage</text>
+<rect x="803.4" y="391.4" width="138.6" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="811.4" y="409.5" font-size="16" font-weight="700" fill="#3730A3">SetLdoVoltage</text>
+<rect x="48" y="425.4" width="216.7" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="56" y="443.5" font-size="16" font-weight="700" fill="#3730A3">SetVbusCurrentLimitMa</text>
+<rect x="272.7" y="425.4" width="207.6" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="280.7" y="443.5" font-size="16" font-weight="700" fill="#3730A3">ReadInterruptCategory</text>
+<rect x="488.4" y="425.4" width="175.4" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="496.4" y="443.5" font-size="16" font-weight="700" fill="#3730A3">ReadLatchedFaults</text>
+<rect x="671.8" y="425.4" width="177.6" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="679.8" y="443.5" font-size="16" font-weight="700" fill="#3730A3">ClearLatchedFaults</text>
+<rect x="857.4" y="425.4" width="183.2" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="865.4" y="443.5" font-size="16" font-weight="700" fill="#3730A3">SetInterruptMaskAll</text>
+<rect x="48" y="459.4" width="225.3" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="56" y="477.5" font-size="16" font-weight="700" fill="#3730A3">ReadDiagnosticSnapshot</text>
+<rect x="281.3" y="459.4" width="213.4" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="289.3" y="477.5" font-size="16" font-weight="700" fill="#3730A3">RefreshStatusSnapshot</text>
+<rect x="502.7" y="459.4" width="170.8" height="26" rx="13" fill="#EEF0FF" stroke="#C7CBF8" stroke-width="1"/>
+<text x="510.7" y="477.5" font-size="16" font-weight="700" fill="#3730A3">RunPowerSelfTest</text>
+<text x="48" y="307.4" font-size="17" font-weight="700" fill="#3730A3">HARDWARE-AGNOSTIC CORE</text>
+<text x="326.2" y="307.4" font-size="16" fill="#3730A3">PF1550&lt;Bus&gt;, inc/pf1550.hpp</text>
+<text x="56" y="578.4" font-size="20" font-weight="700" fill="#3730A3">Communication interface</text>
+<text x="56" y="609" font-size="17" fill="#2B3442">pf1550::BusInterface&lt;Self&gt;: CRTP, no virtual calls; one-byte register reads and writes,</text>
+<text x="56" y="633.7" font-size="17" fill="#2B3442">strap pins by name (STANDBY, USB_VBUS_EN, USB_OTG_EN) and the profile delay hook</text>
+<text x="56" y="732.4" font-size="20" font-weight="700" fill="#115E59">Platform port (your class)</text>
+<text x="56" y="761.6" font-size="16" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" fill="#2B3442">required:  Write()  Read()  EnsureInitialized()  GpioSet()</text>
+<text x="56" y="784.8" font-size="16" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" fill="#2B3442">optional:  DelayUs()</text>
+<text x="56" y="883.4" font-size="20" font-weight="700" fill="#17202C">PF1550</text>
+<text x="56" y="914" font-size="17" fill="#2B3442">I2C up to 400 kHz, address 0x08  /  STANDBY in, INTB and RESETBMCU open drain</text>
+<rect x="32" y="949.8" width="14" height="14" rx="4" fill="#EEF0FF" stroke="#4F46E5" stroke-width="1.4"/>
+<text x="54" y="964.4" font-size="16" fill="#566070">this library</text>
+<rect x="161.8" y="949.8" width="14" height="14" rx="4" fill="#E6F6F4" stroke="#0F8B80" stroke-width="1.4"/>
+<text x="183.8" y="964.4" font-size="16" fill="#566070">you write</text>
+<rect x="282.1" y="949.8" width="14" height="14" rx="4" fill="#F1F4F8" stroke="#64748B" stroke-width="1.4"/>
+<text x="304.1" y="964.4" font-size="16" fill="#566070">hardware</text>
+</svg>

@@ -4,9 +4,9 @@
  */
 #include "my_i2c.hpp"
 
+// --8<-- [start:quickstart]
 #include <cstdio>
 
-// --8<-- [start:quickstart]
 #include "pf1550.hpp"
 
 int bring_up_pmic(MyI2c& bus) {
@@ -21,12 +21,14 @@ int bring_up_pmic(MyI2c& bus) {
     return -2;
   }
 
-  pf1550::DiagnosticSnapshot snap{};             // 3. every rail's set point and enable
+  pf1550::DiagnosticSnapshot snap{};             // 3. SW1..LDO3: set point and enable
   if (!pmic.ReadDiagnosticSnapshot(snap)) {
     return -3;
   }
-  for (const auto& rail : snap.rails) {
-    std::printf("%u mV %s\n", rail.set_voltage_mv, rail.enabled_run ? "on" : "off");
+  for (size_t i = 0; i <= static_cast<size_t>(pf1550::RailId::Ldo3); ++i) {
+    const auto id = static_cast<pf1550::RailId>(i);
+    std::printf("%s %u mV %s\n", pf1550::RailName(id), snap.rails[i].set_voltage_mv,
+                snap.rails[i].enabled_run ? "on" : "off");
   }
   return 0;
 }

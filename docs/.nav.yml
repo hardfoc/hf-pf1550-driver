@@ -1,19 +1,25 @@
 ---
-# Site navigation (mkdocs-awesome-nav): the tabs and sidebar, in this order.
+# Site navigation (mkdocs-awesome-nav): the tabs and their pages, in reading order.
 nav:
   - Home: index.md
-  - "Installation": installation.md
-  - "Chip reference": chip-reference.md
-  - "Quick start": quickstart.md
-  - "Hardware setup — ESP32-C6": hardware_setup.md
-  - "Portenta H7 profile": portenta-profile.md
-  - "CMake integration": cmake_integration.md
-  - "Configuration": configuration.md
-  - "ESP32-C6 external provisioning": esp32-provisioning.md
-  - "Platform integration": platform_integration.md
-  - "API reference": api_reference.md
-  - "Examples": examples.md
-  - "Troubleshooting": troubleshooting.md
-  - "Datasheet & manufacturer": datasheet/README.md
-  - "PF1550 I2C register reference (extract)": datasheet/PF1550-i2c-register-reference.md
-  - "datasheet/PF1550-register-map.md": datasheet/PF1550-register-map.md
+  - Get started:
+      - Quickstart: quickstart.md
+      - Installation: installation.md
+      - Hardware: hardware.md
+  - Concepts:
+      - Architecture: architecture.md
+      - Rails and OTP: rails-and-otp.md
+      - Register map: registers.md
+      - Portenta H7 profiles: portenta-h7.md
+  - Guides:
+      - API guide: api-guide.md
+      - Configuration: configuration.md
+      - Porting: porting.md
+      - Examples: examples.md
+      - External provisioning: provisioning.md
+      - Troubleshooting: troubleshooting.md
+  - Reference:
+      - API reference: api-reference.md
+      - Testing and CI: testing.md
+      - Figures: diagrams/index.md
+      - Changelog: changelog.md
