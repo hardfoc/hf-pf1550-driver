@@ -10,7 +10,7 @@ on:
 
 jobs:
   markdownlint:
-    uses: hardfoc/hf-general-ci-tools/.github/workflows/ru-markdown-lint.yml@main
+    uses: hardfoc/hf-general-ci-tools/.github/workflows/ru-markdown-lint.yml@v1
     with:
       config_file: '_config/.markdownlint.json'
       globs: 'docs/**/*.md *.md examples/**/*.md'
