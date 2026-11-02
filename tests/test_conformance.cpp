@@ -131,3 +131,16 @@ TEST_CASE("the Portenta profiles do not write the read-only SW voltage registers
     CHECK_EQ(profile->back().reg, 0x50); // LDO2_CTRL stays last
   }
 }
+
+// Table 127: VSNVS_CTRL (0x48); VSNVS is a fixed 3.0 V always-on output.
+TEST_CASE("the snapshot fills the VSNVS entry") {
+  MockPf1550 bus;
+  bus.reg(0x48) = 0x20; // LIBGDIS
+  Driver pmic(&bus);
+  pf1550::DiagnosticSnapshot snap{};
+  REQUIRE(pmic.ReadDiagnosticSnapshot(snap));
+  const auto& v = snap.rails[static_cast<size_t>(pf1550::RailId::Vsnvs)];
+  CHECK_EQ(v.ctrl_reg, 0x20);
+  CHECK_EQ(v.set_voltage_mv, 3000);
+  CHECK(v.enabled_run && v.enabled_stby);
+}

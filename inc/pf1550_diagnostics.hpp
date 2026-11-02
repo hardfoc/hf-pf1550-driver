@@ -122,8 +122,8 @@ struct FaultFlags {
  * @brief Per-rail status snapshot (latched + live + control byte).
  */
 struct RailDiagnostics {
-  uint8_t  ctrl_reg{0};      ///< Raw `SWn_CTRL` or `LDOn_CTRL` byte.
-  uint8_t  volt_reg{0};      ///< Raw voltage register byte (RUN mode).
+  uint8_t  ctrl_reg{0};      ///< Raw `SWn_CTRL`, `LDOn_CTRL` or (VSNVS) `VSNVS_CTRL` byte.
+  uint8_t  volt_reg{0};      ///< Raw voltage register byte (RUN mode); 0 for VSNVS, which has none.
   uint16_t set_voltage_mv{0};///< Decoded target voltage in mV.
   bool     enabled_run{false};///< `EN` bit set.
   bool     enabled_stby{false};///< `STBY_EN` bit set.

@@ -84,7 +84,7 @@ end of charge, done, faults, off) and can return the raw byte too. `PmicStateNam
 `DiagnosticSnapshot` holds identity (DEVICE_ID, OTP_FLAVOR, SILICON_REV), INT_CATEGORY, the decoded state and
 charger state, VBUS sense, the decoded VBUS input limit, the aggregated `FaultFlags`, and one `RailDiagnostics` per
 rail: raw control and voltage bytes, set point in mV, RUN and STANDBY enables, latched and live fault marks. The
-VSNVS entry is not filled in. When a read fails, `read_ok` is `false` and `Error::DiagnosticRead` is set, but every
+VSNVS entry holds the raw VSNVS_CTRL byte, 3000 mV and both enables set: VSNVS is a fixed, always-on output. When a read fails, `read_ok` is `false` and `Error::DiagnosticRead` is set, but every
 field that was read is kept for logging.
 
 `RefreshStatusSnapshot()` re-reads only what changes without a register write (interrupts, state, charger, VBUS,

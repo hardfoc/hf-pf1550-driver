@@ -380,6 +380,15 @@ bool PF1550<BusType>::fillRailSnapshot(DiagnosticSnapshot& snap) noexcept {
     d.enabled_run  = (d.ctrl_reg & SwCtrlBits::kEn) != 0;
     d.enabled_stby = (d.ctrl_reg & SwCtrlBits::kStbyEn) != 0;
   }
+  // VSNVS: fixed 3.0 V, always on, no voltage or enable field (VSNVS_VOLT is unused, Table 127).
+  auto& vsnvs = snap.rails[static_cast<size_t>(RailId::Vsnvs)];
+  if (readReg8(static_cast<uint8_t>(Register::VsnvsCtrl), vsnvs.ctrl_reg)) {
+    vsnvs.set_voltage_mv = kVsnvsMillivolts;
+    vsnvs.enabled_run    = true;
+    vsnvs.enabled_stby   = true;
+  } else {
+    ok = false;
+  }
   return ok;
 }
 

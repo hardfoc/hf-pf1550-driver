@@ -34,6 +34,9 @@ inline constexpr uint8_t kDefaultI2cAddress = 0x08;
 /// @brief Expected `DEVICE_ID[2:0]` family identifier (PF1550 family = `100b`).
 inline constexpr uint8_t kExpectedDeviceId = 0x7C;
 
+/// @brief VSNVS output voltage: fixed 3.0 V (VSNVS_CTRL has no voltage field, Table 127).
+inline constexpr uint16_t kVsnvsMillivolts = 3000;
+
 /// @brief Base offset for Section 12.2 charger sub-page (see datasheet §12.2).
 inline constexpr uint8_t kChargerPageBase = 0x80;
 
