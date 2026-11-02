@@ -19,7 +19,7 @@ _local_reference/
 
 Readable register extracts for agents and developers live in tracked paths:
 
-- `docs/datasheet/PF1550-register-map.md` — curated driver subset
+- `docs/registers.md` — the registers the driver names (Register map page)
 - `docs/datasheet/PF1550-i2c-register-reference.md` — auto-generated from PDF (Section 12)
 
 Fetch the official PDF:
