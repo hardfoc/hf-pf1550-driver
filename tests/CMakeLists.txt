@@ -44,3 +44,15 @@ add_test(NAME hf_pf1550_install_check
     -DCXX=${CMAKE_CXX_COMPILER}
     -DINCDIR=${CMAKE_INSTALL_INCLUDEDIR}
     -P ${CMAKE_CURRENT_SOURCE_DIR}/install_check.cmake)
+
+# A bus without DelayUs() must be rejected at compile time with a clear message: the driver's waits
+# (profile delays, the 2 ms OTP wait) would otherwise be skipped silently. Passes only when the
+# compile fails with the driver's static_assert. The source is named .cpp.in so the linters, which
+# compile every .cpp, skip it.
+add_test(NAME hf_pf1550_requires_delay_hook
+  COMMAND ${CMAKE_CXX_COMPILER} -std=c++20 -fsyntax-only
+          "-I$<JOIN:$<TARGET_PROPERTY:${HF_PF1550_TARGET_NAME},INTERFACE_INCLUDE_DIRECTORIES>,;-I>"
+          -x c++ ${CMAKE_CURRENT_SOURCE_DIR}/compile_fail/no_delay_hook.cpp.in
+  COMMAND_EXPAND_LISTS)
+set_tests_properties(hf_pf1550_requires_delay_hook PROPERTIES
+  PASS_REGULAR_EXPRESSION "PF1550 bus must provide DelayUs")

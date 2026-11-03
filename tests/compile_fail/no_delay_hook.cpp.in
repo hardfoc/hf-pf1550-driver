@@ -1,0 +1,25 @@
+/**
+ * @file no_delay_hook.cpp.in
+ * @brief Must NOT compile: a bus without DelayUs() would skip the profile waits and the 2 ms OTP
+ * wait. The ctest `hf_pf1550_requires_delay_hook` compiles this file and passes only when the
+ * compiler stops with the driver's static_assert message.
+ */
+#include "pf1550.hpp"
+
+namespace {
+class BusWithoutDelay : public pf1550::BusInterface<BusWithoutDelay> {
+public:
+  bool Write(uint8_t, uint8_t, const uint8_t*, size_t) noexcept { return true; }
+  bool Read(uint8_t, uint8_t, uint8_t*, size_t) noexcept { return true; }
+  bool EnsureInitialized() noexcept { return true; }
+  void GpioSet(pf1550::CtrlPin, pf1550::GpioSignal) noexcept {}
+  // No DelayUs(uint32_t).
+};
+} // namespace
+
+bool use_driver() {
+  BusWithoutDelay bus;
+  pf1550::PF1550<BusWithoutDelay> pmic(&bus);
+  uint8_t value = 0;
+  return pmic.ReadOtpByte(0, value);
+}
