@@ -53,7 +53,8 @@ public:
     }
   }
 
-  // Optional: profiles wait between some writes. Without it, the waits are skipped.
+  // Required: block for at least `us` microseconds. The driver waits through it between profile
+  // writes and for the 2 ms OTP read; a bus without it does not compile.
   void DelayUs(uint32_t us) noexcept {
     platform_delay_us(us);
   }

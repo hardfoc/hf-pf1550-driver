@@ -46,7 +46,8 @@ namespace pf1550 {
  * @tparam BusType Platform bus type inheriting from `pf1550::BusInterface<BusType>`.
  *         Must implement `Write(addr, reg, data, len)`, `Read(addr, reg, data, len)`,
  *         `EnsureInitialized()`, `GpioSet(CtrlPin, GpioSignal)`, and
- *         `DelayUs(uint32_t)`.
+ *         `DelayUs(uint32_t)`. `DelayUs()` is required (checked by a
+ *         `static_assert`): it must block for at least the given time.
  *
  * @par Thread-safety
  *   The driver itself is **not** thread-safe by design — it expects the
@@ -60,6 +61,11 @@ namespace pf1550 {
  */
 template <typename BusType>
 class PF1550 {
+  static_assert(detail::kHasDelayUs<BusType>,
+                "PF1550 bus must provide DelayUs(uint32_t us) that really waits at least us "
+                "microseconds: the driver relies on it for the profile delays, the 2 ms OTP read "
+                "wait and power sequencing. There is no default (a no-op would skip the waits).");
+
 public:
   /// @brief Bitmask error codes accumulated in `error_flags_`.
   enum class Error : uint16_t {
