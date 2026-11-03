@@ -25,7 +25,7 @@ allocate.
 | `Write(addr, reg, data, len)` | yes | `[addr+W] [reg] [data...] STOP`. The driver always sends `len = 1`. Return `false` on a NACK or timeout |
 | `Read(addr, reg, data, len)` | yes | `[addr+W] [reg]`, repeated START, `[addr+R]`, `len` bytes, STOP. The driver always reads one byte |
 | `GpioSet(pin, signal)` | yes | Drive `CtrlPin::Standby`, `UsbVbusEn` or `UsbOtgEn` to `Active` / `Inactive`; do nothing for a pin your board does not wire |
-| `DelayUs(us)` | no | Block for at least `us` microseconds. The base version returns at once, so profile waits and the 2 ms OTP wait are skipped without it |
+| `DelayUs(us)` | yes | Block for at least `us` microseconds (never less: on an RTOS, round the tick count up and add one tick). There is no default; a bus without it fails to compile with "PF1550 bus must provide DelayUs" |
 
 `addr` is the 7-bit address; your SDK may want it shifted. The base class also provides `GpioSetActive(pin)` and
 `GpioSetInactive(pin)`, which call your `GpioSet()`.
