@@ -32,11 +32,10 @@
     "Write",
     "Read",
     "EnsureInitialized",
-    "GpioSet"
-  ],
-  "optional": [
+    "GpioSet",
     "DelayUs"
   ],
+  "optional": [],
   "sources": [
     "inc/pf1550.hpp:PF1550 public members",
     "inc/pf1550_i2c_interface.hpp:BusInterface"

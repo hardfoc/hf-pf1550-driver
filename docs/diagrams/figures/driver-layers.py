@@ -26,12 +26,19 @@ def data():
     methods = re.findall(r"^  (?:bool|void) (\w+)\([^{;]*?\) noexcept \{\n(.*?)^  \}", comm, re.M | re.S)
     required = [n for n, body in methods if "static_cast<Derived*>" in body]
     optional = [n for n, body in methods if "static_cast<Derived*>" not in body]
+    # Hooks the driver requires without a base-class member: checked by a static_assert in PF1550.
+    for trait, hook in (("kHasDelayUs", "DelayUs"),):
+        if f"detail::{trait}<BusType>" in drv and hook not in required:
+            required.append(hook)
     return {
         "operations": ops,
         "required": required,
         "optional": optional,
         "sources": [f"{DRIVER}:PF1550 public members", f"{COMM}:BusInterface"],
     }
+
+
+_COUNT = {3: "three", 4: "four", 5: "five", 6: "six", 7: "seven"}
 
 
 def build(d):
@@ -43,8 +50,8 @@ def build(d):
         "which drives the I2C bus and the STANDBY and USB strap pins of the PF1550.",
         width=1200,
         kicker="Architecture",
-        subtitle="The driver and the interface are the same on every MCU. The port is a small class with four "
-        "required methods.",
+        subtitle="The driver and the interface are the same on every MCU. The port is a small class with "
+        f"{_COUNT[len(d['required'])]} required methods.",
         profile="overview",
         legend=[("brand", "this library"), ("teal", "you write"), ("slate", "hardware")],
     )
