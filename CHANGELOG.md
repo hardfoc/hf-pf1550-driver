@@ -6,6 +6,21 @@ All notable changes to this driver are listed here. The format follows
 
 ## [Unreleased]
 
+### Breaking
+
+- The bus's `DelayUs(uint32_t)` hook is required. `BusInterface` provided a no-op default, so a port without one
+  compiled and the driver's waits were skipped without a trace: the profile delays between writes (the
+  power-sequencing waits, `ApplyProfile()`) and the 2 ms wait of `ReadOtpByte()` / `ReadOtpRegion()`. The
+  default is gone and `PF1550<BusType>` rejects a bus without `DelayUs()` at compile time with
+  "PF1550 bus must provide DelayUs(uint32_t us) ...". Ports that already define it need no change. New trait
+  `pf1550::detail::kHasDelayUs<Bus>`.
+
+### Fixed
+
+- The ESP32 example bus waited `ceil(us / 1 ms)` ticks with `vTaskDelay()`, which returns up to one tick early;
+  it now rounds the tick count up and adds one tick, so a wait is never shorter than asked (the 2 ms OTP wait
+  could be about 1 ms at 1 kHz).
+
 ### Fixed
 
 - **Breaking (behaviour):** the fault decoder reads `SW_INT_STAT0/1` (and their SENSE registers),

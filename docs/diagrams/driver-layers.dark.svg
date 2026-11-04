@@ -5,7 +5,7 @@
 <rect x="0.5" y="0.5" width="1199" height="999" rx="16" fill="#0E131A" stroke="#283241"/>
 <text x="32" y="46.8" font-size="16" font-weight="700" letter-spacing="1.2" fill="#C7CBFF">ARCHITECTURE</text>
 <text x="32" y="85.6" font-size="32" font-weight="700" fill="#E8EDF3">Three layers, one of them yours</text>
-<text x="32" y="115.4" font-size="18" fill="#9AA6B5">The driver and the interface are the same on every MCU. The port is a small class with four required methods.</text>
+<text x="32" y="115.4" font-size="18" fill="#9AA6B5">The driver and the interface are the same on every MCU. The port is a small class with five required methods.</text>
 <rect x="32" y="131.4" width="1136" height="1" fill="#252F3C"/>
 <rect x="32" y="278.4" width="1136" height="225" rx="16" fill="#1C1F3D" stroke="#3B4080" stroke-width="1.2"/>
 <path d="M600 242.4 L600 274.4" fill="none" stroke="#6C7889" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fk-arrow-rail)"/>
@@ -82,8 +82,8 @@
 <text x="56" y="609" font-size="17" fill="#D2DAE4">pf1550::BusInterface&lt;Self&gt;: CRTP, no virtual calls; one-byte register reads and writes,</text>
 <text x="56" y="633.7" font-size="17" fill="#D2DAE4">strap pins by name (STANDBY, USB_VBUS_EN, USB_OTG_EN) and the profile delay hook</text>
 <text x="56" y="732.4" font-size="20" font-weight="700" fill="#A7F3E6">Platform port (your class)</text>
-<text x="56" y="761.6" font-size="16" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" fill="#D2DAE4">required:  Write()  Read()  EnsureInitialized()  GpioSet()</text>
-<text x="56" y="784.8" font-size="16" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" fill="#D2DAE4">optional:  DelayUs()</text>
+<text x="56" y="761.6" font-size="16" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" fill="#D2DAE4">required:  Write()  Read()  EnsureInitialized()  GpioSet()  DelayUs()</text>
+<text x="56" y="784.8" font-size="16" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" fill="#D2DAE4">optional:  </text>
 <text x="56" y="883.4" font-size="20" font-weight="700" fill="#E8EDF3">PF1550</text>
 <text x="56" y="914" font-size="17" fill="#D2DAE4">I2C up to 400 kHz, address 0x08  /  STANDBY in, INTB and RESETBMCU open drain</text>
 <rect x="32" y="949.8" width="14" height="14" rx="4" fill="#1C1F3D" stroke="#8C93FF" stroke-width="1.4"/>

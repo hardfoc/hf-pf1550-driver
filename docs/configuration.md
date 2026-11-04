@@ -22,8 +22,8 @@ The snippets are compiled by the host CI from [`tests/docs/configuration.cpp`](.
 
 Each entry is `{reg, value, delay_us}`: the register address, the byte, and how long to wait after writing it
 (0 for none). The driver writes them in order and stops at the first failure, so put a rail's set point before its
-enable and a supply before the rails it feeds. The waits go through your port's `DelayUs()`; a port that does not
-define it skips them.
+enable and a supply before the rails it feeds. The waits go through your port's `DelayUs()`, which every port must
+define (the driver does not compile without it).
 
 Rules worth following in a profile:
 

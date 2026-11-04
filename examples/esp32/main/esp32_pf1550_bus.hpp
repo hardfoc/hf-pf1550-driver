@@ -124,9 +124,14 @@ public:
     return i2c_master_transmit_receive(dev, &reg, 1, data, len, pdMS_TO_TICKS(1000)) == ESP_OK;
   }
 
+  /// Required by the driver: block for at least @p us microseconds.
   void DelayUs(uint32_t us) noexcept {
     if (us >= 1000) {
-      vTaskDelay(pdMS_TO_TICKS((us + 999) / 1000));
+      // vTaskDelay(n) returns after n - 1 to n tick periods (the current tick is partly gone), so
+      // round the tick count up and add one: the wait is never shorter than asked.
+      const uint64_t ticks =
+          (static_cast<uint64_t>(us) * configTICK_RATE_HZ + 999999U) / 1000000U + 1U;
+      vTaskDelay(static_cast<TickType_t>(ticks));
     } else if (us > 0) {
       esp_rom_delay_us(us);
     }

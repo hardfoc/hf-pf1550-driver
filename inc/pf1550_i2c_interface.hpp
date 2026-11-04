@@ -7,6 +7,8 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <type_traits>
+#include <utility>
 
 namespace pf1550 {
 
@@ -41,6 +43,15 @@ enum class PowerMode : uint8_t {
  * @brief CRTP template interface for PF1550 bus and strap pins.
  * @tparam Derived Platform bus implementation type.
  */
+namespace detail {
+/// True when @p Bus has a callable `DelayUs(uint32_t)` (the wait hook the driver requires).
+template <typename Bus, typename = void>
+inline constexpr bool kHasDelayUs = false;
+template <typename Bus>
+inline constexpr bool
+    kHasDelayUs<Bus, std::void_t<decltype(std::declval<Bus&>().DelayUs(uint32_t{}))>> = true;
+} // namespace detail
+
 template <typename Derived>
 class BusInterface {
 public:
@@ -64,10 +75,9 @@ public:
 
   void GpioSetInactive(CtrlPin pin) noexcept { GpioSet(pin, GpioSignal::Inactive); }
 
-  /** @brief Optional delay hook — override in derived bus for profile pacing. */
-  void DelayUs(uint32_t us) noexcept {
-    (void)us;
-  }
+  // DelayUs(uint32_t us) is required in the derived bus and has no default here: the driver's
+  // waits (profile pacing, the 2 ms OTP read wait, power sequencing) must really wait. A bus without
+  // it is rejected at compile time by PF1550<BusType> (see detail::kHasDelayUs).
 
   BusInterface(const BusInterface&) = delete;
   BusInterface& operator=(const BusInterface&) = delete;
