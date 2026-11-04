@@ -105,6 +105,47 @@
   <meta property="og:description" content="Header-only C++20 driver for the NXP PF1550 PMIC (3 buck, 3 LDO, Li-ion charger) (I2C). Part of the HardFOC ecosystem.">
   <meta property="og:url" content="https://hardfoc.github.io/hf-pf1550-driver/latest/installation/">
   <meta name="twitter:card" content="summary">
+  <script>
+(function () {
+  if (typeof mermaid != "undefined" && !(mermaid instanceof Element)) return;
+  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading, waiting = [];
+  var stub = {
+    initialize: function (c) { config = c || {}; if (real) real.initialize(config); },
+    render: function (id, text) {
+      var el = null, pres = document.querySelectorAll("pre.mermaid:not([data-hf-mermaid])");
+      for (var i = 0; i < pres.length && !el; i++) if (pres[i].textContent === text) el = pres[i];
+      if (el) el.setAttribute("data-hf-mermaid", "");
+      return near(el).then(load).then(function (m) { return m.render(id, text); });
+    }
+  };
+  function load() {
+    return loading || (loading = new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = SRC;
+      s.onload = function () {
+        real = window.mermaid;
+        window.mermaid = stub;
+        real.initialize(config);
+        resolve(real);
+      };
+      s.onerror = function () { loading = null; reject(new Error("Mermaid did not load")); };
+      document.head.appendChild(s);
+    }));
+  }
+  function near(el) {
+    if (real || !el || !("IntersectionObserver" in window)) return Promise.resolve();
+    return new Promise(function (resolve) {
+      var io = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); resolve(); }
+      }, { rootMargin: "100% 0px" });
+      io.observe(el);
+      waiting.push(function () { io.disconnect(); resolve(); });
+    });
+  }
+  window.addEventListener("beforeprint", function () { waiting.splice(0).forEach(function (go) { go(); }); });
+  window.mermaid = stub;
+})();
+</script>
 
   </head>
   
@@ -1100,7 +1141,7 @@ template implementation they include to <code>include/hf_pf1550/src/</code>, and
 </table>
 <h2 id="esp-idf">ESP-IDF<a class="headerlink" href="#esp-idf" title="Permanent link">&para;</a></h2>
 <p>The ESP-IDF component wrapper is
-<a href="https://github.com/hardfoc/hf-pf1550-driver/blob/4048e9bbf686bc7642f8166a55d72dce4cbeb2f6/examples/esp32/components/hf_pf1550/CMakeLists.txt"><code>examples/esp32/components/hf_pf1550/</code></a>. Copy that folder
+<a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/examples/esp32/components/hf_pf1550/CMakeLists.txt"><code>examples/esp32/components/hf_pf1550/</code></a>. Copy that folder
 into your project's <code>components/</code> (or point <code>EXTRA_COMPONENT_DIRS</code> at it) and set the <code>HF_PF1550_ROOT</code> cache
 variable to the driver checkout; the wrapper stops with a clear message when the path is wrong. Your component
 then declares <code>REQUIRES hf_pf1550</code>. The wrapper requires the IDF <code>driver</code> component, which the ESP32 reference
@@ -1117,17 +1158,17 @@ port uses.</p>
 <tbody>
 <tr>
 <td>Settings</td>
-<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/4048e9bbf686bc7642f8166a55d72dce4cbeb2f6/cmake/hf_pf1550_build_settings.cmake"><code>cmake/hf_pf1550_build_settings.cmake</code></a></td>
+<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/cmake/hf_pf1550_build_settings.cmake"><code>cmake/hf_pf1550_build_settings.cmake</code></a></td>
 <td>Target name, include directories, version: the single source of truth</td>
 </tr>
 <tr>
 <td>Library</td>
-<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/4048e9bbf686bc7642f8166a55d72dce4cbeb2f6/CMakeLists.txt"><code>CMakeLists.txt</code></a></td>
+<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/CMakeLists.txt"><code>CMakeLists.txt</code></a></td>
 <td>INTERFACE target, install and package export</td>
 </tr>
 <tr>
 <td>ESP-IDF</td>
-<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/4048e9bbf686bc7642f8166a55d72dce4cbeb2f6/examples/esp32/components/hf_pf1550/CMakeLists.txt"><code>examples/esp32/components/hf_pf1550/CMakeLists.txt</code></a></td>
+<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/examples/esp32/components/hf_pf1550/CMakeLists.txt"><code>examples/esp32/components/hf_pf1550/CMakeLists.txt</code></a></td>
 <td>IDF component wrapper over the same settings</td>
 </tr>
 </tbody>

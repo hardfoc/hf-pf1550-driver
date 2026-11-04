@@ -105,6 +105,47 @@
   <meta property="og:description" content="Header-only C++20 driver for the NXP PF1550 PMIC (3 buck, 3 LDO, Li-ion charger) (I2C). Part of the HardFOC ecosystem.">
   <meta property="og:url" content="https://hardfoc.github.io/hf-pf1550-driver/latest/rails-and-otp/">
   <meta name="twitter:card" content="summary">
+  <script>
+(function () {
+  if (typeof mermaid != "undefined" && !(mermaid instanceof Element)) return;
+  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading, waiting = [];
+  var stub = {
+    initialize: function (c) { config = c || {}; if (real) real.initialize(config); },
+    render: function (id, text) {
+      var el = null, pres = document.querySelectorAll("pre.mermaid:not([data-hf-mermaid])");
+      for (var i = 0; i < pres.length && !el; i++) if (pres[i].textContent === text) el = pres[i];
+      if (el) el.setAttribute("data-hf-mermaid", "");
+      return near(el).then(load).then(function (m) { return m.render(id, text); });
+    }
+  };
+  function load() {
+    return loading || (loading = new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = SRC;
+      s.onload = function () {
+        real = window.mermaid;
+        window.mermaid = stub;
+        real.initialize(config);
+        resolve(real);
+      };
+      s.onerror = function () { loading = null; reject(new Error("Mermaid did not load")); };
+      document.head.appendChild(s);
+    }));
+  }
+  function near(el) {
+    if (real || !el || !("IntersectionObserver" in window)) return Promise.resolve();
+    return new Promise(function (resolve) {
+      var io = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); resolve(); }
+      }, { rootMargin: "100% 0px" });
+      io.observe(el);
+      waiting.push(function () { io.disconnect(); resolve(); });
+    });
+  }
+  window.addEventListener("beforeprint", function () { waiting.splice(0).forEach(function (go) { go(); }); });
+  window.mermaid = stub;
+})();
+</script>
 
   </head>
   
@@ -1107,7 +1148,7 @@
 <p>How the PF1550 encodes rail voltages, enables and limits, which registers OTP controls, and what that means for
 the values the driver writes.</p>
 <p>All tables come from the <a href="https://www.nxp.com/docs/en/data-sheet/PF1550.pdf">PF1550 data sheet</a>, Rev. 7; the
-driver's decoders in <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/4048e9bbf686bc7642f8166a55d72dce4cbeb2f6/inc/pf1550_voltage_tables.hpp"><code>pf1550_voltage_tables.hpp</code></a> implement them and check
+driver's decoders in <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550_voltage_tables.hpp"><code>pf1550_voltage_tables.hpp</code></a> implement them and check
 themselves at compile time.</p>
 <h2 id="otp-decides-first">OTP decides first<a class="headerlink" href="#otp-decides-first" title="Permanent link">&para;</a></h2>
 <p>At start-up (REGS_DISABLE to RUN) the PF1550 copies its OTP into the regulator registers: set points, enables,

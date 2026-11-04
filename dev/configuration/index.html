@@ -105,6 +105,47 @@
   <meta property="og:description" content="Header-only C++20 driver for the NXP PF1550 PMIC (3 buck, 3 LDO, Li-ion charger) (I2C). Part of the HardFOC ecosystem.">
   <meta property="og:url" content="https://hardfoc.github.io/hf-pf1550-driver/latest/configuration/">
   <meta name="twitter:card" content="summary">
+  <script>
+(function () {
+  if (typeof mermaid != "undefined" && !(mermaid instanceof Element)) return;
+  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading, waiting = [];
+  var stub = {
+    initialize: function (c) { config = c || {}; if (real) real.initialize(config); },
+    render: function (id, text) {
+      var el = null, pres = document.querySelectorAll("pre.mermaid:not([data-hf-mermaid])");
+      for (var i = 0; i < pres.length && !el; i++) if (pres[i].textContent === text) el = pres[i];
+      if (el) el.setAttribute("data-hf-mermaid", "");
+      return near(el).then(load).then(function (m) { return m.render(id, text); });
+    }
+  };
+  function load() {
+    return loading || (loading = new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = SRC;
+      s.onload = function () {
+        real = window.mermaid;
+        window.mermaid = stub;
+        real.initialize(config);
+        resolve(real);
+      };
+      s.onerror = function () { loading = null; reject(new Error("Mermaid did not load")); };
+      document.head.appendChild(s);
+    }));
+  }
+  function near(el) {
+    if (real || !el || !("IntersectionObserver" in window)) return Promise.resolve();
+    return new Promise(function (resolve) {
+      var io = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); resolve(); }
+      }, { rootMargin: "100% 0px" });
+      io.observe(el);
+      waiting.push(function () { io.disconnect(); resolve(); });
+    });
+  }
+  window.addEventListener("beforeprint", function () { waiting.splice(0).forEach(function (go) { go(); }); });
+  window.mermaid = stub;
+})();
+</script>
 
   </head>
   
@@ -1118,7 +1159,7 @@
 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
 <p>What you can configure, where: board profiles, run-time rail settings, the SW1 / SW2 code table, interrupt masks
 and the build.</p>
-<p>The snippets are compiled by the host CI from <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/4048e9bbf686bc7642f8166a55d72dce4cbeb2f6/tests/docs/configuration.cpp"><code>tests/docs/configuration.cpp</code></a>.</p>
+<p>The snippets are compiled by the host CI from <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/tests/docs/configuration.cpp"><code>tests/docs/configuration.cpp</code></a>.</p>
 <h2 id="where-configuration-lives">Where configuration lives<a class="headerlink" href="#where-configuration-lives" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1167,8 +1208,8 @@ and the build.</p>
 </span></code></pre></div>
 <p>Each entry is <code>{reg, value, delay_us}</code>: the register address, the byte, and how long to wait after writing it
 (0 for none). The driver writes them in order and stops at the first failure, so put a rail's set point before its
-enable and a supply before the rails it feeds. The waits go through your port's <code>DelayUs()</code>; a port that does not
-define it skips them.</p>
+enable and a supply before the rails it feeds. The waits go through your port's <code>DelayUs()</code>, which every port must
+define (the driver does not compile without it).</p>
 <p>Rules worth following in a profile:</p>
 <ul>
 <li>Write a rail's voltage register before its control register.</li>
