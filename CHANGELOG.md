@@ -17,6 +17,9 @@ All notable changes to this driver are listed here. The format follows
 
 ### Fixed
 
+- Docs: OTP and read-only register claims now follow the data sheet (Rev. 7 §3, §6.2.5, §6.3.3). Modules can carry
+  custom OTP, the Portenta H7 SW3 set point is marked unconfirmed (every read so far followed a 0x0F write), and
+  "writes are ignored" is replaced by "read-only; the effect of a write is unspecified".
 - The ESP32 example bus waited `ceil(us / 1 ms)` ticks with `vTaskDelay()`, which returns up to one tick early;
   it now rounds the tick count up and adds one tick, so a wait is never shorter than asked (the 2 ms OTP wait
   could be about 1 ms at 1 kHz).

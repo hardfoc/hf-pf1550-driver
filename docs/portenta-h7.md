@@ -34,10 +34,14 @@ voltages, and the bucks run at their OTP values (SW1 and SW2 in the DVS-disabled
 | --- | --- | --- |
 | SW1 (BUCK1, +3V1SW) | 3.0 V, OTP code 0x06 | USB / ULPI, SDRAM, Ethernet; the LDO inputs |
 | SW2 (BUCK2, +VOUT) | 3.3 V, OTP code 0x07 | Carrier +3V3, JTAG VTref |
-| SW3 (BUCK3) | 3.3 V, OTP code 0x0F (on the modules read so far) | STM32H747, QSPI flash |
+| SW3 (BUCK3, +3V1) | OTP value, not yet confirmed: the net name suggests 3.1 V (code 0x0D); see the note below | STM32H747, QSPI flash |
 | LDO1 | 1.0 V, code 0x05 | MIPI bridge |
 | LDO2 | 1.8 V, code 0x00 | MIPI, USB / ULPI |
 | LDO3 | 1.2 V, code 0x09 | STM32 DSI, Ethernet PHY |
+
+**SW3 set point is unconfirmed.** Every SW3_VOLT (0x3E) read so far came after firmware had written 0x0F to it,
+so a read-back of 0x0F (3.3 V) cannot tell the OTP value from the write. Confirm on a cold-started module before
+any write: read 0x3E and OTP byte 0x1F (bits 7:4 hold the SW3 code), and measure +3V1 at the SW3 output.
 
 !!! note "No buck voltage writes"
     Neither profile writes `SWx_VOLT`, `SWx_STBY_VOLT` or `SWx_SLP_VOLT`. SW3's are read-only (no DVS), and so are

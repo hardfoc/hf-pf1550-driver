@@ -77,7 +77,8 @@ constexpr uint8_t SwDvsMillivoltsToCode(uint16_t mv) noexcept {
 
 /**
  * @brief SW3 output voltage (Table 37): 1.80 V + 100 mV × `SW3_VOLT[3:0]`.
- * @note SW3 is loaded from OTP and read-only (it has no DVS) — writes are ignored.
+ * @note SW3 is loaded from OTP and is read-only per the data sheet (Rev. 7 §6.3.3: no DVS). Tables 122–124 list the
+ *       field as RW1S, and the data sheet does not say what a write does, so never write it.
  */
 constexpr uint16_t Sw3CodeToMillivolts(uint8_t code) noexcept {
   return static_cast<uint16_t>(1800U + 100U * (code & 0x0FU));
