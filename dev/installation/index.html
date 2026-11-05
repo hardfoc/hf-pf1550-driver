@@ -108,7 +108,8 @@
   <script>
 (function () {
   if (typeof mermaid != "undefined" && !(mermaid instanceof Element)) return;
-  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading, waiting = [];
+  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading;
+  var waiting = [], io = null, ahead = false, ENGAGE = ["scroll", "keydown", "pointerdown", "touchstart"];
   var stub = {
     initialize: function (c) { config = c || {}; if (real) real.initialize(config); },
     render: function (id, text) {
@@ -132,17 +133,38 @@
       document.head.appendChild(s);
     }));
   }
+  // One observer for the diagrams still waiting: on the screen only until the reader engages, then a screen ahead.
+  function watch() {
+    if (io) io.disconnect();
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) release(function (w) { return w.el === e.target; });
+      });
+    }, { rootMargin: ahead ? "100% 0px" : "0px" });
+    waiting.forEach(function (w) { io.observe(w.el); });
+  }
+  function release(which) {
+    waiting = waiting.filter(function (w) {
+      if (!which(w)) return true;
+      io.unobserve(w.el);
+      w.go();
+      return false;
+    });
+  }
   function near(el) {
     if (real || !el || !("IntersectionObserver" in window)) return Promise.resolve();
     return new Promise(function (resolve) {
-      var io = new IntersectionObserver(function (entries) {
-        if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); resolve(); }
-      }, { rootMargin: "100% 0px" });
-      io.observe(el);
-      waiting.push(function () { io.disconnect(); resolve(); });
+      waiting.push({ el: el, go: resolve });
+      if (io) io.observe(el); else watch();
     });
   }
-  window.addEventListener("beforeprint", function () { waiting.splice(0).forEach(function (go) { go(); }); });
+  function engaged() {
+    ENGAGE.forEach(function (t) { window.removeEventListener(t, engaged, true); });
+    ahead = true;
+    if (io) watch();
+  }
+  ENGAGE.forEach(function (t) { window.addEventListener(t, engaged, { capture: true, passive: true }); });
+  window.addEventListener("beforeprint", function () { if (io) release(function () { return true; }); });
   window.mermaid = stub;
 })();
 </script>
@@ -1141,7 +1163,7 @@ template implementation they include to <code>include/hf_pf1550/src/</code>, and
 </table>
 <h2 id="esp-idf">ESP-IDF<a class="headerlink" href="#esp-idf" title="Permanent link">&para;</a></h2>
 <p>The ESP-IDF component wrapper is
-<a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/examples/esp32/components/hf_pf1550/CMakeLists.txt"><code>examples/esp32/components/hf_pf1550/</code></a>. Copy that folder
+<a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/examples/esp32/components/hf_pf1550/CMakeLists.txt"><code>examples/esp32/components/hf_pf1550/</code></a>. Copy that folder
 into your project's <code>components/</code> (or point <code>EXTRA_COMPONENT_DIRS</code> at it) and set the <code>HF_PF1550_ROOT</code> cache
 variable to the driver checkout; the wrapper stops with a clear message when the path is wrong. Your component
 then declares <code>REQUIRES hf_pf1550</code>. The wrapper requires the IDF <code>driver</code> component, which the ESP32 reference
@@ -1158,17 +1180,17 @@ port uses.</p>
 <tbody>
 <tr>
 <td>Settings</td>
-<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/cmake/hf_pf1550_build_settings.cmake"><code>cmake/hf_pf1550_build_settings.cmake</code></a></td>
+<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/cmake/hf_pf1550_build_settings.cmake"><code>cmake/hf_pf1550_build_settings.cmake</code></a></td>
 <td>Target name, include directories, version: the single source of truth</td>
 </tr>
 <tr>
 <td>Library</td>
-<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/CMakeLists.txt"><code>CMakeLists.txt</code></a></td>
+<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/CMakeLists.txt"><code>CMakeLists.txt</code></a></td>
 <td>INTERFACE target, install and package export</td>
 </tr>
 <tr>
 <td>ESP-IDF</td>
-<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/examples/esp32/components/hf_pf1550/CMakeLists.txt"><code>examples/esp32/components/hf_pf1550/CMakeLists.txt</code></a></td>
+<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/examples/esp32/components/hf_pf1550/CMakeLists.txt"><code>examples/esp32/components/hf_pf1550/CMakeLists.txt</code></a></td>
 <td>IDF component wrapper over the same settings</td>
 </tr>
 </tbody>

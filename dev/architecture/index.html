@@ -108,7 +108,8 @@
   <script>
 (function () {
   if (typeof mermaid != "undefined" && !(mermaid instanceof Element)) return;
-  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading, waiting = [];
+  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading;
+  var waiting = [], io = null, ahead = false, ENGAGE = ["scroll", "keydown", "pointerdown", "touchstart"];
   var stub = {
     initialize: function (c) { config = c || {}; if (real) real.initialize(config); },
     render: function (id, text) {
@@ -132,17 +133,38 @@
       document.head.appendChild(s);
     }));
   }
+  // One observer for the diagrams still waiting: on the screen only until the reader engages, then a screen ahead.
+  function watch() {
+    if (io) io.disconnect();
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) release(function (w) { return w.el === e.target; });
+      });
+    }, { rootMargin: ahead ? "100% 0px" : "0px" });
+    waiting.forEach(function (w) { io.observe(w.el); });
+  }
+  function release(which) {
+    waiting = waiting.filter(function (w) {
+      if (!which(w)) return true;
+      io.unobserve(w.el);
+      w.go();
+      return false;
+    });
+  }
   function near(el) {
     if (real || !el || !("IntersectionObserver" in window)) return Promise.resolve();
     return new Promise(function (resolve) {
-      var io = new IntersectionObserver(function (entries) {
-        if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); resolve(); }
-      }, { rootMargin: "100% 0px" });
-      io.observe(el);
-      waiting.push(function () { io.disconnect(); resolve(); });
+      waiting.push({ el: el, go: resolve });
+      if (io) io.observe(el); else watch();
     });
   }
-  window.addEventListener("beforeprint", function () { waiting.splice(0).forEach(function (go) { go(); }); });
+  function engaged() {
+    ENGAGE.forEach(function (t) { window.removeEventListener(t, engaged, true); });
+    ahead = true;
+    if (io) watch();
+  }
+  ENGAGE.forEach(function (t) { window.addEventListener(t, engaged, { capture: true, passive: true }); });
+  window.addEventListener("beforeprint", function () { if (io) release(function () { return true; }); });
   window.mermaid = stub;
 })();
 </script>
@@ -1066,7 +1088,7 @@
 <details class="hf-figure-desc">
 <summary>Figure description and sources</summary>
 <p>From top to bottom. Your application talks to one PF1550<Bus> object per PMIC. Its public operations (listed from inc/pf1550.hpp) read and write the PF1550's registers: identification, named register sequences (profiles), rail set points, strap pins, OTP, interrupts and diagnostics. The communication interface (pf1550::BusInterface in inc/pf1550_i2c_interface.hpp) is a CRTP base: four methods are required, DelayUs() has a default. The platform port is the only code you write. Below it is the chip.</p>
-<p>Drawn from: <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550.hpp"><code>inc/pf1550.hpp</code></a> <code>PF1550 public members</code>; <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550_i2c_interface.hpp"><code>inc/pf1550_i2c_interface.hpp</code></a> <code>BusInterface</code>; figure module <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/docs/diagrams/figures/driver-layers.py"><code>docs/diagrams/figures/driver-layers.py</code></a>.</p>
+<p>Drawn from: <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550.hpp"><code>inc/pf1550.hpp</code></a> <code>PF1550 public members</code>; <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550_i2c_interface.hpp"><code>inc/pf1550_i2c_interface.hpp</code></a> <code>BusInterface</code>; figure module <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/docs/diagrams/figures/driver-layers.py"><code>docs/diagrams/figures/driver-layers.py</code></a>.</p>
 </details>
 <h2 id="the-three-layers">The three layers<a class="headerlink" href="#the-three-layers" title="Permanent link">&para;</a></h2>
 <table>
@@ -1081,13 +1103,13 @@
 <tbody>
 <tr>
 <td><strong>Hardware-agnostic core</strong>: <code>PF1550&lt;Bus&gt;</code></td>
-<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550.hpp"><code>inc/pf1550.hpp</code></a>, <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/src/pf1550.ipp"><code>src/pf1550.ipp</code></a></td>
+<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550.hpp"><code>inc/pf1550.hpp</code></a>, <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/src/pf1550.ipp"><code>src/pf1550.ipp</code></a></td>
 <td>The interface's methods only</td>
 <td>Never, for a new board</td>
 </tr>
 <tr>
 <td><strong>Communication interface</strong>: <code>BusInterface&lt;Self&gt;</code></td>
-<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550_i2c_interface.hpp"><code>inc/pf1550_i2c_interface.hpp</code></a></td>
+<td><a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550_i2c_interface.hpp"><code>inc/pf1550_i2c_interface.hpp</code></a></td>
 <td>Four methods of your port</td>
 <td>Never</td>
 </tr>
@@ -1100,8 +1122,8 @@
 </tbody>
 </table>
 <p>Board knowledge sits beside the core as data, not code: the register sequences in
-<a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550_profiles.hpp"><code>pf1550_profiles.hpp</code></a> and the Portenta H7 fault-severity table in
-<a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550_diagnostics.hpp"><code>pf1550_diagnostics.hpp</code></a>. A board that is not a Portenta H7 passes its own table to
+<a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550_profiles.hpp"><code>pf1550_profiles.hpp</code></a> and the Portenta H7 fault-severity table in
+<a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550_diagnostics.hpp"><code>pf1550_diagnostics.hpp</code></a>. A board that is not a Portenta H7 passes its own table to
 <code>ApplyProfile()</code> and classifies faults its own way.</p>
 <p>Everything above the port is the same on ESP32, STM32, a Linux host or the unit-test model. That is how the
 <a href="../testing/">host tests</a> run the real driver code without hardware.</p>

@@ -108,7 +108,8 @@
   <script>
 (function () {
   if (typeof mermaid != "undefined" && !(mermaid instanceof Element)) return;
-  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading, waiting = [];
+  var SRC = "https://unpkg.com/mermaid@11/dist/mermaid.min.js", config = {}, real, loading;
+  var waiting = [], io = null, ahead = false, ENGAGE = ["scroll", "keydown", "pointerdown", "touchstart"];
   var stub = {
     initialize: function (c) { config = c || {}; if (real) real.initialize(config); },
     render: function (id, text) {
@@ -132,17 +133,38 @@
       document.head.appendChild(s);
     }));
   }
+  // One observer for the diagrams still waiting: on the screen only until the reader engages, then a screen ahead.
+  function watch() {
+    if (io) io.disconnect();
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) release(function (w) { return w.el === e.target; });
+      });
+    }, { rootMargin: ahead ? "100% 0px" : "0px" });
+    waiting.forEach(function (w) { io.observe(w.el); });
+  }
+  function release(which) {
+    waiting = waiting.filter(function (w) {
+      if (!which(w)) return true;
+      io.unobserve(w.el);
+      w.go();
+      return false;
+    });
+  }
   function near(el) {
     if (real || !el || !("IntersectionObserver" in window)) return Promise.resolve();
     return new Promise(function (resolve) {
-      var io = new IntersectionObserver(function (entries) {
-        if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); resolve(); }
-      }, { rootMargin: "100% 0px" });
-      io.observe(el);
-      waiting.push(function () { io.disconnect(); resolve(); });
+      waiting.push({ el: el, go: resolve });
+      if (io) io.observe(el); else watch();
     });
   }
-  window.addEventListener("beforeprint", function () { waiting.splice(0).forEach(function (go) { go(); }); });
+  function engaged() {
+    ENGAGE.forEach(function (t) { window.removeEventListener(t, engaged, true); });
+    ahead = true;
+    if (io) watch();
+  }
+  ENGAGE.forEach(function (t) { window.addEventListener(t, engaged, { capture: true, passive: true }); });
+  window.addEventListener("beforeprint", function () { if (io) release(function () { return true; }); });
   window.mermaid = stub;
 })();
 </script>
@@ -928,13 +950,13 @@ committed figure no longer matches the code. Each figure below lists the files i
 <details class="hf-figure-desc">
 <summary>Figure description and sources</summary>
 <p>From top to bottom. Your application talks to one PF1550<Bus> object per PMIC. Its public operations (listed from inc/pf1550.hpp) read and write the PF1550's registers: identification, named register sequences (profiles), rail set points, strap pins, OTP, interrupts and diagnostics. The communication interface (pf1550::BusInterface in inc/pf1550_i2c_interface.hpp) is a CRTP base: four methods are required, DelayUs() has a default. The platform port is the only code you write. Below it is the chip.</p>
-<p>Drawn from: <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550.hpp"><code>inc/pf1550.hpp</code></a> <code>PF1550 public members</code>; <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550_i2c_interface.hpp"><code>inc/pf1550_i2c_interface.hpp</code></a> <code>BusInterface</code>; figure module <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/docs/diagrams/figures/driver-layers.py"><code>docs/diagrams/figures/driver-layers.py</code></a>.</p>
+<p>Drawn from: <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550.hpp"><code>inc/pf1550.hpp</code></a> <code>PF1550 public members</code>; <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550_i2c_interface.hpp"><code>inc/pf1550_i2c_interface.hpp</code></a> <code>BusInterface</code>; figure module <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/docs/diagrams/figures/driver-layers.py"><code>docs/diagrams/figures/driver-layers.py</code></a>.</p>
 </details>
-<p>Figure module: <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/docs/diagrams/figures/driver-layers.py"><code>docs/diagrams/figures/driver-layers.py</code></a></p>
+<p>Figure module: <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/docs/diagrams/figures/driver-layers.py"><code>docs/diagrams/figures/driver-layers.py</code></a></p>
 <p>Drawn from:</p>
 <ul>
-<li><code>PF1550 public members</code> in <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550.hpp"><code>inc/pf1550.hpp</code></a></li>
-<li><code>BusInterface</code> in <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/9c5fb148e589f9ccebadd2fa1e437a67f480918b/inc/pf1550_i2c_interface.hpp"><code>inc/pf1550_i2c_interface.hpp</code></a></li>
+<li><code>PF1550 public members</code> in <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550.hpp"><code>inc/pf1550.hpp</code></a></li>
+<li><code>BusInterface</code> in <a href="https://github.com/hardfoc/hf-pf1550-driver/blob/b53922d10139e98845ed1a8d614f40e73a7a64c8/inc/pf1550_i2c_interface.hpp"><code>inc/pf1550_i2c_interface.hpp</code></a></li>
 </ul>
 
 
