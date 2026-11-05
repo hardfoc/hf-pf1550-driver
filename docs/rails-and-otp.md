@@ -18,8 +18,11 @@ Three consequences for a host:
 - **An MCU reset does not reset the PF1550.** The registers keep what you wrote while the PMIC stays powered.
   To start again from OTP values, power the PMIC down (remove VBUS and the battery) or send it through
   REGS_DISABLE.
-- **An A0EP part starts with nothing useful in OTP.** OTP_FLAVOR (0x01) reads 0x00 and the host must configure
-  every rail it needs, which is what the [Portenta H7 profiles](portenta-h7.md) do.
+- **Factory programming varies by part, and modules can carry custom OTP.** A stock A0 part is unprogrammed, but
+  the parts NXP ships are "available only with preprogrammed configurations" (data sheet Rev. 7, §3), and
+  OTP_FLAVOR (0x01) reading 0x00 only means NXP's test flow did not record a flavor (Table 87). On the Portenta
+  H7, SW3 powers the MCU before any I2C traffic, so its OTP already sets the bucks; the [profiles](portenta-h7.md)
+  configure the LDOs and enables. Read the OTP bytes (`ReadOtpByte`, Table 176) instead of assuming a variant.
 - **Some registers are read-only by design.** The next two sections say which.
 
 ## SW1 and SW2: two code tables
